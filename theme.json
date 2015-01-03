@@ -1,0 +1,9 @@
+{
+    "id": "nodebb-theme-exodo",
+    "name": "Exodo Theme for NodeBB",
+    "description": "Theme for exo.do",
+    "url": "hhttps://github.com/ExoDo-NodeBB/nodebb-theme-exodo",
+    "screenshot": null,
+    "templates": "templates",
+    "staticDir": "static"
+}
