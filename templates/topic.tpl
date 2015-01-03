@@ -11,31 +11,31 @@
 <input type="hidden" template-variable="viewcount" value="{viewcount}" />
 
 <div class="topic">
-	<ol class="breadcrumb">
-		<!-- BEGIN breadcrumbs -->
-		<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-			<!-- IF !@last --><a href="{breadcrumbs.url}" itemprop="url"><!-- ENDIF !@last -->
-				<span itemprop="title">
-					{breadcrumbs.text}
-					<!-- IF @last -->
-					<!-- IF !feeds:disableRSS --><a target="_blank" href="{relative_path}/topic/{tid}.rss"><i class="fa fa-rss-square"></i></a><!-- ENDIF !feeds:disableRSS -->
-					<!-- ENDIF @last -->
-				</span>
-			<!-- IF !@last --></a><!-- ENDIF !@last -->
-		</li>
-		<!-- END breadcrumbs -->
-		<div class="loading-indicator pull-right" done="0" style="display:none;">
-			<i class="fa fa-refresh fa-spin"></i>
-		</div>
-	</ol>
+  <ol class="breadcrumb">
+    <!-- BEGIN breadcrumbs -->
+    <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+      <!-- IF !@last --><a href="{breadcrumbs.url}" itemprop="url"><!-- ENDIF !@last -->
+        <span itemprop="title">
+          {breadcrumbs.text}
+          <!-- IF @last -->
+          <!-- IF !feeds:disableRSS --><a target="_blank" href="{relative_path}/topic/{tid}.rss"><i class="fa fa-rss-square"></i></a><!-- ENDIF !feeds:disableRSS -->
+          <!-- ENDIF @last -->
+        </span>
+      <!-- IF !@last --></a><!-- ENDIF !@last -->
+    </li>
+    <!-- END breadcrumbs -->
+    <div class="loading-indicator pull-right" done="0" style="display:none;">
+      <i class="fa fa-refresh fa-spin"></i>
+    </div>
+  </ol>
 
-	<ul id="post-container" class="posts" data-tid="{tid}">
-		<!-- BEGIN posts -->
-			<li class="post-row<!-- IF posts.deleted --> deleted<!-- ENDIF posts.deleted -->" data-pid="{posts.pid}" data-uid="{posts.uid}" data-username="{posts.user.username}" data-userslug="{posts.user.userslug}" data-index="{posts.index}" data-timestamp="{posts.timestamp}" data-votes="{posts.votes}" itemscope itemtype="http://schema.org/Comment">
-				<a id="post_anchor_{posts.index}" name="{posts.index}"></a>
+  <ul id="post-container" class="posts" data-tid="{tid}">
+    <!-- BEGIN posts -->
+      <li class="post-row<!-- IF posts.deleted --> deleted<!-- ENDIF posts.deleted -->" data-pid="{posts.pid}" data-uid="{posts.uid}" data-username="{posts.user.username}" data-userslug="{posts.user.userslug}" data-index="{posts.index}" data-timestamp="{posts.timestamp}" data-votes="{posts.votes}" itemscope itemtype="http://schema.org/Comment">
+        <a id="post_anchor_{posts.index}" name="{posts.index}"></a>
 
-				<meta itemprop="datePublished" content="{posts.relativeTime}">
-				<meta itemprop="dateModified" content="{posts.relativeEditTime}">
+        <meta itemprop="datePublished" content="{posts.relativeTime}">
+        <meta itemprop="dateModified" content="{posts.relativeEditTime}">
 
         <div class="post-wrapper">
           <div class="post-header"></div>
@@ -173,33 +173,33 @@
             </div>
           </div>
         </div>
-				<div style="clear:both;"></div>
-			</li>
+        <div style="clear:both;"></div>
+      </li>
 
-			<!-- IF !posts.index -->
-			<li class="well post-bar" data-index="{posts.index}">
-				<!-- IMPORT partials/post_bar.tpl -->
-			</li>
-			<!-- ENDIF !posts.index -->
-		<!-- END posts -->
-	</ul>
+      <!-- IF !posts.index -->
+      <li class="well post-bar" data-index="{posts.index}">
+        <!-- IMPORT partials/post_bar.tpl -->
+      </li>
+      <!-- ENDIF !posts.index -->
+    <!-- END posts -->
+  </ul>
 
-	<div class="well col-md-12 col-xs-12 pull-right post-bar bottom-post-bar hide">
-		<!-- IMPORT partials/post_bar.tpl -->
-	</div>
+  <div class="well col-md-12 col-xs-12 pull-right post-bar bottom-post-bar hide">
+    <!-- IMPORT partials/post_bar.tpl -->
+  </div>
 
-	<!-- IF config.usePagination -->
-	<div class="text-center">
-		<ul class="pagination">
-			<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i> [[global:previouspage]]</a></li>
-			<li class="next pull-right"><a href="#">[[global:nextpage]] <i class="fa fa-chevron-right"></i></a></li>
-		</ul>
-	</div>
-	<!-- ENDIF config.usePagination -->
+  <!-- IF config.usePagination -->
+  <div class="text-center">
+    <ul class="pagination">
+      <li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i> [[global:previouspage]]</a></li>
+      <li class="next pull-right"><a href="#">[[global:nextpage]] <i class="fa fa-chevron-right"></i></a></li>
+    </ul>
+  </div>
+  <!-- ENDIF config.usePagination -->
 
-	<!-- IMPORT partials/move_thread_modal.tpl -->
-	<!-- IMPORT partials/fork_thread_modal.tpl -->
-	<!-- IMPORT partials/move_post_modal.tpl -->
+  <!-- IMPORT partials/move_thread_modal.tpl -->
+  <!-- IMPORT partials/fork_thread_modal.tpl -->
+  <!-- IMPORT partials/move_post_modal.tpl -->
 </div>
 
 <div widget-area="footer" class="col-xs-12"></div>
