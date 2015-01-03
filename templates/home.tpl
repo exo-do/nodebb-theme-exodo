@@ -6,17 +6,6 @@
         <div class="col-lg-9 col-sm-12" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
                 <!-- BEGIN categories -->
                 <div class="{categories.class} padding15" data-cid="{categories.cid}" data-numRecentReplies="{categories.numRecentReplies}">
-                        <meta itemprop="name" content="{categories.name}">
-                        <h4 class="category-title">
-                                <!-- IF categories.link -->
-                                <a href="{categories.link}" itemprop="url" target="_blank">
-                                <!-- ELSE -->
-                                <a href="{relative_path}/category/{categories.slug}" itemprop="url">
-                                <!-- ENDIF categories.link -->
-                                {categories.name}
-                                </a>
-                        </h4>
-
                         <!-- IF categories.link -->
                         <a style="color: {categories.color};" href="{categories.link}" itemprop="url" target="_blank">
                         <!-- ELSE -->
