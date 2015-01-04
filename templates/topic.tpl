@@ -49,8 +49,10 @@
 
             <a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
               <img src="{posts.user.picture}" align="left" class="img-thumbnail" itemprop="image" />
+							<br>
               <!-- IF posts.user.banned -->
               <span class="label label-danger">[[user:banned]]</span>
+							<br>
               <!-- ENDIF posts.user.banned -->
             </a>
 
