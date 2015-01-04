@@ -104,8 +104,13 @@
     }
 
     .post-block {
-      border-left: 1px solid rgba(0, 0, 0, 0.06);
+      border-left: 1px solid #eee;
+			margin-left: -1px; //para montar sobre el border-right de la columna del avatar
     }
+
+		.profile-image-block {
+			border-right: 1px solid #eee;
+		}
 
 		.post-info, .post-block {
 			position: relative;
@@ -135,6 +140,7 @@
       margin: 0;
       padding: 8px 0 0 23px;
       clear: both;
+			overflow: auto;
 
       button.show {
         display: inline-block !important;
@@ -254,11 +260,6 @@
 		}
 
     .topic-buttons {
-
-      @media (max-width: 767px) {
-        margin-left: -11px;
-        border-left: 0;
-      }
 
       button.show {
         display: inline-block!important;
