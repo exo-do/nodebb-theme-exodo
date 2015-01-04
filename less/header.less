@@ -1,3 +1,268 @@
+#header {
+    background:none;
+    margin:0 0 10px;
+    padding:0;
+    position:relative;
+    display:block;
+    min-height:35px;
+    #top_header {
+        height:36px;
+        margin-top:12px;
+        #globalsearch {
+            width:254px;
+            float:left;
+            text-align:left;
+            line-height:1em;
+            border:solid 1px #e4e4e4;
+            height:32px;
+            background:#fff;
+            .searchbutton {
+                border:0 none;
+                padding:0;
+                width:26px;
+                height:26px;
+                float:right;
+                text-indent:-9999px;
+                cursor:pointer;
+                background:url("https://exo.do/images/exodo/misc/search-button-bg.png") no-repeat left 0;
+                background-attachment:scroll;
+            }
+            .searchbutton:hover {
+                background:url("https://exo.do/images/exodo/misc/search-button-bg.png") no-repeat left -26px;
+            }
+            #search-form {
+                width:252px;
+                height:28px;
+                padding:2px;
+                input.textbox {
+                    height:22px;
+                    width:218px;
+                    border:medium none;
+                    font-size:14px;
+                    vertical-align:middle;
+                    padding:1px;
+                }
+            }
+        }
+        #toplinks {
+            font-size:14px;
+            text-align:right;
+            background:0;
+            float:right;
+            a:link {
+                text-decoration:none;
+            }
+            ul.nouser {
+                li {
+                    display:inline;
+                    font-size:14px;
+                    padding:3px 4px;
+                    text-transform:lowercase;
+                    line-height:28px;
+                }
+                & > li {
+                    line-height:32px;
+                }
+            }
+            ul.isuser {
+                li {
+                    display:inline;
+                    position:relative;
+                    float:right;
+                    clear:left;
+                    padding-right:10px;
+                    a {
+                        display:block;
+                        padding-top:3px;
+                        padding-bottom:3px;
+                        padding-left:4px;
+                        padding-right:4px;
+                        font-size:14px;
+                    }
+                }
+                & > li {
+                    text-transform:lowercase;
+                    line-height:27px;
+                }
+                li.welcomelink {
+                    display:block;
+                    float:right;
+                    clear:left;
+                    padding-top:3px;
+                    padding-bottom:3px;
+                    padding-left:4px;
+                    text-transform:none;
+                    a {
+                        display:inline;
+                        float:none;
+                        clear:none;
+                        margin-left:0;
+                    }
+                }
+            }
+        }
+        .advanced_search {
+            float:left;
+            font-size:12px;
+            line-height:32px;
+            padding-left:12px;
+            margin-bottom:0;
+            li {
+                list-style:outside none none;
+            }
+        }
+    }
+    #middle_header {
+        height:120px;
+        background:linear-gradient(to right,#cf246a 0,#ff942e 100%) repeat scroll 0 0 transparent;
+        position:relative;
+        margin-bottom: 10px;
+        .logo-image {
+            height:auto!important;
+            position:absolute;
+            left:25px;
+            top:25px;
+            z-index:100;
+        }
+        #navbar {
+            position:relative;
+            background:none;
+            margin:10px 0 0;
+            color:#FFF;
+            font:13px "Open Sans",sans-serif;
+            border:0 solid #FFF;
+            a {
+                color:#fff;
+            }
+            a:hover {
+                color:#fff;
+            }
+            #navtabs {
+                background:0;
+                padding:0;
+                text-align:right;
+                font-size:0;
+                display:block;
+                margin:0;
+                ul {
+                    position:absolute;
+                    top:120px;
+                    left:0;
+                    width:100%;
+                    border-top:0 none;
+                    direction:inherit;
+                    li {
+                        border-right:0;
+                        position:relative;
+                    }
+                    li:first-child {
+                        margin-left:12px;
+                        border-left:0;
+                    }
+                }
+                ul.navbar-links {
+                    border-top:solid 12px #f6f6f6;
+                    height:46px;
+                    font:13px "Open Sans",sans-serif;
+                    background:#2e3539;
+                    a {
+                        text-decoration:none;
+                    }
+                    & > li {
+                        font:13px/30px "Open Sans",sans-serif;
+                        padding:2.4px 6px;
+                    }
+                    & > li:last-child {
+                        margin-right:12px;
+                    }
+                }
+                & > li {
+                    border-left:12px solid #f6f6f6;
+                }
+                li {
+                    border-right:0 none;
+                    display:inline-block;
+                    a.navtab {
+                        text-transform:lowercase;
+                        line-height:23px;
+                        display:block;
+                        background:0;
+                        width:120px;
+                        height:120px;
+                        text-align:left;
+                        color:#fff;
+                        font:16px/23px "Open Sans",sans-serif;
+                        text-decoration:none;
+                        position:relative;
+                    }
+                    a.navtab:hover {
+                        background:#2e3539;
+                        color:#fff;
+                    }
+                }
+                li.selected {
+                    a.navtab {
+                        color:#fff;
+                        background:#2e3539;
+                        position:relative;
+                        z-index:10;
+                    }
+                    li {
+                        a {
+                            text-decoration:none;
+                            font:13px/34px "Open Sans",sans-serif;
+                            color:#fff;
+                            padding:2.4px 6px;
+                        }
+                    }
+                }
+                a {
+                    & > span {
+                        position:absolute;
+                        left:12px;
+                        bottom:12px;
+                        line-height:16px;
+                        padding-right:12px;
+                    }
+                }
+            }
+        }
+    }
+}
+#header #top_header #toplinks ul.nouser, #header #top_header #toplinks ul.isuser {
+    display:block;
+    float:right;
+    clear:left;
+    list-style:none;
+    margin-bottom:0;
+}
+#header #top_header #toplinks ul.isuser &>li:first-child,.toplinks ul.isuser &>li:first-child a {
+    padding-right:0;
+}
+#header-menu {
+    background-color:#2E3539;
+    border: none;
+    box-shadow: none;
+    transition:all 0.5s ease;
+    z-index: 9999;
+    .loading-bar {
+        background:linear-gradient(to right, rgb(207, 36, 106) 0px, rgb(255, 148, 46) 100%) repeat scroll 0px 0px transparent;
+        height: 3px;
+    }
+}
+#header-menu.affix {
+    margin:0;
+    width:100%;
+    padding:0 4%;
+    margin:0 -4%;
+    transition:all 0.5s ease;
+    top: 0;
+}
+#header-menu .navbar-nav &>li &>a:hover,#header-menu .navbar-nav &>li &>a:focus {
+    color:#929292;
+    background-color:#232323;
+}
+
 .header {
 
 	#user_label {
@@ -20,6 +285,7 @@
 	.forum-logo {
 		float: left;
 		max-height: 50px;
+		padding: 5px;
 		width: auto;
 	}
 
