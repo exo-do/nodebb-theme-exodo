@@ -43,14 +43,30 @@
 					</div>
 
           <div class="col-md-2 profile-image-block hidden-xs hidden-sm sub-post">
-						<h3>
-							<a class="username-field" href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}</span>
-						</h3>
+						<div class="nickname btn-group">
+							<h3 data-toggle="dropdown">
+								<span class="username-field" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}</span>
+							</h3>
+							<ul class="dropdown-menu">
+								<li><a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->"><i class="fa fa-user"></i> [[topic:profile]]</a></li>
+								<!-- IF !posts.selfPost -->
+								<!-- IF posts.user.userslug -->
+								<!-- IF loggedIn -->
+								<!-- IF !config.disableChat -->
+								<li><a href="#" class="chat"><i class="fa fa-comment"></i> [[topic:chat]]</a></li>
+								<!-- ENDIF !config.disableChat -->
+								<!-- ENDIF loggedIn -->
+								<!-- ENDIF posts.user.userslug -->
+								<!-- ENDIF !posts.selfPost -->
+							</ul>
+						</div>
 
             <a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
               <img src="{posts.user.picture}" align="left" class="img-thumbnail" itemprop="image" />
+							<br>
               <!-- IF posts.user.banned -->
               <span class="label label-danger">[[user:banned]]</span>
+							<br>
               <!-- ENDIF posts.user.banned -->
             </a>
 
