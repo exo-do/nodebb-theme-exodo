@@ -18,7 +18,6 @@
 		<ul class="footer_links left">
 			<li><a href="#">Ir Arriba</a>  |  </li>
 			<li><a href="#">Modo noche</a></li>
-			<li><a href="#">Modo nochesss</a></li>
 		</ul>
 	
 		<ul class="footer_links">
