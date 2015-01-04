@@ -38,15 +38,33 @@
 				<meta itemprop="dateModified" content="{posts.relativeEditTime}">
 
         <div class="post-wrapper">
-          <div class="post-header"></div>
+          <div class="post-header">
+						<div class="post-time">[[global:posted_ago, <span class="timeago" title="{posts.relativeTime}"></span>]]</div>
+					</div>
 
           <div class="col-md-2 profile-image-block hidden-xs hidden-sm sub-post">
+						<h3>
+							<a class="username-field" href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}</span>
+						</h3>
+
             <a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
               <img src="{posts.user.picture}" align="left" class="img-thumbnail" itemprop="image" />
               <!-- IF posts.user.banned -->
               <span class="label label-danger">[[user:banned]]</span>
               <!-- ENDIF posts.user.banned -->
             </a>
+
+						<span>
+							[[global:reputation]]: <i class='fa fa-star'></i> <span data-reputation="{posts.user.reputation}" data-uid="{posts.uid}" class='formatted-number reputation'>{posts.user.reputation}</span>
+							<br>
+							[[global:posts]]: <i class='fa fa-pencil'></i> <span class='formatted-number user_postcount_{posts.uid}'>{posts.user.postcount}</span>
+							<!-- IF posts.user.custom_profile_info.length -->
+							<!-- BEGIN custom_profile_info -->
+							<br>
+							{posts.user.custom_profile_info.content}
+							<!-- END custom_profile_info -->
+							<!-- ENDIF posts.user.custom_profile_info.length -->
+						</span>
           </div>
 
           <div class="col-md-10 post-block topic-item">
@@ -64,25 +82,16 @@
             <!-- ENDIF posts.user.signature -->
 
             <div class="post-info">
-              <span class="pull-right">
-                [[global:posted_ago, <span class="timeago" title="{posts.relativeTime}"></span>]]
+              <span>
                 <!-- IF posts.editor.username -->
-                <span>| [[global:last_edited_by_ago, <strong><a href="{relative_path}/user/{posts.editor.userslug}">{posts.editor.username}</a></strong>, <span class="timeago" title="{posts.relativeEditTime}"></span>]]</span>
+                <span>[[global:last_edited_by_ago, <strong><a href="{relative_path}/user/{posts.editor.userslug}">{posts.editor.username}</a></strong>, <span class="timeago" title="{posts.relativeEditTime}"></span>]]</span>
                 <!-- ENDIF posts.editor.username -->
               </span>
-              <span class="pull-left">
-                [[global:reputation]]: <i class='fa fa-star'></i> <span data-reputation="{posts.user.reputation}" data-uid="{posts.uid}" class='formatted-number reputation'>{posts.user.reputation}</span>&nbsp;|&nbsp;[[global:posts]]: <i class='fa fa-pencil'></i> <span class='formatted-number user_postcount_{posts.uid}'>{posts.user.postcount}</span>
-                <!-- IF posts.user.custom_profile_info.length -->
-                <!-- BEGIN custom_profile_info -->
-                | {posts.user.custom_profile_info.content}
-                <!-- END custom_profile_info -->
-                <!-- ENDIF posts.user.custom_profile_info.length -->
-              </span>
-              <div style="clear:both;"></div>
             </div>
           </div>
 
           <div class="topic-buttons">
+						<div class="col-md-2 profile-image-block hidden-xs hidden-sm sub-post"></div>
 
             <div class="btn-group">
 
