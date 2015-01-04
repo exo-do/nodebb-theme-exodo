@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300italic,600&subset=latin,cyrillic-ext);
 
 .brand-primary {
-	color: @brand-primary;
+	color: @exodo-primary;
 }
 
 .brand-success {
@@ -23,26 +23,26 @@
 
 html {
 	overflow-y: scroll;
-	background: #f6f6f6;
+	background: @exodo-bg-color;
 }
 
 body {
 	font-size: 13px;
-	color: #3e3e3e;
+	color: @exodo-text-color;
 	line-height: 1.23;
-	font-family: "Open Sans",sans-serif;
+	font-family: @exodo-font-family;
 	background: none;
 	width: 92%;
 	min-width: 650px;
 	margin: 0 auto;
 	
 	a {
-		color: #cf246a;
+		color: @exodo-link-color;
 		text-decoration: none;
 	}
 	
 	a:hover {
-		color: #cf246a;
+		color: @exodo-link-color;
 		text-decoration: underline;
 	}
 }

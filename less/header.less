@@ -13,7 +13,7 @@
             float:left;
             text-align:left;
             line-height:1em;
-            border:solid 1px #e4e4e4;
+            border:solid 1px @exodo-border-color;
             height:32px;
             background:#fff;
             .searchbutton {
@@ -73,10 +73,7 @@
                     padding-right:10px;
                     a {
                         display:block;
-                        padding-top:3px;
-                        padding-bottom:3px;
-                        padding-left:4px;
-                        padding-right:4px;
+                        padding: 3px 4px;
                         font-size:14px;
                     }
                 }
@@ -88,9 +85,7 @@
                     display:block;
                     float:right;
                     clear:left;
-                    padding-top:3px;
-                    padding-bottom:3px;
-                    padding-left:4px;
+                    padding: 3px 10px 3px 0;
                     text-transform:none;
                     a {
                         display:inline;
@@ -114,7 +109,7 @@
     }
     #middle_header {
         height:120px;
-        background:linear-gradient(to right,#cf246a 0,#ff942e 100%) repeat scroll 0 0 transparent;
+        background: @exodo-gradient;
         position:relative;
         margin-bottom: 10px;
         .logo-image {
@@ -129,7 +124,7 @@
             background:none;
             margin:10px 0 0;
             color:#FFF;
-            font:13px "Open Sans",sans-serif;
+            font:13px @exodo-font-family;
             border:0 solid #FFF;
             a {
                 color:#fff;
@@ -163,13 +158,13 @@
                 ul.navbar-links {
                     border-top:solid 12px #f6f6f6;
                     height:46px;
-                    font:13px "Open Sans",sans-serif;
-                    background:#2e3539;
+                    font:13px @exodo-font-family;
+                    background: @exodo-dark;
                     a {
                         text-decoration:none;
                     }
                     & > li {
-                        font:13px/30px "Open Sans",sans-serif;
+                        font:13px/30px @exodo-font-family;
                         padding:2.4px 6px;
                     }
                     & > li:last-child {
@@ -191,26 +186,26 @@
                         height:120px;
                         text-align:left;
                         color:#fff;
-                        font:16px/23px "Open Sans",sans-serif;
+                        font:16px/23px @exodo-font-family;
                         text-decoration:none;
                         position:relative;
                     }
                     a.navtab:hover {
-                        background:#2e3539;
+                        background: @exodo-dark;
                         color:#fff;
                     }
                 }
                 li.selected {
                     a.navtab {
                         color:#fff;
-                        background:#2e3539;
+                        background: @exodo-dark;
                         position:relative;
                         z-index:10;
                     }
                     li {
                         a {
                             text-decoration:none;
-                            font:13px/34px "Open Sans",sans-serif;
+                            font:13px/34px @exodo-font-family;
                             color:#fff;
                             padding:2.4px 6px;
                         }
@@ -242,7 +237,7 @@
 #navbar-wrapper{
 	min-height: 61px;
 	#header-menu {
-	    background-color:#2E3539;
+	    background-color: @exodo-dark;
 	    border: none;
 	    box-shadow: none;
 	    transition:all 0.5s ease;
@@ -253,7 +248,7 @@
 		 	position: absolute;
 		 	left: 0px;
 		 	height: 3px;
-		 	background: linear-gradient(to right, rgb(207, 36, 106) 0px, rgb(255, 148, 46) 100%) repeat scroll 0px 0px transparent;
+		 	background: @exodo-gradient;
 		 	z-index: 1;
 		 	-webkit-transition: width 0.2s ease-in;
 		 	-moz-transition: width 0.2s ease-in;
