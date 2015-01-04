@@ -22,7 +22,7 @@
 	<div class="{topic_row_size}" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
 		<div class="header category-tools clearfix">
 			<div class="category-tools-button">
-				<span class = "pull-left">
+				<span class ="pull-left">
 					<ol class="breadcrumb">
 						<!-- BEGIN breadcrumbs -->
 							<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
