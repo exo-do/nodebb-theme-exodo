@@ -31,7 +31,7 @@
 
 	<ul id="post-container" class="posts" data-tid="{tid}">
 		<!-- BEGIN posts -->
-			<li class="post-row<!-- IF posts.deleted --> deleted<!-- ENDIF posts.deleted -->" data-pid="{posts.pid}" data-uid="{posts.uid}" data-username="{posts.user.username}" data-userslug="{posts.user.userslug}" data-index="{posts.index}" data-timestamp="{posts.timestamp}" data-votes="{posts.votes}" itemscope itemtype="http://schema.org/Comment">
+			<li class="post-row<!-- IF posts.deleted --> deleted<!-- ENDIF posts.deleted --><!-- IF posts.ignored --> ignored<!-- ENDIF posts.ignored -->" data-pid="{posts.pid}" data-uid="{posts.uid}" data-username="{posts.user.username}" data-userslug="{posts.user.userslug}" data-index="{posts.index}" data-timestamp="{posts.timestamp}" data-votes="{posts.votes}" itemscope itemtype="http://schema.org/Comment">
 				<a id="post_anchor_{posts.index}" name="{posts.index}"></a>
 
 				<meta itemprop="datePublished" content="{posts.relativeTime}">
@@ -77,6 +77,7 @@
             </h3>
 
             <div id="content_{posts.pid}" class="post-content" itemprop="text">{posts.content}</div>
+			 <div class="original-content hide" itemprop="text">{posts.originalContent}</div>
             <!-- IF posts.user.signature -->
             <div class="post-signature">{posts.user.signature}</div>
             <!-- ENDIF posts.user.signature -->
@@ -113,6 +114,13 @@
                 <!-- ENDIF loggedIn -->
                 <!-- ENDIF posts.user.userslug -->
                 <!-- ENDIF !posts.selfPost -->
+				  
+				<!-- IF !posts.selfPost -->
+				<!-- IF loggedIn -->
+				<li><a href="#" class="unignore" <!-- IF !posts.ignored -->style="display: none;"<!-- ENDIF !posts.ignored -->><i class="fa fa-eye"></i> Des-Ignorar</a></li>
+				<li><a href="#" class="ignore" <!-- IF posts.ignored -->style="display: none;"<!-- ENDIF posts.ignored -->><i class="fa fa-eye-slash"></i> Ignorar usuario</a></li>
+				<!-- ENDIF loggedIn -->
+				<!-- ENDIF !posts.selfPost -->
               </ul>
             </div>
 
