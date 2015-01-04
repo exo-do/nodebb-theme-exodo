@@ -95,10 +95,12 @@
 		</div>
 	</div>
 	
-	<div class="navbar navbar-inverse header" role="navigation" id="header-menu" data-spy="affix" data-offset-top="188">
-		<div class="loading-bar"></div>
-		<div class="container-fluid">
-			<!-- IMPORT partials/menu.tpl -->
+	<div id="navbar-wrapper">
+		<div class="navbar navbar-inverse header" role="navigation" id="header-menu" data-spy="affix" data-offset-top="188">
+			<div class="loading-bar"></div>
+			<div class="container-fluid">
+				<!-- IMPORT partials/menu.tpl -->
+			</div>
 		</div>
 	</div>
 		
