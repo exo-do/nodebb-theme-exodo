@@ -11,23 +11,7 @@
 <input type="hidden" template-variable="viewcount" value="{viewcount}" />
 
 <div class="topic">
-	<ol class="breadcrumb">
-		<!-- BEGIN breadcrumbs -->
-		<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-			<!-- IF !@last --><a href="{breadcrumbs.url}" itemprop="url"><!-- ENDIF !@last -->
-				<span itemprop="title">
-					{breadcrumbs.text}
-					<!-- IF @last -->
-					<!-- IF !feeds:disableRSS --><a target="_blank" href="{relative_path}/topic/{tid}.rss"><i class="fa fa-rss-square"></i></a><!-- ENDIF !feeds:disableRSS -->
-					<!-- ENDIF @last -->
-				</span>
-			<!-- IF !@last --></a><!-- ENDIF !@last -->
-		</li>
-		<!-- END breadcrumbs -->
-		<div class="loading-indicator pull-right" done="0" style="display:none;">
-			<i class="fa fa-refresh fa-spin"></i>
-		</div>
-	</ol>
+	<!-- IMPORT partials/breadcrumbs.tpl -->
 
 	<ul id="post-container" class="posts" data-tid="{tid}">
 		<!-- BEGIN posts -->
@@ -39,7 +23,10 @@
 
         <div class="post-wrapper">
           <div class="post-header">
-						<div class="post-meta">[[global:posted_ago, <span class="timeago" title="{posts.relativeTime}"></span>]] &bull; <span class="post-index"><a href="#">#{posts.index}</a></span></div>
+						<div class="post-meta">
+							[[global:posted_ago, <span class="timeago" title="{posts.relativeTime}"></span>]]
+							&bull;
+							<span class="post-index"><a href="/topic/{slug}/{posts.index}">#{posts.index}</a></span></div>
 					</div>
 
           <div class="col-md-2 profile-image-block hidden-xs hidden-sm sub-post">
@@ -101,17 +88,16 @@
 
             <div id="content_{posts.pid}" class="post-content" itemprop="text">{posts.content}</div>
 			 <div class="original-content hide" itemprop="text">{posts.originalContent}</div>
-            <!-- IF posts.user.signature -->
-            <div class="post-signature">{posts.user.signature}</div>
-            <!-- ENDIF posts.user.signature -->
 
             <div class="post-info">
-              <span>
-                <!-- IF posts.editor.username -->
-                <span>[[global:last_edited_by_ago, <strong><a href="{relative_path}/user/{posts.editor.userslug}">{posts.editor.username}</a></strong>, <span class="timeago" title="{posts.relativeEditTime}"></span>]]</span>
-                <!-- ENDIF posts.editor.username -->
-              </span>
+              <!-- IF posts.editor.username -->
+              <span>[[global:last_edited_by_ago, <strong><a href="{relative_path}/user/{posts.editor.userslug}">{posts.editor.username}</a></strong>, <span class="timeago" title="{posts.relativeEditTime}"></span>]]</span>
+              <!-- ENDIF posts.editor.username -->
             </div>
+
+						<!-- IF posts.user.signature -->
+						<div class="post-signature">{posts.user.signature}</div>
+						<!-- ENDIF posts.user.signature -->
           </div>
 
           <div class="topic-buttons">
