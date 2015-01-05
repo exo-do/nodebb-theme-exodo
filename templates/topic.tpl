@@ -86,8 +86,13 @@
               <p id="topic_title_{posts.pid}" class="topic-title" itemprop="name"><i class="fa fa-thumb-tack hide"></i> <i class="fa fa-lock hide"></i> {title}</p>
             </h3>
 
+			<!-- IF posts.ignored -->
+			<div id="content_{posts.pid}" class="post-content" itemprop="text">Este mensaje est&aacute; oculto porque <b>{posts.user.username}</b> est&aacute; en tu lista de ignorados.</div>
+		  	<div class="original-content hide" itemprop="text">{posts.originalContent}</div>
+		  	<!-- ELSE -->
             <div id="content_{posts.pid}" class="post-content" itemprop="text">{posts.content}</div>
-			 <div class="original-content hide" itemprop="text">{posts.originalContent}</div>
+			<div class="original-content hide" itemprop="text"></div>
+			<!-- ENDIF posts.ignored -->
 
             <div class="post-info">
               <!-- IF posts.editor.username -->
