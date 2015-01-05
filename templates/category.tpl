@@ -12,6 +12,7 @@
 
 <div class="category row">
 	<div class="col-lg-12 col-sm-12">
+		<!-- IMPORT partials/breadcrumbs.tpl -->
 		<div class="col-sm-6 col-lg-6 col-xs-6 title_forum"><h1>{name}</h1><p>{description}</p></div>
 		<!-- IF privileges.topics:create -->
 		<div class="col-sm-6 col-lg-6 col-xs-6 no-p">
@@ -23,20 +24,6 @@
 		<div class="header category-tools clearfix">
 			<div class="category-tools-button">
 				<span class ="pull-left">
-					<ol class="breadcrumb">
-						<!-- BEGIN breadcrumbs -->
-							<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<!-- IF !@last --><a href="{breadcrumbs.url}" itemprop="url"><!-- ENDIF !@last -->
-									<span itemprop="title">
-										{breadcrumbs.text}
-										<!-- IF @last -->
-										<!-- IF !feeds:disableRSS --><a target="_blank" href="{relative_path}/category/{cid}.rss"><i class="fa fa-rss-square"></i></a><!-- ENDIF !feeds:disableRSS -->
-										<!-- ENDIF @last -->
-									</span>
-								<!-- IF !@last --></a><!-- ENDIF !@last -->
-							</li>
-						<!-- END breadcrumbs -->
-					</ol>
 				</span>
 				<span class="pull-right">
 					<!-- IF loggedIn -->
@@ -64,58 +51,65 @@
 		<!-- ENDIF !topics.length -->
 
 		<ul id="topics-container" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}">
-			<div class="list-post-header"></div>
+			<div class="threadlisthead">
+				<span class="threadinfo">
+					<span class="threadtitle">
+						<a>Título</a> /
+						<a>Autor</a>
+					</span>
+				</span>
+				<span class="threadstats"><a>Respuestas</a> / <a>Visitas</a></span>
+				<span class="threadlastpost"><a>Último mensaje</a></span>
+			</div>
 			<meta itemprop="itemListOrder" content="descending">
 			<!-- BEGIN topics -->
 			<li class="category-item<!-- IF topics.locked --> locked<!-- ENDIF topics.locked --><!-- IF topics.pinned --> pinned<!-- ENDIF topics.pinned --><!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}" data-index="{topics.index}">
-
-				<div class="col-md-12 col-xs-12 panel panel-default topic-row">
-					<!-- IF privileges.editable -->
-					<i class="fa fa-fw fa-square-o pull-left select pointer"></i>
-					<!-- ENDIF privileges.editable -->
-					<a href="{relative_path}/user/{topics.user.userslug}" class="pull-left">
-						<img src="<!-- IF topics.thumb -->{topics.thumb}<!-- ELSE -->{topics.user.picture}<!-- ENDIF topics.thumb -->" class="img-rounded user-img" title="{topics.user.username}"/>
-					</a>
-
-					<h3>
-						<a href="{relative_path}/topic/{topics.slug}" itemprop="url">
-							<meta itemprop="name" content="{topics.title}">
-
-							<strong><i class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i> <i class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i></strong>
-							<span class="topic-title">{topics.title}</span>
-						</a>
-					</h3>
-
-					<small>
-						<span class="topic-stats">
-							[[global:posts]]
-							<strong class="human-readable-number" title="{topics.postcount}">{topics.postcount}</strong>
-						</span>
-						|
-						<span class="topic-stats">
-							[[global:views]]
-							<strong class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</strong>
-						</span>
-						|
-						<span>
-							[[global:posted_ago, <span class="timeago" title="{topics.relativeTime}"></span>]]
-						</span>
-
-						<span class="pull-right">
-							<!-- IF topics.unreplied -->
+				<div class="panel panel-default topic-row clearfix">
+					<div class="threadinfo">
+						<a class="threadstatus"></a>
+						<h3>
+							<a href="{relative_path}/topic/{topics.slug}" itemprop="url">
+								<meta itemprop="name" content="{topics.title}">
+	
+								<strong><i class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i> <i class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i></strong>
+								<span class="topic-title">{topics.title}</span>
+							</a>
+						</h3>
+	
+						<small>
+							<span>
+								Iniciado por <a href="<!-- IF topics.user.userslug -->{relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.username}</a>, [[global:posted_ago, <span class="timeago" title="{topics.relativeTime}"></span>]]
+							</span>
+							<!-- IMPORT partials/category_tags.tpl -->
+						</small>
+					</div>
+					<ul class="threadstats">
+						<li>[[global:posts]]: {topics.postcount}</li>
+						<li>[[global:views]]: {topics.viewcount}</li>
+					</ul>
+					<dl class="threadlastpost">
+						<!-- IF topics.unreplied -->
+						<dd>
 							[[category:no_replies]]
-							<!-- ELSE -->
+						</dd>
+						<!-- ELSE -->
+						<dd>
+							<img class="teaser-pic" src="{topics.teaser.user.picture}" />&nbsp;
 							<a href="<!-- IF topics.teaser.user.userslug -->{relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->">
-								<img class="teaser-pic" src="{topics.teaser.user.picture}" title="{topics.teaser.user.username}"/>
+								{topics.teaser.user.username}
 							</a>
-							<a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}">
-								[[global:replied_ago, <span class="timeago" title="{topics.teaser.timestamp}"></span>]]
-							</a>
-							<!-- ENDIF topics.unreplied -->
-						</span>
-
-						<!-- IMPORT partials/category_tags.tpl -->
-					</small>
+						</dd>
+						<dd>
+							[[global:replied_ago, <span class="timeago" title="{topics.teaser.timestamp}"></span>]]
+							<a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}">→</a>
+						</dd>
+						<!-- ENDIF topics.unreplied -->
+					</dl>
+					<!-- IF privileges.editable -->
+					<label class="threadimod">
+						<i class="fa fa-fw fa-square-o select pointer"></i>
+					</label>
+					<!-- ENDIF privileges.editable -->
 				</div>
 			</li>
 			<!-- END topics -->

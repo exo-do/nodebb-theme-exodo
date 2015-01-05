@@ -1,3 +1,100 @@
+.category-item .threadinfo,
+.category-item .threadlastpost,
+.category-item .threadstats {
+	float: left;
+	clear: right;
+	display: inline-block;
+}
+
+.category-item {
+	.threadinfo {
+	    width: 62%;
+	    min-width: 350px;
+    }
+	.threadstats {
+	    width: 12%;
+	    font-size: 12px;
+	    text-align: right;
+	    padding: 10px 0px;
+	    > li {
+			margin-right: 20px;
+	    }
+	}
+	
+	.threadlastpost {
+	    width: 23%;
+	    padding: 9.74px 0px 9.74px 2%;
+	    display: block;
+	    height: 29.52px;
+	    font-size: 11px;
+	}
+	
+	.threadimod {
+	    margin-top: 18px;
+	    > .select {
+			line-height: 0;
+			font-size: 16px;
+			color: @exodo-lightdark;
+	    }
+	    > .fa-check-square-o {
+			color: @exodo-dark;
+	    }
+	}
+	.threadstatus {
+	    background-repeat: no-repeat;
+	    background-position: 12px 10px;
+	    position: relative;
+	    float: left;
+	    clear: right;
+	    width: 64px;
+	    display: block;
+	    min-height: 49px;
+		height: auto;
+	}
+}
+
+.threadlisthead {
+	width: 100%;
+	display: table;
+	background: @exodo-gradient;
+	border-left: @exodo-primary;
+	border-right: @exodo-secondary;
+	color: #FFF;
+	padding: 14px 5px;
+	
+	a, a:hover {
+		color: #FFF;
+		cursor: pointer;
+	}
+	> span {
+		display: block;
+		float: left;
+		clear: right;
+	}
+	span.threadinfo {
+		width: 62%;
+	}
+	
+	span.threadinfo > .threadtitle {
+		padding-left: 12px;
+	}
+	
+	span.threadstats {
+		width: 12%;
+		text-align: right;
+		padding-right: 20px;
+	}
+	
+	span.threadlastpost {
+		width: 23%;
+		padding: 0 0 0 2%;
+	}
+}
+
+.category-item .threadstatus {
+	background-image: url("https://exo.do/images/exodo/statusicon/thread_old-30.png");
+}
+
 .category {
 	.span9 {
 		margin-bottom: 50px;
@@ -42,7 +139,7 @@
 	.topic-row {
 
 		border-radius: 0;
-		padding: 5px 10px 5px 10px;
+		padding: 5px 0;
 
 		small {
 			vertical-align: 2px;
@@ -52,19 +149,15 @@
 		h3 {
 			padding: 0;
 			margin: 0;
-			margin-top: 4px;
-			line-height: 25px;
+			margin-top: 10px;
+			font-size: 13px;
+			line-height: 1.23;
 			white-space: nowrap;
 			text-overflow:ellipsis;
 			overflow: hidden;
 			a {
 				width:100%;
 				display:inline-block;
-			}
-
-			.topic-title {
-				width: 100%;
-				font-size: 14px;
 			}
 		}
 
@@ -139,7 +232,7 @@
 
 		.tool {
 			background: none;
-			font-size: 14px;
+			font-size: 11px;
 			color: #838383;
 			line-height: 30px;
 			height: 30px;
@@ -147,15 +240,6 @@
 			margin: 0 7px;
 			border: none;
 		}
-	}
-
-	.list-post-header {
-		height: 34px;
-		width: 100%;
-		display: block;
-		background: linear-gradient(to right, rgba(207, 36, 106, 1) 0%, rgba(255, 148, 46, 1) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
-		border-left: 1px solid #cf246a;
-		border-right: 1px solid #ff942e;
 	}
 
 
