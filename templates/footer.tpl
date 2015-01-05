@@ -26,7 +26,7 @@
 			<li><a href="#">Panel de Administración</a>  |  </li>
 			<li><a href="#">Panel de Moderación</a>  |  </li>
 			<li><a href="#">Archivo del Foro</a>  |  </li>
-			<li><a id="Cookies" href="#">Política de cookies</a>  |  </li>
+			<li><a href="#">Política de cookies</a>  |  </li>
 			<li><a href="#">Ir Arriba</a></li>
 		</ul>       
 	</div>
