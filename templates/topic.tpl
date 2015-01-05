@@ -118,6 +118,25 @@
 						<div class="col-md-2 profile-image-block hidden-xs hidden-sm sub-post"></div>
 
 						<div class="pull-right">
+							<!-- IF posts.display_moderator_tools -->
+							<div class="btn-group post-tools">
+								<div class="dropdown">
+									<button title="[[topic:tools]]" class="btn btn-sm btn-default" data-toggle="dropdown" href="#"><i class="fa fa-gear"></i></button>
+									<ul class="dropdown-menu text-center pull-right" role="menu" aria-labelledby="dLabel">
+										<button class="btn btn-sm btn-default edit" type="button" title="[[topic:edit]]"><i class="fa fa-pencil"></i></button>
+										<button class="btn btn-sm btn-default delete" type="button" title="[[topic:delete]]"><i class="fa fa-trash-o"></i></button>
+										<button class="btn btn-sm btn-default purge <!-- IF !posts.deleted -->none<!-- ENDIF !posts.deleted -->" type="button" title="[[topic:purge]]"><i class="fa fa-eraser"></i></button>
+
+										<!-- IF posts.display_move_tools -->
+										<button class="btn btn-sm btn-default move" type="button" title="[[topic:move]]"><i class="fa fa-arrows"></i></button>
+										<!-- ENDIF posts.display_move_tools -->
+									</ul>
+								</div>
+							</div>
+							<!-- ENDIF posts.display_moderator_tools -->
+						</div>
+
+						<div class="pull-right">
 	            <div class="btn-group">
 
 	              <button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" type="button" title="<!-- IF posts.user.userslug -->[[topic:posted_by, {posts.user.username}]]<!-- ELSE -->[[topic:posted_by_guest]]<!-- ENDIF posts.user.userslug -->">
@@ -187,32 +206,6 @@
 	            </div>
 	            <!-- ENDIF privileges.topics:reply -->
 						</div>
-
-            <div class="pull-right">
-              <div class="btn-group post-tools">
-                <div class="dropdown share-dropdown pull-right">
-                  <button title="[[topic:share]]"class="btn btn-sm btn-default share" data-toggle="dropdown" href="#"><i class="fa fa-share-square-o"></i></button>
-                  <!-- IMPORT partials/share_dropdown.tpl -->
-                </div>
-              </div>
-
-              <!-- IF posts.display_moderator_tools -->
-              <div class="btn-group post-tools">
-                <div class="dropdown">
-                  <button title="[[topic:tools]]" class="btn btn-sm btn-default" data-toggle="dropdown" href="#"><i class="fa fa-gear"></i></button>
-                  <ul class="dropdown-menu text-center pull-right" role="menu" aria-labelledby="dLabel">
-                    <button class="btn btn-sm btn-default edit" type="button" title="[[topic:edit]]"><i class="fa fa-pencil"></i></button>
-                    <button class="btn btn-sm btn-default delete" type="button" title="[[topic:delete]]"><i class="fa fa-trash-o"></i></button>
-                    <button class="btn btn-sm btn-default purge <!-- IF !posts.deleted -->none<!-- ENDIF !posts.deleted -->" type="button" title="[[topic:purge]]"><i class="fa fa-eraser"></i></button>
-
-                    <!-- IF posts.display_move_tools -->
-                    <button class="btn btn-sm btn-default move" type="button" title="[[topic:move]]"><i class="fa fa-arrows"></i></button>
-                    <!-- ENDIF posts.display_move_tools -->
-                  </ul>
-                </div>
-              </div>
-              <!-- ENDIF posts.display_moderator_tools -->
-            </div>
 
 						<div style="clear:both;"></div>
           </div>
