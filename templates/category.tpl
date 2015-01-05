@@ -77,11 +77,14 @@
 						</h3>
 	
 						<small>
-							<span>
-								Iniciado por <a href="<!-- IF topics.user.userslug -->{relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.username}</a>, [[global:posted_ago, <span class="timeago" title="{topics.relativeTime}"></span>]]
-							</span>
-							<!-- IMPORT partials/category_tags.tpl -->
+							Iniciado por <a href="<!-- IF topics.user.userslug -->{relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.username}</a>, [[global:posted_ago, <span class="timeago" title="{topics.relativeTime}"></span>]]
 						</small>
+						
+						<div class="threaddetails">
+							<!-- IF topics.tags.length -->
+							<img title="<!-- BEGIN tags -->{topics.tags.value} <!-- END tags -->" src="http://exo.do/images/exodo/misc/tag.png" alt="<!-- BEGIN tags -->{topics.tags.value} <!-- END tags -->">
+							<!-- ENDIF topics.tags.length -->
+						</div>
 					</div>
 					<ul class="threadstats">
 						<li>[[global:posts]]: {topics.postcount}</li>
@@ -101,7 +104,7 @@
 						</dd>
 						<dd>
 							[[global:replied_ago, <span class="timeago" title="{topics.teaser.timestamp}"></span>]]
-							<a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}">→</a>
+							<a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}" title="Ir al último mensaje" class="lastpost">→</a>
 						</dd>
 						<!-- ENDIF topics.unreplied -->
 					</dl>

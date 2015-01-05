@@ -10,6 +10,16 @@
 	.threadinfo {
 	    width: 62%;
 	    min-width: 350px;
+	    .threaddetails {
+			float:right;
+			margin-right: 12px;
+	    }
+	    > small {
+		    a, a:hover {
+			    color: @exodo-text-color;
+			    text-decoration: none;
+			}
+	    }
     }
 	.threadstats {
 	    width: 12%;
@@ -27,6 +37,9 @@
 	    display: block;
 	    height: 29.52px;
 	    font-size: 11px;
+	    a.lastpost:hover {
+		    text-decoration: none;
+	    }
 	}
 	
 	.threadimod {
@@ -91,9 +104,10 @@
 	}
 }
 
-.category-item .threadstatus {
-	background-image: url("https://exo.do/images/exodo/statusicon/thread_old-30.png");
-}
+.category-item .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_old-30.png"); }
+.category-item.unread .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_new-30.png"); }
+.category-item.locked .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_lock-30.png"); }
+.category-item.unread.locked .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_lock_new-30.png"); }
 
 .category {
 	.span9 {
@@ -363,12 +377,6 @@ h4.category-title {
 .pinned {
 	.topic-row {
 		background: #f6f6f6;
-	}
-}
-
-.unread {
-	.topic-row {
-		border-left: 2px solid @exodo-secondary;
 	}
 }
 
