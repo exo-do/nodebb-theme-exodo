@@ -1,8 +1,8 @@
 
-
 <!-- IMPORT partials/account_menu.tpl -->
 
 <div class="account">
+
 	<div class="row">
 		<div class="col-md-2 account-block">
 
@@ -44,6 +44,7 @@
 						<hr/>
 						<div class="text-center account-stats">
 
+						<h4 class="user-stats">Estadísticas</h4>
 							<div class="inline-block text-center">
 								<span class="human-readable-number" title="{reputation}">{reputation}</span>
 								<span class="account-bio-label">[[global:reputation]]</span>
@@ -146,7 +147,7 @@
 		</div>
 
 
-		<div class="col-md-7 user-recent-posts" data-nextstart="{nextStart}">
+		<div class="col-md-10 user-recent-posts" data-nextstart="{nextStart}">
 			<div class="topic-row panel panel-default clearfix">
 				<div class="panel-heading">
 					<h3 class="panel-title">[[global:recentposts]]</h3>
