@@ -1,4 +1,3 @@
-
 <!-- IMPORT partials/account_menu.tpl -->
 
 <div class="account">
@@ -16,8 +15,8 @@
 
 							<ul class="usermenu">
 								<li><img src="https://exo.do/images/exodo/site_icons/message.png" alt="Enviar mensaje privado" class="inlineimg" title="Enviar mensaje privado"><a href="">Enviar un mensaje privado</a></a></li>
-								<li><img src="https://exo.do/images/exodo/site_icons/forum.png" alt="Buscar mensajes recientes" class="inlineimg" title="Buscar mensajes recientes"><a href="#">Buscar mensajes recientes</a></li>
-								<li><a href="#"><img src="https://exo.do/images/exodo/site_icons/forum.png" alt="Buscar temas iniciados recientes" class="inlineimg" title="Buscar temas iniciados recientes">Buscar temas iniciados recientes</a></li>
+								<li><img src="https://exo.do/images/exodo/site_icons/forum.png" alt="Buscar mensajes recientes" class="inlineimg" title="Buscar mensajes recientes"><a href="/user/{userslug}/posts">Buscar mensajes recientes</a></li>
+								<li><a href="/user/{userslug}/topics"><img src="https://exo.do/images/exodo/site_icons/forum.png" alt="Buscar temas iniciados recientes" class="inlineimg" title="Buscar temas iniciados recientes">Buscar temas iniciados recientes</a></li>
 							</ul>
 
 					<div class="text-center">

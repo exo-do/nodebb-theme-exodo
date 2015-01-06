@@ -1,4 +1,3 @@
-
 <!-- IMPORT partials/account_menu.tpl -->
 
 <div class="account">
