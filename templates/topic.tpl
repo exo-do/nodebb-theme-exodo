@@ -26,7 +26,7 @@
 						<div class="post-meta">
 							[[global:posted_ago, <span class="timeago" title="{posts.relativeTime}"></span>]]
 							&bull;
-							<span class="post-index"><a href="/topic/{slug}/{function.postIndexPlusOne}">#{function.postIndexPlusOne}</a></span></div>
+							<span class="post-index"><a href="/topic/{slug}/{posts.indexPlusOne}">#{posts.indexPlusOne}</a></span></div>
 					</div>
 
           <div class="col-md-2 profile-image-block hidden-xs hidden-sm sub-post">

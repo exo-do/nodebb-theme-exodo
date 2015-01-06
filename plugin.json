@@ -6,7 +6,7 @@
 			"hook": "filter:widgets.getAreas", "method": "defineWidgetAreas", "callbacked": true
 		},
 		{
-			"hook": "static:app.load", "method": "appLoad"
+			"hook": "filter:topic.get", "method": "filterTopicGet", "callbacked": true
 		}
 	],
 	"scripts": [
