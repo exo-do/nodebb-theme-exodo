@@ -30,7 +30,7 @@
 			<li><a href="#">Ir Arriba</a></li>
 		</ul>       
 	</div>
-
+	
 	<script>
 		require(['forum/footer']);
 	</script>
