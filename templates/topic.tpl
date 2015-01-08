@@ -48,8 +48,8 @@
 
 								<!-- IF !posts.selfPost -->
 								<!-- IF loggedIn -->
-								<li><a href="#" class="unignore" <!-- IF !posts.ignored -->style="display: none;"<!-- ENDIF !posts.ignored -->><i class="fa fa-eye"></i> Des-Ignorar</a></li>
-								<li><a href="#" class="ignore" <!-- IF posts.ignored -->style="display: none;"<!-- ENDIF posts.ignored -->><i class="fa fa-eye-slash"></i> Ignorar usuario</a></li>
+								<li><a href="#" class="unignore hide"><i class="fa fa-eye"></i> [[ignored:unignore]]</a></li>
+								<li><a href="#" class="ignore hide"><i class="fa fa-eye-slash"></i> [[ignored:ignoreUser]]</a></li>
 								<!-- ENDIF loggedIn -->
 								<!-- ENDIF !posts.selfPost -->
 							</ul>
@@ -148,13 +148,6 @@
 	                <!-- ENDIF loggedIn -->
 	                <!-- ENDIF posts.user.userslug -->
 	                <!-- ENDIF !posts.selfPost -->
-
-									<!-- IF !posts.selfPost -->
-									<!-- IF loggedIn -->
-									<li><a href="#" class="unignore" <!-- IF !posts.ignored -->style="display: none;"<!-- ENDIF !posts.ignored -->><i class="fa fa-eye"></i> Des-Ignorar</a></li>
-									<li><a href="#" class="ignore" <!-- IF posts.ignored -->style="display: none;"<!-- ENDIF posts.ignored -->><i class="fa fa-eye-slash"></i> Ignorar usuario</a></li>
-									<!-- ENDIF loggedIn -->
-									<!-- ENDIF !posts.selfPost -->
 	              </ul>
 	            </div>
 
