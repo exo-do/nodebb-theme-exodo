@@ -22,11 +22,9 @@
 		</div>
 		
 		<div class="category-head-middle clearfix">
-			<!-- IF privileges.topics:create -->
 			<div class="category-head-reply">
-				<button id="new_post" class="btn btn-primary new_post_btn">[[category:new_topic_button]]<span>+</span></button>
+				<button id="new_post" class="btn btn-primary new_post_btn<!-- IF !privileges.topics:create --> disabled<!-- ENDIF !privileges.topics:create -->">[[category:new_topic_button]]<span>+</span></button>
 			</div>
-			<!-- ENDIF privileges.topics:create -->
 			
 			<div class="category-head-pagination">
 				<!-- IF config.usePagination -->
