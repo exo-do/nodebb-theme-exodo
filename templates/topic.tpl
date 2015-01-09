@@ -32,8 +32,8 @@
 				<div class="col-md-2 profile-image-block hidden-xs hidden-sm sub-post">
 					<div class="nickname btn-group">
 						<h3 data-toggle="dropdown">
-								<span class="username-field" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}</span>
-							</h3>
+							<span class="username-field" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}</span>
+						</h3>
 						<ul class="dropdown-menu">
 							<li><a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->"><i class="fa fa-user"></i> [[topic:profile]]</a>
 							</li>
@@ -69,13 +69,13 @@
 					</a>
 
 					<span>
-							[[global:reputation]]: <i class='fa fa-star'></i> <span data-reputation="{posts.user.reputation}" data-uid="{posts.uid}" class='formatted-number reputation'>{posts.user.reputation}</span>
-					<br>[[global:posts]]: <i class='fa fa-pencil'></i>  <span class='formatted-number user_postcount_{posts.uid}'>{posts.user.postcount}</span>
-					<!-- IF posts.user.custom_profile_info.length -->
-					<!-- BEGIN custom_profile_info -->
-					<br>{posts.user.custom_profile_info.content}
-					<!-- END custom_profile_info -->
-					<!-- ENDIF posts.user.custom_profile_info.length -->
+						[[global:reputation]]: <i class='fa fa-star'></i> <span data-reputation="{posts.user.reputation}" data-uid="{posts.uid}" class='formatted-number reputation'>{posts.user.reputation}</span>
+						<br>[[global:posts]]: <i class='fa fa-pencil'></i>  <span class='formatted-number user_postcount_{posts.uid}'>{posts.user.postcount}</span>
+						<!-- IF posts.user.custom_profile_info.length -->
+						<!-- BEGIN custom_profile_info -->
+						<br>{posts.user.custom_profile_info.content}
+						<!-- END custom_profile_info -->
+						<!-- ENDIF posts.user.custom_profile_info.length -->
 					</span>
 				</div>
 
@@ -85,8 +85,8 @@
 						<img itemprop="image" src="{posts.user.picture}" align="left" class="img-thumbnail" width=150 height=150 />
 					</a>
 					<h3 class="main-post">
-              <p id="topic_title_{posts.pid}" class="topic-title" itemprop="name"><i class="fa fa-thumb-tack hide"></i> <i class="fa fa-lock hide"></i> {title}</p>
-            </h3>
+						<p id="topic_title_{posts.pid}" class="topic-title" itemprop="name"><i class="fa fa-thumb-tack hide"></i> <i class="fa fa-lock hide"></i> {title}</p>
+					</h3>
 
 					<!-- IF posts.ignored -->
 					<div id="content_{posts.pid}" class="post-content" itemprop="text">[[ignored:ignored_post, {posts.user.username}]]</div>
