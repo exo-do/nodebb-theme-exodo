@@ -35,14 +35,12 @@
 							<span class="username-field" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}</span>
 						</h3>
 						<ul class="dropdown-menu">
-							<li><a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->"><i class="fa fa-user"></i> [[topic:profile]]</a>
-							</li>
+							<li><a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->"><i class="fa fa-user"></i> [[topic:profile]]</a></li>
 							<!-- IF !posts.selfPost -->
 							<!-- IF posts.user.userslug -->
 							<!-- IF loggedIn -->
 							<!-- IF !config.disableChat -->
-							<li><a href="#" class="chat"><i class="fa fa-comment"></i> [[topic:chat]]</a>
-							</li>
+							<li><a href="#" class="chat"><i class="fa fa-comment"></i> [[topic:chat]]</a></li>
 							<!-- ENDIF !config.disableChat -->
 							<!-- ENDIF loggedIn -->
 							<!-- ENDIF posts.user.userslug -->
@@ -50,10 +48,8 @@
 
 							<!-- IF !posts.selfPost -->
 							<!-- IF loggedIn -->
-							<li><a href="#" class="unignore hide"><i class="fa fa-eye"></i> [[ignored:unignore]]</a>
-							</li>
-							<li><a href="#" class="ignore hide"><i class="fa fa-eye-slash"></i> [[ignored:ignore_user]]</a>
-							</li>
+							<li><a href="#" class="unignore hide"><i class="fa fa-eye"></i> [[ignored:unignore]]</a></li>
+							<li><a href="#" class="ignore hide"><i class="fa fa-eye-slash"></i> [[ignored:ignore_user]]</a></li>
 							<!-- ENDIF loggedIn -->
 							<!-- ENDIF !posts.selfPost -->
 						</ul>
@@ -80,7 +76,6 @@
 				</div>
 
 				<div class="col-md-10 post-block topic-item">
-
 					<a class="main-post avatar" href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
 						<img itemprop="image" src="{posts.user.picture}" align="left" class="img-thumbnail" width=150 height=150 />
 					</a>
@@ -114,19 +109,13 @@
 						<!-- IF posts.display_moderator_tools -->
 						<div class="btn-group post-tools">
 							<div class="dropdown">
-								<button title="[[topic:tools]]" class="btn btn-sm btn-default" data-toggle="dropdown" href="#"><i class="fa fa-gear"></i>
-								</button>
+								<button title="[[topic:tools]]" class="btn btn-sm btn-default" data-toggle="dropdown" href="#"><i class="fa fa-gear"></i></button>
 								<ul class="dropdown-menu text-center pull-right" role="menu" aria-labelledby="dLabel">
-									<button class="btn btn-sm btn-default edit" type="button" title="[[topic:edit]]"><i class="fa fa-pencil"></i>
-									</button>
-									<button class="btn btn-sm btn-default delete" type="button" title="[[topic:delete]]"><i class="fa fa-trash-o"></i>
-									</button>
-									<button class="btn btn-sm btn-default purge <!-- IF !posts.deleted -->none<!-- ENDIF !posts.deleted -->" type="button" title="[[topic:purge]]"><i class="fa fa-eraser"></i>
-									</button>
-
+									<button class="btn btn-sm btn-default edit" type="button" title="[[topic:edit]]"><i class="fa fa-pencil"></i></button>
+									<button class="btn btn-sm btn-default delete" type="button" title="[[topic:delete]]"><i class="fa fa-trash-o"></i></button>
+									<button class="btn btn-sm btn-default purge <!-- IF !posts.deleted -->none<!-- ENDIF !posts.deleted -->" type="button" title="[[topic:purge]]"><i class="fa fa-eraser"></i></button>
 									<!-- IF posts.display_move_tools -->
-									<button class="btn btn-sm btn-default move" type="button" title="[[topic:move]]"><i class="fa fa-arrows"></i>
-									</button>
+									<button class="btn btn-sm btn-default move" type="button" title="[[topic:move]]"><i class="fa fa-arrows"></i></button>
 									<!-- ENDIF posts.display_move_tools -->
 								</ul>
 							</div>
@@ -145,14 +134,12 @@
 							</button>
 
 							<ul class="dropdown-menu">
-								<li><a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->"><i class="fa fa-user"></i> [[topic:profile]]</a>
-								</li>
+								<li><a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->"><i class="fa fa-user"></i> [[topic:profile]]</a></li>
 								<!-- IF !posts.selfPost -->
 								<!-- IF posts.user.userslug -->
 								<!-- IF loggedIn -->
 								<!-- IF !config.disableChat -->
-								<li><a href="#" class="chat"><i class="fa fa-comment"></i> [[topic:chat]]</a>
-								</li>
+								<li><a href="#" class="chat"><i class="fa fa-comment"></i> [[topic:chat]]</a></li>
 								<!-- ENDIF !config.disableChat -->
 								<!-- ENDIF loggedIn -->
 								<!-- ENDIF posts.user.userslug -->
@@ -167,8 +154,7 @@
 							</button>
 							<!-- ENDIF !posts.index -->
 							<!-- IF !posts.selfPost -->
-							<button class="btn btn-sm btn-default flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-flag-o"></i>
-							</button>
+							<button class="btn btn-sm btn-default flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-flag-o"></i></button>
 							<!-- ENDIF !posts.selfPost -->
 							<button data-favourited="{posts.favourited}" class="favourite favourite-tooltip btn btn-sm btn-default <!-- IF posts.favourited --> btn-warning <!-- ENDIF posts.favourited -->" type="button">
 								<span class="favourite-text">[[topic:favourite]]</span>
@@ -197,10 +183,8 @@
 
 						<!-- IF privileges.topics:reply -->
 						<div class="btn-group">
-							<button class="btn btn-sm btn-default quote" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i>
-							</button>
-							<button class="btn btn-sm btn-primary btn post_reply" type="button">[[topic:reply]] <i class="fa fa-reply"></i>
-							</button>
+							<button class="btn btn-sm btn-default quote" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i></button>
+							<button class="btn btn-sm btn-primary btn post_reply" type="button">[[topic:reply]] <i class="fa fa-reply"></i></button>
 						</div>
 						<!-- ENDIF privileges.topics:reply -->
 					</div>
@@ -226,10 +210,8 @@
 	<!-- IF config.usePagination -->
 	<div class="text-center">
 		<ul class="pagination">
-			<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i> [[global:previouspage]]</a>
-			</li>
-			<li class="next pull-right"><a href="#">[[global:nextpage]] <i class="fa fa-chevron-right"></i></a>
-			</li>
+			<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i> [[global:previouspage]]</a></li>
+			<li class="next pull-right"><a href="#">[[global:nextpage]] <i class="fa fa-chevron-right"></i></a></li>
 		</ul>
 	</div>
 	<!-- ENDIF config.usePagination -->
