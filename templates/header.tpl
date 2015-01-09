@@ -96,7 +96,7 @@
 	</div>
 	
 	<div id="navbar-wrapper">
-		<div class="navbar navbar-inverse header" role="navigation" id="header-menu" data-spy="affix" data-offset-top="188">
+		<div class="navbar navbar-inverse header" role="navigation" id="header-menu">
 			<div class="loading-bar"></div>
 			<div class="container-fluid">
 				<!-- IMPORT partials/menu.tpl -->
