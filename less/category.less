@@ -1,3 +1,74 @@
+.category-options {
+	> .panel {
+		width: 49.5%;
+		margin-right: 0.5%;
+		float: left;
+		clear: right;
+		position: relative;
+	}
+	> .panel:last-child {
+		margin-right: 0;
+		margin-left: 0.5%;
+	}
+	.panel-heading {
+	    font-size: 14px;
+	    font-weight: normal;
+	    color: #FFF;
+	    background: none repeat scroll 0% 0% #2E3539;
+	    border: 0px none;
+	    padding: 13px 12px;
+	    border-radius: 0;
+	    
+		a[aria-expanded="true"]:after {
+		    content: "\f147";
+		    float: right;
+		}
+		
+		a[aria-expanded="false"]:after {
+		    content: "\f196";
+		    float: right;
+		}
+		
+		.collapse-button {
+			float: right;
+			font-size: 19px;
+			margin-right: 5px;
+			cursor: pointer;
+		}
+		
+		.collapse-button:hover {
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+	.panel-body {
+		padding: 12px;
+		
+		.icon_legends {
+			margin: 0;
+			
+			dt {
+			    float: left;
+			    clear: right;
+			    margin-right: 6px;
+			    line-height: 0;
+			}
+			
+			dd {
+			    margin-bottom: 6px;
+			    display: block;
+			    line-height: 1.23;
+			}
+		}
+		.youcandoblock, .bbcodeblock {
+		    float: left;
+		    width: 49%;
+		    overflow: hidden;
+		    margin: 0px 0.5% 12px 0px;
+		}
+	}
+}
+
 .category-item .threadinfo, .category-item .threadlastpost, .category-item .threadstats {
     clear: right;
     display: inline-block;

@@ -65,7 +65,7 @@
 		</div>
 		<meta itemprop="itemListOrder" content="descending">
 		<!-- BEGIN topics -->
-		<li class="category-item<!-- IF topics.locked --> locked<!-- ENDIF topics.locked --><!-- IF topics.pinned --> pinned<!-- ENDIF topics.pinned --><!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.userParticipated --> participated<!-- ENDIF topics.userParticipated --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}" data-index="{topics.index}">
+		<li class="category-item<!-- IF topics.locked --> locked<!-- ENDIF topics.locked --><!-- IF topics.pinned --> pinned<!-- ENDIF topics.pinned --><!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.userParticipated --> participated<!-- ENDIF topics.userParticipated --><!-- IF topics.isHot --> hot<!-- ENDIF topics.isHot --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}" data-index="{topics.index}">
 			<div class="panel panel-default topic-row clearfix">
 				<div class="threadinfo">
 					<a class="threadstatus"></a>
@@ -119,6 +119,55 @@
 		</li>
 		<!-- END topics -->
 	</ul>
+	
+	<div class="category-options clearfix">
+		<div class="panel panel-default">
+			<div class="panel-heading" role="tab" id="legendHeading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" href="#legend" aria-expanded="true" aria-controls="legend" class="fa collapse-button"></a>
+					Leyenda de iconos
+				</h4>
+			</div>
+			<div id="legend" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="legendHeading">
+				<div class="panel-body">
+					<dl class="icon_legends">
+						<dt><img title="Contiene mensajes sin leer" src="https://exo.do/images/exodo/statusicon/thread_new-16.png" alt="Contiene mensajes sin leer"></dt><dd>Contiene mensajes sin leer</dd>
+						<dt><img title="No contiene mensajes sin leer" src="https://exo.do/images/exodo/statusicon/thread-16-right.png" alt="No contiene mensajes sin leer"></dt><dd>No contiene mensajes sin leer</dd>
+						<dt><img title="Más de 15 respuestas o 150 visitas" src="https://exo.do/images/exodo/statusicon/thread_hot-16.png" alt="Más de 15 respuestas o 150 visitas"></dt><dd>Tema caliente</dd>
+						<dt><img title="Cerrado" src="https://exo.do/images/exodo/statusicon/thread_lock-16.png" alt="Cerrado"></dt><dd>Cerrado</dd>
+						<dt><img title="Temas que contienen mensajes escritos por ti" src="https://exo.do/images/exodo/statusicon/thread_dot-16-right.png" alt="Temas que contienen mensajes escritos por ti"></dt><dd>Has participado en este tema</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		
+		<div class="panel panel-default">
+			<div class="panel-heading" role="tab" id="permissionsHeading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" href="#permissions" aria-expanded="true" aria-controls="permissions" class="fa collapse-button"></a>
+					Permisos de publicación
+				</h4>
+			</div>
+			<div id="permissions" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="permissionsHeading">
+				<div class="panel-body">
+					<ul class="youcandoblock">
+						<li><strong>Puedes</strong> crear nuevos temas</li>
+						<li><strong>Puedes</strong> responder temas</li>
+						<li><strong>Puedes</strong> subir archivos adjuntos</li>
+						<li><strong>Puedes</strong> editar tus mensajes</li>
+					</ul>
+					
+					<ul class="bbcodeblock">
+						<li><a href="#" target="_blank">Códigos BB</a> están <strong>Activo</strong></li>
+						<li>Los <a href="#" target="_blank">Emoticonos</a> están <strong>Activo</strong></li>
+						<li>Código <a href="#" target="_blank">[IMG]</a> está <strong>Activo</strong></li>
+						<li>Código <a href="#" target="_blank">[VIDEO]</a> está <strong>Activo</strong></li>
+						<li>Código HTML está <strong>Inactivo</strong></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- IF config.usePagination -->
 	<div class="text-center">
 		<ul class="pagination">
