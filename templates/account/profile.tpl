@@ -1,37 +1,39 @@
 <!-- IMPORT partials/account_menu.tpl -->
 
-<div class="account">
-
+<div class="account<!-- IF isIgnored --> ignored<!-- ENDIF isIgnored -->" data-uid="{uid}" data-username="{username}">
 	<div class="row">
-		<div class="col-md-2 account-block">
+		<div class="col-md-3 account-block">
 
 			<div class="account-picture-block panel panel-default">
+				<div class="panel-heading">
+					<i class="account-online-status fa fa-circle status {status}" title="[[global:{status}]]"></i>
+					<span class="account-username"> {username}</span>
+				</div>
 				<div class="panel-body">
 
-							<h2 class="blocksubhead">
-								<i class="account-online-status fa fa-circle status {status}" title="[[global:{status}]]"></i>
-								<span class="account-username"> {username}</span>
-							</h2>
-
-							<ul class="usermenu">
-								<li><img src="https://exo.do/images/exodo/site_icons/message.png" alt="Enviar mensaje privado" class="inlineimg" title="Enviar mensaje privado"><a href="">Enviar un mensaje privado</a></a></li>
-								<li><img src="https://exo.do/images/exodo/site_icons/forum.png" alt="Buscar mensajes recientes" class="inlineimg" title="Buscar mensajes recientes"><a href="/user/{userslug}/posts">Buscar mensajes recientes</a></li>
-								<li><a href="/user/{userslug}/topics"><img src="https://exo.do/images/exodo/site_icons/forum.png" alt="Buscar temas iniciados recientes" class="inlineimg" title="Buscar temas iniciados recientes">Buscar temas iniciados recientes</a></li>
-							</ul>
-
 					<div class="text-center">
-						<a href="{relative_path}/user/{userslug}"><img src="{picture}" class="user-profile-picture img-thumbnail"/></a>
+						<a href="{relative_path}/user/{userslug}">
+							<img src="{picture}" class="user-profile-picture img-thumbnail" />
+						</a>
 					</div>
 
 					<div>
 						<div class="text-center">
-							
 
 							<!-- IF !isSelf -->
+							<!-- IF loggedIn -->
 							<br/>
 							<a id="chat-btn" href="#" class="btn btn-primary btn-sm">[[user:chat]]</a>
- 							<a id="follow-btn" href="#" class="btn btn-success btn-sm <!-- IF isFollowing -->hide<!-- ENDIF isFollowing -->">[[user:follow]]</a>
- 							<a id="unfollow-btn" href="#" class="btn btn-warning btn-sm <!-- IF !isFollowing -->hide<!-- ENDIF !isFollowing -->">[[user:unfollow]]</a>
+							<a id="follow-btn" href="#" class="btn btn-success btn-sm <!-- IF isFollowing -->hide<!-- ENDIF isFollowing -->">[[user:follow]]</a>
+							<a id="unfollow-btn" href="#" class="btn btn-warning btn-sm <!-- IF !isFollowing -->hide<!-- ENDIF !isFollowing -->">[[user:unfollow]]</a>
+							<!-- IF ignorePluginEnabled -->
+							<p>
+								</br>
+								<a href="#" class="unignore btn btn-success btn-sm hide">[[ignored:unignore]]</a>
+								<a href="#" class="ignore btn btn-danger btn-sm hide">[[ignored:ignore_user]]</a>
+							</p>
+							<!-- ENDIF ignorePluginEnabled -->
+							<!-- ENDIF loggedIn -->
 							<!-- ENDIF !isSelf -->
 						</div>
 
@@ -42,8 +44,6 @@
 						<!-- ENDIF banned -->
 						<hr/>
 						<div class="text-center account-stats">
-
-						<h4 class="user-stats">Estadísticas</h4>
 							<div class="inline-block text-center">
 								<span class="human-readable-number" title="{reputation}">{reputation}</span>
 								<span class="account-bio-label">[[global:reputation]]</span>
@@ -97,7 +97,7 @@
 					<span class="human-readable-number account-bio-value" title="{followerCount}">{followerCount}</span>
 
 					<span class="account-bio-label">[[user:following]]</span>
-					<span class="human-readable-number account-bio-value"  title="{followingCount}">{followingCount}</span>
+					<span class="human-readable-number account-bio-value" title="{followingCount}">{followingCount}</span>
 
 					<span class="account-bio-label">[[user:joined]]</span>
 					<span class="timeago account-bio-value" title="{joindate}"></span>
@@ -123,9 +123,9 @@
 					<h3 class="panel-title">[[groups:groups]]</h3>
 				</div>
 				<div class="panel-body">
-				<!-- BEGIN groups -->
+					<!-- BEGIN groups -->
 					<a href="{relative_path}/groups/{groups.name}"><span class="label group-label inline-block" style="background-color: {groups.labelColor};"><!-- IF groups.icon --><i class="fa {groups.icon}"></i> <!-- ENDIF groups.icon -->{groups.userTitle}</span></a>
-				<!-- END groups -->
+					<!-- END groups -->
 				</div>
 			</div>
 			<!-- ENDIF groups.length -->
@@ -136,9 +136,9 @@
 					<h3 class="panel-title">[[global:recentips]]</h3>
 				</div>
 				<div class="panel-body">
-				<!-- BEGIN ips -->
+					<!-- BEGIN ips -->
 					<div>{ips.ip}</div>
-				<!-- END ips -->
+					<!-- END ips -->
 				</div>
 			</div>
 			<!-- ENDIF ips.length -->
@@ -146,7 +146,7 @@
 		</div>
 
 
-		<div class="col-md-10 user-recent-posts" data-nextstart="{nextStart}">
+		<div class="col-md-9 user-recent-posts" data-nextstart="{nextStart}">
 			<div class="topic-row panel panel-default clearfix">
 				<div class="panel-heading">
 					<h3 class="panel-title">[[global:recentposts]]</h3>

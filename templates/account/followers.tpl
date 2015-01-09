@@ -2,9 +2,10 @@
 <!-- IMPORT partials/account_menu.tpl -->
 
 <div class="users account">
-	<div>
+	<div class="panel panel-default">
+		<div class="panel-heading"><h3 class="panel-title">[[user:followers]]</h3></div>
 		<!-- BEGIN followers -->
-		<div class="users-box">
+		<div class="panel-bodyusers-box">
 			<a href="{relative_path}/user/{followers.userslug}"><img src="{followers.picture}" class="img-thumbnail"/></a>
 			<div class="user-info">
 				<a href="{relative_path}/user/{followers.userslug}">{followers.username}</a>

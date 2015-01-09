@@ -49,7 +49,7 @@
 								<!-- IF !posts.selfPost -->
 								<!-- IF loggedIn -->
 								<li><a href="#" class="unignore hide"><i class="fa fa-eye"></i> [[ignored:unignore]]</a></li>
-								<li><a href="#" class="ignore hide"><i class="fa fa-eye-slash"></i> [[ignored:ignoreUser]]</a></li>
+								<li><a href="#" class="ignore hide"><i class="fa fa-eye-slash"></i> [[ignored:ignore_user]]</a></li>
 								<!-- ENDIF loggedIn -->
 								<!-- ENDIF !posts.selfPost -->
 							</ul>
@@ -87,7 +87,7 @@
             </h3>
 
 			<!-- IF posts.ignored -->
-			<div id="content_{posts.pid}" class="post-content" itemprop="text">Este mensaje est&aacute; oculto porque <b>{posts.user.username}</b> est&aacute; en tu lista de ignorados.</div>
+			<div id="content_{posts.pid}" class="post-content" itemprop="text">[[ignored:ignored_post, {posts.user.username}]]</div>
 		  	<div class="original-content hide" itemprop="text">{posts.originalContent}</div>
 		  	<!-- ELSE -->
             <div id="content_{posts.pid}" class="post-content" itemprop="text">{posts.content}</div>
