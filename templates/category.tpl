@@ -7,24 +7,43 @@
 <div class="category">
 	<div class="category-head">
 		<!-- IMPORT partials/breadcrumbs.tpl -->
-		<div class="subcategories row">
-			<!-- BEGIN children -->
-			<!-- IMPORT partials/category_child.tpl -->
-			<!-- END children -->
-		</div>
-		<div class="category-head-title">
+		
+		<!-- IF children.length -->
+			<div class="subcategories row">
+				<!-- BEGIN children -->
+				<!-- IMPORT partials/category_child.tpl -->
+				<!-- END children -->
+			</div>
+		<!-- ENDIF children.length -->
+		
+		<div class="category-head-top">
 			<h1>{name}</h1>
 			<p>{description}</p>
 		</div>
-		<!-- IF privileges.topics:create -->
-		<div class="category-head-reply">
-			<button id="new_post" class="btn btn-primary new_post_btn">[[category:new_topic_button]]<span>+</span></button>
+		
+		<div class="category-head-middle clearfix">
+			<!-- IF privileges.topics:create -->
+			<div class="category-head-reply">
+				<button id="new_post" class="btn btn-primary new_post_btn">[[category:new_topic_button]]<span>+</span></button>
+			</div>
+			<!-- ENDIF privileges.topics:create -->
+			
+			<div class="category-head-pagination">
+				<!-- IF config.usePagination -->
+				<div>
+					<div class="pagination-count">Página {currentPage} de {pageCount} <span>({topic_count} hilos)</span></div>
+					<ul class="pagination">
+						<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i></a></li>
+						<li class="next pull-right"><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+					</ul>
+				</div>
+				<!-- ENDIF config.usePagination -->
+			</div>
 		</div>
-		<!-- ENDIF privileges.topics:create -->
 
-		<div class="category-tools">
-			<div class="category-tools-button">
-				<span class ="pull-left">
+		<div class="category-head-bottom">
+			<div class="category-head-tools">
+				<span class="pull-left">
 				</span>
 				<span class="pull-right">
 					<!-- IF loggedIn -->
@@ -52,7 +71,7 @@
 	</div>
 	<!-- ENDIF !topics.length -->
 
-	<ul id="topics-container" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}">
+	<ul class="category-topics" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}">
 		<div class="threadlisthead">
 			<span class="threadinfo">
 				<span class="threadtitle">
@@ -84,7 +103,7 @@
 					
 					<div class="threaddetails">
 						<!-- IF topics.tags.length -->
-						<img title="<!-- BEGIN tags -->{topics.tags.value} <!-- END tags -->" src="http://exo.do/images/exodo/misc/tag.png" alt="<!-- BEGIN tags -->{topics.tags.value} <!-- END tags -->">
+						<img title="<!-- BEGIN tags -->[{topics.tags.value}] <!-- END tags -->" src="http://exo.do/images/exodo/misc/tag.png" alt="<!-- BEGIN tags -->[{topics.tags.value}] <!-- END tags -->">
 						<!-- ENDIF topics.tags.length -->
 					</div>
 				</div>
@@ -105,8 +124,7 @@
 						</a>
 					</dd>
 					<dd>
-						[[global:replied_ago, <span class="timeago" title="{topics.teaser.timestamp}"></span>]]
-						<a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}" title="Ir al último mensaje" class="lastpost">→</a>
+						[[global:replied_ago, <a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}" title="Ir al último mensaje" class="lastpost"><span class="timeago" title="{topics.teaser.timestamp}"></span>]] →</a>
 					</dd>
 					<!-- ENDIF topics.unreplied -->
 				</dl>
@@ -168,19 +186,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- IF config.usePagination -->
-	<div class="text-center">
-		<ul class="pagination">
-			<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i> [[global:previouspage]]</a></li>
-			<li class="next pull-right"><a href="#">[[global:nextpage]] <i class="fa fa-chevron-right"></i></a></li>
-		</ul>
-	</div>
-	<!-- ENDIF config.usePagination -->
-	
-
-	<!-- IF topics.length -->
-	<div widget-area="sidebar" class="col-md-3 col-xs-12 category-sidebar"></div>
-	<!-- ENDIF topics.length -->
 </div>
 
 <!-- IMPORT partials/move_thread_modal.tpl -->
