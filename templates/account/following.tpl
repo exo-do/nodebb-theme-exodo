@@ -17,7 +17,6 @@
 					<span class='formatted-number'>{following.postcount}</span>
 					<i class='fa fa-pencil'></i>
 				</div>
-				<button id="unfollow-btn" class="btn btn-warning btn-xs">[[user:unfollow]]</button>
 			</div>
 		</div>
 
