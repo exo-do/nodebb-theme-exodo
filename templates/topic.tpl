@@ -136,7 +136,7 @@
 						<div class="btn-group post-tools">
 							<div class="dropdown">
 								<button title="[[topic:tools]]" class="btn btn-sm btn-link" data-toggle="dropdown" href="#"><i class="fa fa-gear"></i></button>
-								<ul class="dropdown-menu text-center pull-right" role="menu" aria-labelledby="dLabel">
+								<ul class="dropdown-menu text-center pull-left" role="menu" aria-labelledby="dLabel">
 									<button class="btn btn-sm btn-default edit" type="button" title="[[topic:edit]]"><i class="fa fa-pencil"></i></button>
 									<button class="btn btn-sm btn-default delete" type="button" title="[[topic:delete]]"><i class="fa fa-trash-o"></i></button>
 									<button class="btn btn-sm btn-default purge <!-- IF !posts.deleted -->none<!-- ENDIF !posts.deleted -->" type="button" title="[[topic:purge]]"><i class="fa fa-eraser"></i></button>
@@ -186,24 +186,13 @@
 							<button class="btn btn-sm btn-link follow" type="button" title="[[topic:notify_me]]">
 								<!-- IF isFollowing -->
 								<i class="fa fa-eye-slash"></i>
-								<label>Desuscribir</label>
+								<label><span>[[topic:unwatch]]</span></label>
 								<!-- ELSE -->
 								<i class="fa fa-eye"></i>
-								<label>Suscribir</label>
+								<label><span>[[topic:watch]]</span></label>
 								<!-- ENDIF isFollowing -->
 							</button>
 							<!-- ENDIF !posts.index -->
-						</div>
-						<div class="btn-group">
-							<button data-favourited="{posts.favourited}" class="favourite favourite-tooltip btn btn-sm btn-link <!-- IF posts.favourited --> btn-warning <!-- ENDIF posts.favourited -->" type="button">
-								<!-- IF posts.favourited -->
-								<i class="fa fa-star"></i>
-								<!-- ELSE -->
-								<i class="fa fa-star-o"></i>
-								<!-- ENDIF posts.favourited -->
-								<label class="favourite-text">[[topic:favourite]]</label>
-								<span class="favouriteCount badge badge-sm" data-favourites="{posts.reputation}">{posts.reputation}</span>&nbsp;
-							</button>
 						</div>
 
 						<!-- IF !reputation:disabled -->
