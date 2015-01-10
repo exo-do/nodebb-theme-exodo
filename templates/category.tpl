@@ -23,7 +23,7 @@
 		
 		<div class="category-head-middle clearfix">
 			<div class="category-head-reply">
-				<button id="new_post" class="btn btn-primary new_post_btn<!-- IF !privileges.topics:create --> disabled<!-- ENDIF !privileges.topics:create -->">[[category:new_topic_button]]<span>+</span></button>
+				<button id="new_post" class="btn btn-primary btn-exodo<!-- IF !privileges.topics:create --> disabled<!-- ENDIF !privileges.topics:create -->">[[category:new_topic_button]]<span>+</span></button>
 			</div>
 			
 			<div class="category-head-pagination">
