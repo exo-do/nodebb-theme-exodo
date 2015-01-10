@@ -130,15 +130,8 @@
 				</div>
 
 				<div class="topic-buttons">
+					
 					<div class="pull-left">
-						<div class="btn-group">
-							<!-- IF !posts.selfPost -->
-							<button class="btn btn-sm btn-link flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-exclamation-triangle"></i></button>
-							<!-- ENDIF !posts.selfPost -->
-						</div>
-					</div>
-
-					<div class="pull-right">
 						<!-- IF posts.display_moderator_tools -->
 						<div class="btn-group post-tools">
 							<div class="dropdown">
@@ -155,11 +148,19 @@
 						</div>
 						<!-- ENDIF posts.display_moderator_tools -->
 					</div>
+					
+					<div class="pull-left">
+						<div class="btn-group">
+							<!-- IF !posts.selfPost -->
+							<button class="btn btn-sm btn-link flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-exclamation-triangle"></i></button>
+							<!-- ENDIF !posts.selfPost -->
+						</div>
+					</div>
 
 					<div class="pull-right">
 						<div class="btn-group visible-xs">
 
-							<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" type="button" title="<!-- IF posts.user.userslug -->[[topic:posted_by, {posts.user.username}]]<!-- ELSE -->[[topic:posted_by_guest]]<!-- ENDIF posts.user.userslug -->">
+							<button class="btn btn-sm btn-link dropdown-toggle" data-toggle="dropdown" type="button" title="<!-- IF posts.user.userslug -->[[topic:posted_by, {posts.user.username}]]<!-- ELSE -->[[topic:posted_by_guest]]<!-- ENDIF posts.user.userslug -->">
 								<i class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]"></i>
 								<span class="visible-xs-inline"><img class="" src="{posts.user.picture}" width=18 height=18 />&nbsp;</span>
 								<span class="username-field" href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}&nbsp;</span>
@@ -182,10 +183,18 @@
 
 						<div class="btn-group">
 							<!-- IF !posts.index -->
-							<button class="btn btn-sm btn-default follow" type="button" title="[[topic:notify_me]]">
-								<!-- IF isFollowing --><i class="fa fa-eye-slash"><!-- ELSE --><i class="fa fa-eye"><!-- ENDIF isFollowing --></i>
+							<button class="btn btn-sm btn-link follow" type="button" title="[[topic:notify_me]]">
+								<!-- IF isFollowing -->
+								<i class="fa fa-eye-slash"></i>
+								<label>Suscribir</label>
+								<!-- ELSE -->
+								<i class="fa fa-eye"></i>
+								<label>Desuscribir</label>
+								<!-- ENDIF isFollowing -->
 							</button>
 							<!-- ENDIF !posts.index -->
+						</div>
+						<div class="btn-group">
 							<button data-favourited="{posts.favourited}" class="favourite favourite-tooltip btn btn-sm btn-link <!-- IF posts.favourited --> btn-warning <!-- ENDIF posts.favourited -->" type="button">
 								<!-- IF posts.favourited -->
 								<i class="fa fa-star"></i>
@@ -213,8 +222,11 @@
 
 						<!-- IF privileges.topics:reply -->
 						<div class="btn-group">
-							<button class="btn btn-sm btn-default quote" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i></button>
-							<button class="btn btn-sm btn-primary btn post_reply" type="button">[[topic:reply]] <i class="fa fa-reply"></i></button>
+							<button class="btn btn-sm btn-link quote" type="button"><i class="fa fa-quote-left"></i> <label>[[topic:quote]]</label></button>
+						</div>
+						
+						<div class="btn-group">						
+							<button class="btn btn-sm btn-link post_reply" type="button"><i class="fa fa-reply"></i> <label>[[topic:reply]]</label></button>
 						</div>
 						<!-- ENDIF privileges.topics:reply -->
 					</div>
