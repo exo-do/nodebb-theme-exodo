@@ -10,7 +10,7 @@
 				<ul class="dropdown-menu pull-right" role="menu">
 					<!-- IF ignorePluginEnabled -->
 					<!-- IF isSelf -->
-					<li><a href="#" onclick="location.href='{config.relative_path}/user/{userslug}/ignored'"><i class="fa fa-fw fa-users"></i> [[ignored:ignored]]</a></li>
+					<li><a href="{config.relative_path}/user/{userslug}/ignored"><i class="fa fa-fw fa-users"></i> [[ignored:ignored]]</a></li>
 					<!-- ENDIF isSelf -->
 					<!-- ENDIF ignorePluginEnabled -->
 					<li><a href="{config.relative_path}/user/{userslug}/following"><i class="fa fa-fw fa-users"></i> [[user:following]]</a></li>
