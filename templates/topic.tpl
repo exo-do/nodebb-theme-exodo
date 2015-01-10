@@ -130,7 +130,13 @@
 				</div>
 
 				<div class="topic-buttons">
-					<div class="col-md-2 profile-image-block hidden-xs hidden-sm sub-post"></div>
+					<div class="pull-left">
+						<div class="btn-group">
+							<!-- IF !posts.selfPost -->
+							<button class="btn btn-sm btn-link flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-exclamation-triangle"></i></button>
+							<!-- ENDIF !posts.selfPost -->
+						</div>
+					</div>
 
 					<div class="pull-right">
 						<!-- IF posts.display_moderator_tools -->
@@ -151,7 +157,7 @@
 					</div>
 
 					<div class="pull-right">
-						<div class="btn-group">
+						<div class="btn-group visible-xs">
 
 							<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" type="button" title="<!-- IF posts.user.userslug -->[[topic:posted_by, {posts.user.username}]]<!-- ELSE -->[[topic:posted_by_guest]]<!-- ENDIF posts.user.userslug -->">
 								<i class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]"></i>
@@ -180,28 +186,25 @@
 								<!-- IF isFollowing --><i class="fa fa-eye-slash"><!-- ELSE --><i class="fa fa-eye"><!-- ENDIF isFollowing --></i>
 							</button>
 							<!-- ENDIF !posts.index -->
-							<!-- IF !posts.selfPost -->
-							<button class="btn btn-sm btn-default flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-flag-o"></i></button>
-							<!-- ENDIF !posts.selfPost -->
-							<button data-favourited="{posts.favourited}" class="favourite favourite-tooltip btn btn-sm btn-default <!-- IF posts.favourited --> btn-warning <!-- ENDIF posts.favourited -->" type="button">
-								<span class="favourite-text">[[topic:favourite]]</span>
-								<span class="favouriteCount" data-favourites="{posts.reputation}">{posts.reputation}</span>&nbsp;
+							<button data-favourited="{posts.favourited}" class="favourite favourite-tooltip btn btn-sm btn-link <!-- IF posts.favourited --> btn-warning <!-- ENDIF posts.favourited -->" type="button">
 								<!-- IF posts.favourited -->
 								<i class="fa fa-star"></i>
 								<!-- ELSE -->
 								<i class="fa fa-star-o"></i>
 								<!-- ENDIF posts.favourited -->
+								<label class="favourite-text">[[topic:favourite]]</label>
+								<span class="favouriteCount badge badge-sm" data-favourites="{posts.reputation}">{posts.reputation}</span>&nbsp;
 							</button>
 						</div>
 
 						<!-- IF !reputation:disabled -->
-						<div class="btn-group">
-							<button class="upvote btn btn-sm btn-default <!-- IF posts.upvoted --> upvoted btn-primary <!-- ENDIF posts.upvoted -->">
+						<div class="btn-group reputation">
+							<button class="upvote btn btn-sm btn-link <!-- IF posts.upvoted --> upvoted btn-primary <!-- ENDIF posts.upvoted -->">
 								<i class="fa fa-chevron-up"></i>
 							</button>
-							<button class="votes btn btn-sm btn-default" data-votes="{posts.votes}">{posts.votes}</button>
+							<button class="votes btn btn-sm btn-link" data-votes="{posts.votes}">{posts.votes}</button>
 							<!-- IF !downvote:disabled -->
-							<button class="downvote btn btn-sm btn-default <!-- IF posts.downvoted --> downvoted btn-primary <!-- ENDIF posts.downvoted -->">
+							<button class="downvote btn btn-sm btn-link <!-- IF posts.downvoted --> downvoted btn-primary <!-- ENDIF posts.downvoted -->">
 								<i class="fa fa-chevron-down"></i>
 							</button>
 							<!-- ENDIF !downvote:disabled -->

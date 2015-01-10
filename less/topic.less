@@ -204,8 +204,7 @@
             clear: both;
             display: block;
             font: bold 11px "Open Sans",sans-serif;
-            margin: 0px 10px 0px 0px;
-            padding: 8px 9px 7px 23px;
+            padding: 8px 15px;
             width: 100%;
             .post-tools {
                 margin-left: 10px;
@@ -216,6 +215,45 @@
             @media (max-width:767px) {
                 padding-left: 9px;
             }
+            
+            .pull-left, .pull-right {
+	            .btn-group {
+		            border-right: 1px solid @exodo-border-color;
+		        	.btn-link {
+			            padding: 0 5px;
+			        	color: @exodo-dark;
+			        	label {
+				        	font-weight: bold;
+				        	margin: 0;
+				        }
+				        i.fa {
+							font-size: 14px;
+							vertical-align: middle;
+							margin-right: 4px;
+							top: -1px;
+				        }
+		        	}
+		            &.reputation {
+				        i.fa {
+							font-size: 12px;
+							margin: 0;
+							position: relative;
+				        }
+		            }
+		            .favourite {
+			            .favouriteCount {
+							vertical-align: middle;
+							font-size: 10px;
+							padding: 2px 5px;
+							margin-left: 3px;
+			            }
+		            }
+	            }
+	            
+	            .btn-group:last-child {
+		            border: none;
+	            }
+	        }       
         }
         .post-block {
             .post-content {
