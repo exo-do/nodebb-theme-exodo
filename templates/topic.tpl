@@ -135,7 +135,7 @@
 						<!-- IF posts.display_moderator_tools -->
 						<div class="btn-group post-tools">
 							<div class="dropdown">
-								<button title="[[topic:tools]]" class="btn btn-sm btn-default" data-toggle="dropdown" href="#"><i class="fa fa-gear"></i></button>
+								<button title="[[topic:tools]]" class="btn btn-sm btn-link" data-toggle="dropdown" href="#"><i class="fa fa-gear"></i></button>
 								<ul class="dropdown-menu text-center pull-right" role="menu" aria-labelledby="dLabel">
 									<button class="btn btn-sm btn-default edit" type="button" title="[[topic:edit]]"><i class="fa fa-pencil"></i></button>
 									<button class="btn btn-sm btn-default delete" type="button" title="[[topic:delete]]"><i class="fa fa-trash-o"></i></button>
@@ -186,10 +186,10 @@
 							<button class="btn btn-sm btn-link follow" type="button" title="[[topic:notify_me]]">
 								<!-- IF isFollowing -->
 								<i class="fa fa-eye-slash"></i>
-								<label>Suscribir</label>
+								<label>Desuscribir</label>
 								<!-- ELSE -->
 								<i class="fa fa-eye"></i>
-								<label>Desuscribir</label>
+								<label>Suscribir</label>
 								<!-- ENDIF isFollowing -->
 							</button>
 							<!-- ENDIF !posts.index -->

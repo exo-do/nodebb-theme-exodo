@@ -219,6 +219,7 @@
             .pull-left, .pull-right {
 	            .btn-group {
 		            border-right: 1px solid @exodo-border-color;
+		            margin: 0 3px;
 		        	.btn-link {
 			            padding: 0 5px;
 			        	color: @exodo-dark;
@@ -232,15 +233,16 @@
 				        	margin: 0;
 				        }
 				        i.fa {
-							font-size: 14px;
+							font-size: 12px;
 							margin-right: 6px;
+							vertical-align: middle;
+							position: relative;
 				        }
 		        	}
 		            &.reputation {
 				        i.fa {
-							font-size: 12px;
 							margin: 0;
-							position: relative;
+							bottom: 1px;
 				        }
 		            }
 		            .favourite {
@@ -249,6 +251,9 @@
 							font-size: 10px;
 							padding: 2px 5px;
 							margin-left: 3px;
+			            }
+			            i.fa {
+				            bottom: 1px;
 			            }
 		            }
 	            }
