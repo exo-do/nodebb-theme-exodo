@@ -11,7 +11,31 @@
 <input type="hidden" template-variable="viewcount" value="{viewcount}" />
 
 <div class="topic">
-	<!-- IMPORT partials/breadcrumbs.tpl -->
+	<div class="topic-head">
+		<!-- IMPORT partials/breadcrumbs.tpl -->
+		
+		<div class="topic-head-top">
+			<h1>Tema: <a title="{title}" href="/topic/{slug}">{title}</a></h1>
+		</div>
+		
+		<div class="topic-head-middle clearfix">
+			<div class="topic-head-reply">
+				<button class="btn btn-primary post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
+			</div>
+			
+			<div class="topic-head-pagination">
+				<!-- IF config.usePagination -->
+				<div>
+					<div class="pagination-count">Página {currentPage} de {pageCount} <span>({postcount} posts)</span></div>
+					<ul class="pagination">
+						<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i></a></li>
+						<li class="next pull-right"><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+					</ul>
+				</div>
+				<!-- ENDIF config.usePagination -->
+			</div>
+		</div>
+	</div>
 
 	<ul id="post-container" class="posts" data-tid="{tid}">
 		<!-- BEGIN posts -->
@@ -28,78 +52,81 @@
 						<span class="post-index"><a href="/topic/{slug}/{function.postIndexPlusOne}">#{function.postIndexPlusOne}</a></span>
 					</div>
 				</div>
-
-				<div class="col-md-2 profile-image-block hidden-xs hidden-sm sub-post">
-					<div class="nickname btn-group">
-						<h3 data-toggle="dropdown">
-							<span class="username-field" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}</span>
-						</h3>
-						<ul class="dropdown-menu">
-							<li><a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->"><i class="fa fa-user"></i> [[topic:profile]]</a></li>
-							<!-- IF !posts.selfPost -->
-							<!-- IF posts.user.userslug -->
-							<!-- IF loggedIn -->
-							<!-- IF !config.disableChat -->
-							<li><a href="#" class="chat"><i class="fa fa-comment"></i> [[topic:chat]]</a></li>
-							<!-- ENDIF !config.disableChat -->
-							<!-- ENDIF loggedIn -->
-							<!-- ENDIF posts.user.userslug -->
-							<!-- ENDIF !posts.selfPost -->
-
-							<!-- IF !posts.selfPost -->
-							<!-- IF loggedIn -->
-							<li><a href="#" class="unignore hide"><i class="fa fa-eye"></i> [[ignored:unignore]]</a></li>
-							<li><a href="#" class="ignore hide"><i class="fa fa-eye-slash"></i> [[ignored:ignore_user]]</a></li>
-							<!-- ENDIF loggedIn -->
-							<!-- ENDIF !posts.selfPost -->
-						</ul>
+				
+				<div class="post-details">
+					<div class="userinfo hidden-xs">
+						<div class="nickname btn-group">
+							<h3 data-toggle="dropdown">
+								<span class="username-field" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}</span>
+								<i class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]"></i>
+							</h3>
+							<ul class="dropdown-menu">
+								<li><a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->"><i class="fa fa-user"></i> [[topic:profile]]</a></li>
+								<!-- IF !posts.selfPost -->
+								<!-- IF posts.user.userslug -->
+								<!-- IF loggedIn -->
+								<!-- IF !config.disableChat -->
+								<li><a href="#" class="chat"><i class="fa fa-comment"></i> [[topic:chat]]</a></li>
+								<!-- ENDIF !config.disableChat -->
+								<!-- ENDIF loggedIn -->
+								<!-- ENDIF posts.user.userslug -->
+								<!-- ENDIF !posts.selfPost -->
+	
+								<!-- IF !posts.selfPost -->
+								<!-- IF loggedIn -->
+								<li><a href="#" class="unignore hide"><i class="fa fa-eye"></i> [[ignored:unignore]]</a></li>
+								<li><a href="#" class="ignore hide"><i class="fa fa-eye-slash"></i> [[ignored:ignore_user]]</a></li>
+								<!-- ENDIF loggedIn -->
+								<!-- ENDIF !posts.selfPost -->
+							</ul>
+						</div>
+	
+						<a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
+							<img src="{posts.user.picture}" align="left" class="img-thumbnail" itemprop="image" />
+							<br>
+							<!-- IF posts.user.banned -->
+							<span class="label label-danger">[[user:banned]]</span>
+							<br>
+							<!-- ENDIF posts.user.banned -->
+						</a>
+	
+						<span>
+							[[global:reputation]]: <i class='fa fa-star'></i> <span data-reputation="{posts.user.reputation}" data-uid="{posts.uid}" class='formatted-number reputation'>{posts.user.reputation}</span>
+							<br>[[global:posts]]: <i class='fa fa-pencil'></i>  <span class='formatted-number user_postcount_{posts.uid}'>{posts.user.postcount}</span>
+							<!-- IF posts.user.custom_profile_info.length -->
+							<!-- BEGIN custom_profile_info -->
+							<br>{posts.user.custom_profile_info.content}
+							<!-- END custom_profile_info -->
+							<!-- ENDIF posts.user.custom_profile_info.length -->
+						</span>
 					</div>
-
-					<a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
-						<img src="{posts.user.picture}" align="left" class="img-thumbnail" itemprop="image" />
-						<br>
-						<!-- IF posts.user.banned -->
-						<span class="label label-danger">[[user:banned]]</span>
-						<br>
-						<!-- ENDIF posts.user.banned -->
-					</a>
-
-					<span>
-						[[global:reputation]]: <i class='fa fa-star'></i> <span data-reputation="{posts.user.reputation}" data-uid="{posts.uid}" class='formatted-number reputation'>{posts.user.reputation}</span>
-						<br>[[global:posts]]: <i class='fa fa-pencil'></i>  <span class='formatted-number user_postcount_{posts.uid}'>{posts.user.postcount}</span>
-						<!-- IF posts.user.custom_profile_info.length -->
-						<!-- BEGIN custom_profile_info -->
-						<br>{posts.user.custom_profile_info.content}
-						<!-- END custom_profile_info -->
-						<!-- ENDIF posts.user.custom_profile_info.length -->
-					</span>
-				</div>
-
-				<div class="col-md-10 post-block topic-item">
-					<a class="main-post avatar" href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
-						<img itemprop="image" src="{posts.user.picture}" align="left" class="img-thumbnail" width=150 height=150 />
-					</a>
-					<h3 class="main-post">
-						<p id="topic_title_{posts.pid}" class="topic-title" itemprop="name"><i class="fa fa-thumb-tack hide"></i> <i class="fa fa-lock hide"></i> {title}</p>
-					</h3>
-
-					<!-- IF posts.ignored -->
-					<div id="content_{posts.pid}" class="post-content" itemprop="text">[[ignored:ignored_post, {posts.user.username}]]</div>
-					<div class="original-content hide" itemprop="text">{posts.originalContent}</div>
-					<!-- ELSE -->
-					<div id="content_{posts.pid}" class="post-content" itemprop="text">{posts.content}</div>
-					<div class="original-content hide" itemprop="text"></div>
-					<!-- ENDIF posts.ignored -->
-
-					<div class="post-info">
-						<!-- IF posts.editor.username -->
-						<span>[[global:last_edited_by_ago, <strong><a href="{relative_path}/user/{posts.editor.userslug}">{posts.editor.username}</a></strong>, <span class="timeago" title="{posts.relativeEditTime}"></span>]]</span>
-						<!-- ENDIF posts.editor.username -->
+	
+					<div class="post-block">
+						<a class="main-post avatar" href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
+							<img itemprop="image" src="{posts.user.picture}" align="left" class="img-thumbnail" width=150 height=150 />
+						</a>
+						
+						<h3 class="main-post">{title}</h3>
+	
+						<!-- IF posts.ignored -->
+						<div id="content_{posts.pid}" class="post-content" itemprop="text">[[ignored:ignored_post, {posts.user.username}]]</div>
+						<div class="original-content hide" itemprop="text">{posts.originalContent}</div>
+						<!-- ELSE -->
+						<div id="content_{posts.pid}" class="post-content" itemprop="text">{posts.content}</div>
+						<div class="original-content hide" itemprop="text"></div>
+						<!-- ENDIF posts.ignored -->
+	
+						<div class="post-info">
+							<!-- IF posts.editor.username -->
+							<span>[[global:last_edited_by_ago, <strong><a href="{relative_path}/user/{posts.editor.userslug}">{posts.editor.username}</a></strong>, <span class="timeago" title="{posts.relativeEditTime}"></span>]]</span>
+							<!-- ENDIF posts.editor.username -->
+						</div>
+	
+						<!-- IF posts.user.signature -->
+						<div class="post-signature">{posts.user.signature}</div>
+						<!-- ENDIF posts.user.signature -->
+						<div class="clearfix"></div>
 					</div>
-
-					<!-- IF posts.user.signature -->
-					<div class="post-signature">{posts.user.signature}</div>
-					<!-- ENDIF posts.user.signature -->
 				</div>
 
 				<div class="topic-buttons">
@@ -128,7 +155,7 @@
 
 							<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" type="button" title="<!-- IF posts.user.userslug -->[[topic:posted_by, {posts.user.username}]]<!-- ELSE -->[[topic:posted_by_guest]]<!-- ENDIF posts.user.userslug -->">
 								<i class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]"></i>
-								<span class="visible-xs-inline visible-md-inline"><img class="" src="{posts.user.picture}" width=18 height=18 />&nbsp;</span>
+								<span class="visible-xs-inline"><img class="" src="{posts.user.picture}" width=18 height=18 />&nbsp;</span>
 								<span class="username-field" href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}&nbsp;</span>
 								<span class="caret"></span>
 							</button>
