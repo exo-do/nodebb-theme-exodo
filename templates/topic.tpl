@@ -9,6 +9,7 @@
 <input type="hidden" template-variable="topic_name" value="{title}" />
 <input type="hidden" template-variable="postcount" value="{postcount}" />
 <input type="hidden" template-variable="viewcount" value="{viewcount}" />
+<input type="hidden" template-variable="isFollowing" value="{isFollowing}" />
 
 <div class="topic">
 	<div class="topic-head">
@@ -180,7 +181,8 @@
 								<!-- ENDIF !posts.selfPost -->
 							</ul>
 						</div>
-
+						
+						<!-- IF loggedIn -->
 						<div class="btn-group">
 							<!-- IF !posts.index -->
 							<button class="btn btn-sm btn-link follow" type="button" title="[[topic:notify_me]]">
@@ -194,6 +196,7 @@
 							</button>
 							<!-- ENDIF !posts.index -->
 						</div>
+						<!-- ENDIF loggedIn -->
 
 						<!-- IF !reputation:disabled -->
 						<div class="btn-group reputation">

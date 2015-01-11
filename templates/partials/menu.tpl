@@ -59,6 +59,7 @@
 					</li>
 					<!-- ENDIF searchEnabled -->
 					<!-- BEGIN navigation -->
+					<!-- IF !navigation.rightSide -->
 					<li class="{navigation.class}">
 						<a href="{relative_path}{navigation.route}" title="{navigation.title}">
 							<!-- IF navigation.iconClass -->
@@ -70,11 +71,28 @@
 							<!-- ENDIF navigation.text -->
 						</a>
 					</li>
+					<!-- ENDIF !navigation.rightSide -->
 					<!-- END navigation -->
 				</ul>
 
 				<!-- IF loggedIn -->
 				<ul id="logged-in-menu" class="nav navbar-nav navbar-right pull-right">
+					<!-- BEGIN navigation -->
+					<!-- IF navigation.rightSide -->
+					<li class="{navigation.class}">
+						<a href="{relative_path}{navigation.route}" title="{navigation.title}">
+							<!-- IF navigation.iconClass -->
+							<i class="fa fa-fw {navigation.iconClass}"></i>
+							<!-- ENDIF navigation.iconClass -->
+
+							<!-- IF navigation.text -->
+							<span class="{navigation.textClass}">{navigation.text}</span>
+							<!-- ENDIF navigation.text -->
+						</a>
+					</li>
+					<!-- ENDIF navigation.rightSide -->
+					<!-- END navigation -->
+					
 					<li class="notifications dropdown text-center hidden-xs">
 						<a href="#" title="[[global:header.notifications]]" class="dropdown-toggle" data-toggle="dropdown" id="notif_dropdown">
 							<i class="notification-icon fa fa-fw fa-bell-o" data-content="0"></i>
@@ -85,6 +103,7 @@
 							</li>
 						</ul>
 					</li>
+
 
 					<li class="visible-xs">
 						<a href="{relative_path}/notifications" title="[[notifications:title]]">

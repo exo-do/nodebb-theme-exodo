@@ -1,4 +1,5 @@
 <ul class="category-topics" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}">
+	<!-- IF topics.length -->
 	<div class="threadlisthead">
 		<span class="threadinfo">
 			<span class="threadtitle">
@@ -9,6 +10,7 @@
 		<span class="threadstats"><a>Respuestas</a> / <a>Visitas</a></span>
 		<span class="threadlastpost"><a>Último mensaje</a></span>
 	</div>
+	<!-- ENDIF topics.length -->
 	<meta itemprop="itemListOrder" content="descending">
 	<!-- BEGIN topics -->
 	<li class="category-item<!-- IF topics.locked --> locked<!-- ENDIF topics.locked --><!-- IF topics.pinned --> pinned<!-- ENDIF topics.pinned --><!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.userParticipated --> participated<!-- ENDIF topics.userParticipated --><!-- IF topics.isHot --> hot<!-- ENDIF topics.isHot --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}" data-index="{topics.index}">
