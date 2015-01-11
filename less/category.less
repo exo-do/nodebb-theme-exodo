@@ -1,161 +1,288 @@
-.category-item .threadinfo, .category-item .threadlastpost, .category-item .threadstats {
-    clear: right;
-    display: inline-block;
-    float: left;
-}
-.category-item {
-    &.unread {
-        .topic-title {
-            font-weight: bold;
-        }
-    }
-    &.pinned {
-        .topic-row {
-            background: #f6f6f6;
-        }
-    }
-    .topic-row {
-        border-radius: 0;
-        border-top: none;
-        margin-bottom: 0;
-        padding: 5px 0;
-        small {
-            font-size: 12px;
-            vertical-align: 2px;
-        }
-        h3 {
-            font-size: 13px;
-            line-height: 1.23;
-            margin: 0;
-            margin-top: 10px;
-            overflow: hidden;
-            padding: 0;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            a {
-                display: inline-block;
-                width: 100%;
-            }
-        }
-        .threadinfo {
-            min-width: 350px;
-            width: 62%;
-            .threaddetails {
-                float: right;
-                margin-right: 12px;
-            }
-            > small {
-                a, a:hover {
-                    color: @exodo-text-color;
-                    text-decoration: none;
-                }
-            }
-        }
-        .threadstats {
-            font-size: 12px;
-            padding: 10px 0px;
-            text-align: right;
-            width: 12%;
-            > li {
-                margin-right: 20px;
-            }
-        }
-        .threadlastpost {
-            display: block;
-            font-size: 11px;
-            height: 29.52px;
-            padding: 9.74px 0px 9.74px 2%;
-            width: 23%;
-            a.lastpost:hover {
-                text-decoration: none;
-            }
-            > dd.unreplied {
-                padding-top: 7px;
-            }
-            .user-pic {
-                height: 15px;
-                width: 15px;
-            }
-        }
-        .threadimod {
-            margin-top: 18px;
-            > .select {
-                color: @exodo-lightdark;
-                font-size: 16px;
-                line-height: 0;
-            }
-            > .fa-check-square-o {
-                color: @exodo-dark;
-            }
-        }
-        .threadstatus {
-            background-position: 12px 10px;
-            background-repeat: no-repeat;
-            clear: right;
-            display: block;
-            float: left;
-            height: auto;
-            min-height: 49px;
-            position: relative;
-            width: 64px;
-        }
-    }
-}
-.threadlisthead {
-    background: @exodo-gradient;
-    border-left: @exodo-primary;
-    border-right: @exodo-secondary;
-    color: #FFF;
-    display: table;
-    padding: 14px 5px;
-    width: 100%;
-    a, a:hover {
-        color: #FFF;
-        cursor: pointer;
-    }
-    > span {
-        clear: right;
-        display: block;
-        float: left;
-    }
-    span.threadinfo {
-        width: 62%;
-    }
-    span.threadinfo > .threadtitle {
-        padding-left: 12px;
-    }
-    span.threadstats {
-        padding-right: 20px;
-        text-align: right;
-        width: 12%;
-    }
-    span.threadlastpost {
-        padding: 0 0 0 2%;
-        width: 23%;
-    }
-}
-.category-item .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_old-30.png"); }
-.category-item.participated .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_dot-30-right.png"); }
-.category-item.unread.participated .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_dot_new-30-right.png"); }
-.category-item.unread .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_new-30.png"); }
-.category-item.locked .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_lock-30.png"); }
-.category-item.unread.locked .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_lock_new-30.png"); }
-.category-item.hot .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_hot-30.png"); }
-.category-item.hot.unread .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_hot_new-30.png"); }
-.category-item.hot.participated .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_dot_hot-30-right.png"); }
-.category-item.hot.unread.participated .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_dot_hot_new-30-right.png"); }
 .category {
     .category-head {
         margin-bottom: 20px;
-        .category-head-title, .category-head-reply {
-            float: left;
-            width: 50%;
-        }
-        .category-head-title {
+        .category-head-top {
             h1 {
                 font-size: 21px;
                 margin: 10px 0 5px;
                 padding: 0;
+            }
+        }
+        .category-head-middle {
+            margin-bottom: 15px;
+            > div {
+                clear: right;
+                float: left;
+                height: 32px;
+                width: 50%;
+            }
+            .category-head-pagination {
+                display: block;
+                position: relative;
+                > div {
+                    bottom: 0;
+                    position: absolute;
+                    right: 0;
+                    .pagination-count {
+                        color: @exodo-lightdark;
+                        display: inline-block;
+                        font-size: 10px;
+                        margin-right: 5px;
+                        position: relative;
+                        text-align: right;
+                        top: -3px;
+                        > span {
+                            display: block;
+                        }
+                    }
+                    .pagination {
+                        margin: 0;
+                        > li {
+                            > a {
+                                padding: 3px 6px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .category-head-bottom {
+            clear: both;
+            .category-head-tools {
+                background: white;
+                border: 1px solid #d4d4d4;
+                clear: both;
+                display: block;
+                height: 30px;
+                width: 100%;
+                .tool {
+                    background: none;
+                    border: none;
+                    color: #838383;
+                    font-size: 11px;
+                    height: 30px;
+                    line-height: 30px;
+                    margin: 0 7px;
+                    padding: 0;
+                }
+                .btn-group.open .dropdown-toggle, .btn-group.open .dropdown-toggle:active,  {
+                    box-shadow: none;
+                    outline: 0;
+                }
+            }
+        }
+    }
+    .category-topics {
+        .threadlisthead {
+            background: @exodo-gradient;
+            border-left: @exodo-primary;
+            border-right: @exodo-secondary;
+            color: #FFF;
+            display: table;
+            padding: 14px 5px;
+            width: 100%;
+            a, a:hover {
+                color: #FFF;
+                cursor: pointer;
+            }
+            > span {
+                clear: right;
+                display: block;
+                float: left;
+            }
+            span.threadinfo {
+                width: @exodo-category-threadinfo-size;
+            }
+            span.threadinfo > .threadtitle {
+                padding-left: 12px;
+            }
+            span.threadstats {
+                padding-right: 20px;
+                text-align: right;
+                width: @exodo-category-threadstats-size;
+            }
+            span.threadlastpost {
+                padding: 0 0 0 2%;
+                width: 23%;
+            }
+        }
+        .category-item {
+            &.unread {
+                .topic-title {
+                    font-weight: bold;
+                }
+            }
+            &.pinned {
+                .topic-row {
+                    background: #f6f6f6;
+                }
+            }
+            .topic-row {
+                border-radius: 0;
+                border-top: none;
+                margin-bottom: 0;
+                padding: 5px 0;
+                small {
+                    font-size: 12px;
+                    vertical-align: 2px;
+                }
+                h3 {
+                    font-size: 13px;
+                    line-height: 1.23;
+                    margin: 0;
+                    margin-top: 10px;
+                    overflow: hidden;
+                    padding: 0;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    a {
+                        display: inline-block;
+                        width: 100%;
+                    }
+                }
+                .threadinfo, .threadlastpost, .threadstats {
+                    clear: right;
+                    display: inline-block;
+                    float: left;
+                }
+                .threadinfo {
+                    min-width: 350px;
+                    width: @exodo-category-threadinfo-size;
+                    .threaddetails {
+                        float: right;
+                        margin-right: 12px;
+                    }
+                    > small {
+                        a, a:hover {
+                            color: @exodo-text-color;
+                            text-decoration: none;
+                        }
+                    }
+                }
+                .threadstats {
+                    font-size: 12px;
+                    padding: 10px 0px;
+                    text-align: right;
+                    width: @exodo-category-threadstats-size;
+                    > li {
+                        margin-right: 20px;
+                    }
+                }
+                .threadlastpost {
+                    display: block;
+                    font-size: 11px;
+                    margin: 0;
+                    padding: 9.74px 1% 9.74px 1%;
+                    width: @exodo-category-threadlastpost-size;
+                    a.lastpost:hover {
+                        text-decoration: none;
+                    }
+                    > dd.unreplied {
+                        padding-top: 7px;
+                    }
+                    .user-pic {
+                        height: 15px;
+                        width: 15px;
+                    }
+                }
+                .threadimod {
+                    margin-top: 18px;
+                    width: @exodo-category-threadimod-size;
+                    > .select {
+                        color: @exodo-lightdark;
+                        font-size: 16px;
+                        line-height: 0;
+                    }
+                    > .fa-check-square-o {
+                        color: @exodo-dark;
+                    }
+                }
+                .threadstatus {
+                    background-image: url("https://exo.do/images/exodo/statusicon/thread_old-30.png");
+                    background-position: 12px 10px;
+                    background-repeat: no-repeat;
+                    clear: right;
+                    display: block;
+                    float: left;
+                    height: auto;
+                    min-height: 49px;
+                    position: relative;
+                    width: 64px;
+                }
+            }
+			&.participated .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_dot-30-right.png"); }
+			&.unread.participated .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_dot_new-30-right.png"); }
+			&.unread .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_new-30.png"); }
+			&.locked .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_lock-30.png"); }
+			&.unread.locked .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_lock_new-30.png"); }
+			&.hot .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_hot-30.png"); }
+			&.hot.locked .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_hot_lock-30.png"); }
+			&.hot.locked.participated .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_dot_hot_lock-30-right.png"); }
+			&.hot.unread .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_hot_new-30.png"); }
+			&.hot.participated .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_dot_hot-30-right.png"); }
+			&.hot.unread.participated .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_dot_hot_new-30-right.png"); }
+        }
+    }
+    .category-options {
+        > .panel {
+            clear: right;
+            float: left;
+            margin-right: 0.5%;
+            position: relative;
+            width: 49.5%;
+        }
+        > .panel:last-child {
+            margin-left: 0.5%;
+            margin-right: 0;
+        }
+        .panel-heading {
+            background: none repeat scroll 0% 0% #2E3539;
+            border: 0px none;
+            border-radius: 0;
+            color: #FFF;
+            font-size: 14px;
+            font-weight: normal;
+            padding: 13px 12px;
+            a[aria-expanded="true"]:after {
+                content: "\f147";
+                float: right;
+            }
+            a[aria-expanded="false"]:after {
+                content: "\f196";
+                float: right;
+            }
+            .collapse-button {
+                cursor: pointer;
+                float: right;
+                font-size: 19px;
+                margin-right: 5px;
+            }
+            .collapse-button:hover {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+        .panel-body {
+            padding: 12px;
+            .icon_legends {
+                margin: 0;
+                dt {
+                    clear: right;
+                    float: left;
+                    line-height: 0;
+                    margin-right: 6px;
+                }
+                dd {
+                    display: block;
+                    line-height: 1.23;
+                    margin-bottom: 6px;
+                }
+            }
+            .youcandoblock, .bbcodeblock {
+                float: left;
+                margin: 0px 0.5% 12px 0px;
+                overflow: hidden;
+                width: 49%;
             }
         }
     }
@@ -177,62 +304,6 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-    }
-    .new_post_btn {
-        background: #2E3539 none;
-        border: 0;
-        border-radius: 0px;
-        color: #fff;
-        display: block;
-        float: right;
-        font: normal 13px;
-        height: 32px;
-        line-height: 32px;
-        -moz-border-radius: 0px;
-        padding: 0px 0px 0px 12px;
-        -webkit-border-radius: 0px;
-        &:hover {
-            background: #2E3539 none;
-            box-shadow: 0 0 0 3px #E4E4E4;
-            color: rgb(255,255,255);
-            text-decoration: none;
-        }
-        span {
-            background-color: #cf246a;
-            display: inline-block;
-            font: normal 13px;
-            font-size: 16px;
-            font-weight: bold;
-            font-weight: bold;
-            height: 32px;
-            line-height: 32px;
-            margin-left: 5px;
-            padding: 0 10px;
-        }
-    }
-    .category-tools {
-        clear: both;
-        .category-tools-button {
-            background: white;
-            border: 1px solid #d4d4d4;
-            clear: both;
-            display: block;
-            height: 30px;
-            width: 100%;
-            .tool {
-                background: none;
-                border: none;
-                color: #838383;
-                font-size: 11px;
-                height: 30px;
-                line-height: 30px;
-                margin: 0 7px;
-                padding: 0;
-            }
-            .btn-group.open .dropdown-toggle, .btn-group.open .dropdown-toggle:active,  {
-                box-shadow: none;
-            }
-        }
     }
     .latest-post {
         float: right;
@@ -258,70 +329,6 @@
                 max-height: 33px;
                 overflow: hidden;
                 width: 70%;
-            }
-        }
-    }
-}
-h4.category-title {
-    display: inline-block;
-    font-weight: 700;
-    line-height: 21px;
-    margin: 0;
-    overflow: hidden;
-    text-align: left;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 100%;
-}
-.category-header {
-    .pointer;
-    height: 110px;
-    margin: 0;
-    margin-bottom: 10px;
-    overflow: hidden;
-    padding-top: 25px;
-    text-align: center;
-    width: 100%;
-    &:hover {
-        filter: brightness(115%);
-        -webkit-filter: brightness(115%);
-    }
-    &.category-header-image-auto {
-        background-position: 0% 0% !important;
-        background-size: auto!important;
-        -moz-background-size: auto!important;
-        -o-background-size: auto!important;
-        -webkit-background-size: auto!important;
-    }
-    &.category-header-image-cover {
-        background-position: center!important;
-        background-size: cover!important;
-        -moz-background-size: cover!important;
-        -o-background-size: cover!important;
-        -webkit-background-size: cover!important;
-    }
-    &.category-header-image-contain {
-        background-position: center!important;
-        background-size: contain!important;
-        -moz-background-size: contain!important;
-        -o-background-size: contain!important;
-        -webkit-background-size: contain!important;
-    }
-    .category-box {
-        height: 90px;
-        .post-preview {
-            padding-left: 10px;
-            padding-right: 10px;
-            text-align: left;
-            img {
-                height: 60px;
-                padding-right: 5px;
-                width: 60px;
-            }
-            p {
-                height: 60px;
-                overflow: hidden;
-                text-overflow: ellipsis;
             }
         }
     }

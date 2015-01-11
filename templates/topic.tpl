@@ -11,28 +11,54 @@
 <input type="hidden" template-variable="viewcount" value="{viewcount}" />
 
 <div class="topic">
-	<!-- IMPORT partials/breadcrumbs.tpl -->
+	<div class="topic-head">
+		<!-- IMPORT partials/breadcrumbs.tpl -->
+		
+		<div class="topic-head-top">
+			<h1>Tema: <a title="{title}" href="/topic/{slug}">{title}</a></h1>
+		</div>
+		
+		<div class="topic-head-middle clearfix">
+			<div class="topic-head-reply">
+				<button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
+			</div>
+			
+			<div class="topic-head-pagination">
+				<!-- IF config.usePagination -->
+				<div>
+					<div class="pagination-count">Página {currentPage} de {pageCount} <span>({postcount} posts)</span></div>
+					<ul class="pagination">
+						<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i></a></li>
+						<li class="next pull-right"><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+					</ul>
+				</div>
+				<!-- ENDIF config.usePagination -->
+			</div>
+		</div>
+	</div>
 
 	<ul id="post-container" class="posts" data-tid="{tid}">
 		<!-- BEGIN posts -->
-			<li class="post-row<!-- IF posts.deleted --> deleted<!-- ENDIF posts.deleted --><!-- IF posts.ignored --> ignored<!-- ENDIF posts.ignored --><!-- IF posts.isOP --> highlight-op<!-- ENDIF posts.isOP --><!-- IF posts.isFollow --> highlight-fw<!-- ENDIF posts.isFollow -->" data-pid="{posts.pid}" data-uid="{posts.uid}" data-username="{posts.user.username}" data-userslug="{posts.user.userslug}" data-index="{posts.index}" data-timestamp="{posts.timestamp}" data-votes="{posts.votes}" itemscope itemtype="http://schema.org/Comment">
-				<a id="post_anchor_{posts.index}" name="{posts.index}"></a>
+		<li class="post-row<!-- IF posts.deleted --> deleted<!-- ENDIF posts.deleted --><!-- IF posts.ignored --> ignored<!-- ENDIF posts.ignored --><!-- IF posts.isOP --> highlight-op<!-- ENDIF posts.isOP --><!-- IF posts.isFollow --> highlight-fw<!-- ENDIF posts.isFollow -->" data-pid="{posts.pid}" data-uid="{posts.uid}" data-username="{posts.user.username}" data-userslug="{posts.user.userslug}" data-index="{posts.index}" data-timestamp="{posts.timestamp}" data-votes="{posts.votes}" itemscope itemtype="http://schema.org/Comment">
+			<a id="post_anchor_{posts.index}" name="{posts.index}"></a>
 
-				<meta itemprop="datePublished" content="{posts.relativeTime}">
-				<meta itemprop="dateModified" content="{posts.relativeEditTime}">
+			<meta itemprop="datePublished" content="{posts.relativeTime}">
+			<meta itemprop="dateModified" content="{posts.relativeEditTime}">
 
-        <div class="post-wrapper">
-          <div class="post-header">
-						<div class="post-meta">
-							[[global:posted_ago, <span class="timeago" title="{posts.relativeTime}"></span>]]
-							&bull;
-							<span class="post-index"><a href="/topic/{slug}/{function.postIndexPlusOne}">#{function.postIndexPlusOne}</a></span></div>
+			<div class="post-wrapper">
+				<div class="post-header">
+					<div class="post-meta">
+						[[global:posted_ago, <span class="timeago" title="{posts.relativeTime}"></span>]] &bull;
+						<span class="post-index"><a href="/topic/{slug}/{function.postIndexPlusOne}">#{function.postIndexPlusOne}</a></span>
 					</div>
-
-          <div class="col-md-2 profile-image-block hidden-xs hidden-sm sub-post">
+				</div>
+				
+				<div class="post-details">
+					<div class="userinfo hidden-xs">
 						<div class="nickname btn-group">
 							<h3 data-toggle="dropdown">
 								<span class="username-field" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}</span>
+								<i class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]"></i>
 							</h3>
 							<ul class="dropdown-menu">
 								<li><a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->"><i class="fa fa-user"></i> [[topic:profile]]</a></li>
@@ -45,170 +71,166 @@
 								<!-- ENDIF loggedIn -->
 								<!-- ENDIF posts.user.userslug -->
 								<!-- ENDIF !posts.selfPost -->
-
+	
 								<!-- IF !posts.selfPost -->
 								<!-- IF loggedIn -->
-								<li><a href="#" class="unignore" <!-- IF !posts.ignored -->style="display: none;"<!-- ENDIF !posts.ignored -->><i class="fa fa-eye"></i> Des-Ignorar</a></li>
-								<li><a href="#" class="ignore" <!-- IF posts.ignored -->style="display: none;"<!-- ENDIF posts.ignored -->><i class="fa fa-eye-slash"></i> Ignorar usuario</a></li>
+								<li><a href="#" class="unignore hide"><i class="fa fa-eye"></i> [[ignored:unignore]]</a></li>
+								<li><a href="#" class="ignore hide"><i class="fa fa-eye-slash"></i> [[ignored:ignore_user]]</a></li>
 								<!-- ENDIF loggedIn -->
 								<!-- ENDIF !posts.selfPost -->
 							</ul>
 						</div>
-
-            <a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
-              <img src="{posts.user.picture}" align="left" class="img-thumbnail" itemprop="image" />
+	
+						<a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
+							<img src="{posts.user.picture}" align="left" class="img-thumbnail" itemprop="image" />
 							<br>
-              <!-- IF posts.user.banned -->
-              <span class="label label-danger">[[user:banned]]</span>
+							<!-- IF posts.user.banned -->
+							<span class="label label-danger">[[user:banned]]</span>
 							<br>
-              <!-- ENDIF posts.user.banned -->
-            </a>
-
+							<!-- ENDIF posts.user.banned -->
+						</a>
+	
 						<span>
 							[[global:reputation]]: <i class='fa fa-star'></i> <span data-reputation="{posts.user.reputation}" data-uid="{posts.uid}" class='formatted-number reputation'>{posts.user.reputation}</span>
-							<br>
-							[[global:posts]]: <i class='fa fa-pencil'></i> <span class='formatted-number user_postcount_{posts.uid}'>{posts.user.postcount}</span>
+							<br>[[global:posts]]: <i class='fa fa-pencil'></i>  <span class='formatted-number user_postcount_{posts.uid}'>{posts.user.postcount}</span>
 							<!-- IF posts.user.custom_profile_info.length -->
 							<!-- BEGIN custom_profile_info -->
-							<br>
-							{posts.user.custom_profile_info.content}
+							<br>{posts.user.custom_profile_info.content}
 							<!-- END custom_profile_info -->
 							<!-- ENDIF posts.user.custom_profile_info.length -->
 						</span>
-          </div>
-
-          <div class="col-md-10 post-block topic-item">
-
-            <a class="main-post avatar" href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
-              <img itemprop="image" src="{posts.user.picture}" align="left" class="img-thumbnail" width=150 height=150 />
-            </a>
-            <h3 class="main-post">
-              <p id="topic_title_{posts.pid}" class="topic-title" itemprop="name"><i class="fa fa-thumb-tack hide"></i> <i class="fa fa-lock hide"></i> {title}</p>
-            </h3>
-
-			<!-- IF posts.ignored -->
-			<div id="content_{posts.pid}" class="post-content" itemprop="text">Este mensaje est&aacute; oculto porque <b>{posts.user.username}</b> est&aacute; en tu lista de ignorados.</div>
-		  	<div class="original-content hide" itemprop="text">{posts.originalContent}</div>
-		  	<!-- ELSE -->
-            <div id="content_{posts.pid}" class="post-content" itemprop="text">{posts.content}</div>
-			<div class="original-content hide" itemprop="text"></div>
-			<!-- ENDIF posts.ignored -->
-
-            <div class="post-info">
-              <!-- IF posts.editor.username -->
-              <span>[[global:last_edited_by_ago, <strong><a href="{relative_path}/user/{posts.editor.userslug}">{posts.editor.username}</a></strong>, <span class="timeago" title="{posts.relativeEditTime}"></span>]]</span>
-              <!-- ENDIF posts.editor.username -->
-            </div>
-
+					</div>
+	
+					<div class="post-block">
+						<a class="main-post avatar" href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
+							<img itemprop="image" src="{posts.user.picture}" align="left" class="img-thumbnail" width=150 height=150 />
+						</a>
+						
+						<h3 class="main-post">{title}</h3>
+	
+						<!-- IF posts.ignored -->
+						<div id="content_{posts.pid}" class="post-content" itemprop="text">[[ignored:ignored_post, {posts.user.username}]]</div>
+						<div class="original-content hide" itemprop="text">{posts.originalContent}</div>
+						<!-- ELSE -->
+						<div id="content_{posts.pid}" class="post-content" itemprop="text">{posts.content}</div>
+						<div class="original-content hide" itemprop="text"></div>
+						<!-- ENDIF posts.ignored -->
+	
+						<div class="post-info">
+							<!-- IF posts.editor.username -->
+							<span>[[global:last_edited_by_ago, <strong><a href="{relative_path}/user/{posts.editor.userslug}">{posts.editor.username}</a></strong>, <span class="timeago" title="{posts.relativeEditTime}"></span>]]</span>
+							<!-- ENDIF posts.editor.username -->
+						</div>
+	
 						<!-- IF posts.user.signature -->
 						<div class="post-signature">{posts.user.signature}</div>
 						<!-- ENDIF posts.user.signature -->
-          </div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
 
-          <div class="topic-buttons">
-						<div class="col-md-2 profile-image-block hidden-xs hidden-sm sub-post"></div>
-
-						<div class="pull-right">
-							<!-- IF posts.display_moderator_tools -->
-							<div class="btn-group post-tools">
-								<div class="dropdown">
-									<button title="[[topic:tools]]" class="btn btn-sm btn-default" data-toggle="dropdown" href="#"><i class="fa fa-gear"></i></button>
-									<ul class="dropdown-menu text-center pull-right" role="menu" aria-labelledby="dLabel">
-										<button class="btn btn-sm btn-default edit" type="button" title="[[topic:edit]]"><i class="fa fa-pencil"></i></button>
-										<button class="btn btn-sm btn-default delete" type="button" title="[[topic:delete]]"><i class="fa fa-trash-o"></i></button>
-										<button class="btn btn-sm btn-default purge <!-- IF !posts.deleted -->none<!-- ENDIF !posts.deleted -->" type="button" title="[[topic:purge]]"><i class="fa fa-eraser"></i></button>
-
-										<!-- IF posts.display_move_tools -->
-										<button class="btn btn-sm btn-default move" type="button" title="[[topic:move]]"><i class="fa fa-arrows"></i></button>
-										<!-- ENDIF posts.display_move_tools -->
-									</ul>
-								</div>
+				<div class="topic-buttons">
+					
+					<div class="pull-left">
+						<!-- IF posts.display_moderator_tools -->
+						<div class="btn-group post-tools">
+							<div class="dropdown">
+								<button title="[[topic:tools]]" class="btn btn-sm btn-link" data-toggle="dropdown" href="#"><i class="fa fa-gear"></i></button>
+								<ul class="dropdown-menu text-center pull-left" role="menu" aria-labelledby="dLabel">
+									<button class="btn btn-sm btn-default edit" type="button" title="[[topic:edit]]"><i class="fa fa-pencil"></i></button>
+									<button class="btn btn-sm btn-default delete" type="button" title="[[topic:delete]]"><i class="fa fa-trash-o"></i></button>
+									<button class="btn btn-sm btn-default purge <!-- IF !posts.deleted -->none<!-- ENDIF !posts.deleted -->" type="button" title="[[topic:purge]]"><i class="fa fa-eraser"></i></button>
+									<!-- IF posts.display_move_tools -->
+									<button class="btn btn-sm btn-default move" type="button" title="[[topic:move]]"><i class="fa fa-arrows"></i></button>
+									<!-- ENDIF posts.display_move_tools -->
+								</ul>
 							</div>
-							<!-- ENDIF posts.display_moderator_tools -->
+						</div>
+						<!-- ENDIF posts.display_moderator_tools -->
+					</div>
+					
+					<div class="pull-left">
+						<div class="btn-group">
+							<!-- IF !posts.selfPost -->
+							<button class="btn btn-sm btn-link flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-exclamation-triangle"></i></button>
+							<!-- ENDIF !posts.selfPost -->
+						</div>
+					</div>
+
+					<div class="pull-right">
+						<div class="btn-group visible-xs">
+
+							<button class="btn btn-sm btn-link dropdown-toggle" data-toggle="dropdown" type="button" title="<!-- IF posts.user.userslug -->[[topic:posted_by, {posts.user.username}]]<!-- ELSE -->[[topic:posted_by_guest]]<!-- ENDIF posts.user.userslug -->">
+								<i class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]"></i>
+								<span class="visible-xs-inline"><img class="" src="{posts.user.picture}" width=18 height=18 />&nbsp;</span>
+								<span class="username-field" href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}&nbsp;</span>
+								<span class="caret"></span>
+							</button>
+
+							<ul class="dropdown-menu">
+								<li><a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->"><i class="fa fa-user"></i> [[topic:profile]]</a></li>
+								<!-- IF !posts.selfPost -->
+								<!-- IF posts.user.userslug -->
+								<!-- IF loggedIn -->
+								<!-- IF !config.disableChat -->
+								<li><a href="#" class="chat"><i class="fa fa-comment"></i> [[topic:chat]]</a></li>
+								<!-- ENDIF !config.disableChat -->
+								<!-- ENDIF loggedIn -->
+								<!-- ENDIF posts.user.userslug -->
+								<!-- ENDIF !posts.selfPost -->
+							</ul>
 						</div>
 
-						<div class="pull-right">
-	            <div class="btn-group">
-
-	              <button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" type="button" title="<!-- IF posts.user.userslug -->[[topic:posted_by, {posts.user.username}]]<!-- ELSE -->[[topic:posted_by_guest]]<!-- ENDIF posts.user.userslug -->">
-	                <i class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]"></i>
-	                <span class="visible-xs-inline visible-md-inline"><img class="" src="{posts.user.picture}" width=18 height=18 />&nbsp;</span>
-	                <span class="username-field" href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}&nbsp;</span>
-	                <span class="caret"></span>
-	              </button>
-
-	              <ul class="dropdown-menu">
-	                <li><a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->"><i class="fa fa-user"></i> [[topic:profile]]</a></li>
-	                <!-- IF !posts.selfPost -->
-	                <!-- IF posts.user.userslug -->
-	                <!-- IF loggedIn -->
-	                <!-- IF !config.disableChat -->
-	                <li><a href="#" class="chat"><i class="fa fa-comment"></i> [[topic:chat]]</a></li>
-	                <!-- ENDIF !config.disableChat -->
-	                <!-- ENDIF loggedIn -->
-	                <!-- ENDIF posts.user.userslug -->
-	                <!-- ENDIF !posts.selfPost -->
-
-									<!-- IF !posts.selfPost -->
-									<!-- IF loggedIn -->
-									<li><a href="#" class="unignore" <!-- IF !posts.ignored -->style="display: none;"<!-- ENDIF !posts.ignored -->><i class="fa fa-eye"></i> Des-Ignorar</a></li>
-									<li><a href="#" class="ignore" <!-- IF posts.ignored -->style="display: none;"<!-- ENDIF posts.ignored -->><i class="fa fa-eye-slash"></i> Ignorar usuario</a></li>
-									<!-- ENDIF loggedIn -->
-									<!-- ENDIF !posts.selfPost -->
-	              </ul>
-	            </div>
-
-	            <div class="btn-group">
-	              <!-- IF !posts.index -->
-	              <button class="btn btn-sm btn-default follow" type="button" title="[[topic:notify_me]]"><!-- IF isFollowing --><i class="fa fa-eye-slash"><!-- ELSE --><i class="fa fa-eye"><!-- ENDIF isFollowing --></i></button>
-	              <!-- ENDIF !posts.index -->
-	              <!-- IF !posts.selfPost -->
-	              <button class="btn btn-sm btn-default flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-flag-o"></i></button>
-	              <!-- ENDIF !posts.selfPost -->
-	              <button data-favourited="{posts.favourited}" class="favourite favourite-tooltip btn btn-sm btn-default <!-- IF posts.favourited --> btn-warning <!-- ENDIF posts.favourited -->" type="button">
-	                <span class="favourite-text">[[topic:favourite]]</span>
-	                <span class="favouriteCount" data-favourites="{posts.reputation}">{posts.reputation}</span>&nbsp;
-	                <!-- IF posts.favourited -->
-	                <i class="fa fa-star"></i>
-	                <!-- ELSE -->
-	                <i class="fa fa-star-o"></i>
-	                <!-- ENDIF posts.favourited -->
-	              </button>
-	            </div>
-
-	            <!-- IF !reputation:disabled -->
-	            <div class="btn-group">
-	              <button class="upvote btn btn-sm btn-default <!-- IF posts.upvoted --> upvoted btn-primary <!-- ENDIF posts.upvoted -->">
-	                <i class="fa fa-chevron-up"></i>
-	              </button>
-	              <button class="votes btn btn-sm btn-default" data-votes="{posts.votes}">{posts.votes}</button>
-	              <!-- IF !downvote:disabled -->
-	              <button class="downvote btn btn-sm btn-default <!-- IF posts.downvoted --> downvoted btn-primary <!-- ENDIF posts.downvoted -->">
-	                <i class="fa fa-chevron-down"></i>
-	              </button>
-	              <!-- ENDIF !downvote:disabled -->
-	            </div>
-	            <!-- ENDIF !reputation:disabled -->
-
-	            <!-- IF privileges.topics:reply -->
-	            <div class="btn-group">
-	              <button class="btn btn-sm btn-default quote" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i></button>
-	              <button class="btn btn-sm btn-primary btn post_reply" type="button">[[topic:reply]] <i class="fa fa-reply"></i></button>
-	            </div>
-	            <!-- ENDIF privileges.topics:reply -->
+						<div class="btn-group">
+							<!-- IF !posts.index -->
+							<button class="btn btn-sm btn-link follow" type="button" title="[[topic:notify_me]]">
+								<!-- IF isFollowing -->
+								<i class="fa fa-eye-slash"></i>
+								<label><span>[[topic:unwatch]]</span></label>
+								<!-- ELSE -->
+								<i class="fa fa-eye"></i>
+								<label><span>[[topic:watch]]</span></label>
+								<!-- ENDIF isFollowing -->
+							</button>
+							<!-- ENDIF !posts.index -->
 						</div>
 
-						<div style="clear:both;"></div>
-          </div>
-        </div>
-				<div style="clear:both;"></div>
-			</li>
+						<!-- IF !reputation:disabled -->
+						<div class="btn-group reputation">
+							<button class="upvote btn btn-sm btn-link <!-- IF posts.upvoted --> upvoted btn-primary <!-- ENDIF posts.upvoted -->">
+								<i class="fa fa-chevron-up"></i>
+							</button>
+							<button class="votes btn btn-sm btn-link" data-votes="{posts.votes}">{posts.votes}</button>
+							<!-- IF !downvote:disabled -->
+							<button class="downvote btn btn-sm btn-link <!-- IF posts.downvoted --> downvoted btn-primary <!-- ENDIF posts.downvoted -->">
+								<i class="fa fa-chevron-down"></i>
+							</button>
+							<!-- ENDIF !downvote:disabled -->
+						</div>
+						<!-- ENDIF !reputation:disabled -->
 
-			<!-- IF !posts.index -->
-			<li class="well post-bar" data-index="{posts.index}">
-				<!-- IMPORT partials/post_bar.tpl -->
-			</li>
-			<!-- ENDIF !posts.index -->
+						<!-- IF privileges.topics:reply -->
+						<div class="btn-group">
+							<button class="btn btn-sm btn-link quote" type="button"><i class="fa fa-quote-left"></i> <label>[[topic:quote]]</label></button>
+						</div>
+						
+						<div class="btn-group">						
+							<button class="btn btn-sm btn-link post_reply" type="button"><i class="fa fa-reply"></i> <label>[[topic:reply]]</label></button>
+						</div>
+						<!-- ENDIF privileges.topics:reply -->
+					</div>
+
+					<div style="clear:both;"></div>
+				</div>
+			</div>
+			<div style="clear:both;"></div>
+		</li>
+
+		<!-- IF !posts.index -->
+		<li class="well post-bar" data-index="{posts.index}">
+			<!-- IMPORT partials/post_bar.tpl -->
+		</li>
+		<!-- ENDIF !posts.index -->
 		<!-- END posts -->
 	</ul>
 
