@@ -10,6 +10,7 @@
 		}
 	],
 	"scripts": [
-		"lib/client.js"
+		"lib/client.js",
+		"lib/moment.min.js"
 	]
 }

@@ -47,8 +47,11 @@
 
 			<div class="post-wrapper">
 				<div class="post-header">
-					<div class="post-meta">
-						[[global:posted_ago, <span class="timeago" title="{posts.relativeTime}"></span>]] &bull;
+					<div class="post-date pull-left">
+						<span class="date"><i class="fa fa-clock-o"></i> {function.humanReadableDate}</span>
+					</div>
+					
+					<div class="post-meta pull-right">
 						<span class="post-index"><a href="/topic/{slug}/{function.postIndexPlusOne}">#{function.postIndexPlusOne}</a></span>
 					</div>
 				</div>
@@ -129,8 +132,7 @@
 					</div>
 				</div>
 
-				<div class="topic-buttons">
-					
+				<div class="topic-buttons clearfix">
 					<div class="pull-left">
 						<!-- IF posts.display_moderator_tools -->
 						<div class="btn-group post-tools">
@@ -219,11 +221,8 @@
 						</div>
 						<!-- ENDIF privileges.topics:reply -->
 					</div>
-
-					<div style="clear:both;"></div>
 				</div>
 			</div>
-			<div style="clear:both;"></div>
 		</li>
 
 		<!-- IF !posts.index -->
