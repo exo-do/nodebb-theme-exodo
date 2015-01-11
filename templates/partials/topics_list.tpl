@@ -1,4 +1,4 @@
-<ul class="category-topics" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}">
+<ul class="category-topics" id="topics-container" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}">
 	<!-- IF topics.length -->
 	<div class="threadlisthead">
 		<span class="threadinfo">
@@ -13,7 +13,7 @@
 	<!-- ENDIF topics.length -->
 	<meta itemprop="itemListOrder" content="descending">
 	<!-- BEGIN topics -->
-	<li class="category-item<!-- IF topics.locked --> locked<!-- ENDIF topics.locked --><!-- IF topics.pinned --> pinned<!-- ENDIF topics.pinned --><!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.userParticipated --> participated<!-- ENDIF topics.userParticipated --><!-- IF topics.isHot --> hot<!-- ENDIF topics.isHot --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}" data-index="{topics.index}">
+	<li class="category-item<!-- IF topics.locked --> locked<!-- ENDIF topics.locked --><!-- IF topics.pinned --> pinned<!-- ENDIF topics.pinned --><!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.userParticipated --> participated<!-- ENDIF topics.userParticipated --><!-- IF topics.isHot --> hot<!-- ENDIF topics.isHot --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}" data-cid="{topics.cid}" data-index="<!-- IF topics.index -->{topics.index}<!-- ELSE -->0<!-- ENDIF topics.index -->">
 		<div class="panel panel-default topic-row clearfix">
 			<div class="threadinfo">
 				<a class="threadstatus"></a>
@@ -29,6 +29,8 @@
 				<small>
 					Iniciado por <a href="<!-- IF topics.user.userslug -->{relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.username}</a>, [[global:posted_ago, <span class="timeago" title="{topics.relativeTime}"></span>]]
 				</small>
+				
+				<dl class="threadpagination" data-pages="{topics.pagesCount}"><dd></dd></dl>
 				
 				<div class="threaddetails">
 					<!-- IF topics.tags.length -->
@@ -62,6 +64,11 @@
 				<i class="fa fa-fw fa-square-o select pointer"></i>
 			</label>
 			<!-- ENDIF privileges.editable -->
+			<!-- IF showSelect -->
+			<label class="threadimod">
+				<i class="fa fa-fw fa-square-o select pointer"></i>
+			</label>
+			<!-- ENDIF showSelect -->
 		</div>
 	</li>
 	<!-- END topics -->

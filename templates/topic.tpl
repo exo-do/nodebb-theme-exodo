@@ -48,8 +48,11 @@
 
 			<div class="post-wrapper">
 				<div class="post-header">
-					<div class="post-meta">
-						[[global:posted_ago, <span class="timeago" title="{posts.relativeTime}"></span>]] &bull;
+					<div class="post-date pull-left">
+						<span class="date"><i class="fa fa-clock-o"></i> {function.humanReadableDate}</span>
+					</div>
+					
+					<div class="post-meta pull-right">
 						<span class="post-index"><a href="/topic/{slug}/{function.postIndexPlusOne}">#{function.postIndexPlusOne}</a></span>
 					</div>
 				</div>
@@ -130,8 +133,7 @@
 					</div>
 				</div>
 
-				<div class="topic-buttons">
-					
+				<div class="topic-buttons clearfix">
 					<div class="pull-left">
 						<!-- IF posts.display_moderator_tools -->
 						<div class="btn-group post-tools">
@@ -222,11 +224,8 @@
 						</div>
 						<!-- ENDIF privileges.topics:reply -->
 					</div>
-
-					<div style="clear:both;"></div>
 				</div>
 			</div>
-			<div style="clear:both;"></div>
 		</li>
 
 		<!-- IF !posts.index -->
@@ -236,20 +235,31 @@
 		<!-- ENDIF !posts.index -->
 		<!-- END posts -->
 	</ul>
-
-	<div class="well col-md-12 col-xs-12 pull-right post-bar bottom-post-bar hide">
+	
+	<div class="topic-foot">
+		<div class="topic-head-middle clearfix">
+			<div class="topic-head-reply">
+				<button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
+			</div>
+			
+			<div class="topic-head-pagination">
+				<!-- IF config.usePagination -->
+				<div>
+					<div class="pagination-count">Página {currentPage} de {pageCount} <span>({postcount} posts)</span></div>
+					<ul class="pagination">
+						<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i></a></li>
+						<li class="next pull-right"><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+					</ul>
+				</div>
+				<!-- ENDIF config.usePagination -->
+			</div>
+		</div>
+	</div>
+	
+	<div class="post-bar bottom-post-bar hide">
 		<!-- IMPORT partials/post_bar.tpl -->
 	</div>
-
-	<!-- IF config.usePagination -->
-	<div class="text-center">
-		<ul class="pagination">
-			<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i> [[global:previouspage]]</a></li>
-			<li class="next pull-right"><a href="#">[[global:nextpage]] <i class="fa fa-chevron-right"></i></a></li>
-		</ul>
-	</div>
-	<!-- ENDIF config.usePagination -->
-
+	
 	<!-- IMPORT partials/move_thread_modal.tpl -->
 	<!-- IMPORT partials/fork_thread_modal.tpl -->
 	<!-- IMPORT partials/move_post_modal.tpl -->
