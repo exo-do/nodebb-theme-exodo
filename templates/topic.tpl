@@ -20,7 +20,7 @@
 		
 		<div class="topic-head-middle clearfix">
 			<div class="topic-head-reply">
-				<button class="btn btn-primary post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
+				<button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
 			</div>
 			
 			<div class="topic-head-pagination">
