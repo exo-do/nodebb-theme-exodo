@@ -171,6 +171,7 @@
                 }
                 @media (max-width:767px) {
                     .post-block {
+	                    border: none;
                         margin: 0;
                     }
                 }
@@ -213,39 +214,41 @@
                 display: inline-block !important;
             }
             @media (max-width:767px) {
-                padding-left: 9px;
+                padding: 5px 10px;
             }
             .pull-left, .pull-right {
-                .btn-group {
-                    border-right: 1px solid @exodo-border-color;
-                    margin: 0 3px;
-                    .btn-link {
-                        padding: 0 5px;
-                        color: @exodo-dark;
-                        &:hover {
-                            color: @exodo-link-color;
-                        }
-                        label {
-                            font-weight: bold;
-                            margin: 0;
-                        }
-                        i.fa {
-                            font-size: 12px;
-                            margin-right: 6px;
-                            vertical-align: middle;
-                            position: relative;
-                        }
-                    }
-                    &.reputation {
-                        i.fa {
-                            margin: 0;
-                            bottom: 1px;
-                        }
-                    }
-                }
-                .btn-group:last-child {
-                    border: none;
-                }
+	            &.hidden-xs {
+	                .btn-group {
+	                    border-right: 1px solid @exodo-border-color;
+	                    margin: 0 3px;
+	                    .btn-link {
+	                        padding: 0 5px;
+	                        color: @exodo-dark;
+	                        &:hover {
+	                            color: @exodo-link-color;
+	                        }
+	                        label {
+	                            font-weight: bold;
+	                            margin: 0;
+	                        }
+	                        i.fa {
+	                            font-size: 12px;
+	                            margin-right: 6px;
+	                            vertical-align: middle;
+	                            position: relative;
+	                        }
+	                    }
+	                    &.reputation {
+	                        i.fa {
+	                            margin: 0;
+	                            bottom: 1px;
+	                        }
+	                    }
+	                }
+	                .btn-group:last-child {
+	                    border: none;
+	                }
+	            }
             }
         }
         .post-block {

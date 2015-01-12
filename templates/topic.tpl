@@ -14,20 +14,20 @@
 <div class="topic">
 	<div class="topic-head">
 		<!-- IMPORT partials/breadcrumbs.tpl -->
-		
+
 		<div class="topic-head-top">
 			<h1>Tema: <a title="{title}" href="/topic/{slug}">{title}</a></h1>
 		</div>
-		
+
 		<div class="topic-head-middle clearfix">
 			<div class="topic-head-reply">
 				<button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
 			</div>
-			
+
 			<div class="topic-head-pagination">
 				<!-- IF config.usePagination -->
 				<div>
-					<div class="pagination-count">Página {currentPage} de {pageCount} <span>({postcount} posts)</span></div>
+					<div class="pagination-count hidden-xs">Página {currentPage} de {pageCount} <span>({postcount} posts)</span></div>
 					<ul class="pagination">
 						<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i></a></li>
 						<li class="next pull-right"><a href="#"><i class="fa fa-chevron-right"></i></a></li>
@@ -51,12 +51,12 @@
 					<div class="post-date pull-left">
 						<span class="date"><i class="fa fa-clock-o"></i> {function.humanReadableDate}</span>
 					</div>
-					
+
 					<div class="post-meta pull-right">
 						<span class="post-index"><a href="/topic/{slug}/{function.postIndexPlusOne}">#{function.postIndexPlusOne}</a></span>
 					</div>
 				</div>
-				
+
 				<div class="post-details">
 					<div class="userinfo hidden-xs">
 						<div class="nickname btn-group">
@@ -75,7 +75,7 @@
 								<!-- ENDIF loggedIn -->
 								<!-- ENDIF posts.user.userslug -->
 								<!-- ENDIF !posts.selfPost -->
-	
+
 								<!-- IF !posts.selfPost -->
 								<!-- IF loggedIn -->
 								<li><a href="#" class="unignore hide"><i class="fa fa-eye"></i> [[ignored:unignore]]</a></li>
@@ -84,7 +84,7 @@
 								<!-- ENDIF !posts.selfPost -->
 							</ul>
 						</div>
-	
+
 						<a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
 							<img src="{posts.user.picture}" align="left" class="img-thumbnail" itemprop="image" />
 							<br>
@@ -93,7 +93,7 @@
 							<br>
 							<!-- ENDIF posts.user.banned -->
 						</a>
-	
+
 						<dl class="userinfo-extra">
 							<!-- IF posts.user.custom_profile_info.length -->
 							<!-- BEGIN custom_profile_info -->
@@ -104,16 +104,16 @@
 							<dt>[[global:reputation]]:</dt> <dd><span data-reputation="{posts.user.reputation}" data-uid="{posts.uid}" class='formatted-number reputation'>{posts.user.reputation}</dd>
 							<dt>[[global:posts]]:</dt> <dd><span class='formatted-number user_postcount_{posts.uid}'>{posts.user.postcount}</dd>
 						</dl>
-						
+
 					</div>
-	
+
 					<div class="post-block">
 						<a class="main-post avatar" href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
 							<img itemprop="image" src="{posts.user.picture}" align="left" class="img-thumbnail" width=150 height=150 />
 						</a>
-						
+
 						<h3 class="main-post">{title}</h3>
-	
+
 						<!-- IF posts.ignored -->
 						<div id="content_{posts.pid}" class="post-content" itemprop="text">[[ignored:ignored_post, {posts.user.username}]]</div>
 						<div class="original-content hide" itemprop="text">{posts.originalContent}</div>
@@ -121,22 +121,22 @@
 						<div id="content_{posts.pid}" class="post-content" itemprop="text">{posts.content}</div>
 						<div class="original-content hide" itemprop="text"></div>
 						<!-- ENDIF posts.ignored -->
-	
+
 						<div class="post-info">
 							<!-- IF posts.editor.username -->
 							<span>[[global:last_edited_by_ago, <strong><a href="{relative_path}/user/{posts.editor.userslug}">{posts.editor.username}</a></strong>, <span class="timeago" title="{posts.relativeEditTime}"></span>]]</span>
 							<!-- ENDIF posts.editor.username -->
 						</div>
-	
+
 						<!-- IF posts.user.signature -->
-						<div class="post-signature">{posts.user.signature}</div>
+						<div class="post-signature hidden-xs">{posts.user.signature}</div>
 						<!-- ENDIF posts.user.signature -->
 						<div class="clearfix"></div>
 					</div>
 				</div>
 
 				<div class="topic-buttons clearfix">
-					<div class="pull-left">
+					<div class="pull-left hidden-xs">
 						<!-- IF posts.display_moderator_tools -->
 						<div class="btn-group post-tools">
 							<div class="dropdown">
@@ -152,9 +152,6 @@
 							</div>
 						</div>
 						<!-- ENDIF posts.display_moderator_tools -->
-					</div>
-					
-					<div class="pull-left">
 						<div class="btn-group">
 							<!-- IF !posts.selfPost -->
 							<button class="btn btn-sm btn-link flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-exclamation-triangle"></i></button>
@@ -162,12 +159,11 @@
 						</div>
 					</div>
 
-					<div class="pull-right">
-						<div class="btn-group visible-xs">
-
-							<button class="btn btn-sm btn-link dropdown-toggle" data-toggle="dropdown" type="button" title="<!-- IF posts.user.userslug -->[[topic:posted_by, {posts.user.username}]]<!-- ELSE -->[[topic:posted_by_guest]]<!-- ENDIF posts.user.userslug -->">
+					<div class="pull-left visible-xs">
+						<div class="btn-group">
+							<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" type="button" title="<!-- IF posts.user.userslug -->[[topic:posted_by, {posts.user.username}]]<!-- ELSE -->[[topic:posted_by_guest]]<!-- ENDIF posts.user.userslug -->">
 								<i class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]"></i>
-								<span class="visible-xs-inline"><img class="" src="{posts.user.picture}" width=18 height=18 />&nbsp;</span>
+								<span class="inline"><img class="" src="{posts.user.picture}" width=18 height=18 />&nbsp;</span>
 								<span class="username-field" href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}&nbsp;</span>
 								<span class="caret"></span>
 							</button>
@@ -185,7 +181,40 @@
 								<!-- ENDIF !posts.selfPost -->
 							</ul>
 						</div>
-						
+						<div class="btn-group">
+							<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+								<i class="fa fa-gear" title="Herramientas"></i>
+								<span class="caret"></span>
+							</button>
+							
+							<ul class="dropdown-menu">
+								<li><!-- IF !posts.selfPost --><a class="pointer flag" title="[[topic:flag_title]]"><i class="fa fa-exclamation-triangle"></i> Reportar</a><!-- ENDIF !posts.selfPost --></li>
+								<!-- IF !posts.index -->
+								<li><a class="pointer follow" title="[[topic:notify_me]]">
+									<!-- IF isFollowing --><i class="fa fa-eye-slash"></i> [[topic:unwatch]]
+									<!-- ELSE --><i class="fa fa-eye"></i> [[topic:watch]]<!-- ENDIF isFollowing -->
+								</a></li>
+								<!-- ENDIF !posts.index -->
+							</ul>
+						</div>
+					</div>
+					<div class="pull-right visible-xs">
+						<div class="btn-group">
+							<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+								<i class="fa fa-pencil" title="Responder"></i> Responder
+								<span class="caret"></span>
+							</button>
+							
+							<ul class="dropdown-menu pull-right">
+								<!-- IF privileges.topics:reply -->
+								<li><a class="pointer quote"><i class="fa fa-quote-left"></i> [[topic:quote]]</a></li>
+								<li><a class="pointer post_reply"><i class="fa fa-reply"></i> [[topic:reply]]</a></li>
+								<!-- ENDIF privileges.topics:reply -->
+							</ul>
+						</div>
+					</div>
+
+					<div class="pull-right hidden-xs">
 						<!-- IF loggedIn -->
 						<div class="btn-group">
 							<!-- IF !posts.index -->
@@ -220,8 +249,8 @@
 						<div class="btn-group">
 							<button class="btn btn-sm btn-link quote" type="button"><i class="fa fa-quote-left"></i> <label>[[topic:quote]]</label></button>
 						</div>
-						
-						<div class="btn-group">						
+
+						<div class="btn-group">
 							<button class="btn btn-sm btn-link post_reply" type="button"><i class="fa fa-reply"></i> <label>[[topic:reply]]</label></button>
 						</div>
 						<!-- ENDIF privileges.topics:reply -->
@@ -237,17 +266,17 @@
 		<!-- ENDIF !posts.index -->
 		<!-- END posts -->
 	</ul>
-	
+
 	<div class="topic-foot">
 		<div class="topic-head-middle clearfix">
 			<div class="topic-head-reply">
 				<button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
 			</div>
-			
+
 			<div class="topic-head-pagination">
 				<!-- IF config.usePagination -->
 				<div>
-					<div class="pagination-count">Página {currentPage} de {pageCount} <span>({postcount} posts)</span></div>
+					<div class="pagination-count hidden-xs">Página {currentPage} de {pageCount} <span>({postcount} posts)</span></div>
 					<ul class="pagination">
 						<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i></a></li>
 						<li class="next pull-right"><a href="#"><i class="fa fa-chevron-right"></i></a></li>
@@ -257,11 +286,11 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="post-bar bottom-post-bar hide">
 		<!-- IMPORT partials/post_bar.tpl -->
 	</div>
-	
+
 	<!-- IMPORT partials/move_thread_modal.tpl -->
 	<!-- IMPORT partials/fork_thread_modal.tpl -->
 	<!-- IMPORT partials/move_post_modal.tpl -->
