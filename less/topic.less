@@ -1,52 +1,51 @@
-    .topic-head {
-        margin-bottom: 20px;
-        .topic-head-top {
-            h1 {
-                font-size: 21px;
-                margin: 10px 0;
-                padding: 0;
-            }
+.topic-head, .topic-foot {
+    margin-bottom: 20px;
+    .topic-head-top {
+        h1 {
+            font-size: 21px;
+            margin: 10px 0;
+            padding: 0;
         }
-        .topic-head-middle {
-            margin-bottom: 15px;
+    }
+    .topic-head-middle {
+        margin-bottom: 15px;
+        > div {
+            clear: right;
+            float: left;
+            height: 32px;
+            width: 50%;
+        }
+        .topic-head-pagination {
+            display: block;
+            position: relative;
             > div {
-                clear: right;
-                float: left;
-                height: 32px;
-                width: 50%;
-            }
-            .topic-head-pagination {
-                display: block;
-                position: relative;
-                > div {
-                    bottom: 0;
-                    position: absolute;
-                    right: 0;
-                    .pagination-count {
-                        color: @exodo-lightdark;
-                        display: inline-block;
-                        font-size: 10px;
-                        margin-right: 5px;
-                        position: relative;
-                        text-align: right;
-                        top: -3px;
-                        > span {
-                            display: block;
-                        }
+                bottom: 0;
+                position: absolute;
+                right: 0;
+                .pagination-count {
+                    color: @exodo-lightdark;
+                    display: inline-block;
+                    font-size: 10px;
+                    margin-right: 5px;
+                    position: relative;
+                    text-align: right;
+                    top: -3px;
+                    > span {
+                        display: block;
                     }
-                    .pagination {
-                        margin: 0;
-                        > li {
-                            > a {
-                                padding: 3px 6px;
-                            }
+                }
+                .pagination {
+                    margin: 0;
+                    > li {
+                        > a {
+                            padding: 3px 6px;
                         }
                     }
                 }
             }
         }
     }
-
+}
 .topic {
     .post-content {
         > blockquote {
@@ -143,19 +142,25 @@
                     .nickname {
                         display: block;
                         h3 {
-	                        margin: 6px 0;
-	                        
-	                        .status {
-		                        font-size: 8px;
-	                        }
-	                        
-	                        span.username-field {
-		                        font-size: 20px;
-	                            color: #cf246a;
-	                            cursor: pointer;
-	                            word-wrap: break-word;
-	                        }
-	                    }
+                            margin: 6px 0;
+                            .status {
+                                font-size: 8px;
+                            }
+                            span.username-field {
+                                font-size: 20px;
+                                color: #cf246a;
+                                cursor: pointer;
+                                word-wrap: break-word;
+                            }
+                        }
+                    }
+                    .userinfo-extra{
+	                    font-size: 10px;
+						dt {
+						    float: left;
+						    margin-right: 10px;
+						    width: auto;
+						}
                     }
                 }
                 .post-block {
@@ -210,42 +215,38 @@
             @media (max-width:767px) {
                 padding-left: 9px;
             }
-            
             .pull-left, .pull-right {
-	            .btn-group {
-		            border-right: 1px solid @exodo-border-color;
-		            margin: 0 3px;
-		        	.btn-link {
-			            padding: 0 5px;
-			        	color: @exodo-dark;
-			        	
-			        	&:hover {
-				        	color: @exodo-link-color;
-			        	}
-			        	
-			        	label {
-				        	font-weight: bold;
-				        	margin: 0;
-				        }
-				        i.fa {
-							font-size: 12px;
-							margin-right: 6px;
-							vertical-align: middle;
-							position: relative;
-				        }
-		        	}
-		            &.reputation {
-				        i.fa {
-							margin: 0;
-							bottom: 1px;
-				        }
-		            }
-	            }
-	            
-	            .btn-group:last-child {
-		            border: none;
-	            }
-	        }       
+                .btn-group {
+                    border-right: 1px solid @exodo-border-color;
+                    margin: 0 3px;
+                    .btn-link {
+                        padding: 0 5px;
+                        color: @exodo-dark;
+                        &:hover {
+                            color: @exodo-link-color;
+                        }
+                        label {
+                            font-weight: bold;
+                            margin: 0;
+                        }
+                        i.fa {
+                            font-size: 12px;
+                            margin-right: 6px;
+                            vertical-align: middle;
+                            position: relative;
+                        }
+                    }
+                    &.reputation {
+                        i.fa {
+                            margin: 0;
+                            bottom: 1px;
+                        }
+                    }
+                }
+                .btn-group:last-child {
+                    border: none;
+                }
+            }
         }
         .post-block {
             .post-content {
@@ -285,10 +286,19 @@
             height: 34px;
             line-height: 23px;
             width: 100%;
+            padding: 5px 10px;
+            color: #fff;
+            .post-date {
+                zoom: 1;
+                filter: alpha(opacity=70);
+                opacity: 0.7;
+                span {
+                    i {
+                        margin-right: 3px;
+                    }
+                }
+            }
             .post-meta {
-                color: white;
-                float: right;
-                padding: 5px;
                 .post-index a {
                     color: white;
                     font-weight: bold;
@@ -311,12 +321,12 @@
     }
     .posts li[data-index="0"] {
         .main-post {
-			border-bottom: 1px solid #E4E4E4;
-			margin: 0 0 7px 0;
-			display: block;
-			padding: 12px 12px 5px 0px;
-			font-weight: bold;
-			font-size: 14px;
+            border-bottom: 1px solid #E4E4E4;
+            margin: 0 0 7px 0;
+            display: block;
+            padding: 12px 12px 5px 0px;
+            font-weight: bold;
+            font-size: 14px;
         }
         .col-md-11 {
             width: 100%;

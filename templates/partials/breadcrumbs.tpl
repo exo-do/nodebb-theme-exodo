@@ -42,4 +42,15 @@
 			</span>
 		</li>
 		<!-- ENDIF template.popular -->
+		
+		<!-- IF template.unread -->
+		<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<a href="{relative_path}/" itemprop="url"><span itemprop="title">[[global:home]]</span></a>
+		</li>
+		<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<span itemprop="title">
+				[[unread:title]]
+			</span>
+		</li>
+		<!-- ENDIF template.unread -->
 	</ol>

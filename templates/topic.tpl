@@ -9,6 +9,7 @@
 <input type="hidden" template-variable="topic_name" value="{title}" />
 <input type="hidden" template-variable="postcount" value="{postcount}" />
 <input type="hidden" template-variable="viewcount" value="{viewcount}" />
+<input type="hidden" template-variable="isFollowing" value="{isFollowing}" />
 
 <div class="topic">
 	<div class="topic-head">
@@ -47,8 +48,11 @@
 
 			<div class="post-wrapper">
 				<div class="post-header">
-					<div class="post-meta">
-						[[global:posted_ago, <span class="timeago" title="{posts.relativeTime}"></span>]] &bull;
+					<div class="post-date pull-left">
+						<span class="date"><i class="fa fa-clock-o"></i> {function.humanReadableDate}</span>
+					</div>
+					
+					<div class="post-meta pull-right">
 						<span class="post-index"><a href="/topic/{slug}/{function.postIndexPlusOne}">#{function.postIndexPlusOne}</a></span>
 					</div>
 				</div>
@@ -90,15 +94,17 @@
 							<!-- ENDIF posts.user.banned -->
 						</a>
 	
-						<span>
-							[[global:reputation]]: <i class='fa fa-star'></i> <span data-reputation="{posts.user.reputation}" data-uid="{posts.uid}" class='formatted-number reputation'>{posts.user.reputation}</span>
-							<br>[[global:posts]]: <i class='fa fa-pencil'></i>  <span class='formatted-number user_postcount_{posts.uid}'>{posts.user.postcount}</span>
+						<dl class="userinfo-extra">
 							<!-- IF posts.user.custom_profile_info.length -->
 							<!-- BEGIN custom_profile_info -->
-							<br>{posts.user.custom_profile_info.content}
+							<!-- IF posts.user.custom_profile_info.joindate --><dt>Fecha de ingreso:</dt> <dd>{posts.user.custom_profile_info.joindate}</dd><!-- ENDIF posts.user.custom_profile_info.joindate -->
+							<!-- IF posts.user.custom_profile_info.location --><dt>Ubicación:</dt> <dd>{posts.user.custom_profile_info.location}</dd><!-- ENDIF posts.user.custom_profile_info.location -->
 							<!-- END custom_profile_info -->
 							<!-- ENDIF posts.user.custom_profile_info.length -->
-						</span>
+							<dt>[[global:reputation]]:</dt> <dd><span data-reputation="{posts.user.reputation}" data-uid="{posts.uid}" class='formatted-number reputation'>{posts.user.reputation}</dd>
+							<dt>[[global:posts]]:</dt> <dd><span class='formatted-number user_postcount_{posts.uid}'>{posts.user.postcount}</dd>
+						</dl>
+						
 					</div>
 	
 					<div class="post-block">
@@ -129,8 +135,7 @@
 					</div>
 				</div>
 
-				<div class="topic-buttons">
-					
+				<div class="topic-buttons clearfix">
 					<div class="pull-left">
 						<!-- IF posts.display_moderator_tools -->
 						<div class="btn-group post-tools">
@@ -180,7 +185,8 @@
 								<!-- ENDIF !posts.selfPost -->
 							</ul>
 						</div>
-
+						
+						<!-- IF loggedIn -->
 						<div class="btn-group">
 							<!-- IF !posts.index -->
 							<button class="btn btn-sm btn-link follow" type="button" title="[[topic:notify_me]]">
@@ -194,6 +200,7 @@
 							</button>
 							<!-- ENDIF !posts.index -->
 						</div>
+						<!-- ENDIF loggedIn -->
 
 						<!-- IF !reputation:disabled -->
 						<div class="btn-group reputation">
@@ -219,11 +226,8 @@
 						</div>
 						<!-- ENDIF privileges.topics:reply -->
 					</div>
-
-					<div style="clear:both;"></div>
 				</div>
 			</div>
-			<div style="clear:both;"></div>
 		</li>
 
 		<!-- IF !posts.index -->
@@ -233,20 +237,31 @@
 		<!-- ENDIF !posts.index -->
 		<!-- END posts -->
 	</ul>
-
-	<div class="well col-md-12 col-xs-12 pull-right post-bar bottom-post-bar hide">
+	
+	<div class="topic-foot">
+		<div class="topic-head-middle clearfix">
+			<div class="topic-head-reply">
+				<button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
+			</div>
+			
+			<div class="topic-head-pagination">
+				<!-- IF config.usePagination -->
+				<div>
+					<div class="pagination-count">Página {currentPage} de {pageCount} <span>({postcount} posts)</span></div>
+					<ul class="pagination">
+						<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i></a></li>
+						<li class="next pull-right"><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+					</ul>
+				</div>
+				<!-- ENDIF config.usePagination -->
+			</div>
+		</div>
+	</div>
+	
+	<div class="post-bar bottom-post-bar hide">
 		<!-- IMPORT partials/post_bar.tpl -->
 	</div>
-
-	<!-- IF config.usePagination -->
-	<div class="text-center">
-		<ul class="pagination">
-			<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i> [[global:previouspage]]</a></li>
-			<li class="next pull-right"><a href="#">[[global:nextpage]] <i class="fa fa-chevron-right"></i></a></li>
-		</ul>
-	</div>
-	<!-- ENDIF config.usePagination -->
-
+	
 	<!-- IMPORT partials/move_thread_modal.tpl -->
 	<!-- IMPORT partials/fork_thread_modal.tpl -->
 	<!-- IMPORT partials/move_post_modal.tpl -->
