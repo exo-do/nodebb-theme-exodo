@@ -94,15 +94,17 @@
 							<!-- ENDIF posts.user.banned -->
 						</a>
 	
-						<span>
-							[[global:reputation]]: <i class='fa fa-star'></i> <span data-reputation="{posts.user.reputation}" data-uid="{posts.uid}" class='formatted-number reputation'>{posts.user.reputation}</span>
-							<br>[[global:posts]]: <i class='fa fa-pencil'></i>  <span class='formatted-number user_postcount_{posts.uid}'>{posts.user.postcount}</span>
+						<dl class="userinfo-extra">
 							<!-- IF posts.user.custom_profile_info.length -->
 							<!-- BEGIN custom_profile_info -->
-							<br>{posts.user.custom_profile_info.content}
+							<!-- IF posts.user.custom_profile_info.joindate --><dt>Fecha de ingreso:</dt> <dd>{posts.user.custom_profile_info.joindate}</dd><!-- ENDIF posts.user.custom_profile_info.joindate -->
+							<!-- IF posts.user.custom_profile_info.location --><dt>Ubicación:</dt> <dd>{posts.user.custom_profile_info.location}</dd><!-- ENDIF posts.user.custom_profile_info.location -->
 							<!-- END custom_profile_info -->
 							<!-- ENDIF posts.user.custom_profile_info.length -->
-						</span>
+							<dt>[[global:reputation]]:</dt> <dd><span data-reputation="{posts.user.reputation}" data-uid="{posts.uid}" class='formatted-number reputation'>{posts.user.reputation}</dd>
+							<dt>[[global:posts]]:</dt> <dd><span class='formatted-number user_postcount_{posts.uid}'>{posts.user.postcount}</dd>
+						</dl>
+						
 					</div>
 	
 					<div class="post-block">
