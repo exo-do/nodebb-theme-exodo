@@ -47,7 +47,7 @@
 
 <body>
 	<div id="header">
-		<div id="top_header">
+		<div id="top_header" class="hidden-xs">
 			<div id="globalsearch">
 				<form action="" method="get" id="search-form">
 					<input value="" name="query" class="textbox" tabindex="99" type="text">
@@ -78,19 +78,14 @@
 		</div>
 		
 		<div id="middle_header">
-			<a name="top" href="/" class="logo-image">
-				<img title="Éxodo" src="https://exo.do/images/exodo/misc/logo.png" alt="Éxodo">
-			</a>
-			<div id="navbar">
-				<ul id="navtabs">
-					<li>
-						<a class="navtab" href="#"><span>Actividad</span></a>
-					</li>
-					<li class="selected">
-						<a class="navtab" href="#"><span>Comunidad</span></a>
-					</li>
-
-				</ul>
+			<div class="tile selected">
+				<a class="exodo-community" href="#"><span>Comunidad</span></a>
+			</div>
+			<div class="tile">
+				<a class="exodo-activity" href="#"><span>Actividad</span></a>
+			</div>
+			<div class="col-header">
+				<a name="top" href="/" class="logo-image"></a>
 			</div>
 		</div>
 	</div>
