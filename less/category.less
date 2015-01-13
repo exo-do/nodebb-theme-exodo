@@ -91,7 +91,10 @@
                 float: left;
             }
             span.threadinfo {
-                width: @exodo-category-threadinfo-size;
+                width: (@exodo-category-threadinfo-size - 9%);
+                @media (max-width: @screen-sm-min) {
+                    width: (@exodo-category-threadinfo-size + @exodo-category-threadstats-size);
+                }
             }
             span.threadinfo > .threadtitle {
                 padding-left: 12px;
@@ -99,11 +102,11 @@
             span.threadstats {
                 padding-right: 20px;
                 text-align: right;
-                width: @exodo-category-threadstats-size;
+                width: (@exodo-category-threadstats-size + 9%);
             }
             span.threadlastpost {
                 padding: 0 0 0 2%;
-                width: 23%;
+                width: @exodo-category-threadlastpost-size;
             }
         }
         .category-item {
@@ -145,8 +148,11 @@
                     float: left;
                 }
                 .threadinfo {
-                    min-width: 350px;
                     width: @exodo-category-threadinfo-size;
+                    padding-right: 10px;
+                    @media (max-width: @screen-sm-min) {
+	                    width: (@exodo-category-threadinfo-size + @exodo-category-threadstats-size);
+                    }
                     .threaddetails {
                         float: right;
                         margin-right: 12px;
@@ -228,6 +234,11 @@
                     min-height: 49px;
                     position: relative;
                     width: 64px;
+                    @media (max-width: @screen-sm-min) {
+	                    width: 50px;
+	                    background-size: 50%;
+						background-position: 14px 20px;
+                    }
                 }
             }
 			&.participated .threadstatus { background-image: url("https://exo.do/images/exodo/statusicon/thread_dot-30-right.png"); }

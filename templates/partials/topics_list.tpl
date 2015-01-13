@@ -7,7 +7,7 @@
 				<a>Autor</a>
 			</span>
 		</span>
-		<span class="threadstats"><a>Respuestas</a> / <a>Visitas</a></span>
+		<span class="threadstats hidden-xs"><a>Posts</a> / <a>Visitas</a></span>
 		<span class="threadlastpost"><a>Último mensaje</a></span>
 	</div>
 	<!-- ENDIF topics.length -->
@@ -27,7 +27,7 @@
 				</h3>
 
 				<small>
-					Iniciado por <a href="<!-- IF topics.user.userslug -->{relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.username}</a> [[global:posted_ago, <span class="timeago" title="{topics.relativeTime}"></span>]]<!-- IF template.category --><!-- ELSE --> en <a href="{relative_path}/category/{topics.category.slug}">{topics.category.name}</a><!-- ENDIF template.category -->
+					Iniciado por <a href="<!-- IF topics.user.userslug -->{relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.username}</a>, [[global:posted_ago, <span class="timeago" title="{topics.relativeTime}"></span>]]<!-- IF template.category --><!-- ELSE --> en <a href="{relative_path}/category/{topics.category.slug}">{topics.category.name}</a><!-- ENDIF template.category -->
 				</small>
 				
 				<dl class="threadpagination" data-pages="{topics.pagesCount}"><dd></dd></dl>
@@ -38,7 +38,7 @@
 					<!-- ENDIF topics.tags.length -->
 				</div>
 			</div>
-			<ul class="threadstats">
+			<ul class="threadstats hidden-xs">
 				<li>[[global:posts]]: {topics.postcount}</li>
 				<li>[[global:views]]: {topics.viewcount}</li>
 			</ul>
@@ -60,12 +60,12 @@
 				<!-- ENDIF topics.unreplied -->
 			</dl>
 			<!-- IF privileges.editable -->
-			<label class="threadimod">
+			<label class="threadimod hidden-xs">
 				<i class="fa fa-fw fa-square-o select pointer"></i>
 			</label>
 			<!-- ENDIF privileges.editable -->
 			<!-- IF showSelect -->
-			<label class="threadimod">
+			<label class="threadimod hidden-xs">
 				<i class="fa fa-fw fa-square-o select pointer"></i>
 			</label>
 			<!-- ENDIF showSelect -->
