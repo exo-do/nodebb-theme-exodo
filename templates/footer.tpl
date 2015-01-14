@@ -9,10 +9,10 @@
 			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
 		</div>
 	</div>
-	<div class="alert-window alert-left-top"></div>
-	<div class="alert-window alert-left-bottom"></div>
-	<div class="alert-window alert-right-top"></div>
-	<div class="alert-window alert-right-bottom"></div>
+	<div class="alert-window alert-exodo alert-left-top"></div>
+	<div class="alert-window alert-exodo alert-left-bottom"></div>
+	<div class="alert-window alert-exodo alert-right-top"></div>
+	<div class="alert-window alert-exodo alert-right-bottom"></div>
 
 	<div id="footer" class="floatcontainer footer">
 		<ul class="footer_links left">
