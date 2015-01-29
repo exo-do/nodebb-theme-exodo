@@ -14,6 +14,10 @@
 			<div class="navbar-collapse collapse navbar-ex1-collapse">
 				<!-- IF !maintenanceHeader -->
 				<ul id="main-nav" class="nav navbar-nav pull-left">
+					<li><a name="top" href="/" class="logo-image">
+					<img src="http://i.imgur.com/AcFXnik.png" with="100" height="13"/>
+					</a>
+					</li>
 					<!-- IF loggedIn -->
 					<li>
 						<a href="{relative_path}/unread" title="[[global:header.unread]]">
@@ -38,12 +42,22 @@
 						</a>
 					</li>
 					<li>
+                                             	<a href="{relative_path}/groups" title="Grupos">
+                                                        <i class="fa fa-github-alt"></i><span class="visible-xs-inline"> Grupos</span>
+                                                </a>
+                                        </li>
+					<li>
 						<!-- IF function.displayUsersLink -->
 						<a href="{relative_path}/users" title="[[global:header.users]]">
 							<i class="fa fa-fw fa-users"></i><span class="visible-xs-inline"> [[global:header.users]]</span>
 						</a>
 						<!-- ENDIF function.displayUsersLink -->
 					</li>
+					 
+                                            	
+                                            
+                                                
+                                        
 					<!-- IF isAdmin -->
 					<li>
 						<a href="{relative_path}/admin" title="[[global:header.admin]]" target="_top">
@@ -77,6 +91,7 @@
 
 				<!-- IF loggedIn -->
 				<ul id="logged-in-menu" class="nav navbar-nav navbar-right pull-right">
+					
 					<!-- BEGIN navigation -->
 					<!-- IF navigation.rightSide -->
 					<li class="{navigation.class}">
@@ -156,9 +171,31 @@
 								</a>
 							</li>
 							<li role="presentation" class="divider"></li>
+							 <li>
+                                                            	<a href="{relative_path}/user/{user.userslug}/edit">
+                                                                        <i class="fa fa-user"></i><span> Perfil</span>
+                                                                </a>
+                                                        </li>
+							<li>
+                                                             	<a href="{relative_path}/user/{user.userslug}/settings">
+                                                                        <i class="fa fa-cog"></i><span> Ajustes</span>
+                                                                </a>
+                                                        </li>
+							<li role="presentation" class="divider"></li>
 							<li id="logout-link">
+								
 								<a href="#"><i class="fa fa-fw fa-sign-out"></i><span> [[global:logout]]</span></a>
 							</li>
+
+
+<!--
+                                <ul class="isuser">
+                                        <li id="logout-link"><a href="#">[[global:logout]]</a></li>
+    -->                            
+                                        
+
+
+
 						</ul>
 					</li>
 				</ul>

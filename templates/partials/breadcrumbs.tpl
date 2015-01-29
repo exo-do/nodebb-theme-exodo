@@ -3,14 +3,21 @@
 		<!-- BEGIN breadcrumbs -->
 		<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
 			<!-- IF !@last --><a href="{breadcrumbs.url}" itemprop="url"><!-- ENDIF !@last -->
+			
+				<!-- IF !@last -->
 			<span itemprop="title">
 				{breadcrumbs.text}
+			</span>
+				<!-- ENDIF !@last -->
 				<!-- IF @last -->
+			<span style="font-size:15px">
+					 {breadcrumbs.text} 
 					<!-- IF !feeds:disableRSS -->
 					<a target="_blank" href="{relative_path}/topic/{tid}.rss"><i class="fa fa-rss-square"></i></a>
 					<!-- ENDIF !feeds:disableRSS -->
-				<!-- ENDIF @last -->
 			</span>
+				<!-- ENDIF @last -->
+			
 			<!-- IF !@last --></a><!-- ENDIF !@last -->
 		</li>
 		<!-- END breadcrumbs -->

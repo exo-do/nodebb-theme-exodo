@@ -14,11 +14,11 @@
 <div class="topic">
 	<div class="topic-head">
 		<!-- IMPORT partials/breadcrumbs.tpl -->
-
+		<!--
 		<div class="topic-head-top">
 			<h1>Tema: <a title="{title}" href="/topic/{slug}">{title}</a></h1>
 		</div>
-
+		-->
 		<div class="topic-head-middle clearfix">
 			<div class="topic-head-reply">
 				<button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
@@ -51,10 +51,16 @@
 					<div class="post-date pull-left">
 						<span class="date"><i class="fa fa-clock-o"></i> {function.humanReadableDate}</span>
 					</div>
-
+					<!--
+					<div class="post-date pull-middle">
+					<span><a title="{title}" href="/topic/{slug}">{title}</a></span>
+					</div>
+					-->
 					<div class="post-meta pull-right">
 						<span class="post-index"><a href="/topic/{slug}/{function.postIndexPlusOne}">#{function.postIndexPlusOne}</a></span>
 					</div>
+					
+					
 				</div>
 
 				<div class="post-details">

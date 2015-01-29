@@ -44,7 +44,6 @@
 	<!-- ENDIF useCustomCSS -->
 
 </head>
-
 <body>
 	<div id="header">
 		<div id="top_header" class="hidden-xs">
@@ -56,9 +55,10 @@
 			</div>
 			
 			<ul class="advanced_search">
-				<li><a href="#">Búsqueda avanzada</a></li>	
+				<li><a href="{relative_path}/search/?in=posts"><i class="fa fa-search-plus"></i>Búsqueda avanzada</a></li>
+				
 			</ul>
-
+			<!--
 			<div id="toplinks">
 				<!-- IF loggedIn -->
 				<ul class="isuser">
@@ -75,19 +75,23 @@
 				</ul>
 				<!-- ENDIF loggedIn -->
 			</div>
+			-->
 		</div>
-		
+		<!--
 		<div id="middle_header">
+			
 			<div class="tile selected">
 				<a class="exodo-community" href="#"><span>Comunidad</span></a>
 			</div>
 			<div class="tile">
 				<a class="exodo-activity" href="#"><span>Actividad</span></a>
 			</div>
+			
 			<div class="col-header">
 				<a name="top" href="/" class="logo-image"></a>
 			</div>
 		</div>
+		-->
 	</div>
 	
 	<div id="navbar-wrapper">
