@@ -191,8 +191,8 @@
 								<li><!-- IF !posts.selfPost --><a class="pointer flag" title="[[topic:flag_title]]"><i class="fa fa-exclamation-triangle"></i> Reportar</a><!-- ENDIF !posts.selfPost --></li>
 								<!-- IF !posts.index -->
 								<li><a class="pointer follow" title="[[topic:notify_me]]">
-									<!-- IF isFollowing --><i class="fa fa-eye-slash"></i> [[topic:unwatch]]
-									<!-- ELSE --><i class="fa fa-eye"></i> [[topic:watch]]<!-- ENDIF isFollowing -->
+									<!-- IF isFollowing --><i class="fa fa-eye-slash"></i> <span>[[topic:unwatch]]</span>
+									<!-- ELSE --><i class="fa fa-eye"></i> <span>[[topic:watch]]</span><!-- ENDIF isFollowing -->
 								</a></li>
 								<!-- ENDIF !posts.index -->
 							</ul>
