@@ -254,6 +254,18 @@
 		}
 
 	}
+	
+	.help {
+		display: none;
+	}
+	
+	.img-upload-btn .fa-picture-o:before {
+		/* 
+		 * Icono correspondiente a fa-cloud-upload. No podemos cambiar la clase CSS directamente, porque NodeBB
+		 * añade el manejador basado en 'fa fa-picture-o' y si se cambia deja de funcionar la subida de imágenes... ¬¬ 
+		 */
+		content: "";
+	}
 }
 
 /* Redactor Plugin */
@@ -295,7 +307,7 @@
 		height: 100% !important;
 	}
 	
-	.redactor-editor {
+	.redactor-editor, .redactor-box textarea.write {
 		height: ~"calc(100% - 32px)" !important;
 	}
 	
