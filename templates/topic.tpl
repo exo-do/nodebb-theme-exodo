@@ -25,6 +25,14 @@
 			</div>
 
 			<div class="topic-head-pagination">
+
+				<!-- IF config.usePagination -->
+                                <!-- IMPORT partials/paginator.tpl -->
+                        	<!-- ENDIF config.usePagination -->
+
+
+
+				<!--
 				<!-- IF config.usePagination -->
 				<div>
 					<div class="pagination-count hidden-xs">Página {currentPage} de {pageCount} <span>({postcount} posts)</span></div>
@@ -34,6 +42,7 @@
 					</ul>
 				</div>
 				<!-- ENDIF config.usePagination -->
+				-->
 			</div>
 		</div>
 	</div>
@@ -279,7 +288,16 @@
 				<button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
 			</div>
 
+			
+
 			<div class="topic-head-pagination">
+				<!-- IF config.usePagination -->
+                                <!-- IMPORT partials/paginator.tpl -->
+                	        <!-- ENDIF config.usePagination -->
+		
+			
+
+				<!--
 				<!-- IF config.usePagination -->
 				<div>
 					<div class="pagination-count hidden-xs">Página {currentPage} de {pageCount} <span>({postcount} posts)</span></div>
@@ -289,6 +307,7 @@
 					</ul>
 				</div>
 				<!-- ENDIF config.usePagination -->
+				-->
 			</div>
 		</div>
 	</div>

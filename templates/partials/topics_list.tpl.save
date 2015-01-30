@@ -45,38 +45,8 @@
 			</div>
 			<ul class="threadstats hidden-xs"> 
 				<li>[[global:posts]]: <span class="badge progress-bar-danger">{topics.postcount}</span></li>
-				<li>[[global:views]]: <span class="badge progress-bar-warning">{topics.viewcount}</span></li>
+				<li>[[global:views]]: <span class="badge prlabel-warning">{topics.viewcount}</li>
 			</ul>
 			
 			<dl class="threadlastpost">
 				<!-- IF topics.unreplied -->
-				<dd class="unreplied">
-					[[category:no_replies]]
-				</dd>
-				<!-- ELSE -->
-				<dd>
-					<img class="user-pic" src="{topics.teaser.user.picture}" />&nbsp;
-					<a href="<!-- IF topics.teaser.user.userslug -->{relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->">
-						{topics.teaser.user.username}
-					</a>
-					
-				</dd>
-				<dd>
-					<!--[[global:replied_ago,--> <a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}" title="Ir al último mensaje" class="lastpost"><span class="timeago" style="color:black" title="{topics.teaser.timestamp}"></span> →</a> <!-- ]] -->
-				</dd>
-				<!-- ENDIF topics.unreplied -->
-			</dl>
-			<!-- IF privileges.editable -->
-			<label class="threadimod hidden-xs">
-				<i class="fa fa-fw fa-square-o select pointer"></i>
-			</label>
-			<!-- ENDIF privileges.editable -->
-			<!-- IF showSelect -->
-			<label class="threadimod hidden-xs">
-				<i class="fa fa-fw fa-square-o select pointer"></i>
-			</label>
-			<!-- ENDIF showSelect -->
-		</div>
-	</li>
-	<!-- END topics -->
-</ul>
