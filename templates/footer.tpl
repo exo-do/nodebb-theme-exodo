@@ -9,10 +9,10 @@
 			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
 		</div>
 	</div>
-	<div class="alert-window alert-exodo alert-left-top"></div>
-	<div class="alert-window alert-exodo alert-left-bottom"></div>
-	<div class="alert-window alert-exodo alert-right-top"></div>
-	<div class="alert-window alert-exodo alert-right-bottom"></div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
 
 	<div id="footer" class="floatcontainer footer">
 		<ul class="footer_links left">
@@ -22,10 +22,7 @@
 	
 		<ul class="footer_links">
 			<li><a href="#">Contacta con nosotros</a>  |  </li>
-			<li><a href="#">Éxodo</a>  |  </li>
-			<li><a href="#">Panel de Administración</a>  |  </li>
-			<li><a href="#">Panel de Moderación</a>  |  </li>
-			<li><a href="#">Archivo del Foro</a>  |  </li>
+			<li><a href="/admin">Panel de Administración</a>  |  </li>
 			<li><a href="#">Política de cookies</a>  |  </li>
 			<li><a href="#">Ir Arriba</a></li>
 		</ul>       

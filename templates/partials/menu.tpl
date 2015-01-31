@@ -37,6 +37,13 @@
 							<i class="fa fa-fw fa-fire"></i><span class="visible-xs-inline"> [[global:header.popular]]</span>
 						</a>
 					</li>
+<!--
+					<li>
+						<a href="{relative_path}/groups" title="Grupos">
+							<i class="fa fa-github-alt"></i><span class="visible-xs-inline"> Grupos</span>
+						</a>
+					</li>
+-->
 					<li>
 						<!-- IF function.displayUsersLink -->
 						<a href="{relative_path}/users" title="[[global:header.users]]">
@@ -44,6 +51,11 @@
 						</a>
 						<!-- ENDIF function.displayUsersLink -->
 					</li>
+					 
+                                            	
+                                            
+                                                
+                                        
 					<!-- IF isAdmin -->
 					<li>
 						<a href="{relative_path}/admin" title="[[global:header.admin]]" target="_top">
@@ -77,6 +89,7 @@
 
 				<!-- IF loggedIn -->
 				<ul id="logged-in-menu" class="nav navbar-nav navbar-right pull-right">
+					
 					<!-- BEGIN navigation -->
 					<!-- IF navigation.rightSide -->
 					<li class="{navigation.class}">
@@ -156,9 +169,31 @@
 								</a>
 							</li>
 							<li role="presentation" class="divider"></li>
+							<li>
+								<a href="{relative_path}/user/{user.userslug}/settings">
+									<i class="fa fa-cog"></i><span> Opciones</span>
+								</a>
+							</li>
+							<li>
+								<a href="{relative_path}/user/{user.userslug}/watched">
+									<i class="fa fa-star"></i><span> Suscritos</span>
+								</a>
+							</li>
+							<li role="presentation" class="divider"></li>
 							<li id="logout-link">
+								
 								<a href="#"><i class="fa fa-fw fa-sign-out"></i><span> [[global:logout]]</span></a>
 							</li>
+
+
+<!--
+                                <ul class="isuser">
+                                        <li id="logout-link"><a href="#">[[global:logout]]</a></li>
+    -->                            
+                                        
+
+
+
 						</ul>
 					</li>
 				</ul>
@@ -183,7 +218,7 @@
 				<!-- IF searchEnabled -->
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="">
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="search">
 							<div class="hide" id="search-fields">
 								<div class="form-group">
 									<input type="text" class="form-control" placeholder="[[global:search]]" name="query" value="">

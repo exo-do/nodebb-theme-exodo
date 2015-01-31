@@ -27,7 +27,12 @@
 				</h3>
 
 				<small>
-					Iniciado por <a href="<!-- IF topics.user.userslug -->{relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.username}</a>, [[global:posted_ago, <span class="timeago" title="{topics.relativeTime}"></span>]]<!-- IF template.category --><!-- ELSE --> en <a href="{relative_path}/category/{topics.category.slug}">{topics.category.name}</a><!-- ENDIF template.category -->
+					Iniciado por <a href="<!-- IF topics.user.userslug -->
+					{relative_path}/user/{topics.user.userslug}
+					<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">
+					{topics.user.username}</a>, <!--[[global:posted_ago,--> <span class="timeago" title="{topics.relativeTime}"></span><!--]]-->
+					<!-- IF template.category --><!-- ELSE -->
+					 en <a href="{relative_path}/category/{topics.category.slug}">{topics.category.name}</a><!-- ENDIF template.category -->
 				</small>
 				
 				<dl class="threadpagination" data-pages="{topics.pagesCount}"><dd></dd></dl>
@@ -38,10 +43,11 @@
 					<!-- ENDIF topics.tags.length -->
 				</div>
 			</div>
-			<ul class="threadstats hidden-xs">
+			<ul class="threadstats hidden-xs"> 
 				<li>[[global:posts]]: {topics.postcount}</li>
 				<li>[[global:views]]: {topics.viewcount}</li>
 			</ul>
+			
 			<dl class="threadlastpost">
 				<!-- IF topics.unreplied -->
 				<dd class="unreplied">
@@ -53,9 +59,10 @@
 					<a href="<!-- IF topics.teaser.user.userslug -->{relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->">
 						{topics.teaser.user.username}
 					</a>
+					
 				</dd>
 				<dd>
-					[[global:replied_ago, <a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}" title="Ir al último mensaje" class="lastpost"><span class="timeago" title="{topics.teaser.timestamp}"></span>]] →</a>
+					<!--[[global:replied_ago,--> <a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}" title="Ir al último mensaje" class="lastpost"><span class="timeago" style="color:black" title="{topics.teaser.timestamp}"></span> →</a> <!-- ]] -->
 				</dd>
 				<!-- ENDIF topics.unreplied -->
 			</dl>

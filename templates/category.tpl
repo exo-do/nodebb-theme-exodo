@@ -16,9 +16,9 @@
 			</div>
 		<!-- ENDIF children.length -->
 		
-		<div class="category-head-top">
+		<div class="text-center category-head-top">
 			<h1>{name}</h1>
-			<p>{description}</p>
+			<i class="hidden-xs">{description}</i>
 		</div>
 		
 		<div class="category-head-middle clearfix">
@@ -28,13 +28,7 @@
 			
 			<div class="category-head-pagination">
 				<!-- IF config.usePagination -->
-				<div>
-					<div class="pagination-count">Página {currentPage} de {pageCount} <span>({topic_count} hilos)</span></div>
-					<ul class="pagination">
-						<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i></a></li>
-						<li class="next pull-right"><a href="#"><i class="fa fa-chevron-right"></i></a></li>
-					</ul>
-				</div>
+					<!-- IMPORT partials/paginator.tpl -->
 				<!-- ENDIF config.usePagination -->
 			</div>
 		</div>
@@ -71,14 +65,14 @@
 
 	<!-- IMPORT partials/topics_list.tpl -->
 	
+	<div class="category-head-pagination">
+		<!-- IF config.usePagination -->
+			<!-- IMPORT partials/paginator.tpl -->
+		<!-- ENDIF config.usePagination -->
+	</div>
+	
 	<div class="category-options clearfix">
-		<div class="panel panel-default">
-			<div class="panel-heading" role="tab" id="legendHeading">
-				<h4 class="panel-title">
-					<a data-toggle="collapse" href="#legend" aria-expanded="true" aria-controls="legend" class="fa collapse-button"></a>
-					Leyenda de iconos
-				</h4>
-			</div>
+		<div class="panel col-sm-6 col-xs-12 panel-default">
 			<div id="legend" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="legendHeading">
 				<div class="panel-body">
 					<dl class="icon_legends">
@@ -88,33 +82,6 @@
 						<dt><img title="Cerrado" src="https://exo.do/images/exodo/statusicon/thread_lock-16.png" alt="Cerrado"></dt><dd>Cerrado</dd>
 						<dt><img title="Temas que contienen mensajes escritos por ti" src="https://exo.do/images/exodo/statusicon/thread_dot-16-right.png" alt="Temas que contienen mensajes escritos por ti"></dt><dd>Has participado en este tema</dd>
 					</dl>
-				</div>
-			</div>
-		</div>
-		
-		<div class="panel panel-default">
-			<div class="panel-heading" role="tab" id="permissionsHeading">
-				<h4 class="panel-title">
-					<a data-toggle="collapse" href="#permissions" aria-expanded="true" aria-controls="permissions" class="fa collapse-button"></a>
-					Permisos de publicación
-				</h4>
-			</div>
-			<div id="permissions" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="permissionsHeading">
-				<div class="panel-body">
-					<ul class="youcandoblock">
-						<li><strong>Puedes</strong> crear nuevos temas</li>
-						<li><strong>Puedes</strong> responder temas</li>
-						<li><strong>Puedes</strong> subir archivos adjuntos</li>
-						<li><strong>Puedes</strong> editar tus mensajes</li>
-					</ul>
-					
-					<ul class="bbcodeblock">
-						<li><a href="#" target="_blank">Códigos BB</a> están <strong>Activo</strong></li>
-						<li>Los <a href="#" target="_blank">Emoticonos</a> están <strong>Activo</strong></li>
-						<li>Código <a href="#" target="_blank">[IMG]</a> está <strong>Activo</strong></li>
-						<li>Código <a href="#" target="_blank">[VIDEO]</a> está <strong>Activo</strong></li>
-						<li>Código HTML está <strong>Inactivo</strong></li>
-					</ul>
 				</div>
 			</div>
 		</div>

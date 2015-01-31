@@ -14,11 +14,9 @@
 <div class="topic">
 	<div class="topic-head">
 		<!-- IMPORT partials/breadcrumbs.tpl -->
-
-		<div class="topic-head-top">
-			<h1>Tema: <a title="{title}" href="/topic/{slug}">{title}</a></h1>
+		<div class="text-center topic-head-top">
+			<h1><a title="{title}" href="/topic/{slug}">{title}</a></h1>
 		</div>
-
 		<div class="topic-head-middle clearfix">
 			<div class="topic-head-reply">
 				<button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
@@ -26,13 +24,7 @@
 
 			<div class="topic-head-pagination">
 				<!-- IF config.usePagination -->
-				<div>
-					<div class="pagination-count hidden-xs">Página {currentPage} de {pageCount} <span>({postcount} posts)</span></div>
-					<ul class="pagination">
-						<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i></a></li>
-						<li class="next pull-right"><a href="#"><i class="fa fa-chevron-right"></i></a></li>
-					</ul>
-				</div>
+					<!-- IMPORT partials/paginator.tpl -->
 				<!-- ENDIF config.usePagination -->
 			</div>
 		</div>
@@ -51,10 +43,16 @@
 					<div class="post-date pull-left">
 						<span class="date"><i class="fa fa-clock-o"></i> {function.humanReadableDate}</span>
 					</div>
-
+					<!--
+					<div class="post-date pull-middle">
+					<span><a title="{title}" href="/topic/{slug}">{title}</a></span>
+					</div>
+					-->
 					<div class="post-meta pull-right">
 						<span class="post-index"><a href="/topic/{slug}/{function.postIndexPlusOne}">#{function.postIndexPlusOne}</a></span>
 					</div>
+					
+					
 				</div>
 
 				<div class="post-details">
@@ -111,8 +109,6 @@
 						<a class="main-post avatar" href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
 							<img itemprop="image" src="{posts.user.picture}" align="left" class="img-thumbnail" width=150 height=150 />
 						</a>
-
-						<h3 class="main-post">{title}</h3>
 
 						<!-- IF posts.ignored -->
 						<div id="content_{posts.pid}" class="post-content" itemprop="text">[[ignored:ignored_post, {posts.user.username}]]</div>
@@ -275,16 +271,13 @@
 
 			<div class="topic-head-pagination">
 				<!-- IF config.usePagination -->
-				<div>
-					<div class="pagination-count hidden-xs">Página {currentPage} de {pageCount} <span>({postcount} posts)</span></div>
-					<ul class="pagination">
-						<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i></a></li>
-						<li class="next pull-right"><a href="#"><i class="fa fa-chevron-right"></i></a></li>
-					</ul>
-				</div>
+					<!-- IMPORT partials/paginator.tpl -->
 				<!-- ENDIF config.usePagination -->
 			</div>
 		</div>
+		
+		<!-- IMPORT partials/breadcrumbs.tpl -->
+		
 	</div>
 
 	<div class="post-bar bottom-post-bar hide">
