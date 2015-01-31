@@ -14,10 +14,6 @@
 			<div class="navbar-collapse collapse navbar-ex1-collapse">
 				<!-- IF !maintenanceHeader -->
 				<ul id="main-nav" class="nav navbar-nav pull-left">
-					<li><a name="top" href="/" class="logo-image">
-					<img src="http://i.imgur.com/AcFXnik.png" with="100" height="13"/>
-					</a>
-					</li>
 					<!-- IF loggedIn -->
 					<li>
 						<a href="{relative_path}/unread" title="[[global:header.unread]]">
@@ -41,11 +37,13 @@
 							<i class="fa fa-fw fa-fire"></i><span class="visible-xs-inline"> [[global:header.popular]]</span>
 						</a>
 					</li>
+<!--
 					<li>
-                                             	<a href="{relative_path}/groups" title="Grupos">
-                                                        <i class="fa fa-github-alt"></i><span class="visible-xs-inline"> Grupos</span>
-                                                </a>
-                                        </li>
+						<a href="{relative_path}/groups" title="Grupos">
+							<i class="fa fa-github-alt"></i><span class="visible-xs-inline"> Grupos</span>
+						</a>
+					</li>
+-->
 					<li>
 						<!-- IF function.displayUsersLink -->
 						<a href="{relative_path}/users" title="[[global:header.users]]">
@@ -171,16 +169,16 @@
 								</a>
 							</li>
 							<li role="presentation" class="divider"></li>
-							 <li>
-                                                            	<a href="{relative_path}/user/{user.userslug}/edit">
-                                                                        <i class="fa fa-user"></i><span> Perfil</span>
-                                                                </a>
-                                                        </li>
 							<li>
-                                                             	<a href="{relative_path}/user/{user.userslug}/settings">
-                                                                        <i class="fa fa-cog"></i><span> Ajustes</span>
-                                                                </a>
-                                                        </li>
+								<a href="{relative_path}/user/{user.userslug}/settings">
+									<i class="fa fa-cog"></i><span> Opciones</span>
+								</a>
+							</li>
+							<li>
+								<a href="{relative_path}/user/{user.userslug}/watched">
+									<i class="fa fa-star"></i><span> Suscritos</span>
+								</a>
+							</li>
 							<li role="presentation" class="divider"></li>
 							<li id="logout-link">
 								
@@ -220,7 +218,7 @@
 				<!-- IF searchEnabled -->
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="">
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="search">
 							<div class="hide" id="search-fields">
 								<div class="form-group">
 									<input type="text" class="form-control" placeholder="[[global:search]]" name="query" value="">

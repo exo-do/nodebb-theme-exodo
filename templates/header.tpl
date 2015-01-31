@@ -46,37 +46,6 @@
 </head>
 <body>
 	<div id="header">
-		<div id="top_header" class="hidden-xs">
-			<div id="globalsearch">
-				<form action="" method="get" id="search-form">
-					<input value="" name="query" class="textbox" tabindex="99" type="text">
-					<input class="searchbutton" name="submit" tabindex="100" type="submit">
-				</form>
-			</div>
-			
-			<ul class="advanced_search">
-				<li><a href="{relative_path}/search/?in=posts"><i class="fa fa-search-plus"></i>Búsqueda avanzada</a></li>
-				
-			</ul>
-			<!--
-			<div id="toplinks">
-				<!-- IF loggedIn -->
-				<ul class="isuser">
-					<li id="logout-link"><a href="#">[[global:logout]]</a></li>
-					<li><a href="{relative_path}/user/{user.userslug}/settings">Ajustes</a></li>
-					<li><a href="{relative_path}/user/{user.userslug}/edit">Mi perfil</a></li>
-					<li class="welcomelink">Hola, <a href="{relative_path}/user/{user.userslug}">{user.username}</a></li>
-				</ul>
-				<!-- ELSE -->
-				<ul class="nouser">	
-					<li><a href="{relative_path}/register"><span>[[global:register]]</span></a></li>
-					<li>|</li>
-					<li><a href="{relative_path}/login"><span>[[global:login]]</span></a></li>
-				</ul>
-				<!-- ENDIF loggedIn -->
-			</div>
-			-->
-		</div>
 		<!--
 		<div id="middle_header">
 			
@@ -98,6 +67,9 @@
 		<div class="navbar navbar-inverse header" role="navigation" id="header-menu">
 			<div class="loading-bar"></div>
 			<div class="container-fluid">
+				<a name="top" href="/" class="pull-left logo-image">
+					<img src="http://i.imgur.com/AcFXnik.png" with="100" height="13"/>
+				</a>
 				<!-- IMPORT partials/menu.tpl -->
 			</div>
 		</div>

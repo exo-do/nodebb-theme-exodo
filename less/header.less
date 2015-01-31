@@ -156,13 +156,7 @@
 				}
 			}
         }
-        .logo-image {
-            height:100%;
-            background: url("http://i.imgur.com/AcFXnik.png") no-repeat;
-            background-position: 25px center;
-	        @media (max-width: @screen-sm-min) { background-position: center center; }
-            display: block;
-        }
+        
         .col-header {
 			overflow: hidden;
 			height: 100%;
@@ -180,14 +174,22 @@
     padding-right:0;
 }
 #navbar-wrapper{
-	min-height: 61px;
+	
+	min-height: 20px;
+	
 	#header-menu {
 	    background-color: @exodo-dark;
 	    border: none;
 	    box-shadow: none;
-	    transition:all 0.5s ease;
 	    z-index: 10;
 	    border-radius: 0;
+		
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		padding: 0 4%;
+		
 		.loading-bar {
 		 	width: 0%;
 		 	position: absolute;
@@ -220,6 +222,7 @@
 		.navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
 			background-color:#232323;
 		}
+		
 	}
 	#header-menu.affix {
 	    margin:0;
@@ -448,4 +451,10 @@
 	}
 
 	margin: 0 !important;
+}
+
+.container-fluid {
+	.logo-image {
+		padding: 16px 16px 16px 0;
+	}
 }

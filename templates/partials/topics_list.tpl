@@ -44,8 +44,8 @@
 				</div>
 			</div>
 			<ul class="threadstats hidden-xs"> 
-				<li>[[global:posts]]: <span class="badge progress-bar-danger">{topics.postcount}</span></li>
-				<li>[[global:views]]: <span class="badge progress-bar-warning">{topics.viewcount}</span></li>
+				<li>[[global:posts]]: {topics.postcount}</li>
+				<li>[[global:views]]: {topics.viewcount}</li>
 			</ul>
 			
 			<dl class="threadlastpost">
