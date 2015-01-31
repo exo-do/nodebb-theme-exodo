@@ -13,7 +13,7 @@
 	<!-- ENDIF topics.length -->
 	<meta itemprop="itemListOrder" content="descending">
 	<!-- BEGIN topics -->
-	<li class="category-item<!-- IF topics.locked --> locked<!-- ENDIF topics.locked --><!-- IF topics.pinned --> pinned<!-- ENDIF topics.pinned --><!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.userParticipated --> participated<!-- ENDIF topics.userParticipated --><!-- IF topics.isHot --> hot<!-- ENDIF topics.isHot --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}" data-cid="{topics.cid}" data-index="<!-- IF topics.index -->{topics.index}<!-- ELSE -->0<!-- ENDIF topics.index -->">
+	<li class="category-item<!-- IF topics.ignored --> ignored<!-- ENDIF topics.ignored --><!-- IF topics.locked --> locked<!-- ENDIF topics.locked --><!-- IF topics.pinned --> pinned<!-- ENDIF topics.pinned --><!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.userParticipated --> participated<!-- ENDIF topics.userParticipated --><!-- IF topics.isHot --> hot<!-- ENDIF topics.isHot --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}" data-cid="{topics.cid}" data-index="<!-- IF topics.index -->{topics.index}<!-- ELSE -->0<!-- ENDIF topics.index -->">
 		<div class="panel panel-default topic-row clearfix">
 			<div class="threadinfo">
 				<a class="threadstatus"></a>
