@@ -16,7 +16,11 @@
 	<li class="category-item<!-- IF topics.ignored --> ignored<!-- ENDIF topics.ignored --><!-- IF topics.locked --> locked<!-- ENDIF topics.locked --><!-- IF topics.pinned --> pinned<!-- ENDIF topics.pinned --><!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.userParticipated --> participated<!-- ENDIF topics.userParticipated --><!-- IF topics.isHot --> hot<!-- ENDIF topics.isHot --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}" data-cid="{topics.cid}" data-index="<!-- IF topics.index -->{topics.index}<!-- ELSE -->0<!-- ENDIF topics.index -->">
 		<div class="panel panel-default topic-row clearfix">
 			<div class="threadinfo">
+                <!-- IF template.category -->
 				<a class="threadstatus"></a>
+                <!-- ELSE -->
+				<i class="category-icon fa fa-2x {topics.category.icon}"></i>
+				<!-- ENDIF template.category -->
 				<h3>
 					<a href="{relative_path}/topic/{topics.slug}" itemprop="url">
 						<meta itemprop="name" content="{topics.title}">
