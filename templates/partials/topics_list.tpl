@@ -27,12 +27,12 @@
 				</h3>
 
 				<small>
-					Iniciado por <a href="<!-- IF topics.user.userslug -->
+					<a href="<!-- IF topics.user.userslug -->
 					{relative_path}/user/{topics.user.userslug}
 					<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">
-					{topics.user.username}</a>, <!--[[global:posted_ago,--> <span class="timeago" title="{topics.relativeTime}"></span><!--]]-->
+					{topics.user.username}</a>
 					<!-- IF template.category --><!-- ELSE -->
-					 en <a href="{relative_path}/category/{topics.category.slug}">{topics.category.name}</a><!-- ENDIF template.category -->
+					 | <a href="{relative_path}/category/{topics.category.slug}">{topics.category.name}</a><!-- ENDIF template.category -->
 				</small>
 				
 				<dl class="threadpagination" data-pages="{topics.pagesCount}"><dd></dd></dl>
