@@ -16,7 +16,7 @@
 
 	<!-- IF !topics.length -->
 	<div class="alert alert-warning" id="category-no-topics">
-		<strong>There are no popular topics.</strong>
+		<strong>No hay temas populares.</strong>
 	</div>
 	<!-- ENDIF !topics.length -->
 
