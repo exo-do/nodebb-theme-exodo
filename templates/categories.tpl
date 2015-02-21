@@ -46,5 +46,3 @@
 
 	<div widget-area="sidebar" class="sidebar col-lg-6 col-sm-12"></div>
 </div>
-
-
