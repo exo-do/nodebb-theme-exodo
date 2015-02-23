@@ -34,7 +34,7 @@
 					<a href="<!-- IF topics.user.userslug -->
 					{relative_path}/user/{topics.user.userslug}
 					<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">
-					{topics.user.username}</a>
+					{topics.user.username}</a> 
 					<!-- IF template.category --><!-- ELSE -->
 					 | <a href="{relative_path}/category/{topics.category.slug}">{topics.category.name}</a><!-- ENDIF template.category -->
 				</small>
@@ -66,7 +66,7 @@
 					
 				</dd>
 				<dd>
-					<!--[[global:replied_ago,--> <a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}" title="Ir al último mensaje" class="lastpost"><span class="timeago" style="color:black" title="{topics.teaser.timestamp}"></span> →</a> <!-- ]] -->
+					<a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}" title="Ir al último mensaje" class="lastpost"><span  >{function.humanReadableDateLast}</span><i class="fa fa-lg fa-long-arrow-right"></i></a>
 				</dd>
 				<!-- ENDIF topics.unreplied -->
 			</dl>
