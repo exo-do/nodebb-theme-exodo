@@ -2,7 +2,7 @@
 	"use strict";
 
 	var templates = module.parent.require('templates.js');
-	var moment = require('./moment.min.js');
+	var moment = require('moment');
 
 	var Theme = {};
 

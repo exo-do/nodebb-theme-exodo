@@ -42,7 +42,10 @@
 			<!-- ENDIF categories.link -->
 		</div>
 		<!-- END categories -->
+
+		<div widget-area="homecenter" class="sidebar col-lg-6 col-sm-12" id="homecenterwidget"></div>
+
 	</div>
 
-	<div widget-area="sidebar" class="sidebar col-lg-6 col-sm-12"></div>
+	<div id="sidebar" widget-area="sidebar" class="sidebar col-lg-6 col-sm-12"></div>
 </div>
