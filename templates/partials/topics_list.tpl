@@ -7,7 +7,7 @@
 				<a>Autor</a>
 			</span>
 		</span>
-		<span class="threadstats hidden-xs"><a>Posts</a> / <a>Visitas</a></span>
+		<span class="threadstats hidden-xs"><a>Respuestas</a> / <a>Visitas</a></span>
 		<span class="threadlastpost"><a>Último mensaje</a></span>
 	</div>
 	<!-- ENDIF topics.length -->
