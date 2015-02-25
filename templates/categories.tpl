@@ -3,7 +3,7 @@
 </div>
 
 <div class="row home" itemscope itemtype="http://www.schema.org/ItemList">
-	<div id="pad" class="col-lg-6 col-sm-12" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
+	<div id="pad" class="col-lg-6 col-md-6 col-sm-12 col-xs-12" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
 		<!-- BEGIN categories -->
 		<div class="category {categories.class} padding15" data-cid="{categories.cid}" data-numRecentReplies="{categories.numRecentReplies}">
 
@@ -43,9 +43,9 @@
 		</div>
 		<!-- END categories -->
 
-		<div widget-area="homecenter" class="sidebar col-lg-6 col-sm-12" id="homecenterwidget"></div>
+		<div widget-area="homecenter" class="sidebar col-lg-12 col-md-12 col-sm-12 col-xs-12" id="homecenterwidget"></div>
 
 	</div>
 
-	<div id="sidebar" widget-area="sidebar" class="sidebar col-lg-6 col-sm-12"></div>
+	<div id="sidebar" widget-area="sidebar" class="sidebar col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
 </div>
