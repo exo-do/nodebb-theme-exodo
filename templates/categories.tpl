@@ -3,7 +3,7 @@
 </div>
 
 <div class="row home" itemscope itemtype="http://www.schema.org/ItemList">
-	<div id="pad" class="col-lg-6 col-md-6 col-sm-12 col-xs-12" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
+	<div id="pad" class="col-lg-7 col-md-7 col-sm-12 col-xs-12" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
 		<!-- BEGIN categories -->
 		<!-- IF function.categoryFilter -->
 		<div class="category {categories.class} padding15" data-cid="{categories.cid}" data-numRecentReplies="{categories.numRecentReplies}">
@@ -25,10 +25,11 @@
 						<i class="fa {categories.icon}"></i>
 						<p>{categories.name}</p>
 					</h3>
+					
 				</a>
 				<div class="category-info hidden-xs">
-					<div class="category-stats">
-						<b>Temas:</b> {categories.topic_count} | <b>Mensajes:</b> {categories.post_count}
+					<div class="category-stats" style="text-align: center;">
+						<i class="fa fa-comments-o" title="Temas"> {categories.topic_count} </i>  | <i class="fa fa-pencil" title="Mensajes"> {categories.post_count} </i>
 					</div>
 					<div class="category-last-topic">
 						<!-- BEGIN posts -->
@@ -50,5 +51,5 @@
 
 	</div>
 
-	<div id="sidebar" widget-area="sidebar" class="sidebar col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
+	<div id="sidebar" widget-area="sidebar" class="sidebar col-lg-5 col-md-5 col-sm-12 col-xs-12"></div>
 </div>
