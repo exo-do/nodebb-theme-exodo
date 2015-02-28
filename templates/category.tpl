@@ -71,20 +71,6 @@
 		<!-- ENDIF config.usePagination -->
 	</div>
 	
-	<div class="category-options clearfix">
-		<div class="panel col-lg-12 col-xs-12 panel-default">
-			<div id="legend" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="legendHeading">
-				<div class="panel-body">
-					<span><img title="Contiene mensajes sin leer" src="https://exo.do/images/exodo/statusicon/thread_new-16.png" alt="Contiene mensajes sin leer"/>Sin leer</span>
-						<span><img title="No contiene mensajes sin leer" src="https://exo.do/images/exodo/statusicon/thread-16-right.png" alt="No contiene mensajes sin leer"/>Leidos</span>
-			<!--		<span><img title="Más de 15 respuestas o 150 visitas" src="https://exo.do/images/exodo/statusicon/thread_hot-16.png" alt="Más de 15 respuestas o 150 visitas"/>Tema </span> -->
-					<span><img title="Cerrado" src="https://exo.do/images/exodo/statusicon/thread_lock-16.png" alt="Cerrado"/>Cerrado</span>
-						<span><img title="Temas que contienen mensajes escritos por ti" src="https://exo.do/images/exodo/statusicon/thread_dot-16-right.png" alt="Temas que contienen mensajes escritos por ti"/>Has participado</span>
-						
-				</div>
-			</div>
-		</div>
-	</div>
 </div>
 
 <!-- IMPORT partials/move_thread_modal.tpl -->
