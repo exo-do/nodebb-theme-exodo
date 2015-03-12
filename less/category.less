@@ -111,9 +111,13 @@
             }
         }
         .category-item {
+			.topic-title:first-letter {
+					text-transform:uppercase;
+			}
             &.unread {
                 .topic-title {
                     font-weight: bold;
+					
                 }
             }
             &.pinned {
@@ -140,16 +144,24 @@
                     text-overflow: ellipsis;
                     /* white-space: nowrap; */
                     a {
-                        display: inline-block;
+                        /* display: inline-block; */
                         width: 100%;
                     }
                 }
                 .threadinfo, .threadlastpost, .threadstats {
                     clear: right;
-                    display: inline-block;
+                    /* display: inline-block; */
                     float: left;
                 }
                 .threadinfo {
+					
+					h3 a span {
+						display:block !important;
+					}
+					h3 a span:first-letter {
+							text-transform:uppercase;
+					}
+					
                     width: @exodo-category-threadinfo-size;
                     padding: 0 10px;
                     @media (max-width: (@screen-sm-min - 1px)) {
@@ -389,3 +401,5 @@
         }
     }
 }
+
+
