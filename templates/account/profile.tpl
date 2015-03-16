@@ -2,7 +2,7 @@
 
 <div class="account<!-- IF isIgnored --> ignored<!-- ENDIF isIgnored -->" data-uid="{uid}" data-username="{username}">
 	<div class="row">
-		<div class="col-md-3 account-block">
+		<div class="col-md-4 account-block">
 
 			<div class="account-picture-block panel panel-default">
 				<div class="panel-heading">
@@ -21,9 +21,10 @@
 						<div class="text-center">
 
 							<!-- IF !isSelf -->
-							<!-- IF loggedIn -->
-							<br/>
+<!-- IF loggedIn -->							<br/>
+							<!-- IF !config.disableChat -->
 							<a id="chat-btn" href="#" class="btn btn-primary btn-sm">[[user:chat]]</a>
+							<!-- ENDIF !config.disableChat -->
 							<a id="follow-btn" href="#" class="btn btn-success btn-sm <!-- IF isFollowing -->hide<!-- ENDIF isFollowing -->">[[user:follow]]</a>
 							<a id="unfollow-btn" href="#" class="btn btn-warning btn-sm <!-- IF !isFollowing -->hide<!-- ENDIF !isFollowing -->">[[user:unfollow]]</a>
 							<!-- IF ignorePluginEnabled -->
@@ -44,7 +45,8 @@
 						<!-- ENDIF banned -->
 						<hr/>
 						<div class="text-center account-stats">
-							<div class="inline-block text-center">
+				
+										<div class="inline-block text-center">
 								<span class="human-readable-number" title="{reputation}">{reputation}</span>
 								<span class="account-bio-label">[[global:reputation]]</span>
 							</div>
@@ -124,7 +126,7 @@
 				</div>
 				<div class="panel-body">
 					<!-- BEGIN groups -->
-					<a href="{relative_path}/groups/{groups.name}"><span class="label group-label inline-block" style="background-color: {groups.labelColor};"><!-- IF groups.icon --><i class="fa {groups.icon}"></i> <!-- ENDIF groups.icon -->{groups.userTitle}</span></a>
+					<a href="{relative_path}/groups/{groups.slug}"><span class="label group-label inline-block" style="background-color: {groups.labelColor};"><!-- IF groups.icon --><i class="fa {groups.icon}"></i> <!-- ENDIF groups.icon -->{groups.userTitle}</span></a>
 					<!-- END groups -->
 				</div>
 			</div>
@@ -146,7 +148,7 @@
 		</div>
 
 
-		<div class="col-md-9 user-recent-posts" data-nextstart="{nextStart}">
+		<div class="col-md-8 user-recent-posts" data-nextstart="{nextStart}">
 			<div class="topic-row panel panel-default clearfix">
 				<div class="panel-heading">
 					<h3 class="panel-title">[[global:recentposts]]</h3>
@@ -162,7 +164,7 @@
 							<p class="fade-out"></p>
 						</div>
 						<small>
-							<span class="pull-right footer">
+							<span class="pull-right post-preview-footer">
 								[[global:posted_in_ago, <a href="{relative_path}/category/{posts.category.slug}"><i class="fa {posts.category.icon}"></i> {posts.category.name}</a>, <span class="timeago" title="{posts.relativeTime}"></span>]] &bull;
 								<a href="{relative_path}/topic/{posts.topic.slug}/{posts.index}">[[global:read_more]]</a>
 							</span>

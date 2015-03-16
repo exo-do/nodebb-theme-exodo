@@ -15,7 +15,6 @@
 				<!-- ELSE -->
 					{breadcrumbs.text}
 				<!-- ENDIF @last -->
-
 			</span>
 		<!-- IF !@last --></a><!-- ENDIF !@last -->
 	</li>

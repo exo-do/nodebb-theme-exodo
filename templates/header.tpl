@@ -24,7 +24,9 @@
 	<script>
 		var RELATIVE_PATH = "{relative_path}";
 		var config = JSON.parse('{configJSON}');
-		var app = {};
+		var app = {
+					template: "{template.name}"
+		};
 		app.user = JSON.parse('{userJSON}');
 	</script>
 	<script src="{relative_path}/nodebb.min.js?{script-buster}"></script>
@@ -39,45 +41,16 @@
 			}
 		});
 	</script>
-
 	<!-- IF useCustomJS -->
 	{customJS}
 	<!-- ENDIF useCustomJS -->
-	<!-- IF useCustomCSS -->
-	<style type="text/css">{customCSS}</style>
-	<!-- ENDIF useCustomCSS -->
-
 </head>
+
 <body>
-	<div id="header">
-		<!--
-		<div id="middle_header">
-			
-			<div class="tile selected">
-				<a class="exodo-community" href="#"><span>Comunidad</span></a>
-			</div>
-			<div class="tile">
-				<a class="exodo-activity" href="#"><span>Actividad</span></a>
-			</div>
-			
-			<div class="col-header">
-				<a name="top" href="/" class="logo-image"></a>
-			</div>
-		</div>
-		-->
-	</div>
-	
-	<div id="navbar-wrapper">
-		<div class="navbar navbar-inverse header" role="navigation" id="header-menu">
-			<div class="loading-bar"></div>
-			<div class="container-fluid">
-				<a name="top" href="/" class="pull-left logo-image">
-					<img src="http://i.imgur.com/AcFXnik.png" with="100" height="13"/>
-				</a>
+		<div class="navbar navbar-inverse navbar-fixed-top header" role="navigation" id="header-menu">
+			<div class="container">	
 				<!-- IMPORT partials/menu.tpl -->
 			</div>
 		</div>
-	</div>
-		
-	<div class="container-fluid" id="content">
+	<div class="container" id="content">
 	<!-- IMPORT partials/noscript/warning.tpl -->
