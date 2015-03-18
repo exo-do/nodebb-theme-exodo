@@ -110,6 +110,43 @@
                 width: @exodo-category-threadlastpost-size;
             }
         }
+		
+        .threadlisthead.dark {
+            background: @exodo-gradient-darkmode;
+            border-left: @exodo-primary-darkmode;
+            border-right: @exodo-secondary-darkmode;
+            color: #FFF;
+            display: table;
+            padding: 7px 5px;
+            width: 100%;
+            a, a:hover {
+                color: #FFF;
+                cursor: pointer;
+            }
+            > span {
+                clear: right;
+                display: block;
+                float: left;
+            }
+            span.threadinfo {
+                width: (@exodo-category-threadinfo-size - 9%);
+                @media (max-width: (@screen-sm-min - 1px)) {
+                    width: (@exodo-category-threadinfo-size + @exodo-category-threadstats-size);
+                }
+            }
+            span.threadinfo > .threadtitle {
+                padding-left: 12px;
+            }
+            span.threadstats {
+                padding-right: 20px;
+                text-align: right;
+                width: (@exodo-category-threadstats-size + 9%);
+            }
+            span.threadlastpost {
+                padding: 0 0 0 2%;
+                width: @exodo-category-threadlastpost-size;
+            }
+        }
         .category-item {
 			.topic-title:first-letter {
 					text-transform:uppercase;
