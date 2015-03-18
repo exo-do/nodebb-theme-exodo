@@ -17,7 +17,7 @@
 	<div id="footer" class="floatcontainer footer">
 		<ul class="footer_links left">
 			<li><a href="#">Ir Arriba</a>  |  </li>
-			<li><a href="#">Modo noche</a></li>
+			<li><a href="#" onclick="darkMode()">Modo Noche</a></li>
 		</ul>
 	
 		<ul class="footer_links">
@@ -30,6 +30,20 @@
 	
 	<script>
 		require(['forum/footer']);
+
+		function darkMode()
+		{
+			if(localStorage.darkMode && localStorage.darkMode === "1")
+			{
+				$("*").removeClass("dark");
+				localStorage.darkMode = "0";
+			}
+			else
+			{
+				$("*").addClass("dark");
+				localStorage.darkMode = "1";
+			}
+		}
 	</script>
 </body>
 </html>
