@@ -7,19 +7,7 @@
 	<!-- BEGIN categories -->
 		<div class="{categories.class}" data-cid="{categories.cid}" data-numRecentReplies="{categories.numRecentReplies}">
 			<meta itemprop="name" content="{categories.name}">
-			<h4 class="category-title">
-				<!-- IF !categories.link -->
-				<span class="badge {categories.unread-class}">{categories.topic_count} </span>
-				<!-- ENDIF !categories.link -->	
-
-				<!-- IF categories.link -->
-				<a href="{categories.link}" itemprop="url" target="_blank">
-				<!-- ELSE -->
-				<a href="{relative_path}/category/{categories.slug}" itemprop="url">
-				<!-- ENDIF categories.link -->
-				{categories.name}
-				</a>
-			</h4>
+			
 
 			<!-- IF categories.link -->
 			<a style="color: {categories.color};" href="{categories.link}" itemprop="url" target="_blank">
@@ -35,22 +23,36 @@
 					"
 				>
 					<div id="category-{categories.cid}" class="category-slider-{categories.post_count}">
-						<!-- IF categories.icon -->
-						<div class="category-box"><i class="fa {categories.icon} fa-4x"></i></div>
-						<!-- ENDIF categories.icon -->
-						<div class="category-box" itemprop="description">{categories.description}</div>
-		
+						
+						<!--<div class="category-box" itemprop="description">{categories.description}</div> -->
+						<h3 class="category-title">
+							<!-- IF categories.icon -->
+							<div class="category-box"><i class="fa {categories.icon}"></i></div>
+							<!-- ENDIF categories.icon -->
+							<!-- IF !categories.link -->
+							<span class="badge {categories.unread-class}">{categories.topic_count} </span>
+							<!-- ENDIF !categories.link -->	
+
+							<!-- IF categories.link -->
+							<a href="{categories.link}" itemprop="url" target="_blank">
+							<!-- ELSE -->
+							<a href="{relative_path}/category/{categories.slug}" itemprop="url">
+							<!-- ENDIF categories.link -->
+							{categories.name}
+							</a>
+						</h3>
 						<!-- BEGIN posts -->
 						<div class="category-box">
-							<!-- ><div class="post-preview">
-								<img src="{categories.posts.user.picture}" class="pull-left" />
-								<p class=""><strong>{categories.posts.user.username}</strong>: {categories.posts.content}</p>
+							 <div class="post-preview">
+								<!-- ><img src="{categories.posts.user.picture}" class="pull-left" /> -->
+								<!-- ><p class=""><strong>{categories.posts.user.username}</strong>: {categories.posts.content}</p> -->
+								<!-- ><p class=""><strong>{categories.posts.slug}</strong></p> -->
 							</div>
-								-->
+								
 						</div>
 						<!-- END posts -->
 						<!-- IF categories.icon -->
-						<div class="category-box"><i class="fa {categories.icon} fa-4x"></i></div>
+						<!-- ><div class="category-box"><i class="fa {categories.icon} fa-4x"></i></div> -->
 						<!-- ENDIF categories.icon -->
 					</div>
 				</div>
