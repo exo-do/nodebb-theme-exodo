@@ -27,6 +27,11 @@ html {
 	background: @exodo-bg-color;
 }
 
+html.dark {
+	overflow-y: scroll;
+	background: @exodo-bg-color-darkmode;
+}
+
 body {
 	@media (min-width: 979px)
 	{
@@ -297,3 +302,8 @@ a:hover, .btn-link:hover, .btn-link:active, .btn-link:focus {
 	vertical-align: 17%;
 }
 //END: FIXES FOR BS3, may need to remove these when we get out of the RC releases
+
+.panel.dark {
+	background-color: #404a4f;
+	
+}
