@@ -35,11 +35,25 @@
 		{
 			if(localStorage.darkMode && localStorage.darkMode === "1")
 			{
+				app.alert({
+					type: 'success',
+					timeout: 3000,
+					title: 'Modo Noche',
+					message: "Modo Noche Desactivado",
+					alert_id: 'darkMode'
+				});
 				$("*").removeClass("dark");
 				localStorage.darkMode = "0";
 			}
 			else
 			{
+				app.alert({
+					type: 'success',
+					timeout: 3000,
+					title: 'Modo Noche',
+					message: "Modo Noche Activado",
+					alert_id: 'darkMode'
+				});
 				$("*").addClass("dark");
 				localStorage.darkMode = "1";
 			}
