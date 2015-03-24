@@ -304,6 +304,29 @@ a:hover, .btn-link:hover, .btn-link:active, .btn-link:focus {
 //END: FIXES FOR BS3, may need to remove these when we get out of the RC releases
 
 .panel.dark {
-	background-color: #404a4f;
+	background-color: @exodo-panel-darkmode;
+	small {
+	    a {
+
+	        color: @exodo-text-color-darkmode !important;
+	        text-decoration: none;
+		
+	    }
 	
+		a:hover {
+	        color: @exodo-link-hover-color-darkmode !important;
+	        text-decoration: none;
+	    }
+	}
+	
+	li {
+
+	        color: @exodo-text-color-darkmode;
+	      
+	}
+	
+	dd {
+		color: @exodo-text-color-darkmode !important;
+		
+	}
 }

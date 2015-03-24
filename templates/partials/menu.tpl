@@ -6,7 +6,7 @@
 				</button>
 				<div>
 					<a href="{relative_path}/">
-						<img class="{brand:logo:display} forum-logo " src="{brand:logo}" />
+						<img class="{brand:logo:display} forum-logo pull-left" src="{brand:logo}" />
 					</a>
 					<!-- IF showSiteTitle -->
 					<a href="{relative_path}/">

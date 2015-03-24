@@ -23,6 +23,7 @@
 								<i class="fa {categories.icon}"></i>
 								<p>{categories.name}</p>
 							</h3>
+							
 							<!-- ENDIF categories.icon -->
 						</div>
 						</a>
