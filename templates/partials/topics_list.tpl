@@ -36,7 +36,8 @@
 					<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">
 					<span class="visible-xs pull-left"><img class="user-pic" src="{user.picture}"/>&nbsp;</span>{topics.user.username}</a> 
 					<!-- IF template.category --><!-- ELSE -->
-					 | <a href="{relative_path}/category/{topics.category.slug}">{topics.category.name}</a><!-- ENDIF template.category -->
+					<a href="{relative_path}/category/{topics.category.slug}" class="categoryNameOnTopicInfo"> | {topics.category.name}</a>
+					 <!-- ENDIF template.category -->
 				</small>
 				
 				<dl class="threadpagination" data-pages="{topics.pagesCount}"><dd></dd></dl>
