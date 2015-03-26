@@ -134,7 +134,7 @@
 				<div class="topic-buttons clearfix">
 					<div class="pull-left hidden-xs">
 						<!-- IF posts.display_moderator_tools -->
-						<div class="btn-group post-tools">
+						<div class="btn-group post-tools" id="dropdowntopic">
 							<div class="dropdown">
 								<button title="[[topic:tools]]" class="btn btn-sm btn-link" data-toggle="dropdown" href="#"><i class="fa fa-gear"></i></button>
 								<ul class="dropdown-menu text-center pull-left" role="menu" aria-labelledby="dLabel">
@@ -148,11 +148,13 @@
 							</div>
 						</div>
 						<!-- ENDIF posts.display_moderator_tools -->
+
+						<!-- IF !posts.selfPost -->
 						<div class="btn-group">
-							<!-- IF !posts.selfPost -->
 							<button class="btn btn-sm btn-link flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-exclamation-triangle"></i></button>
-							<!-- ENDIF !posts.selfPost -->
+							
 						</div>
+						<!-- ENDIF !posts.selfPost -->
 					</div>
 
 					<div class="pull-left visible-xs">
@@ -177,38 +179,9 @@
 								<!-- ENDIF !posts.selfPost -->
 							</ul>
 						</div>
-						<div class="btn-group">
-							<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" type="button">
-								<i class="fa fa-gear" title="Herramientas"></i>
-								<span class="caret"></span>
-							</button>
-							
-							<ul class="dropdown-menu">
-								<li><!-- IF !posts.selfPost --><a class="pointer flag" title="[[topic:flag_title]]"><i class="fa fa-exclamation-triangle"></i> Reportar</a><!-- ENDIF !posts.selfPost --></li>
-								<!-- IF !posts.index -->
-								<li><a class="pointer follow" title="[[topic:notify_me]]">
-									<!-- IF isFollowing --><i class="fa fa-eye-slash"></i> <span>[[topic:unwatch]]</span>
-									<!-- ELSE --><i class="fa fa-eye"></i> <span>[[topic:watch]]</span><!-- ENDIF isFollowing -->
-								</a></li>
-								<!-- ENDIF !posts.index -->
-							</ul>
-						</div>
+						
 					</div>
-					<div class="pull-right visible-xs">
-						<div class="btn-group">
-							<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" type="button">
-								<i class="fa fa-pencil" title="Responder"></i> Responder
-								<span class="caret"></span>
-							</button>
-							
-							<ul class="dropdown-menu pull-right">
-								<!-- IF privileges.topics:reply -->
-								<li><a class="pointer quote"><i class="fa fa-quote-left"></i> [[topic:quote]]</a></li>
-								<li><a class="pointer post_reply"><i class="fa fa-reply"></i> [[topic:reply]]</a></li>
-								<!-- ENDIF privileges.topics:reply -->
-							</ul>
-						</div>
-					</div>
+					
 
 					<div class="pull-right hidden-xs">
 						<!-- IF loggedIn -->
