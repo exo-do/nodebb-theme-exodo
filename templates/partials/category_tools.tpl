@@ -1,11 +1,17 @@
 <!-- IF privileges.editable -->
-<div class="btn-group thread-tools">
-	<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
-		<span class="visible-sm-inline visible-md-inline visible-lg-inline">[[topic:thread_tools.title]]</span>
-		<span class="visible-xs-inline"><i class="fa fa-fw fa-gear"></i></span>
-		<span class="caret"></span>
+<span class="btn-group thread-tools"> 
+	<button class="btn btn-exodo dropdown-toggle tool visible-sm-inline visible-md-inline visible-lg-inline" data-toggle="dropdown" type="button">
+		<!--[[topic:thread_tools.title]] --> Mod <span><i class="fa fa-fw fa-gear"></i></span>
+		<span class="caret hidden"></span>
 	</button>
-  <ul class="dropdown-menu pull-right">
+	
+	<button class="btn btn-default dropdown-toggle tool visible-xs-inline " data-toggle="dropdown" type="button">
+		<span><i class="fa fa-fw fa-gear"></i></span>
+		<span class="caret hidden"></span>
+	</button>
+
+	
+  <ul class="dropdown-menu">
     <li><a href="#" class="markAsUnreadForAll"><i class="fa fa-fw fa-inbox"></i> [[topic:thread_tools.markAsUnreadForAll]]</a></li>
     <li><a href="#" class="pin_thread"><i class="fa fa-fw fa-thumb-tack"></i> [[topic:thread_tools.pin]]</a></li>
     <li><a href="#" class="lock_thread"><i class="fa fa-fw fa-lock"></i> [[topic:thread_tools.lock]]</a></li>
@@ -19,7 +25,8 @@
     <li>
       <a href="#" class="{thread_tools.class}"><i class="fa fa-fw {thread_tools.icon}"></i> {thread_tools.title}</a>
     </li>
+		
     <!-- END thread_tools -->
   </ul>
-</div>
+</span> 
 <!-- ENDIF privileges.editable -->

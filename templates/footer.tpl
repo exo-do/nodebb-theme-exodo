@@ -38,8 +38,8 @@
 				app.alert({
 					type: 'success',
 					timeout: 3000,
-					title: 'Modo Noche',
-					message: "Modo Noche Desactivado",
+					title: 'Modo Noche Desactivado',
+					message: "La luz te guía",
 					alert_id: 'darkMode'
 				});
 				$("*").removeClass("dark");
@@ -50,8 +50,8 @@
 				app.alert({
 					type: 'success',
 					timeout: 3000,
-					title: 'Modo Noche',
-					message: "Modo Noche Activado",
+					title: 'Modo Noche Activado',
+					message: "Ahora eres un ninja",
 					alert_id: 'darkMode'
 				});
 				$("*").addClass("dark");
