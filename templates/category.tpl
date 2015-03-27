@@ -27,20 +27,16 @@
 			</div>
 			
 			<div class="category-head-bottom">
-				<div class="category-head-tools">
+				<div class="category-head-tools visible-sm-inline visible-md-inline visible-lg-inline">
 					<span class="pull-left">
 					</span>
 					<span class="pull-right">
 						<!-- IF loggedIn -->
-						<span class="btn-group visible-sm-inline visible-md-inline visible-lg-inline">
+						<span class="btn-group">
 						<button type="button" class="btn btn-exodo watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored --> tool"> [[topic:watch]] <span><i class="fa fa-eye"></i></span></button>
 						<button type="button" class="btn btn-exodo ignore <!-- IF isIgnored -->hidden<!-- ENDIF isIgnored --> tool"> [[category:ignore]]<span><i class="fa fa-eye-slash"></i></span></button>
 						</span>
 						
-						<span class="btn-group visible-xs-inline">
-						<button type="button" class="btn btn-default btn-success watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored --> tool"><i class="fa fa-eye"></i> [[topic:watch]]</button>
-											<button type="button" class="btn btn-default btn-warning ignore <!-- IF isIgnored -->hidden<!-- ENDIF isIgnored --> tool"><i class="fa fa-eye-slash"></i> [[category:ignore]]</button>
-						</span>
 						<!-- ENDIF loggedIn -->
 	
 						<!-- IMPORT partials/category_tools.tpl -->
@@ -61,14 +57,12 @@
 					</div>
 					<!-- ENDIF config.usePagination -->
 				</div>
+				
+				
+				
 			</div>
-			
-			
-			
 		</div>
-
-		
-		
+			
 	</div>
 	
 	<!-- IF !topics.length -->

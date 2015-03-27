@@ -1,16 +1,13 @@
 <!-- IF privileges.editable -->
 <span class="btn-group thread-tools"> 
 	<button class="btn btn-exodo dropdown-toggle tool visible-sm-inline visible-md-inline visible-lg-inline" data-toggle="dropdown" type="button">
-		<!--[[topic:thread_tools.title]] --> Mod <span><i class="fa fa-fw fa-gear"></i></span>
+		<div class=""><!--[[topic:thread_tools.title]] --> Mod <span><i class="fa fa-fw fa-gear"></i></span></div>
 		<span class="caret hidden"></span>
 	</button>
 	
-	<button class="btn btn-default dropdown-toggle tool visible-xs-inline " data-toggle="dropdown" type="button">
-		<span><i class="fa fa-fw fa-gear"></i></span>
-		<span class="caret hidden"></span>
-	</button>
+	
 
-	
+	<div class="visible-xs-inline btn-exodo-mini"><i class="fa fa-fw fa-gear"></i></div>
   <ul class="dropdown-menu">
     <li><a href="#" class="markAsUnreadForAll"><i class="fa fa-fw fa-inbox"></i> [[topic:thread_tools.markAsUnreadForAll]]</a></li>
     <li><a href="#" class="pin_thread"><i class="fa fa-fw fa-thumb-tack"></i> [[topic:thread_tools.pin]]</a></li>
