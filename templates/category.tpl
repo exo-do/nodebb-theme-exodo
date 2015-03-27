@@ -20,16 +20,25 @@
 			<h1>{name}</h1>
 			<i class="hidden-xs">{description}</i>
 		</div>
-	</br>
+		
+	</br></br>
 		<div class="category-head-middle clearfix">
-			<div class="category-head-reply">
-				<button id="new_post" class="btn btn-exodo<!-- IF !privileges.topics:create --> disabled<!-- ENDIF !privileges.topics:create -->">[[category:new_topic_button]]<span>+</span></button>
-			</div>
 			
-			<div class="category-head-bottom">
+		
+			<!-- IF config.usePagination -->
+			<div class="category-head-pagination pull-left">
+				<!-- IMPORT partials/paginator.tpl -->
+			</div>
+			<!-- ENDIF config.usePagination -->
+			
+			<!--<div class="category-head-reply">
+				
+			
+			</div>-->
+			
+			<div class="category-head-bottom pull-right">
 				<div class="category-head-tools visible-sm-inline visible-md-inline visible-lg-inline">
-					<span class="pull-left">
-					</span>
+					
 					<span class="pull-right">
 						<!-- IF loggedIn -->
 						<span class="btn-group">
@@ -41,26 +50,21 @@
 	
 						<!-- IMPORT partials/category_tools.tpl -->
 	
-						<div class="dropdown share-dropdown btn-group">
+						<span class="dropdown share-dropdown btn-group">
 							<button type="button" class="btn btn-exodo dropdown-toggle tool" data-toggle="dropdown">
 								[[topic:share]] <span><i class="fa fa-share-alt"></i></span><span class="caret hidden"></span>
 							</button>
 	
 						<!-- IMPORT partials/share_dropdown.tpl -->
-						</div>
+						</span>
+						
+						<span class="btn-group"><button id="new_post" type="button" class="btn btn-exodo<!-- IF !privileges.topics:create --> disabled<!-- ENDIF !privileges.topics:create --> tool">[[category:new_topic_button]]<span>+</span></button>
+						</span>
 					</span>
-					
-			
-					<!-- IF config.usePagination -->
-					<div class="category-head-pagination">
-						<!-- IMPORT partials/paginator.tpl -->
-					</div>
-					<!-- ENDIF config.usePagination -->
 				</div>
-				
-				
-				
 			</div>
+			
+			
 		</div>
 			
 	</div>
