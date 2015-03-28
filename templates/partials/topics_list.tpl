@@ -17,7 +17,7 @@
 		<div class="panel panel-default topic-row clearfix">
 			<div class="threadinfo">
                 <a class="hidden-xs" href="<!-- IF topics.user.userslug -->
-					{relative_path}/user/{topics.user.userslug}
+					{relative_path}/topic/{topics.slug}
 					<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">
                     <img src="{user.picture}" class="profile-image user-img"/>
                 </a>
@@ -25,8 +25,7 @@
 					<a href="{relative_path}/topic/{topics.slug}" itemprop="url">
 						<meta itemprop="name" content="{topics.title}">
 
-						<strong><i class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i> <i class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i></strong>
-						<span class="topic-title">{topics.title}</span>
+						<span class="topic-title"><i class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->">&nbsp;</i><i class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->">&nbsp;</i>{topics.title}</span>
 					</a>
 				</h3>
 
@@ -43,9 +42,16 @@
 				<dl class="threadpagination" data-pages="{topics.pagesCount}"><dd></dd></dl>
 				
 				<div class="threaddetails">
+					
+					
+					<i class="fa fa-fire<!-- IF !topics.isHot -->  hide<!-- ENDIF !topics.isHot -->" title="Tema Popular">&nbsp;</i>
+					
 					<!-- IF topics.tags.length -->
-					<img title="<!-- BEGIN tags -->[{topics.tags.value}] <!-- END tags -->" src="http://exo.do/images/exodo/misc/tag.png" alt="<!-- BEGIN tags -->[{topics.tags.value}] <!-- END tags -->">
+					<i class="fa fa-tags" title="<!-- BEGIN tags -->[{topics.tags.value}] <!-- END tags -->">&nbsp;</i>
 					<!-- ENDIF topics.tags.length -->
+					
+					<i class="fa fa-sign-in<!-- IF !topics.userParticipated -->  hide<!-- ENDIF !topics.userParticipated -->" title="Has participado en este tema">&nbsp;</i>
+					
 				</div>
                 
                 <div class="threadlastpost visible-xs pull-right text-right">

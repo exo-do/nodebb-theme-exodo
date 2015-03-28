@@ -24,22 +24,16 @@
 	</br></br>
 		<div class="category-head-middle clearfix">
 			
-		
-			<!-- IF config.usePagination -->
-			<div class="category-head-pagination pull-left">
-				<!-- IMPORT partials/paginator.tpl -->
-			</div>
-			<!-- ENDIF config.usePagination -->
+			<!--<div class="category-head-reply"></div>-->
 			
-			<!--<div class="category-head-reply">
-				
-			
-			</div>-->
-			
-			<div class="category-head-bottom pull-right">
+			<div class="category-head-bottom pull-left">
 				<div class="category-head-tools visible-sm-inline visible-md-inline visible-lg-inline">
 					
-					<span class="pull-right">
+					<span class="pull-left">
+						
+						<span class="btn-group"><button id="new_post" type="button" class="btn btn-exodo<!-- IF !privileges.topics:create --> disabled<!-- ENDIF !privileges.topics:create --> tool">[[category:new_topic_button]]<span>+</span></button>
+						</span>
+						
 						<!-- IF loggedIn -->
 						<span class="btn-group">
 						<button type="button" class="btn btn-exodo watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored --> tool"> [[topic:watch]] <span><i class="fa fa-eye"></i></span></button>
@@ -58,11 +52,16 @@
 						<!-- IMPORT partials/share_dropdown.tpl -->
 						</span>
 						
-						<span class="btn-group"><button id="new_post" type="button" class="btn btn-exodo<!-- IF !privileges.topics:create --> disabled<!-- ENDIF !privileges.topics:create --> tool">[[category:new_topic_button]]<span>+</span></button>
-						</span>
+						
 					</span>
 				</div>
 			</div>
+			
+			<!-- IF config.usePagination -->
+			<div class="category-head-pagination pull-right">
+				<!-- IMPORT partials/paginator.tpl -->
+			</div>
+			<!-- ENDIF config.usePagination -->
 			
 			
 		</div>
@@ -77,11 +76,12 @@
 
 	<!-- IMPORT partials/topics_list.tpl -->
 	
+
+	<!-- IF config.usePagination -->
 	<div class="category-head-pagination">
-		<!-- IF config.usePagination -->
 			<!-- IMPORT partials/paginator.tpl -->
-		<!-- ENDIF config.usePagination -->
 	</div>
+	<!-- ENDIF config.usePagination -->
 	
 </div>
 
