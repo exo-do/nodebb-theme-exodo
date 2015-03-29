@@ -78,7 +78,7 @@
 	
 
 	<!-- IF config.usePagination -->
-	<div class="category-head-pagination">
+	<div class="category-head-pagination pagination-foot">
 			<!-- IMPORT partials/paginator.tpl -->
 	</div>
 	<!-- ENDIF config.usePagination -->

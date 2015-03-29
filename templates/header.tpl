@@ -48,9 +48,9 @@
 
 <body>
 		<div class="navbar navbar-inverse navbar-fixed-top header" role="navigation" id="header-menu">
-			<div class="container-fluid">	
+			<div class="container">	
 				<!-- IMPORT partials/menu.tpl -->
 			</div>
 		</div>
-	<div class="container-fluid" id="content">
+	<div class="container" id="content">
 	<!-- IMPORT partials/noscript/warning.tpl -->
