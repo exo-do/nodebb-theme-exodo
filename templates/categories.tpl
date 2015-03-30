@@ -1,5 +1,7 @@
 <div class="row categories" itemscope itemtype="http://www.schema.org/ItemList">
-	<div class="col-lg-9 col-sm-12" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
+	
+	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
+		
 		<div class="row <!-- IF !disableMasonry -->masonry<!-- ENDIF !disableMasonry -->">
 			<!-- BEGIN categories -->
 			<div class="<!-- IF categories.class -->{categories.class}<!-- ELSE -->col-md-3 col-sm-6 col-xs-12<!-- ENDIF categories.class --> category-item" data-cid="{categories.cid}" data-numRecentReplies="{categories.numRecentReplies}">
@@ -25,29 +27,29 @@
 							</h3>
 							
 							<!-- ENDIF categories.icon -->
+							
+							<div class="category-info hidden-xs">
+								<div class="category-stats text-right">
+			                        <i class="fa fa-comments-o" title="Temas"></i> {categories.topic_count} · <i class="fa fa-pencil" title="Mensajes"></i> {categories.post_count}
+			                    </div>
+							</div>
 						</div>
 						</a>
 						
 							
 						<!--	<span class="badge {categories.unread-class}"><i class="fa fa-book" data-toggle="tooltip" title="[[global:topics]]"></i> <span class="human-readable-number" title="{categories.topic_count}">{categories.topic_count}</span>&nbsp; <i class="fa fa-pencil" data-toggle="tooltip" title="[[global:posts]]"></i> <span class="human-readable-number" title="{categories.post_count}">{categories.post_count}</span></span>
 							-->
+		
 
-							
-							
-
-					<div class="category-box">
-						<div class="category-info hidden-xs">
-							<div class="category-stats text-right">
-		                        <i class="fa fa-comments-o" title="Temas"></i> {categories.topic_count} · <i class="fa fa-pencil" title="Mensajes"></i> {categories.post_count}
-		                    </div>
-						</div>
+					<div class="category-box hidden-xs">
+						
 						<!-- IF !categories.link -->
 						<!-- BEGIN posts -->
 						<div class="post-preview clearfix">
 							
-							<strong><a href="{relative_path}/topic/{categories.posts.topic.slug}">{categories.posts.topic.title}</a></strong>
+							<div class="last-topic-title"><a href="{relative_path}/topic/{categories.posts.topic.slug}">{categories.posts.topic.title}</a></div>
 							<p class="last-topic-date">{function.humanReadableDate}</p>
-							<hr/>
+							
 							<!-- <a style="color: {categories.color};" href="<!-- IF categories.posts.user.userslug -->{relative_path}/user/{categories.posts.user.userslug}<!-- ELSE -->#<!-- ENDIF categories.posts.user.userslug-->">
 								<img src="{categories.posts.user.picture}" title="{categories.posts.user.username}" class="pull-left user-img" />
 							</a> -->

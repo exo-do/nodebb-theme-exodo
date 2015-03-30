@@ -1,4 +1,4 @@
-.home {
+.categories {
 	
     margin: 0px auto;
 	
@@ -16,6 +16,46 @@
 			}
 		}
 	}
+	.category-item {
+		
+		padding: 5px;
+	
+	.category-icon {
+		
+		background-color: white;
+		border: 1px solid #DDD;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+		
+		&:hover .category-header {
+			filter: brightness(120%);
+			-webkit-filter: brightness(120%);
+		}
+		
+	}
+	
+	}
+	
+	//esta pillando este
+	.last-topic-title {
+		font-style: italic;
+		display: inline-block;
+		font-size: 13px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		width: 100%;
+		padding-top: 5px;
+	}
+	
+	.last-topic-title:first-letter {
+			text-transform:uppercase;
+		}
+	
+	
+	.last-topic-date {
+		font-size: 80%;
+	}
+	
 	
 	.category-header {
 		display: block;
@@ -26,26 +66,13 @@
 	}
 	
 	.category-title {
-		color: #333;
 		font-size: 22px;
 		
 		@media (max-width: @screen-xs-min) {
 			margin-top: 15px;
 			
 			p {
-				font-size: 14px;
-			}
-		}
-	}
-	.category-title.dark {
-		color: black;
-		font-size: 22px;
-		
-		@media (max-width: @screen-xs-min) {
-			margin-top: 15px;
-			
-			p {
-				font-size: 14px;
+				font-size: 13px;
 			}
 		}
 	}
@@ -54,34 +81,12 @@
 		padding: 10px;
 		
 		.category-stats {
-			color: #333;
+			color: #D9CEDC;
 			font-size: 90%;
 		}
+	}	
 		
-		.category-last-topic {
-			margin-top: 5px;
-			overflow: hidden;
-			
-			.last-topic-title {
-				font-style: italic;
-				display: inline-block;
-				font-size: 13px;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				white-space: nowrap;
-				width: 100%;
-			}
-			
-			.last-topic-title:first-letter {
-					text-transform:uppercase;
-				}
-			
-			
-			.last-topic-date {
-				font-size: 80%;
-			}
-		}
-	}
+	
 
 	.category-header {
 	    .pointer;
