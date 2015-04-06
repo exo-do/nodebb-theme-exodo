@@ -19,7 +19,10 @@
 			</div>
 			<!-- ELSE -->
 			<div class="<!-- IF isTopic -->col-lg-9<!-- ELSE -->col-lg-12<!-- ENDIF isTopic --> col-md-12">
-				<input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" />
+				<!-- IF isTopic --><input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" />
+				<!-- ELSE -->
+				<input class="title form-control" type="hidden" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" />
+				<!-- ENDIF isTopic -->
 			</div>
 			<!-- IF isTopic -->
 			<div class="category-list-container col-lg-3 col-md-12">
@@ -99,14 +102,14 @@
 		<div class="row write-preview-container">
 			<div class="col-md-6 col-sm-12 write-container">
 				<div class="help-text">
-					Compose <span class="help hidden"><i class="fa fa-question-circle"></i></span>
-					<span class="toggle-preview hide">Show Preview</span>
+					Mensaje <span class="help hidden"><i class="fa fa-question-circle"></i></span>
+					<span class="toggle-preview hide">Ver Vista Previa</span>
 				</div>
 				<textarea class="write" tabindex="5"></textarea>
 			</div>
 			<div class="col-md-6 hidden-sm hidden-xs preview-container">
 				<div class="help-text">
-					<span class="toggle-preview">Hide Preview</span>
+					<span class="toggle-preview">Ocultar Vista Previa</span>
 				</div>
 				<div class="preview well"></div>
 			</div>
