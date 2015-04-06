@@ -18,8 +18,14 @@
 			<h1><a title="{title}" href="/topic/{slug}">{title}</a></h1>
 		</div>
 		<div class="topic-head-middle clearfix">
-			<div class="topic-head-reply">
-				<button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
+			<div class="pull-left">
+				<span class="btn-group"><button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button></span>
+
+				<span class="hidden-xs">
+				<!-- IMPORT partials/thread_sort.tpl -->
+				</span>
+				<!-- IMPORT partials/thread_tools.tpl -->
+				
 			</div>
 
 			<div class="topic-head-pagination">
@@ -238,8 +244,13 @@
 
 	<div class="topic-foot">
 		<div class="topic-head-middle clearfix">
-			<div class="topic-head-reply">
-				<button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
+			<div class="pull-left">
+				<span class="btn-group"><button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
+				</span>
+				
+				<span class="visible-xs-inline">
+				<!-- IMPORT partials/thread_sort.tpl -->
+				</span>
 			</div>
 
 			<div class="topic-head-pagination">
