@@ -45,15 +45,27 @@
 			<meta itemprop="dateModified" content="{posts.relativeEditTime}">
 
 			<div class="post-wrapper">
-				<div class="post-header">
-					<div class="post-date pull-left">
+				<div class="post-header ">
+					<div class="pull-left visible-xs">
+							<div class="" title="<!-- IF posts.user.userslug -->[[topic:posted_by, {posts.user.username}]]<!-- ELSE -->[[topic:posted_by_guest]]<!-- ENDIF posts.user.userslug -->">
+								
+									<a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
+									<span class="inline"><img class="" src="{posts.user.picture}" width=23 height=23 />&nbsp;</span>
+									<span class="username-field-mini"  itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}&nbsp;</span>
+									</a>
+									<i class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]">&nbsp;</i>
+							
+						</div>
+
+							
+						
+					</div>
+					
+					<div class="post-date pull-left hidden-xs">
 						<span class="date"><i class="fa fa-clock-o"></i> {function.humanReadableDate}</span>
 					</div>
-					<!--
-					<div class="post-date pull-middle">
-					<span><a title="{title}" href="/topic/{slug}">{title}</a></span>
-					</div>
-					-->
+					
+					
 					<div class="post-meta pull-right">
 						<span class="post-index"><a href="/topic/{slug}/{function.postIndexPlusOne}">#{function.postIndexPlusOne}</a></span>
 					</div>
@@ -163,31 +175,28 @@
 						<!-- ENDIF !posts.selfPost -->
 					</div>
 
-					<div class="pull-left visible-xs">
-						<div class="btn-group">
-							<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" type="button" title="<!-- IF posts.user.userslug -->[[topic:posted_by, {posts.user.username}]]<!-- ELSE -->[[topic:posted_by_guest]]<!-- ENDIF posts.user.userslug -->">
-								<i class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]"></i>
-								<span class="inline"><img class="" src="{posts.user.picture}" width=18 height=18 />&nbsp;</span>
-								<span class="username-field" href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}&nbsp;</span>
-								<span class="caret"></span>
-							</button>
-
-							<ul class="dropdown-menu">
-								<li><a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->"><i class="fa fa-user"></i> [[topic:profile]]</a></li>
-								<!-- IF !posts.selfPost -->
-								<!-- IF posts.user.userslug -->
-								<!-- IF loggedIn -->
-								<!-- IF !config.disableChat -->
-								<li><a href="#" class="chat"><i class="fa fa-comment"></i> [[topic:chat]]</a></li>
-								<!-- ENDIF !config.disableChat -->
-								<!-- ENDIF loggedIn -->
-								<!-- ENDIF posts.user.userslug -->
-								<!-- ENDIF !posts.selfPost -->
-							</ul>
-						</div>
-						
-					</div>
 					
+					
+					<div class="visible-xs">
+						
+											<div class="post-date pull-left">
+												<span class="date"><i class="fa fa-clock-o"></i> {function.humanReadableDate}</span>
+											</div>
+											<div class="btn-group pull-right ">
+												<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+													<i class="fa fa-pencil" title="Responder"></i> Responder
+													<span class="caret"></span>
+												</button>
+											
+												<ul class="dropdown-menu pull-right">
+												<!-- IF privileges.topics:reply -->
+													<li><a class="pointer quote"><i class="fa fa-quote-left"></i> [[topic:quote]]</a></li>
+													<li><a class="pointer post_reply"><i class="fa fa-reply"></i> [[topic:reply]]</a></li>
+													<!-- ENDIF privileges.topics:reply -->
+												</ul>
+											</div>
+											
+					</div>
 
 					<div class="pull-right hidden-xs">
 						<!-- IF loggedIn -->
@@ -253,11 +262,13 @@
 				</span>
 			</div>
 
-			<div class="topic-head-pagination">
-				<!-- IF config.usePagination -->
+			
+				
+				<div class="topic-head-pagination <!-- IF config.usePagination -->hidden-xs <!-- ENDIF config.usePagination -->">
 					<!-- IMPORT partials/paginator.tpl -->
-				<!-- ENDIF config.usePagination -->
-			</div>
+				</div>
+				
+			
 		</div>
 		
 		<!-- IMPORT partials/breadcrumbs.tpl -->
