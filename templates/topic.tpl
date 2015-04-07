@@ -14,9 +14,14 @@
 <div class="topic">
 	<div class="topic-head">
 		<!-- IMPORT partials/breadcrumbs.tpl -->
-		<div class="text-center topic-head-top">
+		<div class="text-center topic-head-top hidden-xs">
 			<h1><a title="{title}" href="/topic/{slug}">{title}</a></h1>
 		</div>
+		
+		<div class="text-center topic-head-top-mini visible-xs">
+			<h1><a title="{title}" href="/topic/{slug}">{title}</a></h1>
+		</div>
+		
 		<div class="topic-head-middle clearfix">
 			<div class="pull-left">
 				<span class="btn-group"><button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button></span>
@@ -45,12 +50,11 @@
 			<meta itemprop="dateModified" content="{posts.relativeEditTime}">
 
 			<div class="post-wrapper">
-				<div class="post-header ">
+				<div class="post-header">
 					<div class="pull-left visible-xs">
-							<div class="" title="<!-- IF posts.user.userslug -->[[topic:posted_by, {posts.user.username}]]<!-- ELSE -->[[topic:posted_by_guest]]<!-- ENDIF posts.user.userslug -->">
-								
+						<div class="" title="<!-- IF posts.user.userslug -->[[topic:posted_by, {posts.user.username}]]<!-- ELSE -->[[topic:posted_by_guest]]<!-- ENDIF posts.user.userslug -->">
 									<a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
-									<span class="inline"><img class="" src="{posts.user.picture}" width=23 height=23 />&nbsp;</span>
+									<span class="inline avatarxs"><img class="" src="{posts.user.picture}" width=34 height=34 />&nbsp;</span>
 									<span class="username-field-mini"  itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}&nbsp;</span>
 									</a>
 									<i class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]">&nbsp;</i>
@@ -61,6 +65,7 @@
 						
 					</div>
 					
+					<div class="post-header-padding">
 					<div class="post-date pull-left hidden-xs">
 						<span class="date"><i class="fa fa-clock-o"></i> {function.humanReadableDate}</span>
 					</div>
@@ -69,7 +74,7 @@
 					<div class="post-meta pull-right">
 						<span class="post-index"><a href="/topic/{slug}/{function.postIndexPlusOne}">#{function.postIndexPlusOne}</a></span>
 					</div>
-					
+					</div>
 					
 				</div>
 
@@ -117,8 +122,8 @@
 							<!-- IF posts.user.custom_profile_info.location --><dt>Ubicación:</dt> <dd>{posts.user.custom_profile_info.location}</dd><!-- ENDIF posts.user.custom_profile_info.location -->
 							<!-- END custom_profile_info -->
 							<!-- ENDIF posts.user.custom_profile_info.length -->
-							<dt>[[global:reputation]]:</dt> <dd><span data-reputation="{posts.user.reputation}" data-uid="{posts.uid}" class='formatted-number reputation'>{posts.user.reputation}</dd>
-							<dt>[[global:posts]]:</dt> <dd><span class='formatted-number user_postcount_{posts.uid}'>{posts.user.postcount}</dd>
+							<dt>[[global:reputation]]:</dt> <dd><span data-reputation="{posts.user.reputation}" data-uid="{posts.uid}" class='formatted-number reputation'>{posts.user.reputation}</span></dd>
+							<dt>[[global:posts]]:</dt> <dd><span class='formatted-number user_postcount_{posts.uid}'>{posts.user.postcount}</span></dd>
 						</dl>
 
 					</div>
@@ -150,6 +155,7 @@
 				</div>
 
 				<div class="topic-buttons clearfix">
+					
 					<div class="pull-left hidden-xs">
 						<!-- IF posts.display_moderator_tools -->
 						<div class="btn-group post-tools" id="dropdowntopic">
@@ -175,27 +181,67 @@
 						<!-- ENDIF !posts.selfPost -->
 					</div>
 
-					
-					
+										
 					<div class="visible-xs">
 						
 											<div class="post-date pull-left">
 												<span class="date"><i class="fa fa-clock-o"></i> {function.humanReadableDate}</span>
 											</div>
-											<div class="btn-group pull-right ">
-												<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" type="button">
-													<i class="fa fa-pencil" title="Responder"></i> Responder
-													<span class="caret"></span>
-												</button>
 											
-												<ul class="dropdown-menu pull-right">
-												<!-- IF privileges.topics:reply -->
-													<li><a class="pointer quote"><i class="fa fa-quote-left"></i> [[topic:quote]]</a></li>
-													<li><a class="pointer post_reply"><i class="fa fa-reply"></i> [[topic:reply]]</a></li>
-													<!-- ENDIF privileges.topics:reply -->
+											
+											
+
+
+											<!-- IF privileges.topics:reply -->
+											<div class="btn-group pull-right">
+												<button class="btn btn-sm btn-default quote" type="button">
+													<span><i class="fa fa-quote-left"></i></span>
+													
+												</button>
+												<button class="btn btn-sm btn-default post_reply" type="button">
+													<span><i class="fa fa-reply"></i></span>
+													
+												</button>
+												
+												
+											</div>
+											<!-- ENDIF privileges.topics:reply -->
+											
+
+											<!-- IF posts.display_moderator_tools -->
+											<div class="btn-group pull-right">
+												<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+													<i class="fa fa-gear" title="Herramientas"></i>
+														<span class="caret"></span>
+												</button>
+																	
+												<ul class="dropdown-menu">
+													
+													
+														<li> <a class="pointer edit" title="[[topic:edit]]"><i class="fa fa-pencil"></i>Editar</a></li>
+														<!-- IF privileges.editable -->
+														<li> <a class="pointer delete" title="[[topic:delete]]"><i class="fa fa-trash-o"></i>Borrar</a></li>
+														<li> <a class="pointer purge <!-- IF !posts.deleted -->none<!-- ENDIF !posts.deleted -->" title="[[topic:purge]]"><i class="fa fa-eraser"></i>Purgar</a></li>
+														<!-- ENDIF privileges.editable -->
+														<!-- IF posts.display_move_tools -->
+														<li> <a class="pointer move" itle="[[topic:move]]"><i class="fa fa-arrows"></i>Mover</a></li>
+														<!-- ENDIF posts.display_move_tools -->
+												
+													
+													<li><!-- IF !posts.selfPost --><a class="pointer flag" title="[[topic:flag_title]]"><i class="fa fa-exclamation-triangle"></i> Reportar</a><!-- ENDIF !posts.selfPost --></li>
+												<!-- IF !posts.index -->
+													<li><a class="pointer follow" title="[[topic:notify_me]]">
+												<!-- IF isFollowing --><i class="fa fa-eye-slash"></i> <span>[[topic:unwatch]]</span>
+												<!-- ELSE --><i class="fa fa-eye"></i> <span>[[topic:watch]]</span><!-- ENDIF isFollowing -->
+													</a></li>
+												<!-- ENDIF !posts.index -->
+												
+												
 												</ul>
 											</div>
-											
+
+											<!-- ENDIF posts.display_moderator_tools -->
+										
 					</div>
 
 					<div class="pull-right hidden-xs">
@@ -239,6 +285,7 @@
 						</div>
 						<!-- ENDIF privileges.topics:reply -->
 					</div>
+					
 				</div>
 			</div>
 		</li>
@@ -284,6 +331,6 @@
 	<!-- IMPORT partials/move_post_modal.tpl -->
 </div>
 
-<div widget-area="footer" class="col-xs-12"></div>
+<!--<div widget-area="footer" class="col-xs-12"></div>-->
 
 <!-- IMPORT partials/noscript/paginator.tpl -->
