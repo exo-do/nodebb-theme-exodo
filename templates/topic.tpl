@@ -60,9 +60,7 @@
 									<i class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]">&nbsp;</i>
 							
 						</div>
-
-							
-						
+	
 					</div>
 					
 					<div class="post-header-padding">
