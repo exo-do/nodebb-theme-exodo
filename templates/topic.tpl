@@ -312,7 +312,9 @@
 			
 				
 				<div class="topic-head-pagination <!-- IF config.usePagination -->hidden-xs <!-- ENDIF config.usePagination -->">
+					<!-- IF config.usePagination -->
 					<!-- IMPORT partials/paginator.tpl -->
+					<!-- ENDIF config.usePagination -->
 				</div>
 				
 			
@@ -331,6 +333,6 @@
 	<!-- IMPORT partials/move_post_modal.tpl -->
 </div>
 
-<!--<div widget-area="footer" class="col-xs-12"></div>-->
+<div widget-area="footer" class="col-xs-12"></div>
 
 <!-- IMPORT partials/noscript/paginator.tpl -->

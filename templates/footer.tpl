@@ -25,8 +25,25 @@
 			<li><a href="/admin">Panel de Administración</a>  |  </li>
 			<li><a href="#">Política de cookies</a>  |  </li>
 			<li><a href="#">Ir Arriba</a></li>
-		</ul>       
+		</ul> 
+		
+		<!-- Include Font Awesome Stylesheet in Header -->
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+		<!-- // -->
+		<div>
+		        <div class="text-center center-block">
+		                <a href="https://www.facebook.com/pages/Exodo/881300971914436"><i class="fa fa-facebook-square fa-3x social-fb social"></i></a>
+			            <a href="https://twitter.com/exodo"><i class="fa fa-twitter-square fa-3x social-tw social"></i></a>
+			            <a href="https://plus.google.com"><i class="fa fa-google-plus-square fa-3x social-gp social"></i></a>
+			            <a href="mailto:contacto@exo.do"><i class="fa fa-envelope-square fa-3x social-em social"></i></a>
+				</div>
+		</div>
+		      
 	</div>
+	
+	
+	
+	
 	
 	<script>
 		require(['forum/footer']);
