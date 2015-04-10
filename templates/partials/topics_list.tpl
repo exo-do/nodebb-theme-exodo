@@ -27,6 +27,7 @@
 
 						<span class="topic-title"><i class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->">&nbsp;</i><i class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->">&nbsp;</i>{topics.title}</span>
 					</a>
+					| <a href="{function.goLastPostButton}">Ir al ultimo post >> </a>
 				</h3>
 
 				<small>
