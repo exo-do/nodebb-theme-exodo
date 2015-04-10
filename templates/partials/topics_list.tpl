@@ -27,7 +27,6 @@
 
 						<span class="topic-title"><i class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->">&nbsp;</i><i class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->">&nbsp;</i>{topics.title}</span>
 					</a>
-					| <a href="{function.goLastPostButton}">Ir al ultimo post >> </a>
 				</h3>
 
 				<small>
@@ -51,8 +50,9 @@
 					<i class="fa fa-tags" title="<!-- BEGIN tags -->[{topics.tags.value}] <!-- END tags -->">&nbsp;</i>
 					<!-- ENDIF topics.tags.length -->
 					
-					<i class="fa fa-sign-in<!-- IF !topics.userParticipated -->  hide<!-- ENDIF !topics.userParticipated -->" title="Has participado en este tema">&nbsp;</i>
+					<i class="fa fa-pencil<!-- IF !topics.userParticipated -->  hide<!-- ENDIF !topics.userParticipated -->" title="Has participado en este tema">&nbsp;</i>
 					
+					<a href="{function.goLastPostButton}"><i class="fa fa-sign-in" title="Ir al ultimo post No Leido">&nbsp;</i></a>
 				</div>
                 
                 <div class="threadlastpost visible-xs pull-right text-right">
