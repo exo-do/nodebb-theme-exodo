@@ -1,6 +1,6 @@
-<ul class="category-topics" id="topics-container" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}">
 	<!-- IF topics.length -->
-	<div class="threadlisthead">
+	<div class="category-topics">
+		<div class="threadlisthead">
 		<span class="threadinfo">
 			<span class="threadtitle">
 				<a>Título</a> /
@@ -9,9 +9,14 @@
 		</span>
 		<span class="threadstats hidden-xs"><a>Respuestas</a> / <a>Visitas</a></span>
 		<span class="threadlastpost hidden-xs"><a>Último mensaje</a></span>
+		</div>
 	</div>
 	<!-- ENDIF topics.length -->
+
+<ul class="category-topics" id="topics-container" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}">
+		
 	<meta itemprop="itemListOrder" content="descending">
+	
 	<!-- BEGIN topics -->
 	<li class="category-item<!-- IF topics.ignored --> ignored<!-- ENDIF topics.ignored --><!-- IF topics.locked --> locked<!-- ENDIF topics.locked --><!-- IF topics.pinned --> pinned<!-- ENDIF topics.pinned --><!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.userParticipated --> participated<!-- ENDIF topics.userParticipated --><!-- IF topics.isHot --> hot<!-- ENDIF topics.isHot --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}" data-cid="{topics.cid}" data-index="<!-- IF topics.index -->{topics.index}<!-- ELSE -->0<!-- ENDIF topics.index -->">
 		<div class="panel panel-default topic-row clearfix">
