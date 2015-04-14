@@ -192,6 +192,11 @@
 
 											<!-- IF privileges.topics:reply -->
 											<div class="btn-group pull-right">
+												<!-- IF !posts.selfPost -->
+												<button class="btn btn-sm btn-default flag" type="button">
+													<span><i class="fa fa-exclamation-triangle"></i></span>
+												<!-- ENDIF !posts.selfPost -->
+												
 												<button class="btn btn-sm btn-default quote" type="button">
 													<span><i class="fa fa-quote-left"></i></span>
 													
@@ -322,7 +327,7 @@
 		
 	</div>
 
-	<div class="post-bar bottom-post-bar hide">
+	<div class="post-bar bottom-post-bar">
 		<!-- IMPORT partials/post_bar.tpl -->
 	</div>
 
