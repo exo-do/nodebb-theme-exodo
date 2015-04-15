@@ -1,5 +1,3 @@
-<h1 id="loadingInfo">Cargando .. </h1>
-
 <div id="motdDiv" class="motd col-lg-6 col-xs-12" style="display:none;">
 	<div widget-area="motd">
 	</div>
@@ -83,7 +81,7 @@
 		</div>
 	</div>
 
-	<div widget-area="sidebar" class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
+	<div widget-area="sidebar" style="padding:5px;" class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
 </div>
 
 
@@ -92,11 +90,11 @@
 $(window).on('action:ajaxify.end', function(event, data) {
     
     // Add categories and widgets
-    $("#categoriesDiv").show(400);
-    $("#motdDiv").show(400);
+    $("#categoriesDiv").show();
+    $("#motdDiv").show();
 
     // Hide Loading text
-    $("#loadingInfo").hide();
+    //$("#loadingInfo").hide();
 
     // Add darkMode when loaded
     if(localStorage.darkMode && localStorage.darkMode === "1")
