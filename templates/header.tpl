@@ -48,6 +48,7 @@
 
 <body>
 		<div class="navbar navbar-inverse navbar-fixed-top header" role="navigation" id="header-menu">
+			<div class="loading-bar"></div>
 			<div class="container-fluid">	
 				<!-- IMPORT partials/menu.tpl -->
 			</div>

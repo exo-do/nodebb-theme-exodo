@@ -194,9 +194,9 @@
 		 	width: 0%;
 		 	position: absolute;
 		 	left: 0px;
-		 	height: 3px;
+		 	height: 5px;
 		 	background: @exodo-gradient;
-		 	z-index: 1;
+		 	z-index: 10000;
 		 	-webkit-transition: width 0.2s ease-in;
 		 	-moz-transition: width 0.2s ease-in;
 		 	-o-transition: width 0.2s ease-in;
@@ -522,4 +522,18 @@
 	
 padding-left: 50px;
 padding-right: 50px;
+}
+
+.loading-bar {
+ 	width: 0%;
+ 	position: absolute;
+ 	left: 0px;
+ 	height: 3px;
+ 	background: @exodo-gradient;
+ 	z-index: 10000;
+ 	-webkit-transition: width 0.2s ease-in;
+ 	-moz-transition: width 0.2s ease-in;
+ 	-o-transition: width 0.2s ease-in;
+ 	-ms-transition: width 0.2s ease-in;
+ 	transition: width 0.2s ease-in;
 }
