@@ -1,6 +1,10 @@
+<div class="motd col-lg-6 col-xs-12">
+	<div widget-area="motd"></div>
+</div>
+
 <div class="row categories" itemscope itemtype="http://www.schema.org/ItemList">
 	
-	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
+	<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
 		
 		<div class="row <!-- IF !disableMasonry -->masonry<!-- ENDIF !disableMasonry -->">
 			<!-- BEGIN categories -->
@@ -76,5 +80,5 @@
 		</div>
 	</div>
 
-	<div widget-area="sidebar" class="col-lg-3 col-sm-12"></div>
+	<div widget-area="sidebar" class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
 </div>
