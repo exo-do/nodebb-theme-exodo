@@ -81,7 +81,7 @@
 		</div>
 	</div>
 
-	<div widget-area="sidebar" style="padding:5px;" class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
+	<div widget-area="sidebar" style="padding-top:5px; padding-left:5px; padding-right:5px;" class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
 </div>
 
 
