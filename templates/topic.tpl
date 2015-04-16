@@ -23,15 +23,24 @@
 		</div>
 		
 		<div class="topic-head-middle clearfix">
-			<div class="pull-left">
+			<div class="pull-left hidden-xs">
 				<span class="btn-group"><button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button></span>
 
-				<span class="hidden-xs">
 				<!-- IMPORT partials/thread_sort.tpl -->
-				</span>
 				<!-- IMPORT partials/thread_tools.tpl -->
 				
 			</div>
+			
+			<div class="pull-left visible-xs">
+				
+				<button class="btn btn-sm sm btn-default btn-exodin post_reply<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->"><i class="fa fa-plus"></i></button>
+				
+				<button class="btn btn-sm sm btn-default btn-exodin post_reply<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->"><i class="fa fa-sort"></i></button>
+				
+				<button class="btn btn-sm sm btn-default btn-exodin post_reply<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->"><i class="fa fa-gear"></i></button>
+				
+			</div>
+
 
 			<div class="topic-head-pagination">
 				<!-- IF config.usePagination -->
@@ -39,8 +48,9 @@
 				<!-- ENDIF config.usePagination -->
 			</div>
 		</div>
+		
 	</div>
-
+	
 	<ul id="post-container" class="posts" data-tid="{tid}">
 		<!-- BEGIN posts -->
 		<li class="post-row<!-- IF posts.deleted --> deleted<!-- ENDIF posts.deleted --><!-- IF posts.ignored --> ignored<!-- ENDIF posts.ignored --><!-- IF posts.isOP --> highlight-op<!-- ENDIF posts.isOP --><!-- IF posts.isFollow --> highlight-fw<!-- ENDIF posts.isFollow -->" data-pid="{posts.pid}" data-uid="{posts.uid}" data-username="{posts.user.username}" data-userslug="{posts.user.userslug}" data-index="{posts.index}" data-timestamp="{posts.timestamp}" data-votes="{posts.votes}" itemscope itemtype="http://schema.org/Comment">
@@ -120,7 +130,9 @@
 							<!-- IF posts.user.custom_profile_info.location --><dt>Ubicación:</dt> <dd>{posts.user.custom_profile_info.location}</dd><!-- ENDIF posts.user.custom_profile_info.location -->
 							<!-- END custom_profile_info -->
 							<!-- ENDIF posts.user.custom_profile_info.length -->
+							<!-- IF !reputation:disabled -->
 							<dt>[[global:reputation]]:</dt> <dd><span data-reputation="{posts.user.reputation}" data-uid="{posts.uid}" class='formatted-number reputation'>{posts.user.reputation}</span></dd>
+							<!-- ENDIF !reputation:disabled -->
 							<dt>[[global:posts]]:</dt> <dd><span class='formatted-number user_postcount_{posts.uid}'>{posts.user.postcount}</span></dd>
 						</dl>
 
@@ -173,7 +185,8 @@
 
 						<!-- IF !posts.selfPost -->
 						<div class="btn-group">
-							<button class="btn btn-sm btn-link flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-exclamation-triangle"></i></button>
+							<button class="btn btn-sm btn-link flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-exclamation-triangle"></i><!-- IF posts.display_moderator_tools -->
+							 <span style="color:red; font-weight:bold; vertical-align:middle;">{posts.flags}</span><!-- ENDIF posts.display_moderator_tools --></i></button>
 							
 						</div>
 						<!-- ENDIF !posts.selfPost -->
@@ -185,25 +198,19 @@
 											<div class="post-date pull-left">
 												<span class="date"><i class="fa fa-clock-o"></i> {function.humanReadableDate}</span>
 											</div>
-											
-											
-											
-
-
 											<!-- IF privileges.topics:reply -->
 											<div class="btn-group pull-right">
 												<!-- IF !posts.selfPost -->
-												<button class="btn btn-sm btn-default flag" type="button">
-													<span><i class="fa fa-exclamation-triangle"></i></span>
+												<button class="btn btn-sm btn-default btn-exodin flag" type="button">
+													<span><i class="fa fa-exclamation-triangle"><!-- IF posts.display_moderator_tools --> <span style="color:red; font-weight:bold;">{posts.flags}</span><!-- ENDIF posts.display_moderator_tools --></i></span>
+												</button>
 												<!-- ENDIF !posts.selfPost -->
 												
-												<button class="btn btn-sm btn-default quote" type="button">
+												<button class="btn btn-sm btn-default btn-exodin quote" type="button">
 													<span><i class="fa fa-quote-left"></i></span>
-													
 												</button>
-												<button class="btn btn-sm btn-default post_reply" type="button">
+												<button class="btn btn-sm btn-default btn-exodin post_reply" type="button">
 													<span><i class="fa fa-reply"></i></span>
-													
 												</button>
 												
 												
@@ -213,7 +220,7 @@
 
 											<!-- IF posts.display_moderator_tools -->
 											<div class="btn-group pull-right">
-												<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+												<button class="btn btn-sm btn-default btn-exodin dropdown-toggle" data-toggle="dropdown" type="button">
 													<i class="fa fa-gear" title="Herramientas"></i>
 														<span class="caret"></span>
 												</button>
@@ -230,8 +237,6 @@
 														<li> <a class="pointer move" itle="[[topic:move]]"><i class="fa fa-arrows"></i>Mover</a></li>
 														<!-- ENDIF posts.display_move_tools -->
 												
-													
-													<li><!-- IF !posts.selfPost --><a class="pointer flag" title="[[topic:flag_title]]"><i class="fa fa-exclamation-triangle"></i> Reportar</a><!-- ENDIF !posts.selfPost --></li>
 												<!-- IF !posts.index -->
 													<li><a class="pointer follow" title="[[topic:notify_me]]">
 												<!-- IF isFollowing --><i class="fa fa-eye-slash"></i> <span>[[topic:unwatch]]</span>

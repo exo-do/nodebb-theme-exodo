@@ -1,4 +1,4 @@
-<div id="motdDiv" class="motd col-lg-6 col-xs-12" style="display:none;">
+<div id="motdDiv" class="motd col-lg-6 col-md-6 col-xs-12" style="display:none;">
 	<div widget-area="motd">
 	</div>
 </div>
