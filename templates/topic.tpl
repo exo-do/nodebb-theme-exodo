@@ -23,30 +23,26 @@
 		</div>
 		
 		<div class="topic-head-middle clearfix">
-			<div class="pull-left hidden-xs">
-				<span class="btn-group"><button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button></span>
-
+			<div class="pull-left topic-buttons-right">
+				<span class="btn-group hidden-xs">
+				<button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
+				</span>
+				<span class="btn-group visible-xs">
+				<button class="btn btn-group btn-sm btn-default btn-exodin post_reply<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->"><i class="fa fa-plus"></i></button>
+				</span>
 				<!-- IMPORT partials/thread_sort.tpl -->
-				<!-- IMPORT partials/thread_tools.tpl -->
 				
+
 			</div>
 			
-			<div class="pull-left visible-xs">
-				
-				<button class="btn btn-sm sm btn-default btn-exodin post_reply<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->"><i class="fa fa-plus"></i></button>
-				
-				<button class="btn btn-sm sm btn-default btn-exodin post_reply<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->"><i class="fa fa-sort"></i></button>
-				
-				<button class="btn btn-sm sm btn-default btn-exodin post_reply<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->"><i class="fa fa-gear"></i></button>
-				
-			</div>
 
 
-			<div class="topic-head-pagination">
-				<!-- IF config.usePagination -->
-					<!-- IMPORT partials/paginator.tpl -->
-				<!-- ENDIF config.usePagination -->
-			</div>
+			
+		</div>
+		<div class="topic-head-pagination">
+			<!-- IF config.usePagination -->
+				<!-- IMPORT partials/paginator.tpl -->
+			<!-- ENDIF config.usePagination -->
 		</div>
 		
 	</div>
@@ -185,8 +181,9 @@
 
 						<!-- IF !posts.selfPost -->
 						<div class="btn-group">
-							<button class="btn btn-sm btn-link flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-exclamation-triangle"></i><!-- IF posts.display_moderator_tools -->
-							 <span style="color:red; font-weight:bold; vertical-align:middle;">{posts.flags}</span><!-- ENDIF posts.display_moderator_tools --></i></button>
+							<button class="btn btn-sm btn-link flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-exclamation-triangle">	<!-- IF posts.display_moderator_tools -->
+							 <span style="color:red; font-weight:bold;"> {posts.flags}</span>
+							<!-- ENDIF posts.display_moderator_tools --></i></button>
 							
 						</div>
 						<!-- ENDIF !posts.selfPost -->
@@ -198,28 +195,12 @@
 											<div class="post-date pull-left">
 												<span class="date"><i class="fa fa-clock-o"></i> {function.humanReadableDate}</span>
 											</div>
-											<!-- IF privileges.topics:reply -->
-											<div class="btn-group pull-right">
-												<!-- IF !posts.selfPost -->
-												<button class="btn btn-sm btn-default btn-exodin flag" type="button">
-													<span><i class="fa fa-exclamation-triangle"><!-- IF posts.display_moderator_tools --> <span style="color:red; font-weight:bold;">{posts.flags}</span><!-- ENDIF posts.display_moderator_tools --></i></span>
-												</button>
-												<!-- ENDIF !posts.selfPost -->
-												
-												<button class="btn btn-sm btn-default btn-exodin quote" type="button">
-													<span><i class="fa fa-quote-left"></i></span>
-												</button>
-												<button class="btn btn-sm btn-default btn-exodin post_reply" type="button">
-													<span><i class="fa fa-reply"></i></span>
-												</button>
-												
-												
-											</div>
-											<!-- ENDIF privileges.topics:reply -->
 											
 
-											<!-- IF posts.display_moderator_tools -->
+											<!-- IF privileges.topics:reply -->
+											
 											<div class="btn-group pull-right">
+												
 												<button class="btn btn-sm btn-default btn-exodin dropdown-toggle" data-toggle="dropdown" type="button">
 													<i class="fa fa-gear" title="Herramientas"></i>
 														<span class="caret"></span>
@@ -227,41 +208,71 @@
 																	
 												<ul class="dropdown-menu">
 													
-													
-														<li> <a class="pointer edit" title="[[topic:edit]]"><i class="fa fa-pencil"></i>Editar</a></li>
+														<!-- IF posts.display_moderator_tools -->
+														<li> <a class="pointer edit" title="[[topic:edit]]"><i class="fa fa-pencil"></i> Editar</a></li>
 														<!-- IF privileges.editable -->
-														<li> <a class="pointer delete" title="[[topic:delete]]"><i class="fa fa-trash-o"></i>Borrar</a></li>
-														<li> <a class="pointer purge <!-- IF !posts.deleted -->none<!-- ENDIF !posts.deleted -->" title="[[topic:purge]]"><i class="fa fa-eraser"></i>Purgar</a></li>
+														<li> <a class="pointer delete" title="[[topic:delete]]"><i class="fa fa-trash-o"></i> Borrar</a></li>
+														<li> <a class="pointer purge <!-- IF !posts.deleted -->none<!-- ENDIF !posts.deleted -->" title="[[topic:purge]]"><i class="fa fa-eraser"></i> Purgar</a></li>
 														<!-- ENDIF privileges.editable -->
 														<!-- IF posts.display_move_tools -->
-														<li> <a class="pointer move" itle="[[topic:move]]"><i class="fa fa-arrows"></i>Mover</a></li>
+														<li> <a class="pointer move" title="[[topic:move]]"><i class="fa fa-arrows"></i> Mover</a></li>
 														<!-- ENDIF posts.display_move_tools -->
 												
-												<!-- IF !posts.index -->
-													<li><a class="pointer follow" title="[[topic:notify_me]]">
-												<!-- IF isFollowing --><i class="fa fa-eye-slash"></i> <span>[[topic:unwatch]]</span>
-												<!-- ELSE --><i class="fa fa-eye"></i> <span>[[topic:watch]]</span><!-- ENDIF isFollowing -->
-													</a></li>
-												<!-- ENDIF !posts.index -->
-												
+
+														<!-- ENDIF posts.display_moderator_tools -->
+														<!-- IF !posts.index -->
+														<li><a class="pointer follow" title="[[topic:notify_me]]">
+															<!-- IF isFollowing --><i class="fa fa-eye-slash">&nbsp;</i><span>[[topic:unwatch]]</span>
+															<!-- ELSE --><i class="fa fa-eye">&nbsp;</i><span>[[topic:watch]]</span>
+															<!-- ENDIF isFollowing -->
+														</a></li>
+														<!-- ENDIF !posts.index -->
+														
+														<!-- IF !posts.selfPost -->
+														<li><a class="pointer flag" title="[[topic:flag_title]]"><i class="fa fa-exclamation-triangle"> Reportar
+																<!-- IF posts.display_moderator_tools -->
+																<span style="color:red; font-weight:bold;"> {posts.flags}</span>
+																<!-- ENDIF posts.display_moderator_tools -->
+														</i></a></li>	
+														<!-- ENDIF !posts.selfPost -->
 												
 												</ul>
+												<button class="btn btn-sm btn-default btn-exodin quote" type="button">
+													<span><i class="fa fa-quote-left"></i></span>
+												</button>
+												<button class="btn btn-sm btn-default btn-exodin post_reply" type="button">
+													<span><i class="fa fa-reply"></i></span>
+												</button>
 											</div>
+											<div class="btn-group pull-right">
+											<!-- IMPORT partials/thread_tools.tpl -->
+											</div>
+											<!-- ENDIF privileges.topics:reply -->
+												
+												
+												
+												
+											
 
-											<!-- ENDIF posts.display_moderator_tools -->
+
 										
 					</div>
 
 					<div class="pull-right hidden-xs">
 						<!-- IF loggedIn -->
+						
+						
+						<div class="btn-group">
+							<!-- IMPORT partials/thread_tools.tpl -->
+						</div>
 						<div class="btn-group">
 							<!-- IF !posts.index -->
 							<button class="btn btn-sm btn-link follow" type="button" title="[[topic:notify_me]]">
 								<!-- IF isFollowing -->
-								<i class="fa fa-eye-slash"></i>
+								<i class="fa fa-eye-slash">&nbsp;</i>
 								<label><span>[[topic:unwatch]]</span></label>
 								<!-- ELSE -->
-								<i class="fa fa-eye"></i>
+								<i class="fa fa-eye">&nbsp;</i>
 								<label><span>[[topic:watch]]</span></label>
 								<!-- ENDIF isFollowing -->
 							</button>
@@ -274,7 +285,7 @@
 							<button class="upvote btn btn-sm btn-link <!-- IF posts.upvoted --> upvoted btn-primary <!-- ENDIF posts.upvoted -->">
 								<i class="fa fa-chevron-up"></i>
 							</button>
-							<button class="votes btn btn-sm btn-link" data-votes="{posts.votes}">{posts.votes}</button>
+							<button class="votes btn btn-sm btn-link" data-votes="{posts.votes}"> {posts.votes} </button>
 							<!-- IF !downvote:disabled -->
 							<button class="downvote btn btn-sm btn-link <!-- IF posts.downvoted --> downvoted btn-primary <!-- ENDIF posts.downvoted -->">
 								<i class="fa fa-chevron-down"></i>
@@ -285,11 +296,11 @@
 
 						<!-- IF privileges.topics:reply -->
 						<div class="btn-group">
-							<button class="btn btn-sm btn-link quote" type="button"><i class="fa fa-quote-left"></i> <label>[[topic:quote]]</label></button>
+							<button class="btn btn-sm btn-link quote" type="button"><i class="fa fa-quote-left"></i> <label> [[topic:quote]] </label></button>
 						</div>
 
 						<div class="btn-group">
-							<button class="btn btn-sm btn-link post_reply" type="button"><i class="fa fa-reply"></i> <label>[[topic:reply]]</label></button>
+							<button class="btn btn-sm btn-link post_reply" type="button"><i class="fa fa-reply"></i> <label> [[topic:reply]]</label></button>
 						</div>
 						<!-- ENDIF privileges.topics:reply -->
 					</div>
@@ -309,17 +320,18 @@
 	<div class="topic-foot">
 		<div class="topic-head-middle clearfix">
 			<div class="pull-left">
-				<span class="btn-group"><button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
+				<span class="btn-group hidden-xs">
+					<button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
 				</span>
-				
+				<span class="btn-group visible-xs">
+				<button class="btn btn-group btn-sm btn-default btn-exodin post_reply<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->"><i class="fa fa-plus"></i></button>
+				</span>
 				<span class="visible-xs-inline">
 				<!-- IMPORT partials/thread_sort.tpl -->
 				</span>
 			</div>
 
-			
-				
-				<div class="topic-head-pagination <!-- IF config.usePagination -->hidden-xs <!-- ENDIF config.usePagination -->">
+				<div class="topic-head-pagination">
 					<!-- IF config.usePagination -->
 					<!-- IMPORT partials/paginator.tpl -->
 					<!-- ENDIF config.usePagination -->

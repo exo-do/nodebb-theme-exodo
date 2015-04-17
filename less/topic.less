@@ -2,7 +2,7 @@
 	vertical-align: none;
 }
 .topic-head, .topic-foot {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     .topic-head-top {
         h1 {
             font-size: 30px;
@@ -28,39 +28,45 @@
     }
     .topic-head-middle {
         margin-bottom: 15px;
-        > div {
+        
+		.topic-buttons-right{
             clear: right;
             float: left;
             height: 32px;
             width: 50%;
 			
-        }
-        .topic-head-pagination {
-            display: block;
-            position: relative;
-			float:right;
-            > div {
-                bottom: 0;
-                position: absolute;
-                right: 0;
-                .pagination-count {
-                    color: @exodo-lightdark;
-                    display: inline-block;
-                    font-size: 10px;
-                    margin-right: 5px;
-                    position: relative;
-                    text-align: right;
-                    top: -3px;
-                    > span {
-                        display: block;
-                    }
+		}
+        
+    }
+    .topic-head-pagination {
+        width: 100%;
+		//margin-bottom: 10px;
+		
+		
+        display: block;
+        position: relative;
+		float:right;
+        > div {
+            bottom: 0;
+            position: absolute;
+            right: 0;
+            .pagination-count {
+                color: @exodo-lightdark;
+                display: inline-block;
+                font-size: 10px;
+                margin-right: 5px;
+                position: relative;
+                text-align: right;
+                top: -3px;
+                > span {
+                    display: block;
                 }
-                .pagination {
-                    margin: 0;
-                    > li {
-                        > a {
-                            padding: 3px 6px !important;
-                        }
+            }
+            .pagination {
+                margin: 0;
+                > li {
+                    > a {
+                        padding: 3px 6px !important;
                     }
                 }
             }

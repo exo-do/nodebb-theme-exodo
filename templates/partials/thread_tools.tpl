@@ -2,11 +2,15 @@
 
 <!-- IF privileges.view_thread_tools -->
 <!-- IF privileges.editable -->
-<span class="thread-tools btn-group">
-	<button class="btn btn-exodo dropdown-toggle" data-toggle="dropdown" type="button">Mod <span><i class="fa fa-fw fa-gear"></i></span></button>
+
+
+<span class="thread-tools">
+	<button class="btn btn-sm btn-default btn-exodin visible-xs" data-toggle="dropdown" type="button"><span><i class="fa fa-bolt"></i></span></button>
+	<button class="btn btn-sm btn-link hidden-xs" data-toggle="dropdown" type="button"><i class="fa fa-bolt"></i><label> Mod </label></button>
+
 	<ul class="dropdown-menu pull-right">
 		
-		<li><a href="#" class="markAsUnreadForAll"><i class="fa fa-fw fa-inbox"></i> [[topic:thread_tools.markAsUnreadForAll]]</a></li>
+		<li><a href="#" class="markAsUnreadForAll"><i class="fa fa-fw fa-inbox"></i> Marcar no leido</a></li>
 		<li><a href="#" class="pin_thread"><i class="fa fa-fw fa-thumb-tack"></i> [[topic:thread_tools.pin]]</a></li>
 		<li><a href="#" class="lock_thread"><i class="fa fa-fw fa-lock"></i> [[topic:thread_tools.lock]]</a></li>
 		<li class="divider"></li>
