@@ -22,7 +22,7 @@
 			<h1><a title="{title}" href="/topic/{slug}">{title}</a></h1>
 		</div>
 		
-		<div class="topic-head-middle clearfix">
+		<div class="topic-head-middle clearfix<!-- IF config.usePagination --> headup <!-- ENDIF config.usePagination -->">
 			<div class="pull-left topic-buttons-right">
 				<span class="btn-group hidden-xs">
 				<button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
@@ -31,7 +31,9 @@
 				<button class="btn btn-group btn-sm btn-default btn-exodin post_reply<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->"><i class="fa fa-plus"></i></button>
 				</span>
 				<!-- IMPORT partials/thread_sort.tpl -->
-				
+				<span class="btn-group">
+				<!-- IMPORT partials/thread_tools.tpl -->
+				</span>
 
 			</div>
 			
@@ -244,9 +246,7 @@
 													<span><i class="fa fa-reply"></i></span>
 												</button>
 											</div>
-											<div class="btn-group pull-right">
-											<!-- IMPORT partials/thread_tools.tpl -->
-											</div>
+											
 											<!-- ENDIF privileges.topics:reply -->
 												
 												
@@ -262,9 +262,7 @@
 						<!-- IF loggedIn -->
 						
 						
-						<div class="btn-group">
-							<!-- IMPORT partials/thread_tools.tpl -->
-						</div>
+						
 						<div class="btn-group">
 							<!-- IF !posts.index -->
 							<button class="btn btn-sm btn-link follow" type="button" title="[[topic:notify_me]]">

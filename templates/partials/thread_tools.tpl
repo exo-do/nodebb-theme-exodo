@@ -6,7 +6,7 @@
 
 <span class="thread-tools">
 	<button class="btn btn-sm btn-default btn-exodin visible-xs" data-toggle="dropdown" type="button"><span><i class="fa fa-bolt"></i></span></button>
-	<button class="btn btn-sm btn-link hidden-xs" data-toggle="dropdown" type="button"><i class="fa fa-bolt"></i><label> Mod </label></button>
+	<button class="btn btn-exodo hidden-xs" data-toggle="dropdown" type="button"><i class="fa fa-bolt"></i><label> Mod </label></button>
 
 	<ul class="dropdown-menu pull-right">
 		
