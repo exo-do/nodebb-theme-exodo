@@ -18,14 +18,14 @@
 				<input class="title form-control" type="text" tabindex="2" placeholder="[[topic:composer.title_placeholder]]" />
 			</div>
 			<!-- ELSE -->
-			<div class="<!-- IF isTopic -->col-lg-9<!-- ELSE -->col-lg-12<!-- ENDIF isTopic --> col-md-12">
+			<div class="<!-- IF isTopic -->col-lg-6<!-- ELSE -->col-lg-12<!-- ENDIF isTopic --> col-md-12">
 				<!-- IF isTopic --><input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" />
 				<!-- ELSE -->
 				<input class="title form-control" type="hidden" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" />
 				<!-- ENDIF isTopic -->
 			</div>
 			<!-- IF isTopic -->
-			<div class="category-list-container col-lg-3 col-md-12">
+			<div class="category-list-container composer-list col-lg-3 col-md-12">
 				<select tabindex="3" class="form-control category-list"></select>
 			</div>
 			<!-- ENDIF isTopic -->
