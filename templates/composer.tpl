@@ -1,7 +1,7 @@
 <div class="composer">
 
 	<div class="composer-container">
-		<nav class="navbar navbar-fixed-top mobile-navbar visible-xs">
+		<nav class="navbar navbar-fixed-top mobile-navbar visible-xs visible-sm visible-md ">
 			<span class="pull-left">
 				<button class="btn btn-primary" data-action="discard" tabindex="-1"><i class="fa fa-times"></i></button>
 			</span>
@@ -86,7 +86,7 @@
 						<![endif]-->
 					</form>
 				</div>
-				<div class="btn-group pull-right action-bar hidden-sm hidden-xs">
+				<div class="btn-group pull-right action-bar hidden-md hidden-sm hidden-xs">
 					<button class="btn btn-default" data-action="discard" tabindex="-1"><i class="fa fa-times"></i> [[topic:composer.discard]]</button>
 					<button class="btn btn-primary" data-action="post" tabindex="6"><i class="fa fa-check"></i> [[topic:composer.submit]]</button>
 				</div>
