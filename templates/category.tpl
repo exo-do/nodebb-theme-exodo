@@ -22,46 +22,60 @@
 		</div>
 		
 	</br></br>
-		<div class="category-head-middle clearfix">
+		<div class="category-head-middle clearfix <!-- IF config.usePagination --> headup <!-- ENDIF config.usePagination -->">
 			
 			<!--<div class="category-head-reply"></div>-->
-			
-			<div class="category-head-bottom pull-left">
-				<div class="category-head-tools visible-sm-inline visible-md-inline visible-lg-inline">
-					
-					<span class="pull-left">
-						
-						<span class="btn-group"><button id="new_post" type="button" class="btn btn-exodo<!-- IF !privileges.topics:create --> disabled<!-- ENDIF !privileges.topics:create --> tool">[[category:new_topic_button]]<span>+</span></button>
+			<!--<div class="category-head-bottom pull-left"> -->
+			<!--<div class="category-head-tools visible-sm-inline visible-md-inline visible-lg-inline"> -->
+			<div class="pull-left category-buttons-right">
+		
+						<a id="new_post">
+						<span class="btn-group hidden-xs">
+						<button type="button" class="new_post btn btn-exodo<!-- IF !privileges.topics:create --> disabled<!-- ENDIF !privileges.topics:create -->">[[category:new_topic_button]]<span>+</span></button>
 						</span>
 						
+						<span class="btn-group visible-xs">	
+						<button type="button" class="btn btn-sm btn-default btn-exodin<!-- IF !privileges.topics:create --> disabled<!-- ENDIF !privileges.topics:create -->"><i class="fa fa-plus"></i></button>
+						</span>	
+						
+						</a>
+						
 						<!-- IF loggedIn -->
-						<span class="btn-group">
-						<button type="button" class="btn btn-exodo watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored --> tool"> [[topic:watch]] <span><i class="fa fa-eye"></i></span></button>
-						<button type="button" class="btn btn-exodo ignore <!-- IF isIgnored -->hidden<!-- ENDIF isIgnored --> tool"> [[category:ignore]]<span><i class="fa fa-eye-slash"></i></span></button>
+						<span class="btn-group hidden-xs">
+						<button type="button" class="btn btn-exodo watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored --> tool"> Seguir <span><i class="fa fa-eye"></i></span></button>
+						<button type="button" class="btn btn-exodo ignore <!-- IF isIgnored -->hidden<!-- ENDIF isIgnored --> tool"> Ignorar<span><i class="fa fa-eye-slash"></i></span></button>
+						</span>
+						
+						<span class="btn-group  visible-xs">
+						
+							<button type="button" class="btn btn-sm btn-default btn-exodin watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored --> tool"><span><i class="fa fa-eye"></i></span></button>
+							<button type="button" class="btn btn-sm btn-default btn-exodin ignore <!-- IF isIgnored -->hidden<!-- ENDIF isIgnored --> tool"><span><i class="fa fa-eye-slash"></i></span></button>
+							
 						</span>
 						
 						<!-- ENDIF loggedIn -->
-	
-						<!-- IMPORT partials/category_tools.tpl -->
-	
+						
 						<span class="dropdown share-dropdown btn-group">
-							<button type="button" class="btn btn-exodo dropdown-toggle tool" data-toggle="dropdown">
-								[[topic:share]] <span><i class="fa fa-share-alt"></i></span><span class="caret hidden"></span>
+							<button type="button"  data-toggle="dropdown" class="btn btn-exodo dropdown-toggle tool hidden-xs">
+								[[topic:share]] <span><i class="fa fa-share-alt"></i></span>
 							</button>
-	
+						<button type="button" data-toggle="dropdown" class="btn btn-sm btn-default btn-exodin dropdown-toggle tool visible-xs"><i class="fa fa-share-alt"></i></button>	
 						<!-- IMPORT partials/share_dropdown.tpl -->
 						</span>
 						
+	
+						<!-- IMPORT partials/category_tools.tpl -->
 						
-					</span>
-				</div>
 			</div>
+				<!--</div>-->
 			
-			<!-- IF config.usePagination -->
-			<div class="category-head-pagination pull-right">
+			
+			<div class="category-head-pagination">
+				<!-- IF config.usePagination -->
 				<!-- IMPORT partials/paginator.tpl -->
+				<!-- ENDIF config.usePagination -->
 			</div>
-			<!-- ENDIF config.usePagination -->
+		
 			
 			
 		</div>

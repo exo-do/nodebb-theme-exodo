@@ -2,12 +2,16 @@
 	vertical-align: none;
 }
 .topic-head, .topic-foot {
-    margin-bottom: 10px;
+    //margin-bottom: 10px;
 	.headup {
 		
-		margin-bottom: 40px !important;
+		margin-bottom: 30px !important;
+	}
+	.headdown {
+		margin-top: 50px !important;
 	}
     .topic-head-top {
+		margin-bottom: 30px;
         h1 {
             font-size: 30px;
             margin: 10px 0;
@@ -20,6 +24,7 @@
     }
 	
     .topic-head-top-mini {
+		margin-bottom: 20px;
         h1 {
             font-size: 20px;
             margin: 10px 0;
@@ -31,13 +36,13 @@
 		}
     }
     .topic-head-middle {
-        margin-bottom: 15px;
+        //margin-bottom: 15px;
         
 		.topic-buttons-right{
             clear: right;
             float: left;
             height: 32px;
-            width: 50%;
+            width: 100%;
 			
 		}
         
@@ -45,13 +50,14 @@
     .topic-head-pagination {
         width: 100%;
 		//margin-bottom: 10px;
-		
-		
         display: block;
         position: relative;
 		float:right;
-        > div {
+        
+		
+		> div {
             bottom: 0;
+			
             position: absolute;
             right: 0;
             .pagination-count {
@@ -70,12 +76,15 @@
                 margin: 0;
                 > li {
                     > a {
-                        padding: 3px 6px !important;
+                        padding: 1px 9px !important;
                     }
                 }
             }
         }
     }
+	.fixfoot {
+		bottom: 50px !important;
+	}
 	
 	
 }

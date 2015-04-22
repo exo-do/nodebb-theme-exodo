@@ -12,23 +12,41 @@
 				color: @exodo-primary;
             }
         }
+		
+		.headup {
+		
+			margin-bottom: 30px !important;
+		}
         .category-head-middle {
-            margin-bottom: 8px;
-			margin-top: 8px;
-            > div {
-                clear: right;
-                float: left;
-                height: 22px;
+            //margin-bottom: 8px;
+			//margin-top: 8px;
+            //> div {
+             //   clear: right;
+             //   float: left;
+              //  height: 22px;
                 //width: 50%;
-            }
-            .category-head-pagination {
+				//}
+				.category-buttons-right{
+		            clear: right;
+		            float: left;
+		            height: 32px;
+		            width: 100%;
+			
+				}
+				
+		}
+        .category-head-pagination {
+				width: 100%;
                 display: block;
                 position: relative;
+				float: right;
+				
                 > div {
                     //bottom: 0;
-                    //position: absolute;
-                    //right: 0;
-                    .pagination-count {
+                    position: absolute;
+                    right: 0;
+                    
+					.pagination-count {
                         color: @exodo-lightdark;
                         display: inline-block;
                         font-size: 10px;
@@ -49,8 +67,7 @@
                         }
                     }
                 }
-            }
-        }
+         }
         .category-head-bottom {
             clear: both;
             .category-head-tools {
@@ -163,6 +180,9 @@
             }
         }
         .category-item {
+			.regular {
+				font-weight: normal !important;
+			}
 			.topic-title:first-letter {
 					text-transform:uppercase;
 			}

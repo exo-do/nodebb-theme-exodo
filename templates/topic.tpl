@@ -28,19 +28,28 @@
 				<button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
 				</span>
 				<span class="btn-group visible-xs">
-				<button class="btn btn-group btn-sm btn-default btn-exodin post_reply<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->"><i class="fa fa-plus"></i></button>
+				<button class="btn btn-sm btn-default btn-exodin post_reply<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->"><i class="fa fa-plus"></i></button>
 				</span>
+				
+				<span class="btn-group">
 				<!-- IMPORT partials/thread_sort.tpl -->
+				</span>
+				
+				<span class="dropdown share-dropdown btn-group">
+				<button class="btn btn-exodo dropdown-toggle tool hidden-xs" data-toggle="dropdown" type="button"> [[topic:share]] <span><i class="fa fa-share-alt"></i></span>
+				</button>
+				<button class="btn btn-sm btn-default btn-exodin dropdown-toggle tool visible-xs" data-toggle="dropdown" type="button"><i class="fa fa-share-alt"></i></button>
+				
+				<!-- IMPORT partials/share_dropdown.tpl -->
+				</span>
+				
 				<span class="btn-group">
 				<!-- IMPORT partials/thread_tools.tpl -->
 				</span>
 
 			</div>
-			
-
-
-			
 		</div>
+		
 		<div class="topic-head-pagination">
 			<!-- IF config.usePagination -->
 				<!-- IMPORT partials/paginator.tpl -->
@@ -316,26 +325,23 @@
 	</ul>
 
 	<div class="topic-foot">
-		<div class="topic-head-middle clearfix">
-			<div class="pull-left">
+		<div class="topic-head-middle clearfix <!-- IF config.usePagination --> headdown <!-- ENDIF config.usePagination -->">
+			<div class="pull-left topic-buttons-right">
+			
 				<span class="btn-group hidden-xs">
 					<button class="btn post_reply btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
 				</span>
 				<span class="btn-group visible-xs">
 				<button class="btn btn-group btn-sm btn-default btn-exodin post_reply<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->"><i class="fa fa-plus"></i></button>
 				</span>
-				<span class="visible-xs-inline">
 				<!-- IMPORT partials/thread_sort.tpl -->
-				</span>
 			</div>
 
-				<div class="topic-head-pagination">
-					<!-- IF config.usePagination -->
-					<!-- IMPORT partials/paginator.tpl -->
-					<!-- ENDIF config.usePagination -->
-				</div>
-				
-			
+		</div>
+		<div class="topic-head-pagination fixfoot">
+			<!-- IF config.usePagination -->
+			<!-- IMPORT partials/paginator.tpl -->
+			<!-- ENDIF config.usePagination -->
 		</div>
 		
 		<!-- IMPORT partials/breadcrumbs.tpl -->

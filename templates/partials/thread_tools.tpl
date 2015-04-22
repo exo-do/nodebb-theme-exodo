@@ -5,10 +5,10 @@
 
 
 <span class="thread-tools">
-	<button class="btn btn-sm btn-default btn-exodin visible-xs" data-toggle="dropdown" type="button"><span><i class="fa fa-bolt"></i></span></button>
-	<button class="btn btn-exodo hidden-xs" data-toggle="dropdown" type="button"><i class="fa fa-bolt"></i><label> Mod </label></button>
+	<button class="btn btn-sm btn-default btn-exodin visible-xs" data-toggle="dropdown" type="button"> Mod <span><i class="fa fa-bolt"></i></span></button>
+	<button class="btn btn-exodo hidden-xs" data-toggle="dropdown" type="button"> Mod <span><i class="fa fa-bolt"></i></span></button>
 
-	<ul class="dropdown-menu pull-right">
+	<ul class="dropdown-menu pull-left">
 		
 		<li><a href="#" class="markAsUnreadForAll"><i class="fa fa-fw fa-inbox"></i> Marcar no leido</a></li>
 		<li><a href="#" class="pin_thread"><i class="fa fa-fw fa-thumb-tack"></i> [[topic:thread_tools.pin]]</a></li>

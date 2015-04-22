@@ -30,7 +30,7 @@
 					<a href="{relative_path}/topic/{topics.slug}" itemprop="url">
 						<meta itemprop="name" content="{topics.title}">
 
-						<span class="topic-title"><i class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->">&nbsp;</i><i class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->">&nbsp;</i>{topics.title}</span>
+						<span class="topic-title <!-- IF !loggedIn --> regular <!-- ENDIF !loggedIn -->"><i class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->">&nbsp;</i><i class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->">&nbsp;</i>{topics.title}</span>
 					</a>
 				</h3>
 
@@ -64,9 +64,9 @@
                     <!-- IF topics.unreplied -->
                     [[category:no_replies]]
                     <!-- ELSE -->
-                    <a href="<!-- IF topics.teaser.user.userslug -->{relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->">
-                        {topics.teaser.user.username}
-                    </a> <a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}" title="Ir al último mensaje" class="lastpost"><span>{function.humanReadableDateLast}</span> <i class="fa fa-long-arrow-right"></i></a>
+					<!-- <span class="pull-left"> {topics.postcount} / {topics.viewcount}</span> -->
+                    <a href="<!-- IF topics.teaser.user.userslug -->{relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->"> {topics.teaser.user.username} </a> 
+					<a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}" title="Ir al último mensaje" class="lastpost"><span>{function.humanReadableDateLast}</span> <i class="fa fa-long-arrow-right"></i></a>
                     <!-- ENDIF topics.unreplied -->
                 </div>
 			</div>
@@ -81,6 +81,7 @@
 					[[category:no_replies]]
 				</dd>
 				<!-- ELSE -->
+				
 				<dd>
 					<img class="user-pic" src="{topics.teaser.user.picture}" />&nbsp;
 					<a href="<!-- IF topics.teaser.user.userslug -->{relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->">
