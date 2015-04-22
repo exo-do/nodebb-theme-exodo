@@ -210,3 +210,19 @@
 				</ul>
 				<!-- ENDIF !maintenanceHeader -->
 			</div>
+
+
+<script>
+$('.mark-all-read').on('click', function() {
+	socket.emit('notifications.markAllRead', function(err) {
+		if (err) {
+			return app.alertError(err.message);
+		}
+
+		$('.mark-all-read').addClass('hidden');
+		$('.notifications .alert-info').removeClass('hidden');
+		var listEl = $('.notifications-list');
+		listEl.empty();
+	});
+});
+</script>
