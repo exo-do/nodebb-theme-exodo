@@ -25,7 +25,7 @@
 				<!-- ENDIF isTopic -->
 			</div>
 			<!-- IF isTopic -->
-			<div class="category-list-container composer-list col-lg-3 col-md-12">
+			<div class="category-list-container composer-list col-lg-3 col-md-6 col-sm-6 col-xs-6">
 				<select tabindex="3" class="form-control category-list"></select>
 			</div>
 			<!-- ENDIF isTopic -->

@@ -15,9 +15,9 @@
 	<div class="alert-window alert-right-bottom"></div>
 
 	<div id="footer" class="floatcontainer footer">
-		<ul class="footer_links left">
+		<!--<ul class="footer_links left">
 			<li><a href="#">Ir Arriba</a>  |  </li>
-			<li><a href="#" onclick="darkMode()">Modo Noche</a></li>
+			<li></li>
 		</ul>
 	
 		<ul class="footer_links">
@@ -26,23 +26,48 @@
 			<li><a href="#">Política de cookies</a>  |  </li>
 			<li><a href="#">Ir Arriba</a></li>
 		</ul> 
-		
+		-->
 		<!-- Include Font Awesome Stylesheet in Header -->
-		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 		<!-- // -->
 		<div>
-		        <div class="text-center center-block">
-		                <a href="https://www.facebook.com/pages/Exodo/881300971914436"><i class="fa fa-facebook-square fa-3x social-fb social"></i></a>
+		        <div class="text-center center-block visible-xs visible-sm">
+						<a href="#" class="scrollup pull-left"><i class="fa fa-chevron-circle-up fa-2x scrollup-ic social"></i></a>
+		                <a href="#" onclick="darkMode()"><i class="fa fa-adjust fa-2x social-ng social "></i></a>
+						<a href="https://www.facebook.com/pages/Exodo/881300971914436"><i class="fa fa-facebook-square fa-2x social-fb social"></i></a>
+			            <a href="https://twitter.com/exodo"><i class="fa fa-twitter-square fa-2x social-tw social"></i></a>
+			            <a href="https://plus.google.com"><i class="fa fa-google-plus-square fa-2x social-gp social"></i></a>
+			            <a href="mailto:contacto@exo.do"><i class="fa fa-envelope-square fa-2x social-em social"></i></a>
+						<a href="#" class="scrollup pull-right"><i class="fa fa-chevron-circle-up fa-2x scrollup-ic social"></i></a>
+				</div>
+				
+		        <div class="text-center center-block hidden-xs hidden-sm">
+						<a href="#" class="scrollup pull-left"><i class="fa fa-chevron-circle-up fa-3x scrollup-ic social"></i></a>
+		                <a href="#" onclick="darkMode()"><i class="fa fa-adjust fa-3x social-ng social "></i></a>
+						<a href="https://www.facebook.com/pages/Exodo/881300971914436"><i class="fa fa-facebook-square fa-3x social-fb social"></i></a>
 			            <a href="https://twitter.com/exodo"><i class="fa fa-twitter-square fa-3x social-tw social"></i></a>
 			            <a href="https://plus.google.com"><i class="fa fa-google-plus-square fa-3x social-gp social"></i></a>
 			            <a href="mailto:contacto@exo.do"><i class="fa fa-envelope-square fa-3x social-em social"></i></a>
+						<a href="#" class="scrollup pull-right"><i class="fa fa-chevron-circle-up fa-3x scrollup-ic social"></i></a>
 				</div>
+				
 		</div>
 		      
 	</div>
 	
 	
-	
+	<script>
+	$(document).ready(function () {
+
+	    $('.scrollup').click(function () {
+	        $("html, body").animate({
+	            scrollTop: 0
+	        }, 600);
+	        return false;
+	    });
+
+	});
+	</script>
 	
 	
 	<script>
@@ -56,7 +81,7 @@
 					type: 'success',
 					timeout: 3000,
 					title: 'Modo Noche Desactivado',
-					message: "La luz te guía",
+					message: "Que la luz te guíe",
 					alert_id: 'darkMode'
 				});
 				$("*").removeClass("dark");
@@ -68,7 +93,7 @@
 					type: 'success',
 					timeout: 3000,
 					title: 'Modo Noche Activado',
-					message: "Ahora eres un ninja",
+					message: "Ahora eres una sombra",
 					alert_id: 'darkMode'
 				});
 				$("*").addClass("dark");
