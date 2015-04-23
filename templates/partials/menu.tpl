@@ -5,9 +5,11 @@
 					<span class="icon-bar"></span>
 				</button>
 				<div>
+					<div class="pull-left">
 					<a href="{relative_path}/">
 						<img class="{brand:logo:display} forum-logo" src="{brand:logo}" />
 					</a>
+					</div>
 					<!-- IF showSiteTitle -->
 					<a href="{relative_path}/">
 						<h1 class="navbar-brand forum-title">{title}</h1>
@@ -58,17 +60,11 @@
 							<li class="notif-dropdown-link"><a href="{relative_path}/notifications">[[notifications:see_all]]</a></li>
 						</ul>
 					</li>
-
-					<li class="visible-xs">
-						<a href="{relative_path}/notifications" title="[[notifications:title]]">
-							<i class="notification-icon fa fa-bell-o fa-fw" data-content="0"></i> [[notifications:title]]
-						</a>
-					</li>
-
+					
 					<!-- IF !disableChat -->
-					<li class="chats dropdown">
+					<li class="chats dropdown hidden-xs">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#" title="[[global:header.chats]]" id="chat_dropdown">
-							<i id="chat-count" class="fa fa-comment-o fa-fw"></i> <span class="visible-xs-inline">[[global:header.chats]]</span>
+							<i id="chat-count" class="fa fa-comment-o fa-fw"></i>
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="chat_dropdown">
 							<li>
@@ -76,13 +72,13 @@
 							<li>
 								<a href="#"><i class="fa fa-refresh fa-spin"></i> [[global:chats.loading]]</a>
 							</li>
-						</ul>
-					</li>
+								</ul>
+							</li>
 							<li class="notif-dropdown-link"><a href="{relative_path}/chats">[[modules:chat.see_all]]</a></li>
 						</ul>
 					</li>
 					<!-- ENDIF !disableChat -->
-
+					
 					<li id="user_label" class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="user_dropdown" title="[[global:header.profile]]">
 							<img id="user-header-picture" src="{user.picture}"/>
@@ -131,6 +127,28 @@
 							</li>
 						</ul>
 					</li>
+					<li class="visible-xs">
+						<a href="{relative_path}/notifications" title="[[notifications:title]]">
+							<i class="notification-icon fa fa-bell-o fa-fw" data-content="0"></i> [[notifications:title]]
+						</a>
+					</li>
+
+					<!-- IF !disableChat -->
+					<li class="visible-xs">
+							<a href="{relative_path}/chats"><i id="chat-count" class="fa fa-comment-o fa-fw"></i> 						<span> [[global:header.chats]] </span></a>
+					</li>
+					<!-- ENDIF !disableChat -->
+					
+					<!-- IF searchEnabled -->
+					<li class="visible-xs">
+							<a href="{relative_path}/search"><i class="fa fa-search fa-fw"></i>
+								<span> [[global:search]] </span></a>
+						
+					</li>
+					<!-- ENDIF searchEnabled -->
+					
+					
+					
 				</ul>
 				<!-- ELSE -->
 				<ul id="logged-out-menu" class="nav navbar-nav navbar-right pull-right">
@@ -168,7 +186,7 @@
 
 				<ul class="nav navbar-nav navbar-right pull-right">
 					<li>
-						<a href="#" id="reconnect" class="hide" title="Connection to {title} has been lost, attempting to reconnect...">
+						<a href="#" id="reconnect" class="hide hidden-xs" title="Connection to {title} has been lost, attempting to reconnect...">
 							<i class="fa fa-check"></i>
 						</a>
 					</li>

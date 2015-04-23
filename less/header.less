@@ -262,12 +262,13 @@
 	}
 
 	.forum-logo {
-		max-width: 100px;
 		
-		
+		max-width: 102px;
+		/* max-height: 50px; */
+		line-height: 50px;
 		padding-top: 18px;
-		padding-bottom: 0px;
-		margin-left: 10px;
+		/* padding-bottom: 0; */
+		margin-left: 20px;
 		
 	}
 	
@@ -520,8 +521,20 @@
 
 .container-fluid {
 	
-padding-left: 50px;
-padding-right: 50px;
+//padding-left: 40px;
+//padding-right: 60px;
+
+@media (min-width: @screen-sm-min) {
+	padding-left: 40px;
+	padding-right: 60px;
+}
+
+@media (max-width: @screen-xs-min) {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+
 }
 
 .loading-bar {
@@ -537,3 +550,10 @@ padding-right: 50px;
  	-ms-transition: width 0.2s ease-in;
  	transition: width 0.2s ease-in;
 }
+
+.widemenu{
+	
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
