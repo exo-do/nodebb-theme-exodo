@@ -14,7 +14,7 @@
 					<div class="col-lg-8">
 						<div class="input-group">
 							<input class="form-control" type="text" placeholder="[[register:email_address_placeholder]]" name="email" id="email" autocorrect="off" autocapitalize="off" />
-							<span class="input-group-addon">
+							<span class="input-group-addon input-register">
 								<span id="email-notify"><i class="fa fa-circle-o"></i></span>
 							</span>
 						</div>
@@ -26,7 +26,7 @@
 					<div class="col-lg-8">
 						<div class="input-group">
 							<input class="form-control" type="text" placeholder="[[register:username_placeholder]]" name="username" id="username" autocorrect="off" autocapitalize="off" />
-							<span class="input-group-addon">
+							<span class="input-group-addon input-register">
 								<span id="username-notify"><i class="fa fa-circle-o"></i></span>
 							</span>
 						</div>
@@ -38,7 +38,7 @@
 					<div class="col-lg-8">
 						<div class="input-group">
 							<input class="form-control" type="password" placeholder="[[register:password_placeholder]]" name="password" id="password" />
-							<span class="input-group-addon">
+							<span class="input-group-addon input-register">
 								<span id="password-notify"><i class="fa fa-circle-o"></i></span>
 							</span>
 						</div>
@@ -50,7 +50,7 @@
 					<div class="col-lg-8">
 						<div class="input-group">
 							<input class="form-control" type="password" placeholder="[[register:confirm_password_placeholder]]" name="password-confirm" id="password-confirm" />
-							<span class="input-group-addon">
+							<span class="input-group-addon input-register">
 								<span id="password-confirm-notify"><i class="fa fa-circle-o"></i></span>
 							</span>
 						</div>
