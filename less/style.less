@@ -69,6 +69,10 @@ body {
 	
 }
 
+.btn {
+	
+	border-radius: 0px;
+}
 
 .btn-exodo {
     background-color: @exodo-dark;
@@ -80,10 +84,16 @@ body {
     height: 22px;
     line-height: 22px;
     padding: 0px 0px 0px 10px !important;
-	border-radius: 4px !important;
+	border-bottom-left-radius: 4px !important;
+	border-top-left-radius: 4px !important;
+	-moz-border-radius-bottomleft: 4px !important;
+	-moz-border-radius-topleft: 4px !important;
+    -webkit-border-bottom-left-radius: 4px !important;
+    -webkit-border-top-left-radius: 4px !important;
+	 
+	//border-radius: 4px !important;
     /*border-radius: 0;
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px; */
+    -moz-border-radius: 0px;*/
     &:hover {
 	    //background-color: @exodo-dark;
         box-shadow: 0 0 0 3px #E4E4E4;
@@ -97,14 +107,14 @@ body {
 	}
     span {
         background-color: @exodo-primary;
-		border-bottom-right-radius: 4px !important;
-		border-top-right-radius: 4px !important;
+		//border-bottom-right-radius: 4px !important;
+		//border-top-right-radius: 4px !important;
         display: inline-block;
         /*font: normal 13px;
         font-size: 13px; */
         font-weight: bold;
         height: 22px;
-        line-height: 22px;
+        line-height: 23px;
         margin-left: 8px;
         padding: 0 8px;
     }
