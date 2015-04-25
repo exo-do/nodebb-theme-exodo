@@ -1,6 +1,5 @@
 @topbarHeight: 50px;
 
-
 html.composing {
 	&.mobile {
 		overflow: hidden;
@@ -8,7 +7,7 @@ html.composing {
 
 	body {
 		height: 0px !important;
-		overflow: hidden;
+		//overflow: hidden;
 	}
 
 	.composer {
@@ -135,7 +134,7 @@ html.composing {
 	.write-preview-container {
 		height:100%;
 		margin: 0 0;
-
+		min-height: 500px;
 		> div {
 			height:100%;
 		}
@@ -216,6 +215,7 @@ html.composing {
 	}
 
 	.resizer {
+		height: 0px;
 		position: absolute;
 		width: 100%;
 		top: 10px;
@@ -315,11 +315,12 @@ html.composing {
 	
 	.composer-container {
 		
-		/*		
+		/*	
 		.title-container .title[disabled] {
 			.visible-xs();
 		}
 		*/
+		
 		.title {
 			background: none;
 			border: medium none;
