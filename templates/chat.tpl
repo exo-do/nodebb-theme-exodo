@@ -16,7 +16,7 @@
 
 				<div class="input-group">
 
-					<textarea maxlength="600" id="chat-message-input" rows="1" placeholder="[[modules:chat.placeholder]]" name="chat-message" class="form-control"></textarea>
+					<textarea maxlength="1288" id="chat-message-input" rows="1" placeholder="[[modules:chat.placeholder]]" name="chat-message" class="form-control"></textarea>
 					<span class="input-group-btn">
 						<button id="chat-message-send-btn" class="btn btn-primary" href="#" type="button">[[modules:chat.send]]</button>
 						<button id="chat-close-btn" class="btn btn-warning" data-dismiss="modal" aria-hidden="true">[[global:close]]</button>
