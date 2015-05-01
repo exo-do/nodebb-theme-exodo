@@ -18,9 +18,9 @@
 								<div class="col-md-6">
 									<label>[[search:in]]</label>
 									<select id="search-in" class="form-control">
-										<option value="titlesposts">[[search:titles-posts]]</option>
 										<option value="titles">[[search:titles]]</option>
 										<option value="posts">[[global:posts]]</option>
+										<option value="titlesposts">[[search:titles-posts]]</option>
 										<option value="users">[[global:users]]</option>
 										<option value="tags">[[tags:tags]]</option>
 									</select>
