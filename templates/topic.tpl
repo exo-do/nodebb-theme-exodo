@@ -122,12 +122,13 @@
 						</div>
 
 						<a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
+							<!-- IF !posts.user.banned --><!--[[user:banned]] -->
 							<img src="{posts.user.picture}" align="left" class="img-thumbnail" itemprop="image" />
 							<br>
-							<!-- IF posts.user.banned -->
-							<span class="label label-danger">[[user:banned]]</span>
-							<br>
-							<!-- ENDIF posts.user.banned -->
+							<!-- ELSE -->
+							<span class="label label-danger">Baneado / Eliminado</span>
+							<br><br>
+							<!-- ENDIF !posts.user.banned -->
 						</a>
 
 						<dl class="userinfo-extra">

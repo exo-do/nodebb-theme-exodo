@@ -11,11 +11,13 @@
 				</div>
 				<div class="panel-body">
 
+					<!-- IF !banned -->
 					<div class="text-center">
 						<a href="{relative_path}/user/{userslug}">
 							<img src="{picture}" class="user-profile-picture img-thumbnail" />
 						</a>
 					</div>
+					<!-- ENDIF !banned -->
 
 					<div>
 						<div class="text-center">
@@ -39,8 +41,8 @@
 						</div>
 
 						<!-- IF banned -->
-						<div class="text-center">
-							<span class="label label-danger">[[user:banned]]</span>
+						<div class="text-center"><!--[[user:banned]]-->
+							<span class="label label-danger">Baneado / Eliminado</span>
 						</div>
 						<!-- ENDIF banned -->
 						<hr/>
