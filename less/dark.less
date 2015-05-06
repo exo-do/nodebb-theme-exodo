@@ -1,0 +1,307 @@
+html.dark {
+	overflow-y: scroll;
+	background: @exodo-bg-color-darkmode;
+}
+
+body.dark {
+
+	color: @exodo-text-color-darkmode;
+	
+	a {
+		color: @exodo-link-color-darkmode;
+	}
+	
+	a:hover {
+		color: @exodo-secondary-darkmode;
+		
+		
+	}
+	
+}
+
+
+.fade-out {
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, transparent),color-stop(1, black));
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), black);
+	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0), black);
+	background-image: -ms-linear-gradient(top, transparent, black);
+	background-image: -o-linear-gradient(top, transparent, black);
+}
+
+
+.panel.dark {
+	border-color: #777;
+	background-color: @exodo-panel-darkmode;
+	small {
+	    a {
+
+	        color: @exodo-text-color-darkmode ;
+	        text-decoration: none;
+		
+	    }
+	
+		a:hover {
+	        color: @exodo-link-hover-color-darkmode ;
+	        text-decoration: none;
+	    }
+	}
+	
+	li {
+
+	        color: @exodo-text-color-darkmode;
+	      
+	}
+	
+	dd {
+		color: @exodo-text-color-darkmode ;
+		span {
+			
+		//color: @exodo-text-color-darkmode ;	
+		}
+		
+		i {
+			
+		color: @exodo-text-color-darkmode ;	
+		}
+	
+	}
+}
+
+
+
+.category-item.pinned .topic-row.dark {
+	background: @exodo-bg-color-pinned-darkmode !important;
+}
+
+
+.btn-exodo.dark {
+    background-color: @exodo-button-darkmode;
+    color: #e2e2e2;
+    span {
+        background-color: @exodo-primary-darkmode;
+    }
+}
+
+
+    .category-head-top {
+        h1.dark {
+          	color: @exodo-primary-darkmode !important;
+        }
+    }
+    .category-head-pagination {
+			
+            > div {
+               .pagination-count.dark {
+                    color: @exodo-lightdark-darkmode !important;
+                   
+                }
+            }
+     }
+	 
+
+.category .category-topics{
+     .threadlisthead.dark {
+         background: @exodo-gradient-darkmode ; 
+         border-left: @exodo-primary-darkmode;
+         border-right: @exodo-secondary-darkmode;
+         color: #FFF;
+        a, a:hover {
+             color: #FFF;
+             cursor: pointer;
+         }
+        
+     }
+	 .category-item{
+		 
+		 .topic-row { 
+		 
+		 
+     		.threadinfo.dark {
+        		 	> small {
+             		   	a {
+                 		   	color: @exodo-text-color-darkmode;
+             		  	}
+			 		 	a:hover {
+                 			color: @exodo-link-color-darkmode;
+             	   		}
+        	   		}
+	 		}
+            .threadlastpost.dark {
+				a.lastpost {
+					color: @exodo-text-color-darkmode !important;
+				}
+                a.lastpost:hover {
+					color: @exodo-link-color-darkmode !important;
+                }
+            }
+		}	
+ 	}
+}
+
+
+
+.social-ng.dark:hover {
+	color: white;
+}
+
+.scrollup-ic.dark:hover {
+	color: @exodo-primary-darkmode;
+}
+	 
+.loading-bar {
+ 	background: @exodo-gradient-darkmode;
+}
+
+
+.pagination {
+	
+	.dark {
+		a {
+			color: #e2e2e2; 
+			background-color: @exodo-button-darkmode !important;
+			border-color: #777 !important;
+		}
+		a:hover {
+			color: @exodo-primary-darkmode;
+		}
+	
+	}
+	.active {
+	
+		a.dark{
+			background-color: @exodo-primary-darkmode !important;
+		
+		}
+	}
+	
+}
+
+
+.pagination.dark .active {
+	span.dark:focus {
+	background-color: @exodo-button-darkmode;
+	}
+}
+.pagination .disabled {
+	span.dark:focus {
+	background-color: @exodo-button-darkmode;
+	}
+}
+
+.tag-item.dark {
+	border: solid 1px @gray-light;
+	background-color: @exodo-primary-darkmode !important;
+	&:hover {
+		color: #ddd;
+	}
+}
+
+.tag-topic-count.dark {
+	border: solid 1px @exodo-primary-darkmode;
+	background-color: @exodo-primary-darkmode;
+	
+	&:hover {
+		color: #ddd;
+		
+	}
+}
+
+
+
+
+.posts {
+//exodo
+    .post-wrapper {
+        border: 1px solid rgba(0,0,0,0.06);
+        .post-details.dark {
+            background: none repeat scroll 0% 0% @exodo-userblock-darkmode;
+           .userinfo {
+                background: none repeat scroll 0% 0% @exodo-userblock-darkmode;
+                border-right: 0px !important;
+                .nickname {
+                    h3 {
+                        span.username-field {
+                            color: @exodo-primary-darkmode;
+                        }
+					    span.username-field-mini {
+                            color: white;
+                        }
+                    }
+                }
+				
+            }
+            .post-block.dark {
+                background: none repeat scroll 0% 0% @exodo-postblock-darkmode;
+                border-left: 1px solid #E4E4E4;
+            }
+            
+        }
+    }
+    
+    .post-info, .post-block {
+        .post-signature {
+            border-top: 1px solid #ddd;
+        
+        }
+    }
+    
+    //exodo
+    .post-block {
+        //para montar sobre el border-right de la columna del avatar;
+        border-left: 1px solid #eee;
+    }
+    
+    .topic-buttons.dark {
+        background: none repeat scroll 0% 0% @exodo-button-darkmode;
+        border-top: 1px solid #E4E4E4;
+        .pull-left, .pull-right {
+            &.hidden-xs {
+                .btn-group {
+                    border-right: 1px solid @exodo-border-color;
+                    .btn-link {
+                        color: white;
+                        &:hover {
+                            color: @exodo-link-color-darkmode;
+                        }
+                       
+                    }
+                    
+                }
+                
+            }
+        }
+    }
+}
+
+
+
+
+.posts { 
+
+	.post-header.dark {
+    background: @exodo-gradient-darkmode;
+    border-left: 1px solid @exodo-primary-darkmode;
+    border-right: 1px solid @exodo-secondary-darkmode;
+    color: #fff;
+    .post-meta {
+        .post-index a {
+            color: white;
+            font-weight: bold;
+        }
+    }
+	}
+	
+    .posts li[data-index="0"] {
+        .main-post {
+            border-bottom: 1px solid #E4E4E4;
+        }
+    }
+}
+
+
+span.username-field-mini {
+    color: white;
+    cursor: pointer;
+    word-wrap: break-word;
+}
+
