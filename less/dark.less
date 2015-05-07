@@ -83,6 +83,26 @@ body.dark {
 }
 
 
+.btn-exodin.dark {
+	color: #e2e2e2;
+	background-color: @exodo-button-darkmode;
+	border: 1px solid #373737;
+	&:hover {
+		background-color: @exodo-primary-darkmode;
+		color: #e2e2e2;
+        text-decoration: none;
+    }
+	
+	&:focus {
+		
+		//color: #fff;
+	}
+	
+	
+}
+
+
+
     .category-head-top {
         h1.dark {
           	color: @exodo-primary-darkmode !important;
@@ -224,7 +244,7 @@ body.dark {
                             color: @exodo-primary-darkmode;
                         }
 					    span.username-field-mini {
-                            color: white;
+                            color: #e2e2e2;
                         }
                     }
                 }
@@ -232,8 +252,8 @@ body.dark {
             }
             .post-block.dark {
                 background: none repeat scroll 0% 0% @exodo-postblock-darkmode;
-                border-left: 1px solid #E4E4E4;
-            }
+                border-left: 0px !important;
+			}
             
         }
     }
@@ -253,13 +273,13 @@ body.dark {
     
     .topic-buttons.dark {
         background: none repeat scroll 0% 0% @exodo-button-darkmode;
-        border-top: 1px solid #E4E4E4;
+        border-top: 1px solid #373737;
         .pull-left, .pull-right {
             &.hidden-xs {
                 .btn-group {
                     border-right: 1px solid @exodo-border-color;
                     .btn-link {
-                        color: white;
+                        color: #e2e2e2;
                         &:hover {
                             color: @exodo-link-color-darkmode;
                         }
@@ -282,10 +302,10 @@ body.dark {
     background: @exodo-gradient-darkmode;
     border-left: 1px solid @exodo-primary-darkmode;
     border-right: 1px solid @exodo-secondary-darkmode;
-    color: #fff;
+    color: #e2e2e2;
     .post-meta {
         .post-index a {
-            color: white;
+            color: #e2e2e2;
             font-weight: bold;
         }
     }
@@ -300,8 +320,30 @@ body.dark {
 
 
 span.username-field-mini {
-    color: white;
+    color: #e2e2e2;
     cursor: pointer;
     word-wrap: break-word;
 }
 
+
+
+.category-box.dark {
+
+	background-color: rgba(55, 55, 55, 0.5) !important;
+	border: 1px solid #0c0c0c !important;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+	
+}
+
+.category-icon.dark {
+
+	background-color: transparent !important;
+	border: 0px !important;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+	
+	&:hover .category-header {
+		filter: brightness(120%);
+		-webkit-filter: brightness(120%);
+	}
+	
+}
