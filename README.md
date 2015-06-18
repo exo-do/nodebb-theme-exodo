@@ -2,5 +2,6 @@ nodebb-theme-exodo
 ==================
 
 Exodo Theme
+based on vanilla
 
--Templates: Aqui van los .tpl sobre los cuales quieres hacer cambios.
+version history. working on node v0.7.x version
