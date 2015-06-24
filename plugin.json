@@ -3,7 +3,7 @@
 	"library": "./lib/theme.js",
 	"hooks": [
 		{
-			"hook": "filter:widgets.getAreas", "method": "defineWidgetAreas", "callbacked": true
+			"hook": "filter:widgets.getAreas", "method": "defineWidgetAreas"
 		},
 		{
 			"hook": "static:app.load", "method": "appLoad"
@@ -11,6 +11,7 @@
 	],
 	"scripts": [
 		"lib/client.js",
-		"lib/moment.min.js"
+		"lib/moment.min.js",
+		"lib/vanilla.js"
 	]
 }

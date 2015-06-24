@@ -29,9 +29,9 @@
 			<!--<div class="category-head-tools visible-sm-inline visible-md-inline visible-lg-inline"> -->
 			<div class="pull-left category-buttons-right">
 		
-						<a id="new_post">
+						<a id="new_topic">
 						<span class="btn-group hidden-xs">
-						<button type="button" class="new_post btn btn-exodo<!-- IF !privileges.topics:create --> disabled<!-- ENDIF !privileges.topics:create -->">[[category:new_topic_button]]<span>+</span></button>
+						<button type="button" class="new_topic btn btn-exodo<!-- IF !privileges.topics:create --> disabled<!-- ENDIF !privileges.topics:create -->">[[category:new_topic_button]]<span>+</span></button>
 						</span>
 						
 						<span class="btn-group visible-xs">	

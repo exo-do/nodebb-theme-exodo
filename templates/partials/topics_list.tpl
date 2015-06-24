@@ -13,12 +13,12 @@
 	</div>
 	<!-- ENDIF topics.length -->
 
-<ul class="category-topics" id="topics-container" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}">
+<ul component="category" class="category-topics" id="topics-container" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}">
 		
 	<meta itemprop="itemListOrder" content="descending">
 	
 	<!-- BEGIN topics -->
-	<li class="category-item<!-- IF topics.ignored --> ignored<!-- ENDIF topics.ignored --><!-- IF topics.locked --> locked<!-- ENDIF topics.locked --><!-- IF topics.pinned --> pinned<!-- ENDIF topics.pinned --><!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.userParticipated --> participated<!-- ENDIF topics.userParticipated --><!-- IF topics.isHot --> hot<!-- ENDIF topics.isHot --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}" data-cid="{topics.cid}" data-index="<!-- IF topics.index -->{topics.index}<!-- ELSE -->0<!-- ENDIF topics.index -->">
+	<li component="category/topic" class="category-item {function.generateTopicClass} <!-- IF topics.ignored --> ignored<!-- ENDIF topics.ignored --><!-- IF topics.userParticipated --> participated<!-- ENDIF topics.userParticipated --><!-- IF topics.isHot --> hot<!-- ENDIF topics.isHot -->" itemprop="itemListElement" data-tid="{topics.tid}" data-cid="{topics.cid}" data-index="<!-- IF topics.index -->{topics.index}<!-- ELSE -->0<!-- ENDIF topics.index -->">
 		<div class="panel panel-default topic-row clearfix">
 			<div class="threadinfo">
                 <a class="hidden-xs" href="<!-- IF topics.user.userslug -->
@@ -30,7 +30,7 @@
 					<a href="{relative_path}/topic/{topics.slug}" itemprop="url">
 						<meta itemprop="name" content="{topics.title}">
 
-						<span class="topic-title <!-- IF !loggedIn --> regular <!-- ENDIF !loggedIn -->"><i class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->">&nbsp;</i><i class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->">&nbsp;</i>{topics.title}</span>
+						<span class="topic-title <!-- IF !loggedIn --> regular <!-- ENDIF !loggedIn -->"><i component="topic/pinned" class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->">&nbsp;</i><i component="topic/locked" class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->">&nbsp;</i>{topics.title}</span>
 					</a>
 				</h3>
 

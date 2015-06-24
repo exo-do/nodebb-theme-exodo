@@ -16,7 +16,7 @@
 					</a>
 					<!-- ENDIF showSiteTitle -->
 
-					<div class="header-topic-title visible-xs">
+					<div component="navbar/title" class="visible-xs">
 						<span></span>
 					</div>
 				</div>
@@ -64,7 +64,7 @@
 					<!-- IF !disableChat -->
 					<li class="chats dropdown hidden-xs">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#" title="[[global:header.chats]]" id="chat_dropdown">
-							<i id="chat-count" class="fa fa-comment-o fa-fw"></i>
+							<i component="chat/icon" class="fa fa-comment-o fa-fw"></i>
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="chat_dropdown">
 							<li>

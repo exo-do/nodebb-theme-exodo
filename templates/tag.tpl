@@ -1,5 +1,4 @@
 
-<input type="hidden" template-variable="tag" value="{tag}" />
 
 <div class="tag">
 	<!-- IMPORT partials/breadcrumbs.tpl -->
@@ -17,3 +16,5 @@
 		</div>
 	</div>
 </div>
+
+<!-- IMPORT partials/variables/tag.tpl -->
