@@ -310,6 +310,10 @@
 						<div class="btn-group">
 							<button class="btn btn-sm btn-link post_reply" type="button"><i class="fa fa-reply"></i> <label> [[topic:reply]]</label></button>
 						</div>
+
+						<div id="likesBtnGroup" class="btn-group likesBtnGroup" style="display:none">
+							<button data-pid="{posts.pid}" class="btn btn-sm btn-link quote" type="button"><label id="likesBtn"> <i class="fa fa-thumbs-o-up"></i> Me gusta <a href="#!" id="likesCount" data-pid="{posts.pid}">0</a></label></button>
+						</div>
 						<!-- ENDIF privileges.topics:reply -->
 					</div>
 					
