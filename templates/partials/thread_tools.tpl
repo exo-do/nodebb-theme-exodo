@@ -1,31 +1,86 @@
-
-
 <!-- IF privileges.view_thread_tools -->
 <!-- IF privileges.editable -->
 
 
-<span class="thread-tools">
-	<button class="btn btn-sm btn-default btn-exodin visible-xs" data-toggle="dropdown" type="button"> Mod <span><i class="fa fa-bolt"></i></span></button>
-	<button class="btn btn-exodo hidden-xs" data-toggle="dropdown" type="button"> Mod <span><i class="fa fa-bolt"></i></span></button>
 
-	<ul class="dropdown-menu pull-left">
-		
-		<li><a component="topic/mark-unread-for-all" href="#" class="markAsUnreadForAll"><i class="fa fa-fw fa-inbox"></i> Marcar no leido</a></li>
-		<li><a component="topic/pin" href="#" class="pin_thread"><i class="fa fa-fw fa-thumb-tack"></i> [[topic:thread_tools.pin]]</a></li>
-		<li><a component="topic/lock" href="#" class="lock_thread"><i class="fa fa-fw fa-lock"></i> [[topic:thread_tools.lock]]</a></li>
+
+	
+
+<!-- IF privileges.view_thread_tools -->
+	<!--<span class="thread-tools">-->
+<div class="btn-group thread-tools dropdown">
+	<button class="btn btn-exodo dropdown-toggle" data-toggle="dropdown" type="button">
+		Mod <span><i class="fa fa-bolt"></i><!--[[topic:thread_tools.title]] <span class="caret">--></span></button>
+
+	<!--<button class="btn btn-exodo hidden-xs" data-toggle="dropdown" type="button"> Mod <span><i class="fa fa-bolt"></i></span></button>-->
+	
+	<ul class="dropdown-menu pull-right">
+		<!-- IF privileges.editable -->
+		<li>
+			<a component="topic/mark-unread-for-all" href="#">
+				<i class="fa fa-fw fa-inbox"></i> Marcar no leido <!--[[topic:thread_tools.markAsUnreadForAll]]-->
+			</a>
+		</li>
+		<li>
+			<a component="topic/pin" href="#" class="<!-- IF pinned -->hidden<!-- ENDIF pinned -->">
+				<i class="fa fa-fw fa-thumb-tack"></i> [[topic:thread_tools.pin]]
+			</a>
+		</li>
+		<li>
+			<a component="topic/unpin" href="#" class="<!-- IF !pinned -->hidden<!-- ENDIF !pinned -->">
+				<i class="fa fa-fw fa-thumb-tack fa-rotate-90"></i> [[topic:thread_tools.unpin]]
+			</a>
+		</li>
+		<li>
+			<a component="topic/lock" href="#" class="<!-- IF locked -->hidden<!-- ENDIF locked -->">
+				<i class="fa fa-fw fa-lock"></i> [[topic:thread_tools.lock]]
+			</a>
+		</li>
+		<li>
+			<a component="topic/unlock" href="#" class="<!-- IF !locked -->hidden<!-- ENDIF !locked -->">
+				<i class="fa fa-fw fa-unlock"></i> [[topic:thread_tools.unlock]]
+			</a>
+		</li>
 		<li class="divider"></li>
-		<li><a component="topic/move" href="#" class="move_thread"><i class="fa fa-fw fa-arrows"></i> [[topic:thread_tools.move]]</a></li>
-		<li><a component="topic/fork" href="#" class="fork_thread"><i class="fa fa-fw fa-code-fork"></i> [[topic:thread_tools.fork]]</a></li>
+
+		<li>
+			<a component="topic/move" href="#">
+				<i class="fa fa-fw fa-arrows"></i> [[topic:thread_tools.move]]
+			</a>
+		</li>
+		<li>
+			<a component="topic/fork" href="#">
+				<i class="fa fa-fw fa-code-fork"></i> [[topic:thread_tools.fork]]
+			</a>
+		</li>
 		<li class="divider"></li>
-		<li><a component="topic/delete" href="#" class="delete_thread"><span class="text-error"><i class="fa fa-fw fa-trash-o"></i> [[topic:thread_tools.delete]]</span></a></li>
-		<li><a component="topic/purge" href="#" class="purge_thread <!-- IF !deleted -->hidden<!-- ENDIF !deleted -->"><span class="text-error"><i class="fa fa-fw fa-eraser"></i> [[topic:thread_tools.purge]]</span></a></li>
-		
+		<!-- ENDIF privileges.editable -->
+
+		<!-- IF privileges.deletable -->
+		<li>
+			<a component="topic/delete" href="#" class="<!-- IF deleted -->hidden<!-- ENDIF deleted -->">
+				<i class="fa fa-fw fa-trash-o"></i> [[topic:thread_tools.delete]]
+			</a>
+		</li>
+		<li>
+			<a component="topic/restore" href="#" class="<!-- IF !deleted -->hidden<!-- ENDIF !deleted -->">
+				<i class="fa fa-fw fa-history"></i> [[topic:thread_tools.restore]]
+			</a>
+		</li>
+		<li>
+			<a component="topic/purge" href="#" class="<!-- IF !deleted -->hidden<!-- ENDIF !deleted -->">
+				<i class="fa fa-fw fa-eraser"></i> [[topic:thread_tools.purge]]
+			</a>
+		</li>
+		<!-- ENDIF privileges.deletable -->
+
+		<!-- IF privileges.editable -->
 		<!-- BEGIN thread_tools -->
 		<li>
 			<a href="#" class="{thread_tools.class}"><i class="fa fa-fw {thread_tools.icon}"></i> {thread_tools.title}</a>
 		</li>
 		<!-- END thread_tools -->
+		<!-- ENDIF privileges.editable -->
 	</ul>
-</span>
-<!-- ENDIF privileges.editable -->
+</div>
 <!-- ENDIF privileges.view_thread_tools -->

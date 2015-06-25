@@ -1,25 +1,76 @@
 <!-- IF privileges.editable -->
-<span class="btn-group thread-tools"> 
-	<button class="btn btn-sm btn-default btn-exodin visible-xs" data-toggle="dropdown" type="button"> Mod <span><i class="fa fa-bolt"></i></span></button>
-	<button class="btn btn-exodo hidden-xs" data-toggle="dropdown" type="button"> Mod <span><i class="fa fa-bolt"></i></span></button>
+<div class="btn-group thread-tools">
+	<!--<button class="btn btn-sm btn-default btn-exodin visible-xs" data-toggle="dropdown" type="button"> Mod <span><i class="fa fa-bolt"></i></span></button>-->
 	
+	<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+		<span class="visible-sm-inline visible-md-inline visible-lg-inline">Mod <i class="fa fa-bolt"></i> <!--[[topic:thread_tools.title]]--></span>
+		<!--<span class="visible-xs-inline"><i class="fa fa-fw fa-gear"></i></span>-->
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu pull-right">
+		<li>
+			<a component="topic/mark-unread-for-all" href="#">
+				<i class="fa fa-fw fa-inbox"></i> Marcar no leido <!--[[topic:thread_tools.markAsUnreadForAll]]-->
+			</a>
+		</li>
+		<li>
+			<a component="topic/pin" href="#">
+				<i class="fa fa-fw fa-thumb-tack"></i> [[topic:thread_tools.pin]]
+			</a>
+		</li>
+		<li>
+			<a component="topic/unpin" href="#" class="hidden">
+				<i class="fa fa-fw fa-thumb-tack fa-rotate-90"></i> [[topic:thread_tools.unpin]]
+			</a>
+		</li>
 
-  <ul class="dropdown-menu pull-left">
-    <li><a href="#" class="markAsUnreadForAll"><i class="fa fa-fw fa-inbox"></i> Marcar no leido</a></li>
-    <li><a href="#" class="pin_thread"><i class="fa fa-fw fa-thumb-tack"></i> [[topic:thread_tools.pin]]</a></li>
-    <li><a href="#" class="lock_thread"><i class="fa fa-fw fa-lock"></i> [[topic:thread_tools.lock]]</a></li>
-    <li class="divider"></li>
-    <li><a href="#" class="move_thread"><i class="fa fa-fw fa-arrows"></i> [[topic:thread_tools.move]]</a></li>
-    <li><a href="#" class="move_all_threads"><i class="fa fa-fw fa-arrows"></i> [[topic:thread_tools.move_all]]</a></li>
-    <li class="divider"></li>
-    <li><a href="#" class="delete_thread"><span><i class="fa fa-fw fa-trash-o"></i> [[topic:thread_tools.delete]]</span></a></li>
-    <li><a href="#" class="purge_thread <!-- IF !deleted -->hidden<!-- ENDIF !deleted -->"><span><i class="fa fa-fw fa-eraser"></i> [[topic:thread_tools.purge]]</span></a></li>
-    <!-- BEGIN thread_tools -->
-    <li>
-      <a href="#" class="{thread_tools.class}"><i class="fa fa-fw {thread_tools.icon}"></i> {thread_tools.title}</a>
-    </li>
-		
-    <!-- END thread_tools -->
-  </ul>
-</span> 
+		<li>
+			<a component="topic/lock" href="#">
+				<i class="fa fa-fw fa-lock"></i> [[topic:thread_tools.lock]]
+			</a>
+		</li>
+		<li>
+			<a component="topic/unlock" href="#" class="hidden">
+				<i class="fa fa-fw fa-unlock"></i> [[topic:thread_tools.unlock]]
+			</a>
+		</li>
+
+		<li class="divider"></li>
+
+		<li>
+			<a component="topic/move" href="#">
+				<i class="fa fa-fw fa-arrows"></i> [[topic:thread_tools.move]]
+			</a>
+		</li>
+		<li>
+			<a component="topic/move-all" href="#">
+				<i class="fa fa-fw fa-arrows"></i> [[topic:thread_tools.move_all]]
+			</a>
+		</li>
+
+		<li class="divider"></li>
+
+		<li>
+			<a component="topic/delete" href="#">
+				<i class="fa fa-fw fa-trash-o"></i> [[topic:thread_tools.delete]]
+			</a>
+		</li>
+		<li>
+			<a component="topic/restore" href="#" class="hidden">
+				<i class="fa fa-fw fa-history"></i> [[topic:thread_tools.restore]]
+			</a>
+		</li>
+		<li>
+			<a component="topic/purge" href="#" class="hidden">
+				<i class="fa fa-fw fa-eraser"></i> [[topic:thread_tools.purge]]
+			</a>
+		</li>
+
+		<!-- BEGIN thread_tools -->
+		<li>
+			<a href="#" class="{thread_tools.class}"><i class="fa fa-fw {thread_tools.icon}"></i> {thread_tools.title}</a>
+		</li>
+		<!-- END thread_tools -->
+	</ul>
+</div>
 <!-- ENDIF privileges.editable -->

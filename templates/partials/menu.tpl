@@ -141,8 +141,7 @@
 					
 					<!-- IF searchEnabled -->
 					<li class="visible-xs">
-							<a href="{relative_path}/search"><i class="fa fa-search fa-fw"></i>
-								<span> [[global:search]] </span></a>
+							<a href="{relative_path}/search"><i class="fa fa-search fa-fw"></i>[[global:search]]</a>
 						
 					</li>
 					<!-- ENDIF searchEnabled -->

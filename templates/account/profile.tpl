@@ -6,7 +6,7 @@
 
 			<div class="account-picture-block panel panel-default">
 				<div class="panel-heading">
-					<i class="account-online-status fa fa-circle status {status}" title="[[global:{status}]]"></i>
+					<i component="user/status" class="fa fa-circle status {status}" title="[[global:{status}]]"></i>
 					<span class="account-username"> {username}</span>
 				</div>
 				<div class="panel-body">

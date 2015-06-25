@@ -15,14 +15,19 @@
 				<input class="handle form-control" type="text" tabindex="1" placeholder="[[topic:composer.handle_placeholder]]" value="{handle}" />
 			</div>
 			<div class="col-sm-9 col-md-12">
-				<input class="title form-control" type="text" tabindex="2" placeholder="[[topic:composer.title_placeholder]]" />
+				<!-- IF isTopicOrMain -->
+				<input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" />
+				<!-- ELSE -->
+				<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
+				<!-- ENDIF isTopicOrMain -->
 			</div>
 			<!-- ELSE -->
 			<div class="<!-- IF isTopic -->col-lg-6<!-- ELSE -->col-lg-12<!-- ENDIF isTopic --> col-md-12">
-				<!-- IF isTopic --><input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" />
+				<!-- IF isTopicOrMain -->
+				<input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" />
 				<!-- ELSE -->
-				<input class="title form-control" type="hidden" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" />
-				<!-- ENDIF isTopic -->
+				<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
+				<!-- ENDIF isTopicOrMain -->
 			</div>
 			<!-- IF isTopic -->
 			<div class="category-list-container composer-list col-lg-3 col-md-6 col-sm-6 col-xs-6">
@@ -106,11 +111,11 @@
 					
 				</div>
 
-				<!-- IF showTags -->
+				<!-- IF isTopicOrMain -->
 				<div class="tags-container inline-block">
 					<input class="tags" type="text" class="form-control" placeholder="[[tags:enter_tags_here, {minimumTagLength}, {maximumTagLength}]]" tabindex="4"/>
 				</div>
-				<!-- ENDIF showTags -->
+				<!-- ENDIF isTopicOrMain -->
 			</div>
 		</div>
 
