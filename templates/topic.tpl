@@ -303,16 +303,17 @@
 						<!-- ENDIF !reputation:disabled -->
 
 						<!-- IF privileges.topics:reply -->
+						<div id="likesBtnGroup" class="btn-group" style="display:none">
+							<button data-pid="{posts.pid}" class="btn btn-sm btn-link col-xs-1" type="button" id="likesBtn"><i class="fa fa-thumbs-o-up"></i></button>
+							<a href="#!" id="likesCount" class="col-xs-1" data-pid="{posts.pid}" data-likes="{posts.likes}"></a>
+						</div>
+
 						<div class="btn-group">
 							<button class="btn btn-sm btn-link quote" type="button"><i class="fa fa-quote-left"></i> <label> [[topic:quote]] </label></button>
 						</div>
 
 						<div class="btn-group">
 							<button class="btn btn-sm btn-link post_reply" type="button"><i class="fa fa-reply"></i> <label> [[topic:reply]]</label></button>
-						</div>
-
-						<div id="likesBtnGroup" class="btn-group likesBtnGroup" style="display:none">
-							<button data-pid="{posts.pid}" class="btn btn-sm btn-link quote" type="button"><label id="likesBtn"> <i class="fa fa-thumbs-o-up"></i> Me gusta <a href="#!" id="likesCount" data-pid="{posts.pid}">0</a></label></button>
 						</div>
 						<!-- ENDIF privileges.topics:reply -->
 					</div>
