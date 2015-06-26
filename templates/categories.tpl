@@ -9,7 +9,9 @@
 		
 		<div class="row <!-- IF !disableMasonry -->masonry<!-- ENDIF !disableMasonry -->">
 			<!-- BEGIN categories -->
-			<div class="<!-- IF categories.class -->{categories.class}<!-- ELSE -->col-md-3 col-sm-6 col-xs-12<!-- ENDIF categories.class --> category-item" data-cid="{categories.cid}" data-numRecentReplies="{categories.numRecentReplies}">
+				
+				<div component="categories/category" class="{categories.class}" data-cid="{categories.cid}" data-numRecentReplies="{categories.numRecentReplies}">
+				
 				<meta itemprop="name" content="{categories.name}">
 	
 				
@@ -46,7 +48,8 @@
 							-->
 		
 
-					<div class="category-box hidden-xs">
+					<div component="category/posts" class="category-box hidden-xs">
+						
 						
 						<!-- IF !categories.link -->
 						<!-- BEGIN posts -->

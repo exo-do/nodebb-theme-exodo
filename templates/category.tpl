@@ -42,7 +42,7 @@
 						
 						<!-- IF loggedIn -->
 						<span class="btn-group hidden-xs">
-						<button type="button" class="btn btn-exodo watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored --> tool"> Seguir <span><i class="fa fa-eye"></i></span></button>
+						<button type="button" class="btn btn-exodo watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored --> tool"> [[category:watch]]<span><i class="fa fa-eye"></i></span></button>
 						<button type="button" class="btn btn-exodo ignore <!-- IF isIgnored -->hidden<!-- ENDIF isIgnored --> tool"> Ignorar<span><i class="fa fa-eye-slash"></i></span></button>
 						</span>
 						

@@ -1,7 +1,7 @@
 <div class="composer">
 
 	<div class="composer-container">
-		<nav class="navbar navbar-fixed-top mobile-navbar visible-xs visible-sm visible-md ">
+		<nav class="navbar navbar-fixed-top mobile-navbar visible-xs visible-sm">
 			<span class="pull-left">
 				<button class="btn btn-primary composer-discard" data-action="discard" tabindex="-1"><i class="fa fa-times"></i></button>
 			</span>
@@ -16,21 +16,21 @@
 			</div>
 			<div class="col-sm-9 col-md-12">
 				<!-- IF isTopicOrMain -->
-				<input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" />
+				<input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" value="{title}"/>
 				<!-- ELSE -->
 				<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
 				<!-- ENDIF isTopicOrMain -->
 			</div>
 			<!-- ELSE -->
-			<div class="<!-- IF isTopic -->col-lg-6<!-- ELSE -->col-lg-12<!-- ENDIF isTopic --> col-md-12">
+			<div class="<!-- IF isTopic -->col-lg-9<!-- ELSE -->col-lg-12<!-- ENDIF isTopic --> col-md-12">
 				<!-- IF isTopicOrMain -->
-				<input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" />
+				<input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" value="{title}"/>
 				<!-- ELSE -->
 				<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
 				<!-- ENDIF isTopicOrMain -->
 			</div>
 			<!-- IF isTopic -->
-			<div class="category-list-container composer-list col-lg-3 col-md-6 col-sm-6 col-xs-6">
+			<div class="category-list-container col-lg-3 col-md-12">
 				<select tabindex="3" class="form-control category-list"></select>
 			</div>
 			<!-- ENDIF isTopic -->
@@ -91,24 +91,23 @@
 						<![endif]-->
 					</form>
 				</div>
-				<div class="btn-group pull-right action-bar hidden-md hidden-sm hidden-xs">
+
+				<div class="btn-group pull-right action-bar hidden-sm hidden-xs">
 					<button class="btn btn-default composer-discard" data-action="discard" tabindex="-1"><i class="fa fa-times"></i> [[topic:composer.discard]]</button>
+
 					<button class="btn btn-primary composer-submit" data-action="post" tabindex="6"><i class="fa fa-check"></i> [[topic:composer.submit]]</button>
-										<!-- IF !isEditing -->
-										<!-- IF isAdminOrMod -->
-										<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
-											<span class="caret"></span>
-											<span class="sr-only">Toggle Dropdown</span>
-										</button>
-										<ul class="dropdown-menu pull-right" role="menu">
-											<li><a href="#" data-switch-action="post"><i class="fa fa-fw fa-check"></i> [[topic:composer.submit]]</a></li>
-											<li><a href="#" data-switch-action="post-lock"><i class="fa fa-fw fa-lock"></i> [[modules:composer.submit_and_lock]]</a></li>
-											
-										</ul>
-										<!-- ENDIF isAdminOrMod -->
-										<!-- ENDIF !isEditing -->
-					
-					
+					<!-- IF !isEditing -->
+					<!-- IF isAdminOrMod -->
+					<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+						<span class="caret"></span>
+						<span class="sr-only">[[modules:composer.toggle_dropdown]]</span>
+					</button>
+					<ul class="dropdown-menu pull-right" role="menu">
+						<li><a href="#" data-switch-action="post"><i class="fa fa-fw fa-check"></i> [[topic:composer.submit]]</a></li>
+						<li><a href="#" data-switch-action="post-lock"><i class="fa fa-fw fa-lock"></i> [[modules:composer.submit_and_lock]]</a></li>
+					</ul>
+					<!-- ENDIF isAdminOrMod -->
+					<!-- ENDIF !isEditing -->
 				</div>
 
 				<!-- IF isTopicOrMain -->
@@ -122,14 +121,14 @@
 		<div class="row write-preview-container">
 			<div class="col-md-6 col-sm-12 write-container">
 				<div class="help-text">
-					Mensaje <span class="help hidden"><i class="fa fa-question-circle"></i></span>
-					<span class="toggle-preview hide">Ver Vista Previa</span>
+					[[modules:composer.compose]] <span class="help hidden"><i class="fa fa-question-circle"></i></span>
+					<span class="toggle-preview hide">[[modules:composer.show_preview]]</span>
 				</div>
 				<textarea class="write" tabindex="5"></textarea>
 			</div>
 			<div class="col-md-6 hidden-sm hidden-xs preview-container">
 				<div class="help-text">
-					<span class="toggle-preview">Ocultar Vista Previa</span>
+					<span class="toggle-preview">[[modules:composer.hide_preview]]</span>
 				</div>
 				<div class="preview well"></div>
 			</div>
