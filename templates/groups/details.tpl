@@ -67,7 +67,20 @@
 		<!-- IF group.isOwner -->
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-title"><i class="fa fa-clock-o"></i> [[groups:details.pending]]</h3>
+				<h3 class="panel-title clearfix">
+					<i class="fa fa-clock-o"></i> [[groups:details.pending]]
+					<!-- IF group.pending.length -->
+					<div class="btn-group pull-right">
+						<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+							[[global:more]] <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#" data-ajaxify="false" data-action="acceptAll">[[groups:pending.accept_all]]</a></li>
+							<li><a href="#" data-ajaxify="false" data-action="rejectAll">[[groups:pending.reject_all]]</a></li>
+						</ul>
+					</div>
+					<!-- ENDIF group.pending.length -->
+				</h3>
 			</div>
 			<div class="panel-body">
 				<table component="groups/members" class="table table-striped table-hover">
@@ -82,7 +95,7 @@
 						<td>
 							<div class="btn-group pull-right">
 								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-									More <span class="caret"></span>
+									[[global:more]] <span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="#" data-ajaxify="false" data-action="accept">[[groups:pending.accept]]</a></li>
@@ -120,14 +133,14 @@
 					</div>
 					<div class="form-group">
 						<label for="userTitle">[[groups:details.badge_text]]</label>
-						<input component="groups/userTitleOption" class="form-control" name="userTitle" id="userTitle" type="text" value="{group.userTitle}"<!-- IF !userTitleEnabled --> disabled<!-- ENDIF !userTitleEnabled --> />
+						<input component="groups/userTitleOption" class="form-control" name="userTitle" id="userTitle" type="text" value="{group.userTitle}"<!-- IF !group.userTitleEnabled --> disabled<!-- ENDIF !group.userTitleEnabled --> />
 					</div>
 					<div class="form-group">
 						<label>[[groups:details.badge_preview]]</label><br />
-						<span class="label<!-- IF !userTitleEnabled --> hide<!-- ENDIF !userTitleEnabled -->" style="background-color: {group.labelColor}"><i class="fa {group.icon} icon"></i> <!-- IF group.userTitle -->{group.userTitle}<!-- ELSE -->{group.name}<!-- ENDIF group.userTitle --></span>
+						<span class="label<!-- IF !group.userTitleEnabled --> hide<!-- ENDIF !group.userTitleEnabled -->" style="background-color: {group.labelColor}"><i class="fa {group.icon} icon"></i> <!-- IF group.userTitle -->{group.userTitle}<!-- ELSE -->{group.name}<!-- ENDIF group.userTitle --></span>
 
-						<button component="groups/userTitleOption" type="button" class="btn btn-default btn-sm" data-action="icon-select"<!-- IF !userTitleEnabled --> disabled<!-- ENDIF !userTitleEnabled -->>[[groups:details.change_icon]]</button>
-						<button component="groups/userTitleOption" type="button" class="btn btn-default btn-sm" data-action="color-select"<!-- IF !userTitleEnabled --> disabled<!-- ENDIF !userTitleEnabled -->>[[groups:details.change_colour]]</button>
+						<button component="groups/userTitleOption" type="button" class="btn btn-default btn-sm" data-action="icon-select"<!-- IF !group.userTitleEnabled --> disabled<!-- ENDIF !group.userTitleEnabled -->>[[groups:details.change_icon]]</button>
+						<button component="groups/userTitleOption" type="button" class="btn btn-default btn-sm" data-action="color-select"<!-- IF !group.userTitleEnabled --> disabled<!-- ENDIF !group.userTitleEnabled -->>[[groups:details.change_colour]]</button>
 						<input type="hidden" name="labelColor" value="<!-- IF group.labelColor -->{group.labelColor}<!-- ENDIF group.labelColor -->" />
 						<input type="hidden" name="icon" value="<!-- IF group.icon -->{group.icon}<!-- ENDIF group.icon -->" />
 						<div id="icons" style="display:none;">

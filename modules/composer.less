@@ -3,6 +3,10 @@
 html.composing {
 	&.mobile {
 		overflow: hidden;
+		.composer {
+			position: absolute;
+			box-shadow: none;
+		}
 	}
 
 	body {
@@ -27,6 +31,10 @@ html.composing {
 
 			.title {
 				padding-left: 8px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				width: 100%;
 			}
 		}
 		
@@ -38,6 +46,10 @@ html.composing {
 			margin-bottom: 0px;
 			padding-bottom: 0px;
 			font-size: 18px;
+		}
+
+		.write:focus {
+			outline-style: solid;
 		}
 
 		.form-control {
@@ -52,6 +64,7 @@ html.composing {
 		.mobile-navbar {
 			background: @btn-primary-bg;
 			color: @btn-primary-color;
+			position: absolute;
 
 			button {
 				font-size: 20px;

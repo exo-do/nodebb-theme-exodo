@@ -29,18 +29,18 @@
 			<!--<div class="category-head-tools visible-sm-inline visible-md-inline visible-lg-inline"> -->
 			<div class="pull-left category-buttons-right">
 		
-						<a id="new_topic">
-						<span class="btn-group hidden-xs">
-						<button type="button" class="new_topic btn btn-exodo<!-- IF !privileges.topics:create --> disabled<!-- ENDIF !privileges.topics:create -->">[[category:new_topic_button]]<span>+</span></button>
-						</span>
 						
-						<span class="btn-group visible-xs">	
-						<button type="button" class="btn btn-sm btn-default btn-exodin<!-- IF !privileges.topics:create --> disabled<!-- ENDIF !privileges.topics:create -->"><i class="fa fa-plus"></i></button>
-						</span>	
 						
-						</a>
+						<!-- IF privileges.topics:create -->
+						<button id="new_topic" class="btn btn-exodo">[[category:new_topic_button]]</button>
+						<!-- ELSE -->
+							<!-- IF !loggedIn -->
+							<a href="{config.relative_path}/login" class="btn btn-exodo">[[category:guest-login-post]]</a>
+							<!-- ENDIF !loggedIn -->
+						<!-- ENDIF privileges.topics:create -->
 						
 						<!-- IF loggedIn -->
+						
 						<span class="btn-group hidden-xs">
 						<button type="button" class="btn btn-exodo watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored --> tool"> [[category:watch]]<span><i class="fa fa-eye"></i></span></button>
 						<button type="button" class="btn btn-exodo ignore <!-- IF isIgnored -->hidden<!-- ENDIF isIgnored --> tool"> Ignorar<span><i class="fa fa-eye-slash"></i></span></button>
