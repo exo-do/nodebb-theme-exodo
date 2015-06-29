@@ -2,13 +2,13 @@
 			<meta itemprop="name" content="{children.name}">
 			<h4 class="category-title">
 				<!-- IF !children.link -->
-				<span class="badge {children.unread-class}">{children.topic_count} </span>
+				<span class="badge {children.unread-class}">{children.totalTopicCount} </span>
 				<!-- ENDIF !children.link -->
 
 				<!-- IF children.link -->
 				<a href="{children.link}" itemprop="url" target="_blank">
 				<!-- ELSE -->
-				<a href="{relative_path}/category/{children.slug}" itemprop="url">
+				<a href="{config.relative_path}/category/{children.slug}" itemprop="url">
 				<!-- ENDIF children.link -->
 				{children.name}
 				</a>
@@ -17,7 +17,7 @@
 			<!-- IF children.link -->
 			<a style="color: {children.color};" href="{children.link}" itemprop="url" target="_blank">
 			<!-- ELSE -->
-			<a style="color: {children.color};" href="{relative_path}/category/{children.slug}" itemprop="url">
+			<a style="color: {children.color};" href="{config.relative_path}/category/{children.slug}" itemprop="url">
 			<!-- ENDIF children.link -->
 				<div
 					id="category-{children.cid}" class="category-header category-header-image-{children.imageClass}"
@@ -27,7 +27,7 @@
 						<!-- IF children.bgColor -->background-color: {children.bgColor};<!-- ENDIF children.bgColor -->
 					"
 				>
-					<div id="category-{children.cid}" class="category-slider-{children.post_count}">
+					<div id="category-{children.cid}" class="category-slider-{children.numRecentReplies}">
 						<!-- IF children.icon -->
 						<div class="category-box"><i class="fa {children.icon} fa-4x"></i></div>
 						<!-- ENDIF children.icon -->

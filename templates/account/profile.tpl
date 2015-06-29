@@ -13,7 +13,7 @@
 
 					<!-- IF !banned -->
 					<div class="text-center">
-						<a href="{relative_path}/user/{userslug}">
+						<a href="{config.relative_path}/user/{userslug}">
 							<img src="{picture}" class="user-profile-picture img-thumbnail" />
 						</a>
 					</div>
@@ -45,6 +45,12 @@
 							<span class="label label-danger">Baneado / Eliminado</span>
 						</div>
 						<!-- ENDIF banned -->
+						<!-- IF aboutme -->
+						<hr/>
+							<div component="aboutme" class="text-center">
+								{aboutme}
+							</div>
+						<!-- ENDIF aboutme -->
 						<hr/>
 						<div class="text-center account-stats">
 				
@@ -128,7 +134,7 @@
 				</div>
 				<div class="panel-body">
 					<!-- BEGIN groups -->
-					<a href="{relative_path}/groups/{groups.slug}"><span class="label group-label inline-block" style="background-color: {groups.labelColor};"><!-- IF groups.icon --><i class="fa {groups.icon}"></i> <!-- ENDIF groups.icon -->{groups.userTitle}</span></a>
+					<a href="{config.relative_path}/groups/{groups.slug}"><span class="label group-label inline-block" style="background-color: {groups.labelColor};"><!-- IF groups.icon --><i class="fa {groups.icon}"></i> <!-- ENDIF groups.icon -->{groups.userTitle}</span></a>
 					<!-- END groups -->
 				</div>
 			</div>
@@ -150,35 +156,11 @@
 		</div>
 
 
-		<div class="col-md-8 user-recent-posts" data-nextstart="{nextStart}">
-			<div class="topic-row panel panel-default clearfix">
-				<div class="panel-heading">
-					<h3 class="panel-title">[[global:recentposts]]</h3>
-				</div>
-				<div class="panel-body">
+		<div class="col-md-8">
 					<!-- IF !posts.length -->
 					<span>[[user:has_no_posts]]</span>
 					<!-- ENDIF !posts.length -->
-					<!-- BEGIN posts -->
-					<div class="user-post clearfix" data-pid="{posts.pid}">
-						<div class="content">
-							<p>{posts.content}</p>
-							<p class="fade-out"></p>
-						</div>
-						<small>
-							<span class="pull-right post-preview-footer">
-								[[global:posted_in_ago, <a href="{relative_path}/category/{posts.category.slug}"><i class="fa {posts.category.icon}"></i> {posts.category.name}</a>, <span class="timeago" title="{posts.relativeTime}"></span>]] &bull;
-								<a href="{relative_path}/topic/{posts.topic.slug}/{posts.index}">[[global:read_more]]</a>
-							</span>
-						</small>
-					</div>
-					<hr/>
-					<!-- END posts -->
-					<div class="loading-indicator text-center hidden">
-						<i class="fa fa-refresh fa-spin"></i>
-					</div>
-				</div>
-			</div>
+					<!-- IMPORT partials/posts_list.tpl -->
 
 		</div>
 	</div>

@@ -20,7 +20,7 @@
 					<!-- IF categories.link -->
 					<a style="color: {categories.color};" href="{categories.link}" itemprop="url" target="_blank">
 					<!-- ELSE -->
-					<a style="color: {categories.color};" href="{relative_path}/category/{categories.slug}" itemprop="url">
+					<a style="color: {categories.color};" href="{config.relative_path}/category/{categories.slug}" itemprop="url">
 					<!-- ENDIF categories.link -->
 						<div
 							id="category-{categories.cid}" class="category-header category-header-image-{categories.imageClass}"
@@ -37,7 +37,7 @@
 							
 							<div class="category-info hidden-xs">
 								<div class="category-stats text-right">
-			                        <i class="fa fa-comments-o" title="Temas"></i> {categories.topic_count} · <i class="fa fa-pencil" title="Mensajes"></i> {categories.post_count}
+			                        <i class="fa fa-comments-o" title="Temas"></i> {categories.totalTopicCount} · <i class="fa fa-pencil" title="Mensajes"></i> {categories.numRecentReplies}
 			                    </div>
 							</div>
 						</div>
@@ -55,10 +55,10 @@
 						<!-- BEGIN posts -->
 						<div class="post-preview clearfix">
 							
-							<div class="last-topic-title"><a href="{relative_path}/topic/{categories.posts.topic.slug}">{categories.posts.topic.title}</a></div>
+							<div class="last-topic-title"><a href="{config.relative_path}/topic/{categories.posts.topic.slug}">{categories.posts.topic.title}</a></div>
 							<p class="last-topic-date">{function.humanReadableDate}</p>
 							
-							<!-- <a style="color: {categories.color};" href="<!-- IF categories.posts.user.userslug -->{relative_path}/user/{categories.posts.user.userslug}<!-- ELSE -->#<!-- ENDIF categories.posts.user.userslug-->">
+							<!-- <a style="color: {categories.color};" href="<!-- IF categories.posts.user.userslug -->{config.relative_path}/user/{categories.posts.user.userslug}<!-- ELSE -->#<!-- ENDIF categories.posts.user.userslug-->">
 								<img src="{categories.posts.user.picture}" title="{categories.posts.user.username}" class="pull-left user-img" />
 							</a> -->
 							<div class="post-preview-content">
@@ -72,7 +72,7 @@
 
 							<!-- <span class="pull-right post-preview-footer">
 								<span class="timeago" title="{categories.posts.relativeTime}"></span> &bull;
-								<a href="{relative_path}/topic/{categories.posts.topic.slug}<!-- IF categories.posts.index -->/{categories.posts.index}<!-- ENDIF categories.posts.index -->">[[global:read_more]]</a>
+								<a href="{config.relative_path}/topic/{categories.posts.topic.slug}<!-- IF categories.posts.index -->/{categories.posts.index}<!-- ENDIF categories.posts.index -->">[[global:read_more]]</a>
 							</span> -->
 						</div>
 						<!-- END posts -->

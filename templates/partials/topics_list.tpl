@@ -22,12 +22,12 @@
 		<div class="panel panel-default topic-row clearfix">
 			<div class="threadinfo">
                 <a class="hidden-xs" href="<!-- IF topics.user.userslug -->
-					{relative_path}/topic/{topics.slug}
+					{config.relative_path}/topic/{topics.slug}
 					<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">
                     <img src="{user.picture}" class="profile-image user-img"/>
                 </a>
 				<h3>
-					<a href="{relative_path}/topic/{topics.slug}" itemprop="url">
+					<a href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
 						<meta itemprop="name" content="{topics.title}">
 
 						<span class="topic-title <!-- IF !loggedIn --> regular <!-- ENDIF !loggedIn -->"><i component="topic/pinned" class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->">&nbsp;</i><i component="topic/locked" class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->">&nbsp;</i>{topics.title}</span>
@@ -36,11 +36,11 @@
 
 				<small>
 					<a href="<!-- IF topics.user.userslug -->
-					{relative_path}/user/{topics.user.userslug}
+					{config.relative_path}/user/{topics.user.userslug}
 					<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">
 					<span class="visible-xs pull-left"><img class="user-pic" src="{user.picture}"/>&nbsp;</span>{topics.user.username}</a> 
 					<!-- IF template.category --><!-- ELSE -->
-					<a href="{relative_path}/category/{topics.category.slug}" class="categoryNameOnTopicInfo"> | {topics.category.name}</a>
+					<a href="{config.relative_path}/category/{topics.category.slug}" class="categoryNameOnTopicInfo"> | {topics.category.name}</a>
 					 <!-- ENDIF template.category -->
 				</small>
 				
@@ -65,8 +65,8 @@
                     [[category:no_replies]]
                     <!-- ELSE -->
 					<!-- <span class="pull-left"> {topics.postcount} / {topics.viewcount}</span> -->
-                    <a href="<!-- IF topics.teaser.user.userslug -->{relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->"> {topics.teaser.user.username} </a> 
-					<a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}" title="Ir al último mensaje" class="lastpost"><span>{function.humanReadableDateLast}</span> <i class="fa fa-long-arrow-right"></i></a>
+                    <a href="<!-- IF topics.teaser.user.userslug -->{config.relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->"> {topics.teaser.user.username} </a> 
+					<a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}" title="Ir al último mensaje" class="lastpost"><span>{function.humanReadableDateLast}</span> <i class="fa fa-long-arrow-right"></i></a>
                     <!-- ENDIF topics.unreplied -->
                 </div>
 			</div>
@@ -84,13 +84,13 @@
 				
 				<dd>
 					<img class="user-pic" src="{topics.teaser.user.picture}" />&nbsp;
-					<a href="<!-- IF topics.teaser.user.userslug -->{relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->">
+					<a href="<!-- IF topics.teaser.user.userslug -->{config.relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->">
 						{topics.teaser.user.username}
 					</a>
 					
 				</dd>
 				<dd>
-					<a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}" title="Ir al último mensaje" class="lastpost"><span>{function.humanReadableDateLast}</span> <i class="fa fa-long-arrow-right"></i></a>
+					<a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}" title="Ir al último mensaje" class="lastpost"><span>{function.humanReadableDateLast}</span> <i class="fa fa-long-arrow-right"></i></a>
 				</dd>
 				<!-- ENDIF topics.unreplied -->
 			</dl>
