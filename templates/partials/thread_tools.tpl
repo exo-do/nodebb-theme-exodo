@@ -1,20 +1,8 @@
 <!-- IF privileges.view_thread_tools -->
-<!-- IF privileges.editable -->
-
-
-
-
-	
-
-<!-- IF privileges.view_thread_tools -->
-	<!--<span class="thread-tools">-->
 <div class="btn-group thread-tools dropdown">
 	<button class="btn btn-exodo dropdown-toggle" data-toggle="dropdown" type="button">
-		Mod <span><i class="fa fa-bolt"></i><!--[[topic:thread_tools.title]] <span class="caret">--></span></button>
-
-	<!--<button class="btn btn-exodo hidden-xs" data-toggle="dropdown" type="button"> Mod <span><i class="fa fa-bolt"></i></span></button>-->
-	
-	<ul class="dropdown-menu pull-right">
+		<span class="hidden-xs"> Mod <!--[[topic:thread_tools.title]]--></span><span class="exright"><i class="fa fa-bolt"></i></span></button>
+	<ul class="dropdown-menu pull-left">
 		<!-- IF privileges.editable -->
 		<li>
 			<a component="topic/mark-unread-for-all" href="#">

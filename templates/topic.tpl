@@ -1,7 +1,9 @@
 <div class="topic">
 	<div class="topic-head">
 		<!-- IMPORT partials/breadcrumbs.tpl -->
+		
 		<div component="topic/deleted/message" class="alert alert-warning<!-- IF !deleted --> hidden<!-- ENDIF !deleted -->">[[topic:deleted_message]]</div>
+		
 		<div class="text-center topic-head-top hidden-xs">
 			<h1><a component="post/header" class="topic-title" itemprop="name" title="{title}" href="/topic/{slug}"><i class="fa fa-thumb-tack <!-- IF !pinned -->hidden<!-- ENDIF !pinned -->"></i> <i class="fa fa-lock <!-- IF !locked -->hidden<!-- ENDIF !locked -->"></i><span component="topic/title">{title}</span></a></h1>
 		</div>
@@ -12,24 +14,12 @@
 		
 		<div class="topic-head-middle clearfix<!-- IF config.usePagination --> headup <!-- ENDIF config.usePagination -->">
 			<div class="pull-left topic-buttons-right">
-				<span class="btn-group hidden-xs">
-				<button component="topic/reply" class="btn btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]<span>+</span></button>
-				</span>
-				<span class="btn-group visible-xs">
-				<button component="topic/reply" class="btn btn-sm btn-default btn-exodin <!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->"><i class="fa fa-plus"></i></button>
+				<span class="btn-group">
+				<button component="topic/reply" class="btn btn-exodo<!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->"><span class="hidden-xs">[[topic:reply]]</span><span class="exright">+</span></button>
 				</span>
 				
 				<span class="btn-group">
 				<!-- IMPORT partials/thread_sort.tpl -->
-				</span>
-				
-				<span class="dropdown moderator-tools btn-group" component="post/tools">
-				<!--<button class="btn btn-sm btn-default btn-exodin dropdown-toggle tool visible-xs" data-toggle="dropdown" type="button"><i class="fa fa-share-alt"></i></button>-->
-				
-				<button title="[[topic:tools]]" class="btn btn-exodo" data-toggle="dropdown" href="#"><i class="fa fa-gear"></i></button>
-					<ul class="dropdown-menu dropdown-menu-right" role="menu">
-						<!-- IMPORT partials/topic/post-menu.tpl -->
-					</ul>
 				</span>
 				
 				<span class="btn-group">
@@ -49,7 +39,7 @@
 	
 	<ul component="topic" id="post-container" class="posts" data-tid="{tid}">
 		<!-- BEGIN posts -->
-		<li class="post-row<!-- IF posts.deleted --> deleted<!-- ENDIF posts.deleted --><!-- IF posts.ignored --> ignored<!-- ENDIF posts.ignored --><!-- IF posts.isOP --> highlight-op<!-- ENDIF posts.isOP --><!-- IF posts.isFollow --> highlight-fw<!-- ENDIF posts.isFollow -->" <!-- IMPORT partials/data/topic.tpl -->>
+		<li component="post" class="post-row<!-- IF posts.deleted --> deleted<!-- ENDIF posts.deleted --><!-- IF posts.ignored --> ignored<!-- ENDIF posts.ignored --><!-- IF posts.isOP --> highlight-op<!-- ENDIF posts.isOP --><!-- IF posts.isFollow --> highlight-fw<!-- ENDIF posts.isFollow -->" <!-- IMPORT partials/data/topic.tpl -->>
 			<a component="post/anchor" name="{posts.index}"></a>
 
 			<meta itemprop="datePublished" content="{posts.relativeTime}">
@@ -60,11 +50,11 @@
 					<div class="pull-left visible-xs">
 						<div class="" title="<!-- IF posts.user.userslug -->[[topic:posted_by, {posts.user.username}]]<!-- ELSE -->[[topic:posted_by_guest]]<!-- ENDIF posts.user.userslug -->">
 									<a href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
-									<span class="inline avatarxs"><img class="" src="{posts.user.picture}" width=34 height=34 />&nbsp;</span>
-									<span class="username-field-mini" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}&nbsp;</span>
+									<img src="{posts.user.picture}" width=34 height=34 align="left" class="" itemprop="image"/>&nbsp;
+									<span class="username-field-mini" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}&nbsp;
+									</span>
 									</a>
 									<i component="user/status" class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]">&nbsp;</i>
-									
 							
 						</div>
 	
@@ -173,14 +163,20 @@
 					<div class="pull-left hidden-xs">
 						
 
-						<!-- IF !posts.selfPost -->
-						<div class="btn-group">
-							<button component="post/flag" class="btn btn-sm btn-link" type="button" title="[[topic:flag_title]]"><i class="fa fa-exclamation-triangle">	<!-- IF posts.display_moderator_tools -->
-							 <span style="color:red; font-weight:bold;"> {posts.flags}</span>
-							<!-- ENDIF posts.display_moderator_tools --></i></button>
-							
+				
+						<div class="dropup moderator-tools" component="post/tools">
+							<button title="[[topic:tools]]" class="btn btn-sm btn-default" data-toggle="dropdown" href="#"><i class="fa fa-gear"></i></button>
+									<ul class="dropdown-menu dropdown-menu-left" role="menu">
+													<!-- IMPORT partials/topic/post-menu.tpl -->
+									</ul>
+						
+							<!-- IF !posts.selfPost -->
+							<!-- IF posts.display_moderator_tools -->
+							 <span style="color:red; font-weight:bold;"> {posts.flags} <i class="fa fa-exclamation-triangle"> </i></span>
+							<!-- ENDIF posts.display_moderator_tools -->
+							<!-- ENDIF !posts.selfPost -->
 						</div>
-						<!-- ENDIF !posts.selfPost -->
+						
 					</div>
 
 										
@@ -253,8 +249,6 @@
 					<div class="pull-right hidden-xs">
 						<!-- IF loggedIn -->
 						
-						
-						
 						<div class="btn-group">
 							<!-- IF !posts.index -->
 							<button component="topic/follow" class="btn btn-sm btn-link btn-default <!-- IF isFollowing -->hidden<!-- ENDIF isFollowing -->" type="button" title="[[topic:watch.title]]"><i class="fa fa-eye"></i><label><span>[[topic:unwatch]]</span></label></button>
@@ -292,12 +286,6 @@
 				</div>
 			</div>
 		</li>
-
-		<!-- IF !posts.index -->
-		<li class="well post-bar <!-- IF unreplied -->hide<!-- ENDIF unreplied -->" data-index="{posts.index}">
-			<!-- IMPORT partials/post_bar.tpl -->
-		</li>
-		<!-- ENDIF !posts.index -->
 		<!-- END posts -->
 	</ul>
 
@@ -311,7 +299,6 @@
 				<span class="btn-group visible-xs">
 				<button component="topic/reply" class="btn btn-group btn-sm btn-default btn-exodin <!-- IF !privileges.topics:reply --> disabled<!-- ENDIF !privileges.topics:reply -->"><i class="fa fa-plus"></i></button>
 				</span>
-				<!-- IMPORT partials/thread_sort.tpl -->
 			</div>
 
 		</div>
@@ -338,4 +325,3 @@
 
 <!-- IMPORT partials/noscript/paginator.tpl -->
 <!-- IMPORT partials/variables/topic.tpl --> 
-

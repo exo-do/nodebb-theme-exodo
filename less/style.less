@@ -72,7 +72,9 @@ body {
 }
 
 .btn-exodo {
-    background-color: @exodo-dark;
+   
+    
+	background-color: @exodo-dark;
     border: 0;
     color: #fff;
     display: block;
@@ -80,20 +82,31 @@ body {
 	font-size: 12px !important;
     height: 22px;
     line-height: 22px;
-    padding: 0px 0px 0px 10px !important;
+	@media (max-width: 768px){
+		
+		border: 1px solid #ccc;
+	    height: 28px;
+	    line-height: 28px;
+		padding: 0px 0px 0px 0px;
+		border-bottom-left-radius: 0px !important;
+		border-top-left-radius: 0px !important;
+		-moz-border-radius-bottomleft: 0px !important;
+		-moz-border-radius-topleft: 0px !important;
+	    -webkit-border-bottom-left-radius: 0px !important;
+	    -webkit-border-top-left-radius: 0px !important;
+		
+	}
+	padding: 0px 0px 0px 10px;
+
 	border-bottom-left-radius: 4px !important;
 	border-top-left-radius: 4px !important;
 	-moz-border-radius-bottomleft: 4px !important;
 	-moz-border-radius-topleft: 4px !important;
     -webkit-border-bottom-left-radius: 4px !important;
     -webkit-border-top-left-radius: 4px !important;
-	 
-	//border-radius: 4px !important;
-    /*border-radius: 0;
-    -moz-border-radius: 0px;*/
+	
     &:hover {
-	    //background-color: @exodo-dark;
-        box-shadow: 0 0 0 2px #E4E4E4;
+	    box-shadow: 0 0 0 2px #E4E4E4;
         color: #fff;
         text-decoration: none;
     }
@@ -102,40 +115,34 @@ body {
 		
 		color: #fff;
 	}
-    span {
+    .exright {
         background-color: @exodo-primary;
-		//border-bottom-right-radius: 4px !important;
-		//border-top-right-radius: 4px !important;
         display: inline-block;
-        /*font: normal 13px;
-        font-size: 13px; */
         font-weight: bold;
         height: 22px;
         line-height: 23px;
+		@media (max-width: 768px){
+			color: #333;
+			background-color: #fff;
+		    height: 28px;
+		    line-height: 28px;
+	        margin-left: 0px;
+			padding-left: 10px;
+			padding-right: 10px;
+		    &:hover {
+				background-color: @exodo-primary;
+				color: #fff;
+		        text-decoration: none;
+		    }
+	    }
         margin-left: 8px;
         padding: 0 8px;
     }
-	
 	
 }
 
 
 .btn-exodin {
-    //background-color: @exodo-primary;
-    //border: 2px;
-	//border-color: @exodo-dark;
-    //color: #fff;
-    //display: block;
-    //font: normal;
-	
-	//font-size: 12px !important;
-    //height: 22px;
-    //line-height: 22px;
-    //padding: 0px 0px 0px 10px !important;
-	//border-radius: 4px !important;
-    /*border-radius: 0;
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px; */
     &:hover {
 		background-color: @exodo-primary;
 		color: #fff;
