@@ -1,7 +1,7 @@
 .btn-link i.fa {
 	vertical-align: none;
 }
-.topic-head, .topic-foot {
+//.topic-head, .topic-foot {
     //margin-bottom: 10px;
 	.headup {
 		
@@ -20,6 +20,18 @@
         }
 		h1:first-letter {
 			text-transform:uppercase;
+		}
+		@media (max-width: 768px){
+	 		margin-bottom: 20px;
+	         h1 {
+	             font-size: 20px;
+	             margin: 10px 0;
+	             padding: 0;
+			
+	         }
+	 		h1:first-letter {
+	 			text-transform:uppercase;
+	 		}
 		}
     }
 	
@@ -87,7 +99,7 @@
 	}
 	
 	
-}
+//}
 .topic {
     .post-content {
         > blockquote {
@@ -311,7 +323,7 @@
                 padding: 5px 10px;
             }
             .pull-left, .pull-right {
-	            &.hidden-xs {
+	            //&.hidden-xs {
 	                .btn-group {
 	                    border-right: 1px solid @exodo-border-color;
 	                    margin: 0 3px;
@@ -343,7 +355,7 @@
 	                .btn-group:last-child {
 	                    border: none;
 	                }
-	            }
+				//}
             }
         }
         .post-block {
