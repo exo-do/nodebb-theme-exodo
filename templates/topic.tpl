@@ -41,30 +41,53 @@
 
 			<div class="post-wrapper">
 				<div class="post-header">
-					<div class="pull-left visible-xs">
-						<div class="" title="<!-- IF posts.user.userslug -->[[topic:posted_by, {posts.user.username}]]<!-- ELSE -->[[topic:posted_by_guest]]<!-- ENDIF posts.user.userslug -->">
-							<a href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
-							<img src="{posts.user.picture}" width=34 height=34 align="left" class="" itemprop="image"/>&nbsp;
-							<span class="username-field-mini" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}&nbsp;</span>
-							</a>
-							<i component="user/status" class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]">&nbsp;</i>
-							
+						<div class="nickname pull-left btn-group" title="<!-- IF posts.user.userslug -->[[topic:posted_by, {posts.user.username}]]<!-- ELSE -->[[topic:posted_by_guest]]<!-- ENDIF posts.user.userslug -->">
+							<span class="avatar-mini">
+								<a href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->"><img src="{posts.user.picture}" width=34 height=34 align="left" class="" itemprop="image"/>&nbsp;</a>
+							</span>
+							<h4 data-toggle="dropdown">
+								<span class="username-field post-header-padding" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}&nbsp;</span>
+								<i component="user/status" class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]">&nbsp;</i>
+							</h4>
+						
+							<ul class="dropdown-menu">
+								<li><a href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->"><i class="fa fa-user"></i> [[topic:profile]]</a></li>
+								<!-- IF !posts.selfPost -->
+								<!-- IF posts.user.userslug -->
+								<!-- IF loggedIn -->
+								<!-- IF !config.disableChat -->
+								<li><a href="#" class="chat" component="post/chat"><i class="fa fa-comment"></i> [[topic:chat]]</a></li>
+								<!-- ENDIF !config.disableChat -->
+								<!-- ENDIF loggedIn -->
+								<!-- ENDIF posts.user.userslug -->
+								<!-- ENDIF !posts.selfPost -->
+
+								<!-- IF !posts.selfPost -->
+								<!-- IF loggedIn -->
+								<li><a href="#" class="unignore hide"><i class="fa fa-eye"></i> [[ignored:unignore]]</a></li>
+								<li><a href="#" class="ignore hide"><i class="fa fa-eye-slash"></i> [[ignored:ignore_user]]</a></li>
+								<!-- ENDIF loggedIn -->
+								<!-- ENDIF !posts.selfPost -->
+							</ul>
 						</div>
-					</div>
-					
-					<div class="post-header-padding">
-						<div class="post-date pull-left hidden-xs">
+						
+						<!--<div class="post-date pull-left hidden-xs">
 							<span class="date"><i class="fa fa-clock-o"></i> {function.humanReadableDate}</span>
 						</div>
-						<div class="post-meta pull-right">
-							<span class="post-index"><a href="/topic/{slug}/{function.postIndexPlusOne}">#{function.postIndexPlusOne}</a></span>
+						-->
+						<div class="ribbon-wrapper-green"><div class="ribbon-green"><a href="/topic/{slug}/{function.postIndexPlusOne}">{function.postIndexPlusOne}
+							</a></div></div>
+						<!--<div class="post-meta pull-right post-header-padding">
+							<span class="post-index"><a href="/topic/{slug}/{function.postIndexPlusOne}">#{function.postIndexPlusOne}
+							</a></span>
 						</div>
-					</div>	
+						-->
+				
 				</div>
 
 				<div class="post-details">
 					<div class="userinfo hidden-xs">
-						<div class="nickname btn-group">
+						<!-- <div class="nickname btn-group">
 							<h3 data-toggle="dropdown">
 								<span href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}&nbsp;</span>
 								<i component="user/status" class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]"></i>
@@ -89,7 +112,7 @@
 								<!-- ENDIF !posts.selfPost -->
 							</ul>
 						</div>
-
+						-->
 						<a href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
 							<!-- IF !posts.user.banned --><!--[[user:banned]] -->
 							<img src="{posts.user.picture}" align="left" class="img-thumbnail" itemprop="image" />
@@ -101,7 +124,7 @@
 							<!-- ENDIF !posts.user.banned -->
 						</a>
 
-						<dl class="userinfo-extra">
+						<!--<dl class="userinfo-extra">
 							<!-- IF posts.user.custom_profile_info.length -->
 							<!-- BEGIN custom_profile_info -->
 							<!-- IF posts.user.custom_profile_info.joindate -->
@@ -113,12 +136,13 @@
 							<!-- END custom_profile_info -->
 							<!-- ENDIF posts.user.custom_profile_info.length -->
 							
-							<!-- IF !reputation:disabled -->
-							<dt>[[global:reputation]]:</dt> <dd><span component="user/reputation" data-reputation="{posts.user.reputation}" data-uid="{posts.uid}" class='formatted-number reputation'>{posts.user.reputation}</span></dd>
-							<!-- ENDIF !reputation:disabled -->
 							
-							<dt>[[global:posts]]:</dt><dd><span class='formatted-number' component="user/postcount" data-uid="{posts.uid}" data-postcount="{posts.user.postcount}">{posts.user.postcount}</span></dd>
 						</dl>
+						-->
+						<span class="userinfo-extra">
+							<i class='fa fa-star'></i> <span component="user/reputation" data-reputation="{posts.user.reputation}" data-uid="{posts.uid}" class='formatted-number reputation'>{posts.user.reputation}</span>&nbsp;|&nbsp;
+							<i class='fa fa-pencil'></i> <span class='formatted-number' component="user/postcount" data-uid="{posts.uid}" data-postcount="{posts.user.postcount}">{posts.user.postcount}</span>
+						</span>
 					</div>
 
 					<div class="post-block">
@@ -134,6 +158,7 @@
 						<div class="original-content hide" itemprop="text"></div>
 						<!-- ENDIF posts.ignored -->
 
+						<div class="clearfix"></div>
 						<div class="post-info">
 							<span class="pull-right">
 							[[global:posted_ago, <span class="timeago" title="{posts.relativeTime}"></span>]]
@@ -144,7 +169,7 @@
 						<!-- IF posts.user.signature -->
 						<div class="post-signature hidden-xs">{posts.user.signature}</div>
 						<!-- ENDIF posts.user.signature -->
-						<div class="clearfix"></div>
+						
 					</div>
 				</div>
 
