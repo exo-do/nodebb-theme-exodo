@@ -336,8 +336,10 @@
 	            //&.hidden-xs {
 	                .btn-group {
 	                    border-right: 1px solid @exodo-border-color;
-	                    margin: 0 3px;
-	                    .btn-link {
+			            @media (max-width: @screen-sm-min) {
+							 
+						}
+						.btn-link {
 	                        padding: 0 5px;
 	                        color: @exodo-dark;
 	                        &:hover {
@@ -351,8 +353,12 @@
 	                        i.fa {
 	                            font-size: 12px;
 	                            margin-right: 6px;
-	                            vertical-align: middle;
-	                            position: relative;
+					            @media (max-width: @screen-sm-min) {
+					                margin-right: 0px;
+					            }
+								//margin-left: 6px;
+	                            //vertical-align: middle;
+	                            //position: relative;
 	                        }
 	                    }
 	                    &.reputation {

@@ -17,6 +17,11 @@
 				<!-- IMPORT partials/thread_sort.tpl -->
 				</span>
 				
+				<div class="btn-group">
+					<button component="topic/follow" class="btn btn-exodo <!-- IF isFollowing -->hidden<!-- ENDIF isFollowing -->" type="button" title="[[topic:watch.title]]"><span class="hidden-xs"> [[topic:unwatch]]</span><span class="exright"><i class="fa fa-bookmark"></i></span></button>
+					<button component="topic/unfollow" class="btn btn-exodo <!-- IF !isFollowing -->hidden<!-- ENDIF !isFollowing -->" type="button" title="[[topic:unwatch.title]]"><span class="hidden-xs"> [[topic:watch]]</span><span class="exright"><i class="fa fa-bookmark-o"></i></span></button>
+				</div>		
+				
 				<span class="btn-group">
 				<!-- IMPORT partials/thread_tools.tpl -->
 				</span>
@@ -124,21 +129,21 @@
 							<!-- ENDIF !posts.user.banned -->
 						</a>
 
-						<!--<dl class="userinfo-extra">
+						<dl class="userinfo-extra">
 							<!-- IF posts.user.custom_profile_info.length -->
 							<!-- BEGIN custom_profile_info -->
 							<!-- IF posts.user.custom_profile_info.joindate -->
-							<dt>Fecha de ingreso:</dt> <dd>{posts.user.custom_profile_info.joindate}</dd>
+							<dt></dt> <dd>{posts.user.custom_profile_info.joindate}</dd>
 							<!-- ENDIF posts.user.custom_profile_info.joindate -->
 							<!-- IF posts.user.custom_profile_info.location -->
-							<dt>Ubicación:</dt> <dd>{posts.user.custom_profile_info.location}</dd>
+							<!--<dt></dt> <dd>{posts.user.custom_profile_info.location}</dd>-->
 							<!-- ENDIF posts.user.custom_profile_info.location -->
 							<!-- END custom_profile_info -->
 							<!-- ENDIF posts.user.custom_profile_info.length -->
 							
 							
 						</dl>
-						-->
+						
 						<span class="userinfo-extra">
 							<i class='fa fa-star'></i> <span component="user/reputation" data-reputation="{posts.user.reputation}" data-uid="{posts.uid}" class='formatted-number reputation'>{posts.user.reputation}</span>&nbsp;|&nbsp;
 							<i class='fa fa-pencil'></i> <span class='formatted-number' component="user/postcount" data-uid="{posts.uid}" data-postcount="{posts.user.postcount}">{posts.user.postcount}</span>
@@ -177,19 +182,19 @@
 					
 					<div class="pull-left">
 				
-						<div class="dropup moderator-tools" component="post/tools">
-							<button title="[[topic:tools]]" class="btn btn-sm btn-default" data-toggle="dropdown" href="#">
+						<div class="dropup moderator-tools btn-group" component="post/tools">
+							<button title="[[topic:tools]]" class="btn btn-sm btn-link btn-default" data-toggle="dropdown" href="#">
 								<i class="fa fa-gear"></i></button>
 									<ul class="dropdown-menu dropdown-menu-left" role="menu">
 													<!-- IMPORT partials/topic/post-menu.tpl -->
 									</ul>
-						
-							<!-- IF !posts.selfPost -->
-							<!-- IF posts.display_moderator_tools -->
-							 <span style="color:red; font-weight:bold;"> {posts.flags} <i class="fa fa-exclamation-triangle"></i></span>
-							<!-- ENDIF posts.display_moderator_tools -->
-							<!-- ENDIF !posts.selfPost -->
 						</div>
+						<!-- IF !posts.selfPost -->
+						<!-- IF posts.display_moderator_tools -->
+							<span style="color:red; font-weight:bold;"> {posts.flags} <i class="fa fa-exclamation-triangle"></i></span>
+						<!-- ENDIF posts.display_moderator_tools -->
+						<!-- ENDIF !posts.selfPost -->
+						
 						
 					</div>
 
@@ -207,21 +212,13 @@
 						
 						<div class="btn-group">
 						<button component="post/favourite" class="btn btn-sm btn-link btn-default" role="menuitem" tabindex="-1" href="#" data-favourited="{posts.favourited}">
-								<i component="post/favourite/on" class="fa fa-thumbs-up <!-- IF !posts.favourited -->hidden<!-- ENDIF !posts.favourited -->"></i>
-								<i component="post/favourite/off" class="fa fa-thumbs-o-up <!-- IF posts.favourited -->hidden<!-- ENDIF posts.favourited -->"></i>
+								<i component="post/favourite/on" class="fa fa-heart <!-- IF !posts.favourited -->hidden<!-- ENDIF !posts.favourited -->"></i>
+								<i component="post/favourite/off" class="fa fa-heart-o <!-- IF posts.favourited -->hidden<!-- ENDIF posts.favourited -->"></i>
 								<label class="favourite-text hidden-xs"><!--[[topic:favourite]]--></label>
 								<span component="post/favourite-count" class="favouriteCount" data-favourites="{posts.reputation}">{posts.reputation}</span>&nbsp;
 						</button>
 						</div>
 						
-						<div class="btn-group">
-							<!-- IF !posts.index -->
-							<button component="topic/follow" class="btn btn-sm btn-link btn-default <!-- IF isFollowing -->hidden<!-- ENDIF isFollowing -->" type="button" title="[[topic:watch.title]]"><i class="fa fa-eye"></i><label class="hidden-xs"><span> [[topic:unwatch]]</span></label></button>
-							<button component="topic/unfollow" class="btn btn-sm btn-link btn-default <!-- IF !isFollowing -->hidden<!-- ENDIF !isFollowing -->" type="button" title="[[topic:unwatch.title]]"><i class="fa fa-eye-slash"></i><label class="hidden-xs"><span> [[topic:watch]]</span></label></button>
-								
-							<!-- ENDIF !posts.index -->
-						</div>
-
 						<!-- IF !reputation:disabled -->
 						<div class="btn-group reputation">
 							<button component="post/upvote" class="upvote btn btn-sm btn-link <!-- IF posts.upvoted --> upvoted btn-primary <!-- ENDIF posts.upvoted -->">
