@@ -44,5 +44,5 @@
 				<!-- IMPORT partials/menu.tpl -->
 			</div>
 		</div>
-	<div class="container" id="content" component="content">
+	<div class="container-fluid" id="content" component="content">
 	<!-- IMPORT partials/noscript/warning.tpl -->
