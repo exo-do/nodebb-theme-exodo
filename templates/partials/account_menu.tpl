@@ -11,7 +11,7 @@
 				<li><a href="{config.relative_path}/user/{userslug}/followers"><i class="fa fa-fw fa-users"></i> [[user:followers]]</a></li>
 				<!-- IF ignorePluginEnabled -->
 				<!-- IF isSelf -->
-				<li><a href="{config.relative_path}/user/{userslug}/ignored"><i class="fa fa-eye-slash"></i> [[ignored:ignored]]</a></li>
+				<li><a href="{config.relative_path}/user/{userslug}/ignored"><i class="fa fa-user-times"></i> [[ignored:ignored]]</a></li>
 				<!-- ENDIF isSelf -->
 				<!-- ENDIF ignorePluginEnabled -->
 				<li class="divider"></li>

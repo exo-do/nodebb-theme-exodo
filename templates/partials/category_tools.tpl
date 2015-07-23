@@ -1,16 +1,12 @@
 <!-- IF privileges.editable -->
 <div class="btn-group thread-tools">
-	<!--<button class="btn btn-sm btn-default btn-exodin visible-xs" data-toggle="dropdown" type="button"> Mod <span><i class="fa fa-bolt"></i></span></button>-->
-	
-	<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
-		<span class="visible-sm-inline visible-md-inline visible-lg-inline">Mod <i class="fa fa-bolt"></i> <!--[[topic:thread_tools.title]]--></span>
-		<!--<span class="visible-xs-inline"><i class="fa fa-fw fa-gear"></i></span>-->
-		<span class="caret"></span>
+	<button class="btn btn-exodo dropdown-toggle" data-toggle="dropdown" type="button">
+		<span class="hidden-xs">Mod</span><span class="exright"><i class="fa fa-bolt"></i></span> <!--[[topic:thread_tools.title]]-->
 	</button>
 	<ul class="dropdown-menu pull-right">
 		<li>
 			<a component="topic/mark-unread-for-all" href="#">
-				<i class="fa fa-fw fa-inbox"></i> Marcar no leido <!--[[topic:thread_tools.markAsUnreadForAll]]-->
+				<i class="fa fa-fw fa-inbox"></i> [[topic:thread_tools.markAsUnreadForAll]]
 			</a>
 		</li>
 		<li>

@@ -18,8 +18,8 @@
 				</span>
 				
 				<div class="btn-group">
-					<button component="topic/follow" class="btn btn-exodo <!-- IF isFollowing -->hidden<!-- ENDIF isFollowing -->" type="button" title="[[topic:watch.title]]"><span class="hidden-xs"> [[topic:unwatch]]</span><span class="exright"><i class="fa fa-bookmark"></i></span></button>
-					<button component="topic/unfollow" class="btn btn-exodo <!-- IF !isFollowing -->hidden<!-- ENDIF !isFollowing -->" type="button" title="[[topic:unwatch.title]]"><span class="hidden-xs"> [[topic:watch]]</span><span class="exright"><i class="fa fa-bookmark-o"></i></span></button>
+					<button component="topic/follow" class="btn btn-exodo <!-- IF isFollowing -->hidden<!-- ENDIF isFollowing -->" type="button" title="[[topic:watch.title]]"><span class="hidden-xs"> [[topic:unwatch]]</span><span class="exright"><i class="fa fa-eye-slash"></i></span></button>
+					<button component="topic/unfollow" class="btn btn-exodo <!-- IF !isFollowing -->hidden<!-- ENDIF !isFollowing -->" type="button" title="[[topic:unwatch.title]]"><span class="hidden-xs"> [[topic:watch]]</span><span class="exright"><i class="fa fa-eye"></i></span></button>
 				</div>		
 				
 				<span class="btn-group">
@@ -80,7 +80,7 @@
 							<span class="date"><i class="fa fa-clock-o"></i> {function.humanReadableDate}</span>
 						</div>
 						-->
-						<div class="ribbon-wrapper-green"><div class="ribbon-green"><a href="/topic/{slug}/{function.postIndexPlusOne}">{function.postIndexPlusOne}
+						<div class="ribbon-wrapper-green"><div class="ribbon-green"><a href="/topic/{slug}/{function.postIndexPlusOne}">{posts.index}<!--{function.postIndexPlusOne}-->
 							</a></div></div>
 						<!--<div class="post-meta pull-right post-header-padding">
 							<span class="post-index"><a href="/topic/{slug}/{function.postIndexPlusOne}">#{function.postIndexPlusOne}
