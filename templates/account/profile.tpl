@@ -20,10 +20,10 @@
 					<!-- ENDIF !banned -->
 
 					<div>
+						<!-- IF loggedIn -->
+						<!-- IF !isSelf -->
 						<div class="text-center">
-
-							<!-- IF !isSelf -->
-<!-- IF loggedIn -->							<br/>
+							<br/>
 							<!-- IF !config.disableChat -->
 							<a id="chat-btn" href="#" class="btn btn-primary btn-sm">[[user:chat]]</a>
 							<!-- ENDIF !config.disableChat -->
@@ -36,8 +36,7 @@
 								<a href="#" class="ignore btn btn-danger btn-sm hide">[[ignored:ignore_user]]</a>
 							</p>
 							<!-- ENDIF ignorePluginEnabled -->
-							<!-- ENDIF loggedIn -->
-							<!-- ENDIF !isSelf -->
+							
 						</div>
 						
 						<!-- IF isAdmin -->
@@ -46,7 +45,8 @@
 							<a id="unbanAccountBtn" href="#" class="btn btn-danger btn-sm <!-- IF !banned -->hide<!-- ENDIF !banned -->">[[user:unban_account]]</a>
 							<a id="deleteAccountBtn" href="#" class="btn btn-danger btn-sm">[[user:delete_account]]</a><br/><br/>
 						<!-- ENDIF isAdmin -->
-						
+						<!-- ENDIF !isSelf -->
+						<!-- ENDIF loggedIn -->
 
 						<div id="banLabel" class="text-center <!-- IF !banned -->hide<!-- ENDIF !banned -->">
 							<span class="label label-danger">Baneado / Eliminado</span><!--[[user:banned]]-->

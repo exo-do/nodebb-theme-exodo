@@ -14,7 +14,7 @@
 		</div>
 		<div class="col-xs-5 text-left pull-right">
 			<div class="input-group">
-				<input type="text" class="form-control" placeholder="Buscar" name="query" value="" id="search-text">
+				<input type="text" class="form-control" placeholder="[[global:search]]" name="query" value="" id="search-text">
 				<span id="search-button" class="input-group-addon search-button"><i class="fa fa-search"></i></span>
 			</div>
 		</div>
@@ -33,5 +33,4 @@
 		</div>
 	</div>
 	<!-- ENDIF groups.length -->
-	
 </div>

@@ -78,4 +78,8 @@
 </div>
 
 <!-- IMPORT partials/move_thread_modal.tpl -->
-<!-- IMPORT partials/noscript/paginator.tpl -->
+<!-- IF !config.usePagination -->
+<noscript>
+<!-- IMPORT partials/paginator.tpl -->
+</noscript>
+<!-- ENDIF !config.usePagination -->
