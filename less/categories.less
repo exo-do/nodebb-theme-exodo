@@ -16,24 +16,43 @@
 			}
 		}
 	}
+	
+	//no se usa
 	.category-item {
 		
 		padding: 5px;
+	}
 	
 	.category-icon {
 		
-		background-color: white;
-		border: 1px solid #DDD;
-		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-		
+		//background-color: white;
+		//border: 1px solid #DDD;
+		//box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+		position:relative;
+		min-height: 55px;
 		&:hover .category-header {
-			filter: brightness(120%);
-			-webkit-filter: brightness(120%);
+			filter: brightness(110%);
+			-webkit-filter: brightness(110%);
 		}
 		
 	}
 	
+	/*--
+	.category-icon:before {
+	    content: "\f000";
+	    font-family: FontAwesome;
+	    font-style: normal;
+	    font-weight: normal;
+	    text-decoration: inherit;
+	adjust as necessary
+	    color: grey;
+	    font-size: 48px;
+	    position: absolute;
+	    top: 0;
+	    right: 1px;
+      	z-index: 1;
 	}
+	--*/
 	
 	//esta pillando este
 	.last-topic-title {
@@ -66,8 +85,8 @@
 	}
 	
 	.category-title {
-		font-size: 22px;
-		
+		font-size: 15px;
+		margin-top: 0px !important;
 		@media (max-width: @screen-xs-min) {
 			margin-top: 15px;
 			
@@ -77,9 +96,12 @@
 		}
 	}
 	
+	
+	
+	
 	.category-info {
 		padding: 10px;
-		
+		text-align: right;
 		.category-stats {
 			color: #D9CEDC;
 			font-size: 90%;
@@ -90,15 +112,16 @@
 
 	.category-header {
 	    .pointer;
-	    height: 110px;
-	    margin: 0;
-	    padding-top: 15px;
-	    text-align: center;
+	    //height: 110px;
+	    min-height: 70px;
+		margin: 0;
+	    padding-top: 1px;
+	    text-align: left;
 	    width: 100%;
 		
 		.category-title {
 			color: white !important;
-			margin: 5px;
+			//margin: 5px;
 		}
 	    
 	    &.category-header-image-auto {
@@ -145,7 +168,7 @@
 		height: 80px;
 		
 		.category-title {
-			color: #333;
+			//color: #333;
 			font-size: 24px;
 			line-height: 90px;
 		}
@@ -275,4 +298,117 @@
 	padding-right: 1px;
 }
 
+
+
+
+
+/*Badges molones*/
+
+.user-badge-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 20px;
+  width: auto;
+  height: auto;
+
+//filter: brightness(100%);
+//-webkit-filter: brightness(100%);
+  //transform: translate3d(0px,80px,0px);
+  //transition: transform 800ms 2.2s ease-out;
+}
+
+.user-badge-nav a {
+  //background-color: #50587c;
+  //color: #fff;
+  display: inline-block;
+  outline: none;
+  text-decoration: none;
+  text-align: center;
+  float: right;
+  font-size: 10px;
+  font-weight: 400;
+  //user-select: none;
+  width: 40px;
+  height: 100%;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+	//transition: background-color 350ms ease-in-out; 
+}
+
+.user-badge-nav span {
+  color: #fff;
+  vertical-align: middle;
+  //margin-right: 10px;
+}
+
+
+.user-badge-nav a:nth-child(1) {
+  //border-top: 4px solid #e64c65;
+  //background-color: #e64c65;
+  //border-radius: 0px 0px 0px 5px;
+}
+
+.user-badge-nav a:nth-child(1) span {
+  font-size: 1.2em;
+}
+
+.user-badge-nav a:nth-child(2) {
+  //background-color: #11a8ab;
+  margin-left: 1px;
+}
+
+.user-badge-nav a:nth-child(2) span {
+  font-size: 1.2em;
+}
+
+
+/************************************************* Icon
+*/
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/953/icomoon.eot?-h9pxf3');
+	src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/953/icomoon.eot?#iefix-h9pxf3') format('embedded-opentype'),
+		url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/953/icomoon.woff?-h9pxf3') format('woff'),
+		url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/953/icomoon.ttf?-h9pxf3') format('truetype'),
+		url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/953/icomoon.svg?-h9pxf3#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+}
+
+.icon-corazon:before {
+	content: "\e600";
+}
+.icon-ojo:before {
+	content: "\e601";
+}
+.icon-bocadillo:before {
+	content: "\e602";
+}
+.icon-mas:before {
+	content: "\e603";
+}
+
+.icon {
+	
+	font-size: 17px;
+	line-height: 17px;
+	padding: 5px;
+	color: #fff;
+	//border-radius: 50%;
+	margin-right: 15px;
+	min-width: 46px;
+	min-height: 55px;
+	margin-top: 0px !important;
+}
 

@@ -80,7 +80,7 @@
 							<span class="date"><i class="fa fa-clock-o"></i> {function.humanReadableDate}</span>
 						</div>
 						-->
-						<div class="ribbon-wrapper-green"><div class="ribbon-green"><a href="/topic/{slug}/{function.postIndexPlusOne}">{posts.index}<!--{function.postIndexPlusOne}-->
+						<div class="ribbon-wrapper-green"><div class="ribbon-green"><a href="/topic/{slug}/{function.postIndexPlusOne}">{function.postIndexPlusOne}
 							</a></div></div>
 						<!--<div class="post-meta pull-right post-header-padding">
 							<span class="post-index"><a href="/topic/{slug}/{function.postIndexPlusOne}">#{function.postIndexPlusOne}
