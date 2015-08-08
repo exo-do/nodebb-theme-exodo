@@ -1,7 +1,4 @@
-<div id="motdDiv" class="motd col-lg-6 col-md-6 col-xs-12" style="display:none;">
-	<div widget-area="motd">
-	</div>
-</div>
+<div id="motdDiv" class="motd col-lg-6 col-md-6 col-xs-12" style="display:none;"> <div widget-area="motd"> </div> </div>
 
 <div id="categoriesDiv" class="row categories" style="display:none;" itemscope itemtype="http://www.schema.org/ItemList">
 	<div widget-area="sidebar" style="padding-top:0px; padding-left:0px; padding-right:0px;" class="col-lg-7 col-md-7 col-sm-12 col-xs-12"></div>
@@ -25,8 +22,7 @@
 						
 							<!-- IF categories.icon -->
 							<span class="icon" style="<!-- IF categories.bgColor -->background-color: {categories.bgColor};<!-- ENDIF categories.bgColor -->">
-								<i class="fa {categories.icon}"><span class="category-title"> {categories.name}</span>
-								</i>
+								<i class="fa {categories.icon}"></i><span class="category-title"> {categories.name}</span>
 							</span>
 							<!-- ENDIF categories.icon -->
 						</div>
