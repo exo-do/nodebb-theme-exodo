@@ -4,7 +4,7 @@
 </div>
 
 <div id="categoriesDiv" class="row categories" style="display:none;" itemscope itemtype="http://www.schema.org/ItemList">
-	<div widget-area="sidebar" style="padding-top:5px; padding-left:5px; padding-right:5px;" class="col-lg-7 col-md-7 col-sm-12 col-xs-12"></div>
+	<div widget-area="sidebar" style="padding-top:0px; padding-left:0px; padding-right:0px;" class="col-lg-7 col-md-7 col-sm-12 col-xs-12"></div>
 	<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
 		
 		<div class="row <!-- IF !disableMasonry -->masonry<!-- ENDIF !disableMasonry -->">
