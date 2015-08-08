@@ -14,8 +14,7 @@
 				
 				<meta itemprop="name" content="{categories.name}">
 	
-				
-				<div class="category-icon">
+				<div class="category-icon animated zoomIn">
 
 					<!-- IF categories.link -->
 					<a style="color: {categories.color};" href="{categories.link}" itemprop="url" target="_blank">
