@@ -1,25 +1,28 @@
 {
-  "name": "nodebb-theme-exodo",
-  "version": "1.0.96",
-  "description": "exo.do theme for NodeBB",
-  "main": "theme.less",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/exo-do/nodebb-theme-exodo"
-  },
-  "keywords": [
-    "nodebb",
-    "theme",
-    "themes",
-    "exo.do",
-    "exodo"
-  ],
-  "bugs": {
-    "url": "https://github.com/exo-do/nodebb-theme-exodo/issues"
-  },
-  "readmeFilename": "README.md",
-  "homepage": "https://github.com/exo-do/nodebb-theme-exodo",
-  "dependencies": {
-    "moment": "^2.9.0"
-  }
+	"name": "nodebb-theme-exodo",
+	"version": "1.0.96",
+	"description": "exo.do theme for NodeBB",
+	"main": "theme.less",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/exo-do/nodebb-theme-exodo"
+	},
+	"keywords": [
+		"nodebb",
+		"theme",
+		"themes",
+		"exo.do",
+		"exodo"
+	],
+	"bugs": {
+		"url": "https://github.com/exo-do/nodebb-theme-exodo/issues"
+	},
+	"nbbpm": {
+		"compatibility": "^0.7.1"
+	},
+	"readmeFilename": "README.md",
+	"homepage": "https://github.com/exo-do/nodebb-theme-exodo",
+	"dependencies": {
+		"moment": "^2.9.0"
+	}
 }
