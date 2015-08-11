@@ -12,7 +12,7 @@
 		</div>
 		<div class="panel-body">
 			<span class="since-bar"><a href="#" class="selected" data-since="recent">[[recent:title]]</a> &bull; <a href="#" data-since="week">[[modules:chat.seven_days]]</a> &bull; <a href="#" data-since="month">[[modules:chat.thirty_days]]</a> &bull; <a href="#" data-since="threemonths">[[modules:chat.three_months]]</a></span>
-			<ul class="chat-content">
+			<ul class="well well-sm">
 				<!-- IMPORT partials/chat_messages.tpl -->
 				<span class="user-typing pull-right hide"><i class="fa fa-pencil"></i> [[modules:chat.user_typing, {meta.username}]]</span>
 			</ul>
