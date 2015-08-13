@@ -31,7 +31,7 @@
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 		<!-- // -->
 		<div>
-		        <div class="text-center center-block visible-xs visible-sm">
+		        <div class="text-center center-block">
 						<a href="#" class="scrollup pull-left"><i class="fa fa-chevron-circle-up fa-2x scrollup-ic social"></i></a>
 		                <a href="#" onclick="darkMode()"><i class="fa fa-adjust fa-2x social-ng social "></i></a>
 						<a href="https://www.facebook.com/pages/Exodo/881300971914436" target="_blank"><i class="fa fa-facebook-square fa-2x social-fb social"></i></a>
@@ -40,17 +40,6 @@
 			            <a href="mailto:contacto@exo.do" target="_blank"><i class="fa fa-envelope-square fa-2x social-em social"></i></a>
 						<a href="#" class="scrollup pull-right"><i class="fa fa-chevron-circle-up fa-2x scrollup-ic social"></i></a>
 				</div>
-				
-		        <div class="text-center center-block hidden-xs hidden-sm">
-						<a href="#" class="scrollup pull-left"><i class="fa fa-chevron-circle-up fa-3x scrollup-ic social"></i></a>
-		                <a href="#" onclick="darkMode()"><i class="fa fa-adjust fa-3x social-ng social "></i></a>
-						<a href="https://www.facebook.com/pages/Exodo/881300971914436" target="_blank"><i class="fa fa-facebook-square fa-3x social-fb social"></i></a>
-			            <a href="https://twitter.com/exodo" target="_blank"><i class="fa fa-twitter-square fa-3x social-tw social"></i></a>
-			            <a href="https://plus.google.com" target="_blank"><i class="fa fa-google-plus-square fa-3x social-gp social"></i></a>
-			            <a href="mailto:contacto@exo.do" target="_blank"><i class="fa fa-envelope-square fa-3x social-em social"></i></a>
-						<a href="#" class="scrollup pull-right"><i class="fa fa-chevron-circle-up fa-3x scrollup-ic social"></i></a>
-				</div>
-				
 		</div>
 		      
 	</div>
