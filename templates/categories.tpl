@@ -1,8 +1,8 @@
 <div id="motdDiv" class="motd col-lg-6 col-md-6 col-xs-12" style="display:none;"> <div widget-area="motd"> </div> </div>
 
 <div id="categoriesDiv" class="row categories" style="display:none;" itemscope itemtype="http://www.schema.org/ItemList">
-	<div widget-area="sidebar" style="padding-top:0px; padding-left:0px; padding-right:0px;" class="col-lg-7 col-md-7 col-sm-12 col-xs-12"></div>
-	<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
+	<div widget-area="sidebar" class="col-lg-8 col-md-7 col-sm-12 col-xs-12 side"></div>
+	<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
 		
 		<div class="row <!-- IF !disableMasonry -->masonry<!-- ENDIF !disableMasonry -->">
 			<!-- BEGIN categories -->
@@ -27,10 +27,6 @@
 							<!-- ENDIF categories.icon -->
 						</div>
 						</a>
-						
-						
-						
-							
 						
 						<!--	<span class="badge {categories.unread-class}"><i class="fa fa-book" data-toggle="tooltip" title="[[global:topics]]"></i> <span class="human-readable-number" title="{categories.topic_count}">{categories.topic_count}</span>&nbsp; <i class="fa fa-pencil" data-toggle="tooltip" title="[[global:posts]]"></i> <span class="human-readable-number" title="{categories.post_count}">{categories.post_count}</span></span>
 							-->

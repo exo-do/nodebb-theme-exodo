@@ -1,6 +1,26 @@
 .categories {
 	
-    margin: 0px auto;
+	//margin: 0px auto;
+	
+	//ajuste de tiles menor a MD
+	@media (max-width: 992px) {
+		.col-xs-12 {
+			//padding-left: 1px !important;
+			//padding-right: 1px !important;
+			.masonry > div {
+				padding-left: 0px !important;
+				padding-right: 0px !important;
+			} 
+		}
+	
+	}
+	
+	
+	.side {
+		padding-top:0px !important; 
+		padding-left:0px !important; 
+		padding-right:0px !important;
+	}
 	
 	.category {
 		padding-bottom: 10px;
@@ -38,23 +58,6 @@
 		
 	}
 	
-	/*--
-	.category-icon:before {
-	    content: "\f000";
-	    font-family: FontAwesome;
-	    font-style: normal;
-	    font-weight: normal;
-	    text-decoration: inherit;
-	adjust as necessary
-	    color: grey;
-	    font-size: 48px;
-	    position: absolute;
-	    top: 0;
-	    right: 1px;
-      	z-index: 1;
-	}
-	--*/
-	
 	//esta pillando este
 	.last-topic-title {
 		font-style: italic;
@@ -68,8 +71,8 @@
 	}
 	
 	.last-topic-title:first-letter {
-			text-transform:uppercase;
-		}
+		text-transform:uppercase;
+	}
 	
 	
 	.last-topic-date {
@@ -98,8 +101,6 @@
 	}
 	
 	
-	
-	
 	.category-info {
 		padding: 10px;
 		text-align: right;
@@ -112,40 +113,40 @@
 	
 
 	.category-header {
-	    .pointer;
-	    //height: 110px;
-	    min-height: 70px;
+		.pointer;
+		//height: 110px;
+		min-height: 70px;
 		margin: 0;
-	    padding-top: 1px;
-	    text-align: left;
-	    width: 100%;
+		padding-top: 1px;
+		text-align: left;
+		width: 100%;
 		
 		.category-title {
 			color: white !important;
 			//margin: 5px;
 		}
 	    
-	    &.category-header-image-auto {
-	        background-position: 0% 0% !important;
-	        background-size: auto!important;
-	        -moz-background-size: auto!important;
-	        -o-background-size: auto!important;
-	        -webkit-background-size: auto!important;
-	    }
-	    &.category-header-image-cover {
-	        background-position: center!important;
-	        background-size: cover!important;
-	        -moz-background-size: cover!important;
-	        -o-background-size: cover!important;
-	        -webkit-background-size: cover!important;
-	    }
-	    &.category-header-image-contain {
-	        background-position: center!important;
-	        background-size: contain!important;
-	        -moz-background-size: contain!important;
-	        -o-background-size: contain!important;
-	        -webkit-background-size: contain!important;
-	    }
+		&.category-header-image-auto {
+			background-position: 0% 0% !important;
+			background-size: auto!important;
+			-moz-background-size: auto!important;
+			-o-background-size: auto!important;
+			-webkit-background-size: auto!important;
+		}
+		&.category-header-image-cover {
+			background-position: center!important;
+			background-size: cover!important;
+			-moz-background-size: cover!important;
+			-o-background-size: cover!important;
+			-webkit-background-size: cover!important;
+		}
+		&.category-header-image-contain {
+			background-position: center!important;
+			background-size: contain!important;
+			-moz-background-size: contain!important;
+			-o-background-size: contain!important;
+			-webkit-background-size: contain!important;
+		}
 
 	}
 	.post-preview {
@@ -231,7 +232,7 @@
 
 .motd {
 	margin: 0 auto;
-    float: none;
+	float: none;
 	
 	.stats {
 		color: #cf246a;
@@ -273,10 +274,10 @@
 	border-right: 1px solid white;
 }
 .tag-topic-count:hover {
-    color: #ddd;
+	color: #ddd;
 }
 .tag-item:hover {
-    color: #ddd;
+	color: #ddd;
 }
 
 #pad{
@@ -306,60 +307,60 @@
 /*Badges molones*/
 
 .user-badge-nav {
-  position: absolute;
-  top: 0;
-  right: 0;
-  line-height: 20px;
-  width: auto;
-  height: auto;
+	position: absolute;
+	top: 0;
+	right: 0;
+	line-height: 20px;
+	width: auto;
+	height: auto;
 
-//filter: brightness(100%);
-//-webkit-filter: brightness(100%);
-  //transform: translate3d(0px,80px,0px);
-  //transition: transform 800ms 2.2s ease-out;
+	//filter: brightness(100%);
+	//-webkit-filter: brightness(100%);
+	//transform: translate3d(0px,80px,0px);
+	//transition: transform 800ms 2.2s ease-out;
 }
 
 .user-badge-nav a {
-  //background-color: #50587c;
-  //color: #fff;
-  display: inline-block;
-  outline: none;
-  text-decoration: none;
-  text-align: center;
-  float: right;
-  font-size: 10px;
-  font-weight: 400;
-  //user-select: none;
-  width: 40px;
-  height: 100%;
-  -webkit-tap-highlight-color:rgba(0,0,0,0);
+	//background-color: #50587c;
+	//color: #fff;
+	display: inline-block;
+	outline: none;
+	text-decoration: none;
+	text-align: center;
+	float: right;
+	font-size: 10px;
+	font-weight: 400;
+	//user-select: none;
+	width: 40px;
+	height: 100%;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
 	//transition: background-color 350ms ease-in-out; 
 }
 
 .user-badge-nav span {
-  color: #fff;
-  vertical-align: middle;
-  //margin-right: 10px;
+	color: #fff;
+	vertical-align: middle;
+	//margin-right: 10px;
 }
 
 
 .user-badge-nav a:nth-child(1) {
-  //border-top: 4px solid #e64c65;
-  //background-color: #e64c65;
-  //border-radius: 0px 0px 0px 5px;
+	//border-top: 4px solid #e64c65;
+	//background-color: #e64c65;
+	//border-radius: 0px 0px 0px 5px;
 }
 
 .user-badge-nav a:nth-child(1) span {
-  font-size: 1.2em;
+	font-size: 1.2em;
 }
 
 .user-badge-nav a:nth-child(2) {
-  //background-color: #11a8ab;
-  margin-left: 1px;
+	//background-color: #11a8ab;
+	margin-left: 1px;
 }
 
 .user-badge-nav a:nth-child(2) span {
-  font-size: 1.2em;
+	font-size: 1.2em;
 }
 
 
@@ -370,9 +371,9 @@
 	font-family: 'icomoon';
 	src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/953/icomoon.eot?-h9pxf3');
 	src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/953/icomoon.eot?#iefix-h9pxf3') format('embedded-opentype'),
-		url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/953/icomoon.woff?-h9pxf3') format('woff'),
-		url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/953/icomoon.ttf?-h9pxf3') format('truetype'),
-		url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/953/icomoon.svg?-h9pxf3#icomoon') format('svg');
+	url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/953/icomoon.woff?-h9pxf3') format('woff'),
+	url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/953/icomoon.ttf?-h9pxf3') format('truetype'),
+	url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/953/icomoon.svg?-h9pxf3#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
