@@ -12,6 +12,7 @@
 	"scripts": [
 		"lib/client.js",
 		"lib/moment.min.js",
-		"lib/vanilla.js"
+		"lib/vanilla.js",
+		"lib/fastclick.js"
 	]
 }

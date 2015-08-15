@@ -33,7 +33,7 @@
 			</span>
 			<!-- ELSE -->
 			<!-- IF !loggedIn -->
-			<a href="{config.relative_path}/login" class="btn btn-exodo">[[category:guest-login-post]]<span class="exright">+</span></a>
+			<a href="{config.relative_path}/login" class="btn btn-exodo">[[category:guest-login-post]]<span class="exright hidden-xs">+</span></a>
 			<!-- ENDIF !loggedIn -->
 			<!-- ENDIF privileges.topics:create -->
 						

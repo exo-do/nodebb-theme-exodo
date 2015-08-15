@@ -9,23 +9,21 @@
 		
 	<div class="topic-head-middle clearfix<!-- IF config.usePagination --> headup <!-- ENDIF config.usePagination -->">
 		<div class="pull-left topic-buttons-right">
-			<span class="btn-group">
-				<!-- IMPORT partials/topic/reply-button.tpl -->
-			</span>
+			<!-- IMPORT partials/topic/reply-button.tpl -->
+			
 				
-			<span class="btn-group">
-				<!-- IMPORT partials/thread_sort.tpl -->
-			</span>
-				
+			<!-- IMPORT partials/thread_sort.tpl -->
+			
+			
+			<!-- IF loggedIn -->	
 			<div class="btn-group">
 				<button component="topic/follow" class="btn btn-exodo <!-- IF isFollowing -->hidden<!-- ENDIF isFollowing -->" type="button" title="[[topic:watch.title]]"><span class="hidden-xs"> [[topic:unwatch]]</span><span class="exright"><i class="fa fa-eye-slash"></i></span></button>
 				<button component="topic/unfollow" class="btn btn-exodo <!-- IF !isFollowing -->hidden<!-- ENDIF !isFollowing -->" type="button" title="[[topic:unwatch.title]]"><span class="hidden-xs"> [[topic:watch]]</span><span class="exright"><i class="fa fa-eye"></i></span></button>
 			</div>		
-				
-			<span class="btn-group">
-				<!-- IMPORT partials/thread_tools.tpl -->
-			</span>
-
+			
+			<!-- IMPORT partials/thread_tools.tpl -->
+			<!-- ENDIF loggedIn -->
+			
 		</div>
 	</div>
 		
@@ -210,15 +208,17 @@
 			<!-- END posts -->
 		</ul>
 	
-		<div class="well col-md-12 col-xs-12 pull-right post-bar bottom-post-bar <!-- IF unreplied -->hide<!-- ENDIF unreplied -->">
-			<!-- IMPORT partials/post_bar.tpl -->
-		</div>
-
 		<div class="topic-head-pagination fixfoot">
 			<!-- IF config.usePagination -->
 			<!-- IMPORT partials/paginator.tpl -->
 			<!-- ENDIF config.usePagination -->
 		</div>
+		
+		<div class="well col-md-12 col-xs-12 pull-right post-bar bottom-post-bar <!-- IF unreplied -->hide<!-- ENDIF unreplied -->">
+			<!-- IMPORT partials/post_bar.tpl -->
+		</div>
+
+		
 		<!-- IMPORT partials/breadcrumbs.tpl -->
 	
 		<!-- IMPORT partials/move_thread_modal.tpl -->
