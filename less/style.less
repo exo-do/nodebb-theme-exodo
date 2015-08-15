@@ -1,7 +1,7 @@
 //este import es de exodo
-//@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,600&subset=latin,cyrillic-ext);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=latin,latin-ext);
 //@import url(https://fonts.googleapis.com/css?family=Roboto:400,300italic,600&subset=latin,cyrillic-ext);
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,500,300&subset=latin,cyrillic-ext);
+//@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,500,300&subset=latin,cyrillic-ext);
 
 .brand-primary {
 	color: @exodo-primary;
@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6,
     border: 0;
     color: #fff;
     display: block;
-    font: normal;
+    font-weight: normal;
 	font-size: 12px !important;
     height: 22px;
     line-height: 22px;
@@ -494,3 +494,25 @@ a:hover, .btn-link:hover, .btn-link:active, .btn-link:focus {
 	color: inherit;
   }
 }
+
+//exodo
+.panel {
+	background-color: #f8f8f8;
+}
+
+
+@pagination-color:                     @exodo-link-color;
+@pagination-bg:                        #fff;
+@pagination-border:                    #ddd;
+
+@pagination-hover-color:               @exodo-link-hover-color;
+@pagination-hover-bg:                  @gray-lighter;
+@pagination-hover-border:              #ddd;
+
+@pagination-active-color:              #fff;
+@pagination-active-bg:                 @exodo-primary;
+@pagination-active-border:             @exodo-primary;
+
+@pagination-disabled-color:            @gray-light;
+@pagination-disabled-bg:               #fff;
+@pagination-disabled-border:           #ddd;
