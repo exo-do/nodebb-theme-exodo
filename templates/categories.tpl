@@ -25,14 +25,17 @@
 									<i class="fa {categories.icon}"></i><span class="category-title"> {categories.name}</span>
 								</span>
 								<!-- ENDIF categories.icon -->
+								<div class="user-badge-nav hidden-xs" style="<!-- IF categories.bgColor -->background-color: {categories.bgColor};<!-- ENDIF categories.bgColor -->">
+									<span><i class="fa fa-pencil" title="[[global:posts]]"><span class="human-readable-number" style="padding-left:5px;" title="{categories.post_count}"></span></i></span>
+									<span><i class="fa fa-comments" data-toggle="tooltip" title="[[global:topics]]"><span class="human-readable-number" style="padding-left:5px;" title="{categories.topic_count}"></span></i></span>
+								</div>
 							</div>
+							
+							
 						</a>
 						
 						
-						<div class="user-badge-nav hidden-xs" style="<!-- IF categories.bgColor -->background-color: {categories.bgColor};<!-- ENDIF categories.bgColor -->">
-							<a href="{config.relative_path}/category/{categories.slug}" itemprop="url"><span><i class="fa fa-pencil" title="[[global:posts]]"><span class="human-readable-number" style="padding-left:5px;" title="{categories.post_count}"></span></i></span></a>
-							<a href="{config.relative_path}/category/{categories.slug}" itemprop="url"><span><i class="fa fa-comments" data-toggle="tooltip" title="[[global:topics]]"><span class="human-readable-number" style="padding-left:5px;" title="{categories.topic_count}"></span></i></span></a>
-						</div>
+						
 						 
 						
 					</div>
