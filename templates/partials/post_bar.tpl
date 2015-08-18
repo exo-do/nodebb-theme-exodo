@@ -1,15 +1,5 @@
 <div class="inline-block">
 
-	<span class="tags">
-	<!-- BEGIN tags -->
-	<a href="{config.relative_path}/tags/{tags.value}"><span class="tag-item" data-tag="{tags.value}" style="<!-- IF tags.color -->color: {tags.color};<!-- ENDIF tags.color --><!-- IF tags.bgColor -->background-color: {tags.bgColor};<!-- ENDIF tags.bgColor -->">{tags.value}</span><span class="tag-topic-count">{tags.score}</span></a>
-	<!-- END tags -->
-	</span>
-
-	<!-- IF tags.length -->
-	<span>|</span>
-	<!-- ENDIF tags.length -->
-
 	<small class="topic-stats">
 		<span>[[global:posts]]</span>
 		<strong><span component="topic/post-count" class="human-readable-number" title="{postcount}">{postcount}</span></strong> |
@@ -34,4 +24,5 @@
 	<!-- IMPORT partials/topic/reply-button.tpl -->
 
 </div>
+
 <div style="clear:both;"></div>

@@ -25,9 +25,9 @@
 				<a class="hidden-xs" href="<!-- IF topics.user.userslug -->{config.relative_path}/topic/{topics.slug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">
 					<img src="<!-- IF topics.thumb -->{topics.thumb}<!-- ELSE -->{topics.user.picture}<!-- ENDIF topics.thumb -->" class="profile-image user-img" title="{topics.user.username}" />
 				</a>
-				<h3>
+				<h3 component="topic/header">
 					<a href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
-						<meta itemprop="name" content="{topics.title}">
+						<meta itemprop="name" content="{function.stripTags,title}">
 					
 						<span class="topic-title <!-- IF !loggedIn --> regular <!-- ENDIF !loggedIn -->"><i component="topic/pinned" class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->">&nbsp;</i><i component="topic/locked" class="fa fa-lock<!-- IF !topics.locked --> hide <!-- ENDIF !topics.locked -->">&nbsp;</i>{topics.title}</span>
 					</a>

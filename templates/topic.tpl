@@ -219,10 +219,20 @@
 			<!-- ENDIF config.usePagination -->
 		</div>
 		
-		<div class="well col-md-12 col-xs-12 pull-right post-bar bottom-post-bar <!-- IF unreplied -->hide<!-- ENDIF unreplied -->">
+		<div class="well col-md-12 col-xs-12 post-bar-well pull-right post-bar bottom-post-bar <!-- IF unreplied -->hide<!-- ENDIF unreplied -->">
 			<!-- IMPORT partials/post_bar.tpl -->
 		</div>
 
+		<!-- IF tags.length -->
+		<div class="well col-md-12 col-xs-12 post-bar-well">
+			<span class="tags">
+			<!-- BEGIN tags -->
+			<a href="{config.relative_path}/tags/{tags.value}"><span class="tag-item" data-tag="{tags.value}" style="<!-- IF tags.color -->color: {tags.color};<!-- ENDIF tags.color --><!-- IF tags.bgColor -->background-color: {tags.bgColor};<!-- ENDIF tags.bgColor -->">{tags.value}</span><span class="tag-topic-count">{tags.score}</span></a>
+			<!-- END tags -->
+			</span>
+		</div>
+		
+		<!-- ENDIF tags.length -->
 		
 		<!-- IMPORT partials/breadcrumbs.tpl -->
 	
