@@ -131,10 +131,15 @@
 						<div class="clearfix"></div>
 						<div class="post-info">
 							<span class="pull-right">
-								[[global:posted_ago, <span class="timeago" title="{posts.relativeTime}"></span>]]
-								<span component="post/editor" class="<!-- IF !posts.editor.username --> hidden<!-- ENDIF !posts.editor.username -->">| [[global:last_edited_by_ago, <strong><a href="{config.relative_path}/user/{posts.editor.userslug}">{posts.editor.username}</a></strong>, <span class="timeago" title="{posts.relativeEditTime}"></span>]]</span>
+								<span class="timeago" title="{posts.relativeTime}"></span>
+								<i class="fa fa-pencil-square pointer edit-icon <!-- IF !posts.editor.username -->hidden<!-- ENDIF !posts.editor.username -->"></i>
 							</span>
 						</div>
+
+						
+
+						<small data-editor="{posts.editor.userslug}" component="post/editor" class="hidden">[[global:last_edited_by_ago, <strong>{posts.editor.username}</strong>, <span class="timeago" title="{posts.relativeEditTime}"></span>]]</small>
+						
 
 						<!-- IF posts.user.signature -->
 						<div class="post-signature hidden-xs">{posts.user.signature}</div>
