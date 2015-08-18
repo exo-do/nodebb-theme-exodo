@@ -16,7 +16,7 @@
 		</a>
 		<!-- ENDIF showSiteTitle -->
 
-		<div component="navbar/title" class="visible-xs">
+		<div component="navbar/title" class="header-topic-title visible-xs">
 			<span></span>
 		</div>
 	</div>
@@ -214,7 +214,9 @@
 		</li>
 	</ul>
 
-	<div class="header-topic-title hidden-xs">
+
+
+	<div component="navbar/title" class="header-topic-title hidden-xs">
 		<span></span>
 	</div>
 	<!-- ELSE -->
