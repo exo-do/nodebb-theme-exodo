@@ -28,10 +28,10 @@
 					<!-- ENDIF categories.icon -->
 					<div class="user-badge-nav hidden-xs" style="<!-- IF categories.bgColor -->background-color: {categories.bgColor};<!-- ENDIF categories.bgColor -->">
 						<span>
-							<i class="fa fa-pencil" title="[[global:posts]]"><span class="human-readable-number" style="padding-left:5px;" title="{categories.post_count}"></span></i>
+							<i class="fa fa-pencil" title="[[global:posts]]"><span class="human-readable-number" style="padding-left:5px;" title="{categories.numRecentReplies}"></span></i>
 						</span>
 						<span>
-							<i class="fa fa-comments" data-toggle="tooltip" title="[[global:topics]]"><span class="human-readable-number" style="padding-left:5px;" title="{categories.topic_count}"></span></i>
+							<i class="fa fa-comments" data-toggle="tooltip" title="[[global:topics]]"><span class="human-readable-number" style="padding-left:5px;" title="{categories.totalTopicCount}"></span></i>
 						</span>
 								</div>
 							</div>
