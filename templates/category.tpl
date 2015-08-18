@@ -29,7 +29,7 @@
 		
 			<!-- IF privileges.topics:create -->
 			<span class="btn-group">
-			<button id="new_topic" class="btn btn-exodo"><span class="hidden-xs">[[category:new_topic_button]]</span><span class="exright">+</span></button>
+				<button id="new_topic" class="btn btn-exodo"><span class="hidden-xs">[[category:new_topic_button]]</span><span class="exright">+</span></button>
 			</span>
 			<!-- ELSE -->
 			<!-- IF !loggedIn -->
@@ -45,24 +45,59 @@
 			<!-- ENDIF loggedIn -->			
 	
 			<!-- IMPORT partials/category_tools.tpl -->
-						
-		</div>
+			
+			<!-- Recents Filter Plugin Code Begin-->
+			<a href="#!" onclick="showHideFilters()"><span class="btn-group"><button class="btn btn-exodo">Filtros<span><i class="fa fa-filter"></i></span></button></span></a>
+			</br>
+			</br>
+			<div id="filtersContainer" style="display:none">
+				<div class="col-xs-4">
+					<label class="control-label" for="excludedTitleWords"><h5>Filtro de títulos de temas <i class="fa fa-scissors"></i></h5></label>
+					<input class="col-xs-12" type="text" id="excludedTitleWords" placeholder="Separadas por espacios">
+					<br>
+					<small>Los hilos que contengan alguna de estas palabras en el título se ocultarán.</small>
+				</div>
+
+				<div class="col-xs-4">
+					<label class="control-label" for="excludedTags"><h5>Filtro de etiquetas <i class="fa fa-minus-square"></i></h5></label>
+					<input class="col-xs-12" type="text" id="excludedTags" placeholder="Separadas por espacios">
+					<br>
+					<small>Los hilos que contengan alguna de estas etiquetas se ocultarán.</small>
+				</div>
+
+				<div class="col-xs-4">
+					<label class="control-label" for="onlyThisTags"><h5>Filtro de etiquetas <i class="fa fa-plus-square"></i></h5></label>
+					<input class="col-xs-12" type="text" id="onlyThisTags" placeholder="Separadas por espacios">
+					<br>
+					<small>Solo los hilos que contengan estas etiquetas serán mostrados</small>
+				</div>
+				<div class="clearfix"></div>
+				</br>
+				</br>
+				<div clas="pull-right">
+					<a align="center" id="submitBtn" href="#!" onclick="saveFilters()" class="btn btn-exodo">Guardar filtros<span><i class="fa fa-cloud"></i></span></a>
+				</div>
+				</br>
+				</br>
+			</div>
+			<!-- Recents Filter Plugin Code End-->			
+</div>
 			
 			
-		<div class="category-head-pagination">
-			<!-- IF config.usePagination -->
-			<!-- IMPORT partials/paginator.tpl -->
-			<!-- ENDIF config.usePagination -->
-		</div>
+<div class="category-head-pagination">
+<!-- IF config.usePagination -->
+<!-- IMPORT partials/paginator.tpl -->
+<!-- ENDIF config.usePagination -->
+</div>
 		
 			
 			
-	</div>
+</div>
 </div>
 	
 <!-- IF !topics.length -->
 <div class="alert alert-warning" id="category-no-topics">
-	[[category:no_topics]]
+[[category:no_topics]]
 </div>
 <!-- ENDIF !topics.length -->
 
@@ -71,7 +106,7 @@
 
 <!-- IF config.usePagination -->
 <div class="category-head-pagination pagination-foot">
-	<!-- IMPORT partials/paginator.tpl -->
+<!-- IMPORT partials/paginator.tpl -->
 </div>
 <!-- ENDIF config.usePagination -->
 	

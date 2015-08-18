@@ -37,7 +37,7 @@
 							</p>
 							<!-- ENDIF ignorePluginEnabled -->
 							
-						</div>
+						
 						
 						<!-- IF isAdmin -->
 						<br/><br/>
@@ -45,6 +45,7 @@
 							<a id="unbanAccountBtn" href="#" class="btn btn-danger btn-sm <!-- IF !banned -->hide<!-- ENDIF !banned -->">[[user:unban_account]]</a>
 							<a id="deleteAccountBtn" href="#" class="btn btn-danger btn-sm">[[user:delete_account]]</a><br/><br/>
 						<!-- ENDIF isAdmin -->
+					</div>
 						<!-- ENDIF !isSelf -->
 						<!-- ENDIF loggedIn -->
 
