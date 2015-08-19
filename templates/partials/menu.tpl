@@ -113,6 +113,11 @@
 				</li>
 				<li role="presentation" class="divider"></li>
 				<li>
+					<a href="{relative_path}/user/{user.userslug}">
+						<i class="fa fa-user"></i><span> Perfil</span>
+					</a>
+				</li>
+				<li>
 					<a href="{relative_path}/user/{user.userslug}/settings">
 						<i class="fa fa-cog"></i><span> Opciones</span>
 					</a>
