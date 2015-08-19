@@ -12,7 +12,7 @@
 <!-- ELSE -->
 
 <!-- IF !privileges.topics:reply -->
-<a href="{config.relative_path}/login" class="btn btn-exodo">[[topic:guest-login-reply]]<span class="exright">+</span></a>
+<a href="{config.relative_path}/login" class="btn btn-exodo">&nbsp;[[topic:guest-login-reply]]&nbsp;<span class="exright hidden-xs">+</span></a>
 <!-- ENDIF !privileges.topics:reply -->
 
 <!-- ENDIF loggedIn -->
