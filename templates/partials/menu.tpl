@@ -175,16 +175,19 @@
 	<!-- ENDIF loggedIn -->
 	<!-- IF searchEnabled -->
 	<ul class="nav navbar-nav navbar-right">
-		<li>
+		<li>	
 			<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="">
 				<div class="hide" id="search-fields">
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="[[global:search]]" name="query" value="">
 					</div>
 					<button type="submit" class="btn btn-default hide">[[global:search]]</button>
+					<span class="" id="search-advanced" title="Avanzado"><a href="/search"><i class="fa fa-plus-square"></i></a></span>
 				</div>
+				
 				<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="[[global:header.search]]"></i></button>
 			</form>
+			
 		</li>
 	</ul>
 	<!-- ENDIF searchEnabled -->
