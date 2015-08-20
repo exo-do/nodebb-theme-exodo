@@ -39,8 +39,8 @@
 						
 			<!-- IF loggedIn -->			
 			<span class="btn-group">
-				<button type="button" class="btn btn-exodo watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored --> tool"><span class="hidden-xs">[[category:watch]]</span><span class="exright"><i class="fa fa-eye"></i></span></button>
-				<button type="button" class="btn btn-exodo ignore <!-- IF isIgnored -->hidden<!-- ENDIF isIgnored --> tool"><span class="hidden-xs">[[category:ignore]]</span><span class="exright"><i class="fa fa-eye-slash"></i></span></button>
+				<button type="button" class="btn btn-exodo watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored --> tool"><span class="hidden-xs">[[category:watch]]</span><span class="exright"><i class="fa fa-eye-slash"></i></span></button>
+				<button type="button" class="btn btn-exodo ignore <!-- IF isIgnored -->hidden<!-- ENDIF isIgnored --> tool"><span class="hidden-xs">[[category:ignore]]</span><span class="exright"><i class="fa fa-eye"></i></span></button>
 			</span>
 			<!-- ENDIF loggedIn -->			
 	
