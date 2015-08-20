@@ -44,13 +44,15 @@
 
 			<div class="post-wrapper">
 				<div class="post-header">
-					<div class="nickname pull-left btn-group" title="<!-- IF posts.user.userslug -->[[topic:posted_by, {posts.user.username}]]<!-- ELSE -->[[topic:posted_by_guest]]<!-- ENDIF posts.user.userslug -->">
+					<div class="nickname pull-left btn-group">
 						<span class="avatar-mini">
 							<a href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->"><img src="{posts.user.picture}" width=34 height=34 align="left" class="" itemprop="image"/>&nbsp;</a>
 						</span>
 						<h4 data-toggle="dropdown">
-							<span class="username-field post-header-padding" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}&nbsp;</span>
-							<i component="user/status" class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]">&nbsp;</i>
+							<span class="username-field post-header-padding" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" title="<!-- IF posts.user.userslug -->[[topic:posted_by, {posts.user.username}]]<!-- ELSE -->[[topic:posted_by_guest]]<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}&nbsp;
+							</span>
+							<i component="user/status" class="fa fa-circle status {posts.user.status} statusfix" title="[[global:{posts.user.status}]]"></i>
+						  
 						</h4>
 						
 						<ul class="dropdown-menu">
