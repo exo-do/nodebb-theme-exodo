@@ -45,7 +45,7 @@
 
 	<hr />
 
-	<div class="category row">
+	<div class="category">
 		<div id="category-no-topics" class="alert alert-warning <!-- IF topics.length -->hidden<!-- ENDIF topics.length -->">
 			<strong>[[unread:no_unread_topics]]</strong>
 		</div>
@@ -53,9 +53,8 @@
 		<a href="{config.relative_path}/unread">
 			<div class="alert alert-warning hide" id="new-topics-alert"></div>
 		</a>
-		<div class="col-md-12">
 			<!-- IMPORT partials/topics_list.tpl -->
 			<button id="load-more-btn" class="btn btn-primary hide">[[unread:load_more]]</button>
-		</div>
+		
 	</div>
 </div>

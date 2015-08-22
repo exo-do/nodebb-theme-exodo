@@ -10,8 +10,8 @@
 	<input class="form-control" type="text" id="tag-search" placeholder="[[global:search]]"/>
 	<br/>
 
-	<div class="category row">
-		<div class="col-md-12 clearfix tag-list" data-nextstart="{nextStart}">
+	<div class="category ">
+		<div class="clearfix tag-list" data-nextstart="{nextStart}">
 			<!-- IMPORT partials/tags_list.tpl -->
 		</div>
 	</div>

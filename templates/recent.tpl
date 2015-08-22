@@ -59,9 +59,7 @@
 </div>
 <!-- ENDIF !topics.length -->
 
-<div class="category row">
-<div class="col-md-12">
+<div class="category">
 <!-- IMPORT partials/topics_list.tpl -->
-</div>
 </div>
 </div>
