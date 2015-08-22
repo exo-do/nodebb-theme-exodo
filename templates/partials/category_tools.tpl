@@ -3,7 +3,7 @@
 	<button class="btn btn-exodo dropdown-toggle" data-toggle="dropdown" type="button">
 		<span class="hidden-xs">Mod</span><span class="exright"><i class="fa fa-bolt"></i></span> <!--[[topic:thread_tools.title]]-->
 	</button>
-	<ul class="dropdown-menu pull-right">
+	<ul class="dropdown-menu pull-left">
 		<li>
 			<a component="topic/mark-unread-for-all" href="#">
 				<i class="fa fa-fw fa-inbox"></i> [[topic:thread_tools.markAsUnreadForAll]]
