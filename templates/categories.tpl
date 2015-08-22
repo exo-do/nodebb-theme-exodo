@@ -2,12 +2,13 @@
 
 <div id="categoriesDiv" class="row categories" style="display:none;" itemscope itemtype="http://www.schema.org/ItemList">
 	<div widget-area="sidebar" class="col-lg-8 col-md-8 col-sm-12 col-xs-12 side"></div>
+	
 	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tiles" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
 		
 		<div class="row <!-- IF !disableMasonry -->masonry<!-- ENDIF !disableMasonry -->">
 			<!-- BEGIN categories -->
-				
-			<div component="categories/category" class="{categories.class}" data-cid="{categories.cid}" data-numRecentReplies="{categories.numRecentReplies}">
+				<!--component="categories/category"--> 
+			<div class="{categories.class}" data-cid="{categories.cid}" data-numRecentReplies="{categories.numRecentReplies}">
 				
 				<meta itemprop="name" content="{categories.name}">
 	
@@ -26,23 +27,23 @@
 						<i class="fa {categories.icon}"></i><span class="category-title"> {categories.name}</span>
 					</span>
 					<!-- ENDIF categories.icon -->
-					<div class="user-badge-nav hidden-xs" style="<!-- IF categories.bgColor -->background-color: {categories.bgColor};<!-- ENDIF categories.bgColor -->">
-						<span>
-							<i class="fa fa-pencil" title="[[global:posts]]"><span class="human-readable-number" style="padding-left:5px;" title="{categories.numRecentReplies}"></span></i>
-						</span>
-						<span>
-							<i class="fa fa-comments" data-toggle="tooltip" title="[[global:topics]]"><span class="human-readable-number" style="padding-left:5px;" title="{categories.totalTopicCount}"></span></i>
-						</span>
-								</div>
-							</div>
-					</a>
+						<div class="user-badge-nav hidden-xs" style="<!-- IF categories.bgColor -->background-color: {categories.bgColor};<!-- ENDIF categories.bgColor -->">
+							<span>
+								<i class="fa fa-pencil" title="[[global:posts]]"><span class="human-readable-number" style="padding-left:5px;" title="{categories.numRecentReplies}"></span></i>
+							</span>
+							<span>
+								<i class="fa fa-comments" data-toggle="tooltip" title="[[global:topics]]"><span class="human-readable-number" style="padding-left:5px;" title="{categories.totalTopicCount}"></span></i>
+							</span>
+						</div>
 					</div>
+					</a>
+					
 				</div>
-				<!-- END categories -->
 			</div>
+				<!-- END categories -->
 		</div>
-
 	</div>
+</div>
 
 	<script type="text/javascript">
 
