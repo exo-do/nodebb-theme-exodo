@@ -221,12 +221,12 @@
 			<!-- ENDIF config.usePagination -->
 		</div>
 		
-		<div class="well col-md-12 col-xs-12 post-bar-well pull-right post-bar bottom-post-bar <!-- IF unreplied -->hide<!-- ENDIF unreplied -->">
+		<div class="col-md-12 col-xs-12">
 			<!-- IMPORT partials/post_bar.tpl -->
 		</div>
 
 		<!-- IF tags.length -->
-		<div class="well col-md-12 col-xs-12 post-bar-well">
+		<div class="col-md-12 col-xs-12 padingtag">
 			<span class="tags">
 			<!-- BEGIN tags -->
 			<a href="{config.relative_path}/tags/{tags.value}"><span class="tag-item" data-tag="{tags.value}" style="<!-- IF tags.color -->color: {tags.color};<!-- ENDIF tags.color --><!-- IF tags.bgColor -->background-color: {tags.bgColor};<!-- ENDIF tags.bgColor -->">{tags.value}</span><span class="tag-topic-count">{tags.score}</span></a>
@@ -242,7 +242,7 @@
 		<!-- IMPORT partials/fork_thread_modal.tpl -->
 		<!-- IMPORT partials/move_post_modal.tpl -->
 	</div>
-
+	
 	<div widget-area="footer" class="col-xs-12"></div>
 
 	<!-- IF !config.usePagination -->
