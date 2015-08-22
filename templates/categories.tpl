@@ -19,7 +19,7 @@
 					<!-- ELSE -->
 					<a style="color: {categories.color};" href="{config.relative_path}/category/{categories.slug}" itemprop="url" title="{categories.description}">
 					<!-- ENDIF categories.link -->
-					<div id="category-{categories.cid}" class="category-header category-header-image-{categories.imageClass}" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url({categories.backgroundImage}); <!-- IF categories.bgColor -->background-color: {categories.bgColor};<!-- ENDIF categories.bgColor --> border-top: 6px solid {categories.bgColor}">
+					<div id="category-{categories.cid}" class="category-header category-header-image-{categories.imageClass}" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url({categories.backgroundImage}); <!-- IF categories.bgColor -->background-color: {categories.bgColor};<!-- ENDIF categories.bgColor --> border-top: 6px solid {categories.bgColor}">
 						
 					<!-- IF categories.icon -->
 					<span class="icon" style="<!-- IF categories.bgColor -->background-color: {categories.bgColor};<!-- ENDIF categories.bgColor -->">
