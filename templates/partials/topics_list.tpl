@@ -39,7 +39,7 @@
 						</span>
 						{topics.user.username}
 					</a>
-					&nbsp;<span class="timeago" title="{topics.relativeTime}"></span> 
+					<span class="timeago" title="{topics.relativeTime}"></span> 
 					<!-- IF template.category --><!-- ELSE -->
 					<a href="{config.relative_path}/category/{topics.category.slug}" class="categoryNameOnTopicInfo"> | {topics.category.name}</a>
 					<!-- ENDIF template.category -->
