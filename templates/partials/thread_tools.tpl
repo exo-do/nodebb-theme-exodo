@@ -1,9 +1,10 @@
 <!-- IF privileges.view_thread_tools -->
+<!-- IF privileges.editable -->
 <div class="btn-group thread-tools dropdown">
 	<button class="btn btn-exodo dropdown-toggle" data-toggle="dropdown" type="button">
 		<span class="hidden-xs"> Mod <!--[[topic:thread_tools.title]]--></span><span class="exright"><i class="fa fa-bolt"></i></span></button>
 	<ul class="dropdown-menu pull-left">
-		<!-- IF privileges.editable -->
+		
 		<li>
 			<a component="topic/mark-unread-for-all" href="#">
 				<i class="fa fa-fw fa-inbox"></i> Marcar no leido <!--[[topic:thread_tools.markAsUnreadForAll]]-->
@@ -42,9 +43,7 @@
 			</a>
 		</li>
 		<li class="divider"></li>
-		<!-- ENDIF privileges.editable -->
 
-		<!-- IF privileges.deletable -->
 		<li>
 			<a component="topic/delete" href="#" class="<!-- IF deleted -->hidden<!-- ENDIF deleted -->">
 				<i class="fa fa-fw fa-trash-o"></i> [[topic:thread_tools.delete]]
@@ -66,7 +65,7 @@
 			<a href="#" class="{thread_tools.class}"><i class="fa fa-fw {thread_tools.icon}"></i> {thread_tools.title}</a>
 		</li>
 		<!-- END thread_tools -->
-		<!-- ENDIF privileges.deletable -->
 	</ul>
 </div>
+<!-- ENDIF privileges.editable -->
 <!-- ENDIF privileges.view_thread_tools -->
