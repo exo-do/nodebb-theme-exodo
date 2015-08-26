@@ -7,10 +7,12 @@
 	<!-- ENDIF !posts.length -->
 
 	<div class="row">
+		<div class="col-xs-12">
 		<!-- IMPORT partials/posts_list.tpl -->
 		<!-- IF config.usePagination -->
 			<!-- IMPORT partials/paginator.tpl -->
 		<!-- ENDIF config.usePagination -->
+		</div>
 	</div>
 </div>
 

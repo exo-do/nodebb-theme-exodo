@@ -1,6 +1,6 @@
 <!-- IMPORT partials/breadcrumbs.tpl -->
 
-<div class="row">
+<div class="row register">
 	<div class="{register_window:spansize}">
 		<div class="well well-lg">
 			<div class="alert alert-danger" id="register-error-notify" <!-- IF error -->style="display:block"<!-- ELSE -->style="display: none;"<!-- ENDIF error -->>
@@ -13,8 +13,8 @@
 					<label for="email" class="col-lg-4 control-label">[[register:email_address]]</label>
 					<div class="col-lg-8">
 						<div class="input-group">
-							<input class="form-control" type="text" placeholder="[[register:email_address_placeholder]]" name="email" id="email" autocorrect="off" autocapitalize="off" autocomplete="off" />
-							<span class="input-group-addon input-register">
+							<input class="form-control" type="text" placeholder="[[register:email_address_placeholder]]" name="email" id="email" autocorrect="off" autocapitalize="off" />
+							<span class="input-group-addon">
 								<span id="email-notify"><i class="fa fa-circle-o"></i></span>
 							</span>
 						</div>
@@ -25,8 +25,8 @@
 					<label for="username" class="col-lg-4 control-label">[[register:username]]</label>
 					<div class="col-lg-8">
 						<div class="input-group">
-							<input class="form-control" type="text" placeholder="[[register:username_placeholder]]" name="username" id="username" autocorrect="off" autocapitalize="off" />
-							<span class="input-group-addon input-register">
+							<input class="form-control" type="text" placeholder="[[register:username_placeholder]]" name="username" id="username" autocorrect="off" autocapitalize="off" autocomplete="off" />
+							<span class="input-group-addon">
 								<span id="username-notify"><i class="fa fa-circle-o"></i></span>
 							</span>
 						</div>
@@ -38,7 +38,7 @@
 					<div class="col-lg-8">
 						<div class="input-group">
 							<input class="form-control" type="password" placeholder="[[register:password_placeholder]]" name="password" id="password" />
-							<span class="input-group-addon input-register">
+							<span class="input-group-addon">
 								<span id="password-notify"><i class="fa fa-circle-o"></i></span>
 							</span>
 						</div>
@@ -50,7 +50,7 @@
 					<div class="col-lg-8">
 						<div class="input-group">
 							<input class="form-control" type="password" placeholder="[[register:confirm_password_placeholder]]" name="password-confirm" id="password-confirm" />
-							<span class="input-group-addon input-register">
+							<span class="input-group-addon">
 								<span id="password-confirm-notify"><i class="fa fa-circle-o"></i></span>
 							</span>
 						</div>
@@ -72,7 +72,7 @@
 					<div class="col-lg-8">
 						<hr />
 						<strong>[[register:terms_of_use]]</strong>
-						<textarea readonly class="form-control" rows=6>{termsOfUse}</textarea>
+						<div class="tos">{termsOfUse}</div>
 						<div class="checkbox">
 							<label>
 								<input type="checkbox" name="agree-terms" id="agree-terms"> [[register:agree_to_terms_of_use]]

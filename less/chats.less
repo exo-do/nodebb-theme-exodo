@@ -56,7 +56,12 @@
 			font-weight: bold;
 
 			i {
-				font-size: 1rem;
+				font-size: 14px;
+				vertical-align: center;
+
+				&.fa-keyboard-o {
+					.animation(topic-reply-pulse 2s ease-in infinite);
+				}
 			}
 		}
 
@@ -65,16 +70,22 @@
 		}
 	}
 
-	ul.well {
+	.chat-content {
+		.fix-lists;
 		height: 250px;
 		overflow-y: auto;
+		overflow-x: hidden;
 		resize: none;
 		word-wrap: break-word;
+		padding: 1rem;
 
-		li {
+		li.chat-message {
 			list-style-type: none;
-			margin-bottom: 10px;
 			font-weight: 300;
+
+			&[data-break="true"] {
+				margin-top: 7px;
+			}
 
 			.chat-user-image {
 				width: 20px;
@@ -90,7 +101,13 @@
 			}
 
 			.message-body {
+				margin-left: 14px;
 				clear: both;
+
+				p {
+					margin: 7px 0 0 0;
+					line-height: 2rem;
+				}
 			}
 
 			&[data-self="0"] + [data-self="0"], &[data-self="1"] + [data-self="1"] {

@@ -36,8 +36,6 @@
 								<a href="#" class="ignore btn btn-danger btn-sm hide">[[ignored:ignore_user]]</a>
 							</p>
 							<!-- ENDIF ignorePluginEnabled -->
-							
-						
 						
 						<!-- IF isAdmin -->
 						<br/><br/>
@@ -62,11 +60,12 @@
 						<hr/>
 						<div class="text-center account-stats">
 				
-										<div class="inline-block text-center">
+							<!-- IF reputation -->
+							<div class="inline-block text-center">
 								<span class="human-readable-number" title="{reputation}">{reputation}</span>
 								<span class="account-bio-label">[[global:reputation]]</span>
 							</div>
-
+							<!-- ENDIF reputation -->
 							<div class="inline-block text-center">
 								<span class="human-readable-number" title="{postcount}">{postcount}</span>
 								<span class="account-bio-label">[[global:posts]]</span>
@@ -166,7 +165,7 @@
 
 		<div class="col-md-8">
 					<!-- IF !posts.length -->
-					<span>[[user:has_no_posts]]</span>
+					<div class="alert alert-warning">[[user:has_no_posts]]</div>
 					<!-- ENDIF !posts.length -->
 					<!-- IMPORT partials/posts_list.tpl -->
 
