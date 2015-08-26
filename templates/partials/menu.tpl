@@ -1,5 +1,6 @@
 <div class="navbar-header">
 	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="notification-icon fa fa-fw fa-bell-o unread-count"  data-content="0"></span>
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
