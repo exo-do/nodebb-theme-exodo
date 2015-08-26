@@ -1,18 +1,22 @@
-<div class="inline-block col-xs-12">
+<div class="inline-block col-xs-12 nocolpad">
 
-	<small class="topic-stats">
+	
+	<div class="topic-main-buttons pull-left inline-block">
+		
+	
+		<!-- IMPORT partials/topic/reply-button.tpl -->
+
+		
+	</div>
+	
+	<small class="topic-stats pull-right">
 		<span>[[global:posts]]</span>
 		<strong><span component="topic/post-count" class="human-readable-number" title="{postcount}">{postcount}</span></strong> |
 		<span>[[global:views]]</span>
 		<strong><span class="human-readable-number" title="{viewcount}">{viewcount}</span></strong>
 	</small>
-	<div class="topic-main-buttons pull-right inline-block">
-		<div class="loading-indicator" done="0" style="display:none;">
-			<span class="hidden-xs">[[topic:loading_more_posts]]</span> <i class="fa fa-refresh fa-spin"></i>
-		</div>
-	
-		<!-- IMPORT partials/topic/reply-button.tpl -->
-
+	<div class="loading-indicator pull-right" done="0" style="display:none;">
+		<span class="hidden-xs">[[topic:loading_more_posts]]</span> <i class="fa fa-refresh fa-spin"></i>
 	</div>
 </div>
 <hr>
