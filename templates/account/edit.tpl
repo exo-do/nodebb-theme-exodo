@@ -30,7 +30,7 @@
 					<div class="control-group">
 						<label class="control-label" for="inputUsername">[[user:username]]</label>
 						<div class="controls">
-							<input class="form-control" type="text" id="inputUsername" placeholder="[[user:username]]" value="{username}">
+							<input class="form-control" type="text" id="inputUsername" placeholder="[[user:username]]" value="{username}" disabled>
 						</div>
 					</div>
 
