@@ -35,7 +35,7 @@
 
 				<small>
 					<a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">
-						<span class="visible-xs pull-left"><img src="<!-- IF topics.thumb -->{topics.thumb}<!-- ELSE -->{topics.user.picture}<!-- ENDIF topics.thumb -->" class="user-pic" title="{topics.user.username}" />&nbsp;
+						<!--<span class="visible-xs pull-left"><img src="<!-- IF topics.thumb -->{topics.thumb}<!-- ELSE -->{topics.user.picture}<!-- ENDIF topics.thumb -->" class="user-pic" title="{topics.user.username}" />&nbsp;-->
 						</span>
 						{topics.user.username}
 					</a>
