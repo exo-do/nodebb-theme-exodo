@@ -47,7 +47,7 @@
 			<!-- IMPORT partials/category_tools.tpl -->
 			
 			<!-- Recents Filter Plugin Code Begin-->
-			<a href="#!" onclick="showHideFilters()"><span class="btn-group"><button class="btn btn-exodo"><span class="hidden-xs">Filtros</span><span class="exright"><i class="fa fa-filter"></i></span></button></span></a>
+			<a href="#!" onclick="showHideFilters()"><span class="btn-group"><button class="btn btn-exodo <!-- IF !loggedIn -->	hidden <!-- ENDIF !loggedIn -->"><span class="hidden-xs">Filtros</span><span class="exright"><i class="fa fa-filter"></i></span></button></span></a>
 			</br>
 			</br>
 			<div id="filtersContainer" style="display:none">

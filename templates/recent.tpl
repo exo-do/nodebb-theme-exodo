@@ -12,10 +12,12 @@
 		<button id="new_topic" class="btn btn-exodo"><span class="hidden-xs">[[category:new_topic_button]]</span><span class="exright">+</span></button>
 	</span>
 	
-	
+	<!-- ELSE -->
+	<a href="{config.relative_path}/login" class="btn btn-exodo">[[category:guest-login-post]] <span class="exright hidden-xs">+</span></a>
+	<!-- ENDIF loggedIn -->
 
 		<!-- Recents Filter Plugin Code Begin-->
-		<a href="#!" onclick="showHideFilters()"><span class="btn-group"><button class="btn btn-exodo"><span class="hidden-xs">Filtros</span><span class="exright"><i class="fa fa-filter"></i></span></button></span></a>
+		<a href="#!" onclick="showHideFilters()"><span class="btn-group"><button class="btn btn-exodo <!-- IF !loggedIn -->	hidden <!-- ENDIF !loggedIn -->"><span class="hidden-xs">Filtros</span><span class="exright"><i class="fa fa-filter"></i></span></button></span></a>
 		</br></br>
 	<div id="filtersContainer" style="display:none">
 		<div class="col-xs-12">
@@ -48,9 +50,7 @@
 		</br>
 	</div>
 	<!-- Recents Filter Plugin Code End -->
-	<!-- ELSE -->
-	<a href="{config.relative_path}/login" class="btn btn-exodo">[[category:guest-login-post]] <span class="exright hidden-xs">+</span></a>
-	<!-- ENDIF loggedIn -->
+	
 
 	
 <!-- IF !topics.length -->
