@@ -101,13 +101,13 @@
 	    ga('send', 'pageview');
 
 	  </script>
-  
-   <script type="text/javascript">
-	     window.cookieconsent_options = {"message":"Utilizamos cookies para mejorar tu experiencia como usuario de este sitio. Si estás conforme, acepta pulsando el botón.","dismiss":"OK!","learnMore":"Más info","link":"http://exo.do/topic/41/","theme":"dark-top"};
-	 </script>
 
-	 <script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script>
+	<script type="text/javascript">
+	    window.cookieconsent_options = {"message":"Utilizamos cookies para mejorar tu experiencia de usuario. Si estás conforme, acepta pulsando el botón.","dismiss":"Acepto!","learnMore":" más info","link":"http://exo.do/topic/41/","theme":"dark-bottom"};
+	</script>
 
+	<script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script>
+		
   	  
 </body>
 </html>
