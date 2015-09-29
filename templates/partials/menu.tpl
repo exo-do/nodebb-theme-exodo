@@ -46,13 +46,13 @@
 
 	<!-- IF config.loggedIn -->
 	<ul id="logged-in-menu" class="nav navbar-nav navbar-right pull-right">
-		<li class="notifications dropdown text-center hidden-xs">
+		<li class="notifications dropdown text-center hidden-xs" component="notifications">
 			<a href="#" title="[[global:header.notifications]]" class="dropdown-toggle" data-toggle="dropdown" id="notif_dropdown">
 				<i component="notifications/icon" class="notification-icon fa fa-fw fa-bell-o" data-content="0"></i>
 			</a>
 			<ul class="dropdown-menu" aria-labelledby="notif_dropdown">
 				<li>
-					<ul id="notif-list">
+					<ul id="notif-list" component="notifications/list">
 						<li>
 							<a href="#"><i class="fa fa-refresh fa-spin"></i> [[global:notifications.loading]]</a>
 						</li>
@@ -65,12 +65,12 @@
 					
 		<!-- IF !config.disableChat -->
 		<li class="chats dropdown hidden-xs">
-			<a class="dropdown-toggle" data-toggle="dropdown" href="#" title="[[global:header.chats]]" id="chat_dropdown">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#" title="[[global:header.chats]]" id="chat_dropdown" component="chat/dropdown">
 				<i component="chat/icon" class="fa fa-comment-o fa-fw"></i>
 			</a>
 			<ul class="dropdown-menu" aria-labelledby="chat_dropdown">
 				<li>
-					<ul id="chat-list">
+					<ul id="chat-list" component="chat/list">
 						<li>
 							<a href="#"><i class="fa fa-refresh fa-spin"></i> [[global:chats.loading]]</a>
 						</li>
