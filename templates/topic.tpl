@@ -251,4 +251,3 @@
 	</noscript>
 	<!-- ENDIF !config.usePagination -->
 
-	<!-- IMPORT partials/variables/topic.tpl --> 

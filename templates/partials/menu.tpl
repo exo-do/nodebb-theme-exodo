@@ -11,11 +11,11 @@
 				<img alt="{brand:logo:alt}" class="{brand:logo:display} forum-logo" src="{brand:logo}" />
 			</a>
 		</div>
-		<!-- IF showSiteTitle -->
+		<!-- IF config.showSiteTitle -->
 		<a href="{relative_path}/">
 			<h1 class="navbar-brand forum-title">{title}</h1>
 		</a>
-		<!-- ENDIF showSiteTitle -->
+		<!-- ENDIF config.showSiteTitle -->
 
 		<div component="navbar/title" class="header-topic-title visible-xs">
 			<span></span>
@@ -44,7 +44,7 @@
 		<!-- END navigation -->
 	</ul>
 
-	<!-- IF loggedIn -->
+	<!-- IF config.loggedIn -->
 	<ul id="logged-in-menu" class="nav navbar-nav navbar-right pull-right">
 		<li class="notifications dropdown text-center hidden-xs">
 			<a href="#" title="[[global:header.notifications]]" class="dropdown-toggle" data-toggle="dropdown" id="notif_dropdown">
@@ -63,7 +63,7 @@
 			</ul>
 		</li>
 					
-		<!-- IF !disableChat -->
+		<!-- IF !config.disableChat -->
 		<li class="chats dropdown hidden-xs">
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#" title="[[global:header.chats]]" id="chat_dropdown">
 				<i component="chat/icon" class="fa fa-comment-o fa-fw"></i>
@@ -79,7 +79,7 @@
 				<li class="notif-dropdown-link"><a href="{relative_path}/chats">[[modules:chat.see_all]]</a></li>
 			</ul>
 		</li>
-		<!-- ENDIF !disableChat -->
+		<!-- ENDIF !config.disableChat -->
 					
 		<li id="user_label" class="dropdown">
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="user_dropdown" title="[[global:header.profile]]">
@@ -140,18 +140,18 @@
 			</a>
 		</li>
 
-		<!-- IF !disableChat -->
+		<!-- IF !config.disableChat -->
 		<li class="visible-xs">
 			<a href="{relative_path}/chats"><i id="chat-count" class="fa fa-comment-o fa-fw"></i> [[global:header.chats]]</a>
 		</li>
-		<!-- ENDIF !disableChat -->
+		<!-- ENDIF !config.disableChat -->
 					
-		<!-- IF searchEnabled -->
+		<!-- IF config.searchEnabled -->
 		<li class="visible-xs">
 			<a href="{relative_path}/search"><i class="fa fa-search fa-fw"></i> [[global:search]]</a>
 						
 		</li>
-		<!-- ENDIF searchEnabled -->
+		<!-- ENDIF config.searchEnabled -->
 					
 					
 					
@@ -173,8 +173,8 @@
 			</a>
 		</li>
 	</ul>
-	<!-- ENDIF loggedIn -->
-	<!-- IF searchEnabled -->
+	<!-- ENDIF config.loggedIn -->
+	<!-- IF config.searchEnabled -->
 	<ul class="nav navbar-nav navbar-right">
 		<li>	
 			<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="">
@@ -191,7 +191,7 @@
 			
 		</li>
 	</ul>
-	<!-- ENDIF searchEnabled -->
+	<!-- ENDIF config.searchEnabled -->
 
 	<ul class="nav navbar-nav navbar-right pull-right">
 		<li>
@@ -240,7 +240,7 @@
 	<!-- ENDIF !maintenanceHeader -->
 </div>
 
-
+<!--
 <script>
 $('.mark-all-read').on('click', function() {
 	socket.emit('notifications.markAllRead', function(err) {
@@ -255,3 +255,4 @@ $('.mark-all-read').on('click', function() {
 	});
 });
 </script>
+-->

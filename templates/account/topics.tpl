@@ -15,5 +15,3 @@
 		<!-- ENDIF config.usePagination -->
 	</div>
 </div>
-
-<!-- IMPORT partials/variables/account.tpl -->

@@ -5,7 +5,7 @@
 	<!-- BEGIN metaTags -->
 	{function.buildMetaTag}
 	<!-- END metaTags -->
-	<link rel="stylesheet" type="text/css" href="{relative_path}/stylesheet.css?{css-buster}" />
+	<link rel="stylesheet" type="text/css" href="{relative_path}/stylesheet.css?{config.css-buster}" />
 	<!-- IF bootswatchCSS --><link id="bootswatchCSS" href="{bootswatchCSS}" rel="stylesheet" media="screen"><!-- ENDIF bootswatchCSS -->
 	
 	<!-- BEGIN linkTags -->
@@ -27,7 +27,7 @@
 					user: JSON.parse('{{userJSON}}')
 		};
 		</script>
-	<script src="{relative_path}/nodebb.min.js?{script-buster}"></script>
+	<script src="{relative_path}/nodebb.min.js?{config.script-buster}"></script>
 	<!-- IMPORT partials/requirejs-config.tpl -->
 	<!-- IF useCustomJS -->
 	{{customJS}}
