@@ -26,13 +26,18 @@
 					<img src="<!-- IF topics.thumb -->{topics.thumb}<!-- ELSE -->{topics.user.picture}<!-- ENDIF topics.thumb -->" class="profile-image user-img" title="{topics.user.username}" />
 				</a>
 				<h3 component="topic/header">
+					<!-- IF !topics.noAnchor -->
 					<a href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
 						<meta itemprop="name" content="{function.stripTags,title}">
 					
 						<span class="topic-title <!-- IF !loggedIn --> regular <!-- ENDIF !loggedIn -->"><i component="topic/pinned" class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->">&nbsp;</i><i component="topic/locked" class="fa fa-lock<!-- IF !topics.locked --> hide <!-- ENDIF !topics.locked -->">&nbsp;</i>{topics.title}</span>
 					</a>
+					
+					<!-- ELSE -->
+					<strong><!-- IF topics.pinned --><i class="fa fa-thumb-tack"></i><!-- ENDIF topics.pinned --> <!-- IF topics.locked --><i class="fa fa-lock"></i><!-- ENDIF topics.locked --></strong>
+					<span class="topic-title">{topics.title}</span>
+					<!-- ENDIF !topics.noAnchor -->
 				</h3>
-
 				<small>
 					<a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">
 						<!--<span class="visible-xs pull-left"><img src="<!-- IF topics.thumb -->{topics.thumb}<!-- ELSE -->{topics.user.picture}<!-- ENDIF topics.thumb -->" class="user-pic" title="{topics.user.username}" />&nbsp;-->
@@ -60,7 +65,7 @@
                 
 				<div class="threadlastpost visible-xs pull-right text-right">
 					<!-- IF topics.unreplied -->
-					[[category:no_replies]]
+					<a href="{config.relative_path}/topic/{topics.slug}" itemprop="url">[[category:no_replies]]</a>
 					<!-- ELSE -->
 					<!-- <span class="pull-left"> {topics.postcount} / {topics.viewcount}</span> -->
 					<a href="<!-- IF topics.teaser.user.userslug -->{config.relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->"> {topics.teaser.user.username} </a> 

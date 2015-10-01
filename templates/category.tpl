@@ -9,13 +9,11 @@
 	<div class="category-head">
 		<!-- IMPORT partials/breadcrumbs.tpl -->
 		
-		<!-- IF children.length -->
 		<div class="subcategories row">
 			<!-- BEGIN children -->
 			<!-- IMPORT partials/category_child.tpl -->
 			<!-- END children -->
 		</div>
-		<!-- ENDIF children.length -->
 		
 		<div class="text-center category-head-top">
 			<h1>{name}</h1>
@@ -46,53 +44,53 @@
 	
 			<!-- IMPORT partials/category_tools.tpl -->
 			
+			<!-- IMPORT partials/category_sort.tpl -->
+			
 			<!-- Recents Filter Plugin Code Begin-->
-			<a href="#!" onclick="showHideFilters()"><span class="btn-group"><button class="btn btn-exodo <!-- IF !loggedIn -->	hidden <!-- ENDIF !loggedIn -->"><span class="hidden-xs">Filtros</span><span class="exright"><i class="fa fa-filter"></i></span></button></span></a>
-			</br>
-			</br>
-			<div id="filtersContainer" style="display:none">
-				<div class="col-xs-12">
-					<label class="control-label" for="excludedTitleWords"><h5>Filtro de títulos de temas <i class="fa fa-scissors"></i></h5></label>
-					<input class="col-xs-12" type="text" id="excludedTitleWords" placeholder="Separadas por espacios">
-					<br>
-					<small>Los hilos que contengan alguna de estas palabras en el título se ocultarán.</small>
-				</div>
+						<a href="#!" onclick="showHideFilters()"><span class="btn-group"><button class="btn btn-exodo <!-- IF !loggedIn -->	hidden <!-- ENDIF !loggedIn -->"><span class="hidden-xs">Filtros</span><span class="exright"><i class="fa fa-filter"></i></span></button></span></a>
+						</br>
+						</br>
+						<div id="filtersContainer" style="display:none">
+							<div class="col-xs-12">
+								<label class="control-label" for="excludedTitleWords"><h5>Filtro de títulos de temas <i class="fa fa-scissors"></i></h5></label>
+								<input class="col-xs-12" type="text" id="excludedTitleWords" placeholder="Separadas por espacios">
+								<br>
+								<small>Los hilos que contengan alguna de estas palabras en el título se ocultarán.</small>
+							</div>
 
-				<div class="col-xs-12">
-					<label class="control-label" for="excludedTags"><h5>Filtro de etiquetas <i class="fa fa-minus-square"></i></h5></label>
-					<input class="col-xs-12" type="text" id="excludedTags" placeholder="Separadas por espacios">
-					<br>
-					<small>Los hilos que contengan alguna de estas etiquetas se ocultarán.</small>
-				</div>
+							<div class="col-xs-12">
+								<label class="control-label" for="excludedTags"><h5>Filtro de etiquetas <i class="fa fa-minus-square"></i></h5></label>
+								<input class="col-xs-12" type="text" id="excludedTags" placeholder="Separadas por espacios">
+								<br>
+								<small>Los hilos que contengan alguna de estas etiquetas se ocultarán.</small>
+							</div>
 
-				<div class="col-xs-12">
-					<label class="control-label" for="onlyThisTags"><h5>Filtro de etiquetas <i class="fa fa-plus-square"></i></h5></label>
-					<input class="col-xs-12" type="text" id="onlyThisTags" placeholder="Separadas por espacios">
-					<br>
-					<small>Solo los hilos que contengan estas etiquetas serán mostrados</small>
-				</div>
-				<div class="clearfix"></div>
-				</br>
-				</br>
-				<div clas="pull-right">
-					<a align="center" id="submitBtn" href="#!" onclick="saveFilters()" class="btn btn-exodo"> Guardar filtros <span class="exright"><i class="fa fa-cloud"></i></span></a>
-				</div>
-				</br>
-				</br>
-			</div>
+							<div class="col-xs-12">
+								<label class="control-label" for="onlyThisTags"><h5>Filtro de etiquetas <i class="fa fa-plus-square"></i></h5></label>
+								<input class="col-xs-12" type="text" id="onlyThisTags" placeholder="Separadas por espacios">
+								<br>
+								<small>Solo los hilos que contengan estas etiquetas serán mostrados</small>
+							</div>
+							<div class="clearfix"></div>
+							<br>
+							<br>
+				
+							<div class="pull-right">
+								<a align="center" id="submitBtn" href="#!" onclick="saveFilters()" class="btn btn-exodo"> Guardar filtros <span class="exright"><i class="fa fa-cloud"></i></span></a>
+
+								<br>
+								<br>
+							</div>
+						</div>
 			<!-- Recents Filter Plugin Code End-->			
-</div>
-			
-			
+</div>		
 <div class="category-head-pagination">
 <!-- IF config.usePagination -->
 <!-- IMPORT partials/paginator.tpl -->
 <!-- ENDIF config.usePagination -->
+</div>			
 </div>
-		
-			
-			
-</div>
+
 </div>
 	
 <!-- IF !topics.length -->
@@ -103,16 +101,19 @@
 
 <!-- IMPORT partials/topics_list.tpl -->
 	
-
 <!-- IF config.usePagination -->
 <div class="category-head-pagination pagination-foot">
 <!-- IMPORT partials/paginator.tpl -->
 </div>
 <!-- ENDIF config.usePagination -->
-	
+
+	<!-- IF topics.length -->
+	<div widget-area="sidebar" class="col-md-3 col-xs-12 category-sidebar"></div>
+	<!-- ENDIF topics.length -->	
 </div>
 
 <!-- IMPORT partials/move_thread_modal.tpl -->
+
 <!-- IF !config.usePagination -->
 <noscript>
 <!-- IMPORT partials/paginator.tpl -->

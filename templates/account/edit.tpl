@@ -26,14 +26,14 @@
 		<div class="col-md-5">
 			<div>
 				<form class='form-horizontal'>
-
+					<!-- IF !username:disableEdit -->
 					<div class="control-group">
 						<label class="control-label" for="inputUsername">[[user:username]]</label>
 						<div class="controls">
-							<input class="form-control" type="text" id="inputUsername" placeholder="[[user:username]]" value="{username}" disabled>
+							<input class="form-control" type="text" id="inputUsername" placeholder="[[user:username]]" value="{username}">
 						</div>
 					</div>
-
+					<!-- ENDIF !username:disableEdit -->
 					<div class="control-group">
 						<label class="control-label" for="inputEmail">[[user:email]]</label>
 						<div class="controls">

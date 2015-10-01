@@ -181,9 +181,9 @@
 				<div class="hide" id="search-fields">
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="[[global:search]]" name="query" value="">
+						<a href="#"><i class="fa fa-gears fa-fw advanced-search-link"></i></a>
 					</div>
 					<button type="submit" class="btn btn-default hide">[[global:search]]</button>
-					<span class="" id="search-advanced" title="Avanzado"><a href="/search"><i class="fa fa-plus-square"></i></a></span>
 				</div>
 				
 				<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="[[global:header.search]]"></i></button>
